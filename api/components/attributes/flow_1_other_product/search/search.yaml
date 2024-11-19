@@ -1,0 +1,106 @@
+context:
+  parent: true
+  domain:
+    description: updated domain namespace defined here https://docs.google.com/document/d/1brvcltG_DagZ3kGr1ZZQk4hG4tze3zvcxmGV4NMTzr8/edit#heading=h.w9zlp87xdha1
+    required: mandatory
+    usage: "ONDC:RET10"
+    reference: if any
+  action:
+    description: enum
+    required: mandatory
+    usage: "search"
+    reference: if any
+  version:
+    description: current live version
+    required: mandatory
+    usage: "2.x"
+    reference: if any
+  bap_id:
+    description: subscriber_id of buyer app
+    required: mandatory
+    usage: buyerapp.com
+    reference: if any
+  bap_uri:
+    description: subscriber_uri of buyer app
+    required: mandatory
+    usage: https://buyerapp.com/ondc
+    reference: if any
+  timestamp:
+    description: RFC3339 compliant timestamp
+    required: mandatory
+    usage: "2023-10-17T21:10:00.000Z"
+    reference: if any
+  transaction_id:
+    description: unique string for each request trail
+    required: mandatory
+    usage: T2
+    reference: if any
+  message_id:
+    description: unique string for each request trail
+    required: mandatory
+    usage: M4
+    reference: if any
+  location:
+    parent: true
+    city:
+      code:
+        description: city code for search where service needs to be provided. List of city codes, with pincode mapping, are here - https://docs.google.com/spreadsheets/d/12A_B-nDtvxyFh_FWDfp85ss2qpb65kZ7/edit#gid=213574534
+        required: mandatory
+        usage: std:080
+        reference: if any
+    country:
+      code:
+        description: ISO standard 3 digit country code where service needs to be provided
+        required: mandatory
+        usage: IND
+        reference: if any
+  ttl:
+    description: validity of message
+    required: mandatory
+    usage: PT30S
+    reference: if any
+message:
+  parent: true
+  intent:
+    parent: true
+    category:
+      parent: true
+      id:
+        description: "Unique identifier for the category. This field maps to the specific category of the product or service in the system."
+        required: mandatory
+        usage: "Foodgrains"
+        reference: "Category Id for which search is requested. List can be found here https://docs.google.com/spreadsheets/d/1APAvavF_BNbTA89benAlGtv0GuFvpn2b6XXi4lSdTTw/edit?gid=0#gid=0"
+    fulfillment:
+      parent: true
+      stops:
+        parent: true
+        type:
+          description: stops type
+          required: required
+          usage: "stops_type"
+          reference: if any
+        location:
+          gps:
+            description: service location gps coordinates where service needs to be provided, should be atleast 6 digit decimal precision
+            required: required
+            usage: "12.4535445,77.9283792"
+            reference: if any
+          area_code :
+            description: "Postal code of the location"
+            required: required
+            usage: "560004"
+            reference: "if any"  
+      type:
+        description: Type of fulfillment
+        required: required
+        usage: "Delivery"
+        reference: if any
+    item:
+      parent: true
+      descriptor:
+        parent: true
+        name:
+          description: "Name of the item that the search request is made for"
+          required: mandatory
+          usage: "Coffee"
+          reference: "if any"

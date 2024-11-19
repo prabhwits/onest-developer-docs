@@ -1,0 +1,13 @@
+domain:
+  - code: onest:learning-experiences
+    description: Name of the ONEST Domain	
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: onest:financial-support
+    description: Name of the ONEST Domain	
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: onest:work-opportunities
+    description: Name of the ONEST Domain	
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: onest:expert-connect
+    description: Name of the ONEST Domain	
+    reference: <PR/Issue/Discussion Links md format text>

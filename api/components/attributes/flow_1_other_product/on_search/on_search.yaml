@@ -1,0 +1,216 @@
+message:
+  parent: true
+  catalog:
+    parent: true
+    fulfillments:
+      parent: true
+      id:
+        description: Id of fullfillment type
+        required: required
+        usage: "F1"
+        reference: if any
+      type:
+        description: Type of fullfillment supported
+        required: required
+        usage: "Delivery"
+        reference: if any
+    descriptor:
+      parent: true
+      name:
+        description: Name of the Seller NP
+        required: required
+        usage: "ABC store"
+        reference: if any
+      short_desc:
+        description: Short description of seller NP
+        required: required
+        usage: "Short description of seller NP"
+        reference: if any
+      long_desc:
+        description: Long description of the seller NP
+        required: required
+        usage: "Long description of the seller NP"
+        reference: if any
+      images.url:
+        description: Link to an image of the seller NP
+        required: required
+        usage: "https://sellerNP.com/images/np.png"
+        reference: if any
+    providers:
+      parent: true
+      id:
+        description: service provider id
+        required: required
+        usage: "P1"
+        reference: if any
+      descriptor:
+        description: details of the service provider
+        required: required
+        usage: "ABC store"
+        reference: if any
+      locations:
+        description: service provider locations
+        required: optional
+        usage: "-"
+        reference: if any
+      items:
+        descriptor:
+          code:
+            description: unique code for item which will be in this format - "type:code" where type is 1 - EAN, 2 - ISBN, 3 - GTIN, 4 - HSN, 5 - others
+            required: required
+            usage: "1:XXXXXXXXXXXXX"
+            reference: if any
+          images.url:
+            description: Link to an image of the seller NP
+            required: required
+            usage: "https://sellerNP.com/images/i1.png"
+            reference: if any
+          name:
+            description: name of the service provided by the service provider
+            required: required
+            usage: "Plain Atta"
+            reference: if any
+          short_desc:
+            description: Short description of the Item
+            required: required
+            usage: "Item short description"
+            reference: if any
+          long_desc:
+            description: Long description of the Item
+            required: required
+            usage: "Item long description"
+            reference: if any
+          fulfillment_ids:
+            description: Default fulfillment type of the Item
+            required: required
+            usage: "F1"
+            reference: if any
+          price:
+            value:
+              description: price of the service
+              required: required
+              usage: "149"
+              reference: if any
+            currency:
+              description: currency of the price value
+              required: required
+              usage: "INR"
+              reference: if any
+        category_ids:
+          description: item assigned to custom menu, can only be assigned to child menu item (if there is a parent menu item) or the root menu item; defined in this format - "custom menu item id:display sequence within custom menu item
+          required: required
+          usage: "SRV10-1000"
+          reference: if any
+        fulfillment_ids:
+          description: fulfillment id of the service provided by the service provider
+          required: required
+          usage: "1"
+          reference: if any
+        location_ids:
+          description: location ids of the service provider
+          required: required
+          usage: "L1"
+          reference: if any
+        time:
+          range:
+            start:
+              description: availability start date of the service provider
+              required: required
+              usage: "2022-11-10T00:00:00.000Z"
+              reference: if any
+            end:
+              description: availability end date of the service provider
+              required: required
+              usage: "2022-11-20T00:00:00.000Z"
+              reference: if any
+          schedule:
+            frequency:
+              description: service slot frequency
+              required: required
+              usage: "PT1H"
+              reference: if any
+            holidays:
+              description: days on which service provide is not available
+              required: required
+              usage: "[2023-11-13, 2023-11-15]"
+              reference: if any
+            times:
+              description: time slots in which service provide is available
+              required: required
+              usage: "[2022-11-20T00:00:00.000Z]"
+              reference: if any
+        offers:
+          id:
+            description: offer id
+            required: optional
+            usage: "offer-1"
+            reference: if any
+          descriptor:
+            code:
+              description: code of the offer being provided by the service provider
+              required: optional
+              usage: "FREEBIE"
+              reference: if any
+            short_desc:
+              description: description of the offer being provided by the service provider
+              required: optional
+              usage: "Cushion Cleaning"
+              reference: if any
+          item_ids:
+            description: item ids on which this offer is applicable
+            required: optional
+            usage: "[I1]"
+            reference: if any
+          time:
+            range:
+              start:
+                description: start date of the period for which offer is available
+                required: optional
+                usage: "2023-11-12T00:00:00.000Z"
+                reference: if any
+              end:
+                description: end date of the offer
+                required: optional
+                usage: "2023-11-16T00:00:00.000Z"
+                reference: if any
+        fulfillments:
+          contact:
+            phone:
+              description: contact number of the service provider
+              required: optional
+              usage: "9886098860"
+              reference: if any
+      categories:
+        id:
+          description: Id of the Category
+          required: required
+          usage: "5"
+          reference: if any
+        descriptor:
+          images.url:
+            description: Link to a suitable image for the category
+            required: required
+            usage: "https://sellerNP.com/ondc/m005.png"
+            reference: if any
+          long_desc:
+            description: Long description of the category
+            required: required
+            usage: "Category long description"
+            reference: if any
+          name:
+            description: Name of the category
+            required: required
+            usage: "Pizza"
+            reference: if any
+          short_desc:
+            description: Short description of the category
+            required: required
+            usage: "Category short description"
+            reference: if any
+        parent_category_id:
+          description: Parent Category Id of the category
+          required: required
+          usage: ""
+          reference: if any
+          
+          
