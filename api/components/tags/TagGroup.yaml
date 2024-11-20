@@ -3,8 +3,8 @@ intent:
     - code: BAP_TERMS
       description: Terms of BAP (Optional)
       reference: <PR/Issue/Discussion Links md format text>
-      list:
-        $ref: any
+      # list:
+      #   $ref: any
     # - code: CATALOG_FULL
     #   description: The format in which the buyer Np wants the catalog
     #   reference: <PR/Issue/Discussion Links md format text>
