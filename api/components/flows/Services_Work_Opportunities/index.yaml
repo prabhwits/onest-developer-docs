@@ -1,0 +1,124 @@
+summary: Services - Work Opportunities
+description: The following is an illustrative flow for a job application transaction, where a candidate intends to apply for a specific job role.
+details:
+
+  - description: Sequence Diagram for Services Work Opportunities
+    mermaidGraph: >-
+      sequenceDiagram
+        participant B as Buyer
+        participant BA as BuyerApp
+        participant G as Gateway
+        participant SA1 as SellerApp1
+        participant SA2 as SellerApp2
+        
+        Note Over B,SA: **SEARCH FLOW**
+        B ->> BA: Search by city for a job
+        BA ->> G: **/search** - Search by city for a job and <br>additional parameters
+        Note left of BA: Additional params include: <br><br>
+        G ->> SA1: **/search** - Job request broadcasted based <br>on city and domain in context
+        G ->> SA2: **/search** - Job request broadcasted based <br>on city and domain in context
+        SA1 ->> BA: **/on_search** - Job catalog returned <br>with pricing, seller statutory details, pricing
+        SA2 ->> BA: **/on_search** - Job catalog returned <br>with pricing, seller statutory details, pricing
+        Note Over BA,SA1: Buyer now has the option to choose the <br>Job from either Seller 1 or Seller 2 or both
+        BA ->> B: Shows all the jobs <br>options from sellers
+
+  - description: Ordering
+    mermaidGraph: >-
+      sequenceDiagram
+        participant B as Buyer
+        participant BA as BuyerApp
+        participant G as Gateway
+        participant SA as SellerApp
+        Note Over B,SA: **SELECT FLOW**
+        B ->> BA: Selects one of the <br>providers for job
+        BA ->> SA: **/select** - A job is selected with a <br>TTL for receiving response
+        SA ->> BA: **/on_select** - Responds to the selection with <br>breakup, quote including logistics charges
+        BA ->> B: Shows response with price details
+
+  - description: Initializing the order
+    mermaidGraph: >-
+      sequenceDiagram
+        participant B as Buyer
+        participant BA as BuyerApp
+        participant G as Gateway
+        participant SA as SellerApp
+        Note Over B,SA: **INITIALIZATION FLOW**
+        B ->> BA: Proceeds with the Order
+        BA ->> SA: **/init** - Initializes the order and <br>sends billing details
+        SA ->> BA: **/on_init** - Order initialization with <br>fulfillment & settlement information <br>including UPI or NEFT/IMPS/Bank Transfer
+        BA ->> B: Confirms initialization
+
+  - description: Order Confirmation
+    mermaidGraph: >-
+      sequenceDiagram
+        participant B as Buyer
+        participant BA as BuyerApp
+        participant SA as SellerApp
+        Note Over B,SA: **CONFIRMATION FLOW**
+        B ->> BA: Confirms the Order
+        BA ->> SA: **/confirm** - Creates order to create final digital contract
+        SA ->> BA: **/on_confirm** - Accepts the order 
+        BA ->> B: Confirms order and delivery 
+
+  - description: Fulfillment
+    mermaidGraph: >-
+      sequenceDiagram
+        participant B as Buyer
+        participant BA as BuyerApp
+        participant SA as SellerApp 
+        Note Over B,SA: **ORDER STATUS FLOW**
+        B ->> BA: Checks the order status
+        BA ->> SA: **/status** - Enquire order status <br>or tracking information
+        SA ->> BA: **/on_status_in_transit** - Latest order and fulfillment status is sent
+        BA ->> B: Updates the latest order <br>and fulfillment information
+
+reference: if any
+steps:
+  - summary: Description
+    api: search
+    description: BAP will make search request with an intent, example :- job name, job provider, location etc.
+    reference: if any
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/search/search_by_job_name.yaml"
+  - summary: Description
+    api: on_search
+    description: BPP will create a catalogue containing jobs with matching criteria and sends it as on_search request.
+    reference: if any
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/on_search/on_search.yaml"
+  - summary: Description
+    api: select
+    description:  BAP will receive the on_search request and displays the list of jobs to the user. Once the user chooses a job, BAP will make select API with item ID to get the complete details about the job.
+    reference: if any
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/select/select.yaml"
+  - summary: Description
+    api: on_select
+    description: BPP will receive the select request and check if the listing is still valid. If the listing is still valid, BPP will send the on_select call with complete details of the job listing.
+    reference: if any
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/on_select/on_select.yaml"
+  - summary: Description
+    api: init
+    description: BAP sends the customer details to the BPP in the init API. This is the initializing step of the job application process.
+    reference: if any
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/init/init.yaml"
+  - summary: Description
+    api: on_init
+    description: If BPP wants to collect additional details of the user, it will send an xinput form in the on_init request.
+    reference: if any
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/on_init/on_init.yaml"
+  - summary: Description
+    api: confirm
+    description: BAP confirms user wants to submit the job application.
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/confirm/confirm.yaml"
+  - summary: Description
+    api: on_confirm
+    description: BPP sends confirmation of submission of job application.
+    reference: if any
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/on_confirm/on_confirm.yaml"
+

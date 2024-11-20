@@ -1,0 +1,125 @@
+value:
+  context:
+    domain: onest:work-opportunities
+    version: 2.x
+    action: confirm
+    bap_id: worker-hub.bap.io
+    bap_uri: https://worker-hub.bap.io
+    bpp_id: job-hub.bpp.io
+    bpp_uri: https://job-hub.bpp.io
+    transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+    message_id: 481a01fc-4b45-4d49-9558-c6a7dfad8b75
+    location:
+      city:
+        code: BLR
+      country:
+        code: IND
+    timestamp: '2023-02-23T08:09:02Z'
+    ttl: PT10M
+  message:
+    order:
+      provider:
+        id: '1'
+      items:
+        - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+          fulfillment_ids:
+            - '1'
+      fulfillments:
+        - id: '1'
+          customer:
+            person:
+              name: Sanjay
+              gender: Male
+              age: '35'
+              skills:
+                - code: Android
+                  name: Android
+                - code: AWS
+                  name: AWS
+              languages:
+                - code: en
+                  name: english
+                - code: ml
+                  name: Malayalam
+                - code: hi
+                  name: Hindi
+              tags:
+                - display: true
+                  descriptor:
+                    code: CURRENT-EXPERIENCE
+                    name: Current Experience
+                  list:
+                    - descriptor:
+                        code: EXP-YEARS
+                        name: Experience
+                      value: P4Y2M
+                      display: true
+                    - descriptor:
+                        code: CURRENT-COMPANY
+                        name: Current Company
+                      value: ABC tech
+                      display: true
+                - display: true
+                  descriptor:
+                    code: SALARY-DETAILS
+                    name: Salary Details
+                  list:
+                    - descriptor:
+                        code: EXPECTED-SALARY
+                        name: Expected Salary
+                      value: '80000'
+                      display: true
+                    - descriptor:
+                        code: CURRENT-SALARY
+                        name: Current Salary
+                      value: '50000'
+                      display: true
+                - display: true
+                  descriptor:
+                    code: DOCUMENTS
+                    name: Documents
+                  list:
+                    - descriptor:
+                        code: RESUME
+                        name: Resume
+                      value: https://link-to-the-document.com
+                      display: true
+            contact:
+              phone: '9999999999999'
+              email: abc@abc.bc
+          tags:
+            - display: true
+              descriptor:
+                code: DISTRIBUTOR-DETAILS
+                name: Distributor Details
+              list:
+                - descriptor:
+                    code: DISTRIBUTOR-ID
+                    name: Distributor Id
+                  value: PNB
+                  display: true
+                - descriptor:
+                    code: DISTRIBUTOR-NAME
+                    name: Distributor Name
+                  value: Pay Near By
+                  display: true
+                - descriptor:
+                    code: DISTRIBUTOR-PHONE
+                    name: Distributor Phone
+                  value: '9123456789'
+                  display: true
+                - descriptor:
+                    code: DISTRIBUTOR-EMAIL
+                    name: Distributor Email
+                  value: support@pnb.com
+                  display: true
+                - descriptor:
+                    code: AGENT-ID
+                    name: Agent Id
+                  value: agent-123
+                  display: true
+                - descriptor:
+                    code: AGENT-VERIFIED
+                    name: Agent Verified
+                  value: 'true'
+                  display: true

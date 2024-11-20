@@ -1,0 +1,21 @@
+value:
+  context:
+    domain: onest:work-opportunities
+    action: search
+    version: 2.x
+    bap_id: worker-hub.bap.io
+    bap_uri: https://worker-hub.bap.io/
+    transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+    message_id: $89bdae17-9942-40c8-869a-5bd413356407
+    location:
+      city:
+        code: city_code_value
+      country:
+        code: country_code_value
+    timestamp: '2022-10-11T09:55:41.161Z'
+    ttl: PT30S
+  message:
+    intent:
+      item:
+        descriptor:
+          name: Engineer
