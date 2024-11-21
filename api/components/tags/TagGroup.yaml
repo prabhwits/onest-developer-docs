@@ -3,18 +3,18 @@ intent:
     - code: BAP_TERMS
       description: Terms of BAP (Optional)
       reference: <PR/Issue/Discussion Links md format text>
-      # list:
-      #   $ref: any
-    # - code: CATALOG_FULL
-    #   description: The format in which the buyer Np wants the catalog
-    #   reference: <PR/Issue/Discussion Links md format text>
-    #   list:
-    #     $ref: "./Tag.yaml#/CATALOG_FULL"
-    # - code: CATALOG_INC
-    #   description: The format in which the buyer Np wants the catalog
-    #   reference: <PR/Issue/Discussion Links md format text>
-    #   list:
-    #     $ref: "./Tag.yaml#/CATALOG_INC"
+      list:
+        $ref: "./Tag.yaml#/BAP_TERMS"
+    - code: CATALOG_FULL
+      description: The format in which the buyer Np wants the catalog
+      reference: <PR/Issue/Discussion Links md format text>
+      list:
+        $ref: "./Tag.yaml#/CATALOG_FULL"
+    - code: CATALOG_INC
+      description: The format in which the buyer Np wants the catalog
+      reference: <PR/Issue/Discussion Links md format text>
+      list:
+        $ref: "./Tag.yaml#/CATALOG_INC"
 catalog:
   providers:
     tags:

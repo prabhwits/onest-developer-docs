@@ -102,7 +102,7 @@ message:
           usage: "SRV10-1000"
           reference: if any
         fulfillment_ids:
-          description: x`x`
+          description: fulfillment id of the service provided by the service provider
           required: required
           usage: "1"
           reference: if any

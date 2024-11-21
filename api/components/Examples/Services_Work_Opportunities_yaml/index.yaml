@@ -2,7 +2,7 @@ search:
   examples:
     - $ref: "./search/search_by_job_name.yaml"
     - $ref: "./search/search_by_job_provider.yaml"
-    - $ref: "./search/search_by_location_of_the_job.yaml"
+    - $ref: "./search/search_by_loaction_of_the_job.yaml"
     - $ref: "./search/search_by_user_details.yaml"
     - $ref: "./search/search_by_industry_type.yaml"
     - $ref: "./search/search_by_employment_type.yaml"
@@ -15,6 +15,9 @@ init:
 confirm:
   examples:
     - $ref: "./confirm/confirm.yaml"
+update:
+  examples:
+    - $ref: "./update/update.yaml"
 on_search:
   examples:
     - $ref: "./on_search/on_search.yaml"
@@ -29,3 +32,6 @@ on_init:
 on_confirm:
   examples:
     - $ref: "./on_confirm/on_confirm.yaml"
+on_update:
+  examples:
+    - $ref: "./on_update/on_update.yaml"

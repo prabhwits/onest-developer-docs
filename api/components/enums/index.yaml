@@ -22,6 +22,8 @@ on_search:
           $ref: "./fulfillments.yaml#/fulfillments/type"
         state:
           $ref: "./fulfillments.yaml#/fulfillments/state"
+        customer:
+          $ref: "./fulfillments.yaml#/fulfillments/customer"
       # tags:
       #   serviceability: 
       #     $ref: "./tags.yaml#/serviceability/type"
