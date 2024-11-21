@@ -18,6 +18,9 @@ confirm:
 update:
   examples:
     - $ref: "./update/update.yaml"
+status:
+  examples:
+    - $ref: "./status/status.yaml"
 on_search:
   examples:
     - $ref: "./on_search/on_search.yaml"
@@ -35,3 +38,6 @@ on_confirm:
 on_update:
   examples:
     - $ref: "./on_update/on_update.yaml"
+on_status:
+  examples:
+    - $ref: "./on_status/on_status.yaml"

@@ -1,16 +1,16 @@
-# search:
-#   context: &context
-#     domain: 
-#       $ref: "./context.yaml#/domain"
-#   message:
-#     intent:
-#       item:
-#         category:
-#           id:
-#             $ref: "./category.yaml#/category_ids"
-#       fulfillments: &fulfillments
-#         type: 
-#           $ref: "./fulfillments.yaml#/fulfillments/type"
+search:
+  context: &context
+    domain: 
+      $ref: "./context.yaml#/domain"
+  message:
+    intent:
+      # item:
+        # category:
+        #   id:
+        #     $ref: "./category.yaml#/category_ids"
+      fulfillments: &fulfillments
+        type: 
+          $ref: "./fulfillments.yaml#/fulfillments/type"
 on_search:
   context: &context
     domain: 

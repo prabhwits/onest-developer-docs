@@ -77,24 +77,15 @@ attributes:
   - code: color
     description: Hex Code for color (Optional)
     reference: <PR/Issue/Discussion Links md format text>
-BAP_TERMS:
-  - code: FINDER_FEE_TYPE
-    description: Type of the finder fee. eg. "percent" (Required)
+EMPLOYMENT-TYPE:
+  - code: full-time
+    description: Type of employment-type
     reference: <PR/Issue/Discussion Links md format text>
-  - code: FINDER_FEE_AMOUNT
-    description: Amount for the finder fee (Required)
+  - code: part-time
+    description: Type of employment-type
     reference: <PR/Issue/Discussion Links md format text>
-  - code: FINDER_FEE_PERCENTAGE 
-    description: Percentage for the finder fee (Required)
-    reference: <PR/Issue/Discussion Links md format text>
-  - code : EFFECTIVE_DATE
-    description: Timestamp after which the catalog is effective
-    reference: <PR/Issue/Discussion Links md format text>
-  - code : STATIC_TERMS
-    description: Static terms provided by buyer NP
-    reference: <PR/Issue/Discussion Links md format text>
-  - code : STATIC_TERMS_NEW
-    description: Static terms provided by buyer NP
+  - code: contractual 
+    description: Type of employment-type
     reference: <PR/Issue/Discussion Links md format text>
 CATALOG_FULL:
     - code: PAYLOAD_TYPE

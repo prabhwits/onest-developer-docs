@@ -1,7 +1,7 @@
 value:
   context:
     domain: ONDC:ONEST10
-    version: 2.x
+    version: 2.0.0
     action: confirm
     bap_id: worker-hub.bap.io
     bap_uri: https://worker-hub.bap.io

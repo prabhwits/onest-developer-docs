@@ -2,7 +2,7 @@ value:
   context:
     domain: onest:financial-support
     action: status
-    version: 1.1.0
+    version: 2.0.0
     bap_uri: https://sample.bap.io/
     bap_id: sample.bap.io
     transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62196

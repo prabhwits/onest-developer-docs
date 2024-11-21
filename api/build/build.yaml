@@ -161,6 +161,75 @@ paths:
       responses:
         default:
           $ref: '#/paths/~1init/post/responses/default'
+  /status:
+    post:
+      tags:
+        - Beckn Provider Platform (BPP)
+      description: Fetch the latest order object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - status
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    order_id:
+                      $ref: '#/components/schemas/Order/properties/id'
+                  required:
+                    - order_id
+              required:
+                - context
+                - message
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
+  /track:
+    post:
+      tags:
+        - Beckn Provider Platform (BPP)
+      description: Track an active order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - track
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    order_id:
+                      $ref: '#/components/schemas/Order/properties/id'
+                    callback_url:
+                      type: string
+                      format: uri
+                  required:
+                    - order_id
+              required:
+                - context
+                - message
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
   /update:
     post:
       tags:
@@ -356,6 +425,40 @@ paths:
                         action:
                           enum:
                             - on_update
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    order:
+                      $ref: '#/components/schemas/Order'
+                  required:
+                    - order
+                error:
+                  $ref: '#/components/schemas/Error'
+              required:
+                - context
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
+  /on_status:
+    post:
+      tags:
+        - Beckn Application Platform (BAP)
+      description: Fetch the status of a Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - on_status
                       required:
                         - action
                 message:
@@ -2232,9 +2335,9 @@ components:
             to confirm the order.
           type: boolean
 x-enum:
-  on_search:
+  search:
     context:
-      domain:
+      domain: &ref_0
         - code: onest:learning-experiences
           description: Name of the ONEST Domain
           reference: <PR/Issue/Discussion Links md format text>
@@ -2248,9 +2351,9 @@ x-enum:
           description: Name of the ONEST Domain
           reference: <PR/Issue/Discussion Links md format text>
     message:
-      catalog:
+      intent:
         fulfillments:
-          type:
+          type: &ref_1
             - code: REMOTE
               description: How the job will be fullfilled
               reference: <PR/Issue/Discussion Links md format text>
@@ -2260,6 +2363,13 @@ x-enum:
             - code: ONSITE
               description: How the job will be fullfilled
               reference: <PR/Issue/Discussion Links md format text>
+  on_search:
+    context:
+      domain: *ref_0
+    message:
+      catalog:
+        fulfillments:
+          type: *ref_1
           state:
             descriptor:
               code:
@@ -2336,52 +2446,57 @@ x-enum:
 x-tags:
   search:
     message:
-      intent:
+      intent: &ref_3
         tags:
-          - code: BAP_TERMS
-            description: Terms of BAP (Optional)
+          - code: EMPLOYMENT-TYPE
+            description: Employment Type
             reference: <PR/Issue/Discussion Links md format text>
-            list:
-              - code: FINDER_FEE_TYPE
-                description: Type of the finder fee. eg. "percent" (Required)
+            list: &ref_2
+              - code: full-time
+                description: Type of employment-type
                 reference: <PR/Issue/Discussion Links md format text>
-              - code: FINDER_FEE_AMOUNT
-                description: Amount for the finder fee (Required)
+              - code: part-time
+                description: Type of employment-type
                 reference: <PR/Issue/Discussion Links md format text>
-              - code: FINDER_FEE_PERCENTAGE
-                description: Percentage for the finder fee (Required)
+              - code: contractual
+                description: Type of employment-type
                 reference: <PR/Issue/Discussion Links md format text>
-              - code: EFFECTIVE_DATE
-                description: Timestamp after which the catalog is effective
+  on_search:
+    message:
+      catalog:
+        providers:
+          tags:
+            - code: EMPLOYMENT-TYPE
+              description: Employment Type
+              reference: <PR/Issue/Discussion Links md format text>
+              list: *ref_2
+          items:
+            tags:
+              - code: EMPLOYMENT-TYPE
+                description: Employment Type
                 reference: <PR/Issue/Discussion Links md format text>
-              - code: STATIC_TERMS
-                description: Static terms provided by buyer NP
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: STATIC_TERMS_NEW
-                description: Static terms provided by buyer NP
-                reference: <PR/Issue/Discussion Links md format text>
-          - code: CATALOG_FULL
-            description: The format in which the buyer Np wants the catalog
-            reference: <PR/Issue/Discussion Links md format text>
-            list:
-              - code: PAYLOAD_TYPE
-                description: The format in which the buyer Np wants the catalog
-                reference: <PR/Issue/Discussion Links md format text>
-          - code: CATALOG_INC
-            description: The format in which the buyer Np wants the catalog
-            reference: <PR/Issue/Discussion Links md format text>
-            list:
-              - code: START_TIME
-                description: Effective start time of pull based incremental catalog refresh
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: END_TIME
-                description: Cutoff time of pull based incremental catalog refresh
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: MODE
-                description: >-
-                  Used for starting or stopping async incremental catalog
-                  refresh
-                reference: <PR/Issue/Discussion Links md format text>
+                list: *ref_2
+  on_select:
+    message:
+      order:
+        items: *ref_3
+  on_init:
+    message:
+      order:
+        items:
+          tags:
+            - code: LISTING-DETAILS
+              description: LISTING-DETAILS
+              reference: <PR/Issue/Discussion Links md format text>
+              list: *ref_2
+  on_status:
+    message:
+      order:
+        items: *ref_3
+  on_update:
+    message:
+      order:
+        items: *ref_3
 x-flows:
   - summary: Services - Work Opportunities
     description: >-
@@ -2488,7 +2603,7 @@ x-flows:
             context:
               domain: ONDC:ONEST10
               action: search
-              version: 2.x
+              version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io/
               transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -2516,7 +2631,7 @@ x-flows:
             context:
               domain: ONDC:ONEST10
               action: on_search
-              version: 2.x
+              version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
               transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -3023,7 +3138,7 @@ x-flows:
             context:
               domain: ONDC:ONEST10
               action: select
-              version: 2.x
+              version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
               bpp_id: job-hub.bpp.io
@@ -3056,7 +3171,7 @@ x-flows:
             context:
               domain: ONDC:ONEST10
               action: on_select
-              version: 2.x
+              version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
               transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -3317,7 +3432,7 @@ x-flows:
             context:
               domain: ONDC:ONEST10
               action: init
-              version: 2.x
+              version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
               bpp_id: job-hub.bpp.io
@@ -3342,7 +3457,7 @@ x-flows:
             context:
               domain: ONDC:ONEST10
               action: on_init
-              version: 2.x
+              version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
               bpp_id: job-hub.bpp.io
@@ -3670,7 +3785,7 @@ x-flows:
           value:
             context:
               domain: ONDC:ONEST10
-              version: 2.x
+              version: 2.0.0
               action: confirm
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
@@ -3802,7 +3917,7 @@ x-flows:
             context:
               domain: ONDC:ONEST10
               action: on_confirm
-              version: 2.x
+              version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
               bpp_id: job-hub.bpp.io
@@ -4102,7 +4217,7 @@ x-flows:
             context:
               domain: ONDC:ONEST10
               action: update
-              version: 2.X
+              version: 2.0.0
               bap_id: bap-12345
               bap_uri: https://worker-hub.bap.io
               bpp_id: job-hub.bpp.io
@@ -4135,7 +4250,7 @@ x-flows:
             context:
               domain: ONDC:ONEST10
               action: on_update
-              version: 2.x
+              version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
               bpp_id: job-hub.bpp.io
@@ -4441,7 +4556,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: search
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io/
                 transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -4462,7 +4577,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: search
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io/
                 transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -4483,7 +4598,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: search
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io/
                 transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -4512,7 +4627,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: search
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io/
                 transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -4540,7 +4655,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: search
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io/
                 transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -4566,7 +4681,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: search
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io/
                 transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -4594,7 +4709,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: select
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io
                 bpp_id: job-hub.bpp.io
@@ -4621,7 +4736,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: init
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io
                 bpp_id: job-hub.bpp.io
@@ -4640,7 +4755,7 @@ x-examples:
           - value:
               context:
                 domain: ONDC:ONEST10
-                version: 2.x
+                version: 2.0.0
                 action: confirm
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io
@@ -4769,7 +4884,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: update
-                version: 2.X
+                version: 2.0.0
                 bap_id: bap-12345
                 bap_uri: https://worker-hub.bap.io
                 bpp_id: job-hub.bpp.io
@@ -4793,13 +4908,31 @@ x-examples:
                       contact:
                         phone: '9999999999'
                         email: abc@abc.bc
+      status:
+        examples:
+          - value:
+              context:
+                domain: onest:financial-support
+                action: status
+                version: 2.0.0
+                bap_uri: https://sample.bap.io/
+                bap_id: sample.bap.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62196
+                message_id: $bb579fb8-cb82-4824-be12-fcbc405b6608
+                timestamp: '2022-12-12T09:55:41.161Z'
+                ttl: PT10M
+                bpp_id: sample.bpp.io
+                bpp_uri: https://sample.bpp.io
+              message:
+                order:
+                  id: '1677140405881'
       on_search:
         examples:
           - value:
               context:
                 domain: ONDC:ONEST10
                 action: on_search
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io
                 transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -5300,7 +5433,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: on_search
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io
                 transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -5467,7 +5600,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: on_select
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io
                 transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
@@ -5724,7 +5857,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: on_init
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io
                 bpp_id: job-hub.bpp.io
@@ -6050,7 +6183,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: on_init
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io
                 bpp_id: job-hub.bpp.io
@@ -6361,7 +6494,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: on_confirm
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io
                 bpp_id: job-hub.bpp.io
@@ -6660,7 +6793,7 @@ x-examples:
               context:
                 domain: ONDC:ONEST10
                 action: on_update
-                version: 2.x
+                version: 2.0.0
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io
                 bpp_id: job-hub.bpp.io
@@ -6953,5 +7086,303 @@ x-examples:
                               contact:
                                 phone: '9999999999999'
                                 email: abc@abc.bc
+      on_status:
+        examples:
+          - value:
+              context:
+                domain: onest:financial-support
+                action: status
+                version: 2.0.0
+                bap_uri: https://sample.bap.io/
+                bap_id: sample.bap.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62196
+                message_id: $bb579fb8-cb82-4824-be12-fcbc405b6608
+                timestamp: '2022-12-12T09:55:41.161Z'
+                ttl: PT10M
+                bpp_id: sample.bpp.io
+                bpp_uri: https://sample.bpp.io
+              message:
+                order:
+                  id: '1677140405881'
+                  provider:
+                    id: '1'
+                    descriptor:
+                      name: Affinidi
+                    locations:
+                      - id: L1
+                        city:
+                          name: Pune
+                          code: std:020
+                        state:
+                          name: Maharastra
+                          code: MH
+                  items:
+                    - id: >-
+                        a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+                      descriptor:
+                        name: Fullstack Engineer
+                        long_desc: >-
+                          We’re on a search for a Staff Mobile Developer with
+                          the following attributes: Critical Thinking- You are
+                          able to skillfully conceptualise, apply, analyse and
+                          evaluate information gathered from observation,
+                          experience or communication and use it as a guide to
+                          action Data-Driven attitude — You often propose
+                          solutions or make a point in a logical and objective
+                          manner, substantiated with accurate data and evidence
+                          Dealing with Ambiguity — You can effectively cope with
+                          change and uncertainty, and are comfortable when
+                          things are up in the air Goal-oriented — You are
+                          driven and can be counted on to exceed goals. You
+                          steadfastly push yourself and others to achieve
+                          results all the time Problem Solving — You can easily
+                          identify and solve complex problems in a
+                          methodological manner 
+                      fulfillment_ids:
+                        - '1'
+                      location_ids:
+                        - L1
+                      time:
+                        range:
+                          start: '2023-01-03T13:23:01+00:00'
+                          end: '2023-02-03T13:23:01+00:00'
+                      tags:
+                        - display: true
+                          descriptor:
+                            code: academic-eligibility
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: course-name
+                                name: Name of the course
+                              value: Class-X
+                              display: true
+                            - descriptor:
+                                code: min-percentage
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: mandatory-eligibility
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: academic-eligibility
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: course-name
+                                name: Name of the course
+                              value: Class-XII
+                              display: true
+                            - descriptor:
+                                code: min-percentage
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: mandatory-eligibility
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: academic-eligibility
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: course-level
+                                name: Level of the course
+                              value: Under Graduate
+                              display: true
+                            - descriptor:
+                                code: min-percentage
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: mandatory-eligibility
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: academic-eligibility
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: course-level
+                                name: Level of the course
+                              value: Graduate
+                              display: true
+                            - descriptor:
+                                code: mandatory-eligibility
+                                name: Mandatory Eligibility
+                              value: 'false'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: job-requirements
+                            name: Job requirements
+                          list:
+                            - descriptor:
+                                code: req-experience
+                                name: Required work experience in years
+                              value: '2.5'
+                              display: true
+                            - descriptor:
+                                code: req-prof-skill
+                                name: Skills required for the role
+                              value: android-development
+                              display: true
+                            - descriptor:
+                                code: req-prof-skill
+                                name: Skills required for the role
+                              value: dev-ops
+                              display: true
+                            - descriptor:
+                                code: req-prof-skill
+                                name: Additional skills required for the job
+                              value: >-
+                                You have 8+ years of engineering experience,
+                                predominantly in shipping user-facing production
+                                features
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: job-responsibilities
+                            name: Job responsibilities
+                          list:
+                            - descriptor:
+                                code: responsibility
+                                name: Responsibility
+                              value: >-
+                                Build frontend experiences for our tools (Web,
+                                PWA and React Native)
+                              display: true
+                            - descriptor:
+                                code: responsibility
+                                name: Responsibility
+                              value: >-
+                                Articulate a long term technical direction and
+                                vision for building, maintaining, and scaling
+                                our web and mobile platforms
+                              display: true
+                            - descriptor:
+                                code: responsibility
+                                name: Responsibility
+                              value: >-
+                                Create trustworthy user experiences by building
+                                interfaces that are simple, easy to comprehend,
+                                performant and reliable using modern tools like
+                                React, React Native, Typescript, Node.js, Jest
+                                and Webpack.
+                              display: true
+                            - descriptor:
+                                code: responsibility
+                                name: Responsibility
+                              value: >-
+                                Mentor and train other team members on design
+                                techniques and coding standards.
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: listing-details
+                            name: Listing details
+                          list:
+                            - descriptor:
+                                code: industry-type
+                                name: Industry type
+                              value: IT Services & Consulting
+                              display: true
+                            - descriptor:
+                                code: department
+                                name: Department
+                              value: Engineering - Software & QA
+                              display: true
+                            - descriptor:
+                                code: employment-type
+                                name: Employment type
+                              value: full-time
+                              display: true
+                            - descriptor:
+                                code: job-role
+                                name: Job role
+                              value: DevOps Engineer
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: salary-info
+                            name: Salary information
+                          list:
+                            - descriptor:
+                                code: gross-min
+                                name: Minimum gross pay
+                              value: '900000'
+                              display: true
+                            - descriptor:
+                                code: gross-max
+                                name: Maximum gross pay
+                              value: '1200000'
+                              display: true
+                  fulfillments:
+                    - id: '1'
+                      type: REMOTE
+                      state:
+                        descriptor:
+                          code: OFFER-EXTENDED
+                          name: Offer Extended
+                        updated_at: '2023-02-06T09:55:41.161Z'
+                      customer:
+                        person:
+                          name: Sanjay
+                          gender: Male
+                          age: '35'
+                          skills:
+                            - code: Android
+                              name: Android
+                            - code: AWS
+                              name: AWS
+                          languages:
+                            - code: en
+                              name: english
+                            - code: ml
+                              name: Malayalam
+                            - code: hi
+                              name: Hindi
+                          tags:
+                            - descriptor:
+                                code: emp-details
+                              list:
+                                - descriptor:
+                                    code: expected-salary
+                                  value: '1000000'
+                                - descriptor:
+                                    code: total-experience
+                                  value: '4'
+                            - descriptor:
+                                code: documents
+                                name: Documents
+                              list:
+                                - descriptor:
+                                    code: doc-type
+                                  value: resume
+                                - descriptor:
+                                    code: link
+                                  value: https://example.com/resume.pdf
+                                - descriptor:
+                                    code: file-format
+                                  value: pdf
+                        contact:
+                          phone: '9999999999999'
+                          email: abc@abc.bc
 x-attributes: null
 x-errorcodes: null

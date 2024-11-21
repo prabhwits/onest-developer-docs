@@ -13,7 +13,7 @@ context:
   version:
     description: current live version
     required: mandatory
-    usage: "2.x"
+    usage: "2.0.0"
     reference: if any
   bap_id:
     description: subscriber_id of buyer app
