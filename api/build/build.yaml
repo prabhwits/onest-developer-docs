@@ -2577,7 +2577,7 @@ x-flows:
               message_id: $89bdae17-9942-40c8-869a-5bd413356407
               location:
                 city:
-                  code: city_code_value
+                  code: std:080
                 country:
                   code: country_code_value
               timestamp: '2022-10-11T09:55:41.161Z'
@@ -2605,12 +2605,11 @@ x-flows:
               message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
               location:
                 city:
-                  code: city_code_value
+                  code: std:080
                 country:
                   code: country_code_value
               timestamp: '2023-02-22T11:45:10.171Z'
               ttl: P30S
-
             message:
               catalog:
                 descriptor:
@@ -3115,12 +3114,11 @@ x-flows:
               message_id: $89bdae17-9942-40c8-869a-5bd413356407
               location:
                 city:
-                  code: city_code_value
+                  code: std:080
                 country:
                   code: country_code_value
               timestamp: '2023-02-14T12:11:46.129Z'
               ttl: P30S
-
             message:
               order:
                 provider:
@@ -3147,7 +3145,7 @@ x-flows:
               message_id: c8e3968c-cd78-4e46-aa34-0d541e46bd73
               location:
                 city:
-                  code: city_code_value
+                  code: std:080
                 country:
                   code: country_code_value
               timestamp: '2023-02-22T11:50:46.742Z'
@@ -3406,12 +3404,11 @@ x-flows:
               message_id: $89bdae17-9942-40c8-869a-5bd413356407
               location:
                 city:
-                  code: BLR
+                  code: std:080
                 country:
                   code: IND
               timestamp: '2023-02-14T12:12:46Z'
               ttl: P30S
-
             message:
               order:
                 provider:
@@ -3498,12 +3495,11 @@ x-flows:
               message_id: af58aa7b-6745-47d0-9b0d-62dcb262ee87
               location:
                 city:
-                  code: BLR
+                  code: std:080
                 country:
                   code: IND
               timestamp: '2023-02-23T10:14:05Z'
               ttl: P30S
-
             message:
               order:
                 provider:
@@ -3824,7 +3820,7 @@ x-flows:
               message_id: 481a01fc-4b45-4d49-9558-c6a7dfad8b75
               location:
                 city:
-                  code: BLR
+                  code: std:080
                 country:
                   code: IND
               timestamp: '2023-02-23T08:09:02Z'
@@ -3957,12 +3953,11 @@ x-flows:
                 message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2023-02-23T08:20:06Z'
                 ttl: P30S
-
               message:
                 order:
                   id: '1677140405881'
@@ -4261,12 +4256,11 @@ x-flows:
                 message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
                 location:
                   city:
-                    code: BLR
+                    code: std:080
                   country:
                     code: IND
                 timestamp: 2024-09-04T12:34:560Z
                 ttl: P30S
-
               message:
                 order:
                   id: ORD-67890
@@ -4287,7 +4281,7 @@ x-flows:
                 message_id: c8e3968c-cd78-4e46-aa34-0d541e46bd73
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2023-02-22T11:50:46.742Z'
@@ -4606,12 +4600,11 @@ x-flows:
               message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
               location:
                 city:
-                  code: BLR
+                  code: std:080
                 country:
                   code: IND
               timestamp: '2024-09-04T12:34:56Z'
-              ttl: P30S
-
+              ttl: PT30M
             message:
               update_target: fulfillments
               order:
@@ -4640,12 +4633,11 @@ x-flows:
               message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
               location:
                 city:
-                  code: city_code_value
+                  code: std:080
                 country:
                   code: country_code_value
               timestamp: '2023-02-23T08:20:06Z'
               ttl: P30S
-
             message:
               order:
                 id: '1677140405881'
@@ -4942,7 +4934,7 @@ x-examples:
                 message_id: $89bdae17-9942-40c8-869a-5bd413356407
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2022-10-11T09:55:41.161Z'
@@ -4963,7 +4955,7 @@ x-examples:
                 message_id: $89bdae17-9942-40c8-869a-5bd413356407
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2022-10-11T09:55:41.161Z'
@@ -4984,7 +4976,7 @@ x-examples:
                 message_id: $89bdae17-9942-40c8-869a-5bd413356407
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2022-10-11T09:55:41.161Z'
@@ -5013,7 +5005,7 @@ x-examples:
                 message_id: $89bdae17-9942-40c8-869a-5bd413356407
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2022-10-11T09:55:41.161Z'
@@ -5041,7 +5033,7 @@ x-examples:
                 message_id: 89bdae17-9942-40c8-869a-5bd413356407
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2022-10-11T09:55:41.161Z'
@@ -5089,7 +5081,7 @@ x-examples:
                 message_id: $89bdae17-9942-40c8-869a-5bd413356407
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2022-10-11T09:55:41.161Z'
@@ -5119,12 +5111,11 @@ x-examples:
                 message_id: $89bdae17-9942-40c8-869a-5bd413356407
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2023-02-14T12:11:46.129Z'
                 ttl: P30S
-
               message:
                 order:
                   provider:
@@ -5147,12 +5138,11 @@ x-examples:
                 message_id: $89bdae17-9942-40c8-869a-5bd413356407
                 location:
                   city:
-                    code: BLR
+                    code: std:080
                   country:
                     code: IND
                 timestamp: '2023-02-14T12:12:46Z'
                 ttl: P30S
-
               message:
                 order:
                   provider:
@@ -5234,7 +5224,7 @@ x-examples:
                 message_id: 481a01fc-4b45-4d49-9558-c6a7dfad8b75
                 location:
                   city:
-                    code: BLR
+                    code: std:080
                   country:
                     code: IND
                 timestamp: '2023-02-23T08:09:02Z'
@@ -5363,12 +5353,11 @@ x-examples:
                 message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
                 location:
                   city:
-                    code: BLR
+                    code: std:080
                   country:
                     code: IND
                 timestamp: '2024-09-04T12:34:56Z'
-                ttl: P30S
-
+                ttl: PT30M
               message:
                 update_target: fulfillments
                 order:
@@ -5395,12 +5384,11 @@ x-examples:
                   message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
                   location:
                     city:
-                      code: BLR
+                      code: std:080
                     country:
                       code: IND
                   timestamp: 2024-09-04T12:34:560Z
                   ttl: P30S
-
                 message:
                   order:
                     id: ORD-67890
@@ -5417,12 +5405,11 @@ x-examples:
                 message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2023-02-22T11:45:10.171Z'
                 ttl: P30S
-
               message:
                 catalog:
                   descriptor:
@@ -5920,12 +5907,11 @@ x-examples:
                   message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
                   location:
                     city:
-                      code: city_code_value
+                      code: std:080
                     country:
                       code: country_code_value
                   timestamp: '2023-02-22T11:45:10.171Z'
                   ttl: P30S
-
                 message:
                   catalog:
                     descriptor:
@@ -6423,7 +6409,7 @@ x-examples:
                 message_id: c8e3968c-cd78-4e46-aa34-0d541e46bd73
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2023-02-22T11:50:46.742Z'
@@ -6678,12 +6664,11 @@ x-examples:
                 message_id: af58aa7b-6745-47d0-9b0d-62dcb262ee87
                 location:
                   city:
-                    code: BLR
+                    code: std:080
                   country:
                     code: IND
                 timestamp: '2023-02-23T10:14:05Z'
                 ttl: P30S
-
               message:
                 order:
                   provider:
@@ -7001,12 +6986,11 @@ x-examples:
                 message_id: af58aa7b-6745-47d0-9b0d-62dcb262ee87
                 location:
                   city:
-                    code: BLR
+                    code: std:080
                   country:
                     code: IND
                 timestamp: '2023-02-23T10:14:05Z'
                 ttl: P30S
-
               message:
                 order:
                   provider:
@@ -7310,12 +7294,11 @@ x-examples:
                   message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
                   location:
                     city:
-                      code: city_code_value
+                      code: std:080
                     country:
                       code: country_code_value
                   timestamp: '2023-02-23T08:20:06Z'
                   ttl: P30S
-
                 message:
                   order:
                     id: '1677140405881'
@@ -7612,12 +7595,11 @@ x-examples:
                 message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
                 location:
                   city:
-                    code: city_code_value
+                    code: std:080
                   country:
                     code: country_code_value
                 timestamp: '2023-02-23T08:20:06Z'
                 ttl: P30S
-
               message:
                 order:
                   id: '1677140405881'
@@ -7908,7 +7890,7 @@ x-examples:
                   message_id: c8e3968c-cd78-4e46-aa34-0d541e46bd73
                   location:
                     city:
-                      code: city_code_value
+                      code: std:080
                     country:
                       code: country_code_value
                   timestamp: '2023-02-22T11:50:46.742Z'
