@@ -53,10 +53,7 @@ value:
             - '1'
           location_ids:
             - L1
-          time:
-            range:
-              start: '2023-01-03T13:23:01+00:00'
-              end: '2023-02-03T13:23:01+00:00'
+          
           tags:
             - display: true
               descriptor:

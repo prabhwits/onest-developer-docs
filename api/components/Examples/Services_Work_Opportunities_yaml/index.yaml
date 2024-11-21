@@ -35,3 +35,24 @@ on_confirm:
 on_update:
   examples:
     - $ref: "./on_update/on_update.yaml"
+status:
+  examples:
+    - $ref: "./status/status.yaml"
+on_status:
+  examples:
+    - $ref: "./on_status/on_status.yaml"
+# on_cancel:
+#   examples:
+#     - $ref: "./on_cancel/on_cancel.yaml"
+# rating:
+#   examples:
+#     - $ref: "./rating/rating.yaml"
+# support:
+#   examples:
+#     - $ref: "./support/support.yaml"
+# on_rating:
+#   examples:
+#     - $ref: "./on_rating/on_rating.yaml"
+# on_support:
+#   examples:
+#     - $ref: "./on_support/on_support.yaml"

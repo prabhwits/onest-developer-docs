@@ -161,6 +161,39 @@ paths:
       responses:
         default:
           $ref: '#/paths/~1init/post/responses/default'
+  /status:
+    post:
+      tags:
+        - Beckn Provider Platform (BPP)
+      description: Fetch the latest order object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - status
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    order_id:
+                      $ref: '#/components/schemas/Order/properties/id'
+                  required:
+                    - order_id
+              required:
+                - context
+                - message
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
   /update:
     post:
       tags:
@@ -356,6 +389,40 @@ paths:
                         action:
                           enum:
                             - on_update
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    order:
+                      $ref: '#/components/schemas/Order'
+                  required:
+                    - order
+                error:
+                  $ref: '#/components/schemas/Error'
+              required:
+                - context
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
+  /on_status:
+    post:
+      tags:
+        - Beckn Application Platform (BAP)
+      description: Fetch the status of a Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - on_status
                       required:
                         - action
                 message:
@@ -5359,18 +5426,21 @@ x-examples:
                             long_desc: >-
                               We’re on a search for a Staff Mobile Developer
                               with the following attributes: Critical Thinking-
-                              You are able to skillfully conceptualize, apply,
-                              analyze, and evaluate information gathered from
-                              observation, experience, or communication and use
-                              it as a guide to action. Data-Driven attitude —
-                              You propose solutions or make a point in a logical
-                              and objective manner, substantiated with accurate
-                              data and evidence. Dealing with Ambiguity — You
-                              effectively cope with change and uncertainty and
-                              are comfortable when things are unclear.
-                              Goal-oriented — You are driven and can be counted
-                              on to exceed goals. Problem Solving — You easily
-                              identify and solve complex problems methodically.
+                              You are able to skillfully conceptualise, apply,
+                              analyse and evaluate information gathered from
+                              observation, experience or communication and use
+                              it as a guide to action Data-Driven attitude — You
+                              often propose solutions or make a point in a
+                              logical and objective manner, substantiated with
+                              accurate data and evidence Dealing with Ambiguity
+                              — You can effectively cope with change and
+                              uncertainty, and are comfortable when things are
+                              up in the air Goal-oriented — You are driven and
+                              can be counted on to exceed goals. You steadfastly
+                              push yourself and others to achieve results all
+                              the time Problem Solving — You can easily identify
+                              and solve complex problems in a methodological
+                              manner 
                             media:
                               - mimetype: audio/mp4
                                 url: http://url-to-audio-about-job
@@ -5391,18 +5461,21 @@ x-examples:
                             long_desc: >-
                               We’re on a search for a Staff Mobile Developer
                               with the following attributes: Critical Thinking-
-                              You are able to skillfully conceptualize, apply,
-                              analyze, and evaluate information gathered from
-                              observation, experience, or communication and use
-                              it as a guide to action. Data-Driven attitude —
-                              You propose solutions or make a point in a logical
-                              and objective manner, substantiated with accurate
-                              data and evidence. Dealing with Ambiguity — You
-                              effectively cope with change and uncertainty and
-                              are comfortable when things are unclear.
-                              Goal-oriented — You are driven and can be counted
-                              on to exceed goals. Problem Solving — You easily
-                              identify and solve complex problems methodically.
+                              You are able to skillfully conceptualise, apply,
+                              analyse and evaluate information gathered from
+                              observation, experience or communication and use
+                              it as a guide to action Data-Driven attitude — You
+                              often propose solutions or make a point in a
+                              logical and objective manner, substantiated with
+                              accurate data and evidence Dealing with Ambiguity
+                              — You can effectively cope with change and
+                              uncertainty, and are comfortable when things are
+                              up in the air Goal-oriented — You are driven and
+                              can be counted on to exceed goals. You steadfastly
+                              push yourself and others to achieve results all
+                              the time Problem Solving — You can easily identify
+                              and solve complex problems in a methodological
+                              manner
                             media:
                               - mimetype: audio/mp4
                                 url: http://url-to-audio-about-job
@@ -5430,13 +5503,74 @@ x-examples:
                                   display: true
                                 - descriptor:
                                     code: MIN-PERCENTAGE
-                                    name: Minimum percentage required
+                                    name: >-
+                                      Minimum percentage of marks to be obtained
+                                      in the course for eligibility
                                   value: '60'
                                   display: true
                                 - descriptor:
                                     code: MANDATORY-ELIGIBILITY
                                     name: Mandatory Eligibility
                                   value: 'true'
+                                  display: true
+                            - display: true
+                              descriptor:
+                                code: ACADEMIC-ELIGIBILITY
+                                name: Academic eligibility
+                              list:
+                                - descriptor:
+                                    code: COURSE-NAME
+                                    name: Name of the course
+                                  value: Class-XII
+                                  display: true
+                                - descriptor:
+                                    code: MIN-PERCENTAGE
+                                    name: >-
+                                      Minimum percentage of marks to be obtained
+                                      in the course for eligibility
+                                  value: '60'
+                                  display: true
+                                - descriptor:
+                                    code: MANDATORY-ELIGIBILITY
+                                    name: Mandatory Eligibility
+                                  value: 'true'
+                                  display: true
+                            - display: true
+                              descriptor:
+                                code: ACADEMIC-ELIGIBILITY
+                                name: Academic eligibility
+                              list:
+                                - descriptor:
+                                    code: COURSE-LEVEL
+                                    name: Level of the course
+                                  value: Under Graduate
+                                  display: true
+                                - descriptor:
+                                    code: MIN-PERCENTAGE
+                                    name: >-
+                                      Minimum percentage of marks to be obtained
+                                      in the course for eligibility
+                                  value: '60'
+                                  display: true
+                                - descriptor:
+                                    code: MANDATORY-ELIGIBILITY
+                                    name: Mandatory Eligibility
+                                  value: 'true'
+                                  display: true
+                            - display: true
+                              descriptor:
+                                code: ACADEMIC-ELIGIBILITY
+                                name: Academic eligibility
+                              list:
+                                - descriptor:
+                                    code: COURSE-LEVEL
+                                    name: Level of the course
+                                  value: Graduate
+                                  display: true
+                                - descriptor:
+                                    code: MANDATORY-ELIGIBILITY
+                                    name: Mandatory Eligibility
+                                  value: 'false'
                                   display: true
                             - display: true
                               descriptor:
@@ -5450,17 +5584,286 @@ x-examples:
                                   display: true
                                 - descriptor:
                                     code: REQ-PROF-SKILL
-                                    name: Skills required
+                                    name: Skills required for the role
+                                  value: android-development
+                                  display: true
+                                - descriptor:
+                                    code: REQ-PROF-SKILL
+                                    name: Skills required for the role
                                   value: dev-ops
                                   display: true
                                 - descriptor:
                                     code: REQ-PROF-SKILL
-                                    name: Additional skills
+                                    name: Additional skills required for the job
                                   value: >-
-                                    You have 8+ years of experience in
-                                    engineering, shipping user-facing production
-                                    features.
+                                    You have 8+ years of engineering experience,
+                                    predominantly in shipping user-facing
+                                    production features
                                   display: true
+                            - display: true
+                              descriptor:
+                                code: JOB-RESPONSIBILITIES
+                                name: Job responsibilities
+                              list:
+                                - descriptor:
+                                    code: RESPONSIBILITY
+                                    name: Responsibility
+                                  value: >-
+                                    Build frontend experiences for our tools
+                                    (Web, PWA and React Native)
+                                  display: true
+                                - descriptor:
+                                    code: RESPONSIBILITY
+                                    name: Responsibility
+                                  value: >-
+                                    Articulate a long term technical direction
+                                    and vision for building, maintaining, and
+                                    scaling our web and mobile platforms
+                                  display: true
+                                - descriptor:
+                                    code: RESPONSIBILITY
+                                    name: Responsibility
+                                  value: >-
+                                    Create trustworthy user experiences by
+                                    building interfaces that are simple, easy to
+                                    comprehend, performant and reliable using
+                                    modern tools like React, React Native,
+                                    Typescript, Node.js, Jest and Webpack.
+                                  display: true
+                                - descriptor:
+                                    code: RESPONSIBILITY
+                                    name: Responsibility
+                                  value: >-
+                                    Mentor and train other team members on
+                                    design techniques and coding standards.
+                                  display: true
+                            - display: true
+                              descriptor:
+                                code: LISTING-DETAILS
+                                name: Listing details
+                              list:
+                                - descriptor:
+                                    code: INDUSTRY-TYPE
+                                    name: Industry type
+                                  value: IT Services & Consulting
+                                  display: true
+                                - descriptor:
+                                    code: DEPARTMENT
+                                    name: Department
+                                  value: Engineering - Software & QA
+                                  display: true
+                                - descriptor:
+                                    code: EMPLOYMENT-TYPE
+                                    name: Employment type
+                                  value: full-time
+                                  display: true
+                                - descriptor:
+                                    code: JOB-ROLE
+                                    name: Job role
+                                  value: DevOps Engineer
+                                  display: true
+                            - display: true
+                              descriptor:
+                                code: SALARY-INFO
+                                name: Salary information
+                              list:
+                                - descriptor:
+                                    code: GROSS-MIN
+                                    name: Minimum gross pay
+                                  value: '900000'
+                                  display: true
+                                - descriptor:
+                                    code: GROSS-MAX
+                                    name: Maximum gross pay
+                                  value: '1200000'
+                                  display: true
+                      tags:
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-NAME
+                                name: Name of the course
+                              value: Class-X
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-NAME
+                                name: Name of the course
+                              value: Class-XII
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-LEVEL
+                                name: Level of the course
+                              value: Under Graduate
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-LEVEL
+                                name: Level of the course
+                              value: Graduate
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'false'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: JOB-REQUIREMENTS
+                            name: Job requirements
+                          list:
+                            - descriptor:
+                                code: REQ-EXPERIENCE
+                                name: Required work experience in years
+                              value: '2.5'
+                              display: true
+                            - descriptor:
+                                code: REQ-PROF-SKILL
+                                name: Skills required for the role
+                              value: android-development
+                              display: true
+                            - descriptor:
+                                code: REQ-PROF-SKILL
+                                name: Skills required for the role
+                              value: dev-ops
+                              display: true
+                            - descriptor:
+                                code: REQ-PROF-SKILL
+                                name: Additional skills required for the job
+                              value: >-
+                                You have 8+ years of engineering experience,
+                                predominantly in shipping user-facing production
+                                features
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: JOB-RESPONSIBILITIES
+                            name: Job responsibilities
+                          list:
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Build frontend experiences for our tools (Web,
+                                PWA and React Native)
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Articulate a long term technical direction and
+                                vision for building, maintaining, and scaling
+                                our web and mobile platforms
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Create trustworthy user experiences by building
+                                interfaces that are simple, easy to comprehend,
+                                performant and reliable using modern tools like
+                                React, React Native, Typescript, Node.js, Jest
+                                and Webpack.
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Mentor and train other team members on design
+                                techniques and coding standards.
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: LISTING-DETAILS
+                            name: Listing details
+                          list:
+                            - descriptor:
+                                code: INDUSTRY-TYPE
+                                name: Industry type
+                              value: IT Services & Consulting
+                              display: true
+                            - descriptor:
+                                code: DEPARTMENT
+                                name: Department
+                              value: Engineering - Software & QA
+                              display: true
+                            - descriptor:
+                                code: EMPLOYMENT-TYPE
+                                name: Employment type
+                              value: full-time
+                              display: true
+                            - descriptor:
+                                code: JOB-ROLE
+                                name: Job role
+                              value: DevOps Engineer
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: SALARY-INFO
+                            name: Salary information
+                          list:
+                            - descriptor:
+                                code: GROSS-MIN
+                                name: Minimum gross pay
+                              value: '900000'
+                              display: true
+                            - descriptor:
+                                code: GROSS-MAX
+                                name: Maximum gross pay
+                              value: '1200000'
+                              display: true
       on_select:
         examples:
           - value:
@@ -6953,5 +7356,282 @@ x-examples:
                               contact:
                                 phone: '9999999999999'
                                 email: abc@abc.bc
+      status:
+        examples:
+          - value:
+              value:
+                context:
+                  domain: ONDC:ONEST10
+                  action: status
+                  version: 2.x
+                  bap_id: bap-12345
+                  bap_uri: https://worker-hub.bap.io
+                  bpp_id: job-hub.bpp.io
+                  bpp_uri: https://job-hub.bpp.io
+                  transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                  message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
+                  location:
+                    city:
+                      code: BLR
+                    country:
+                      code: IND
+                  timestamp: 2024-09-04T12:34:560Z
+                  ttl: PT30M
+                message:
+                  order:
+                    id: ORD-67890
+      on_status:
+        examples:
+          - value:
+              value:
+                context:
+                  domain: ONDC:ONEST10
+                  action: on_status
+                  version: 2.x
+                  bap_id: worker-hub.bap.io
+                  bap_uri: https://worker-hub.bap.io
+                  transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                  message_id: c8e3968c-cd78-4e46-aa34-0d541e46bd73
+                  location:
+                    city:
+                      code: city_code_value
+                    country:
+                      code: country_code_value
+                  timestamp: '2023-02-22T11:50:46.742Z'
+                  ttl: PT10M
+                message:
+                  order:
+                    provider:
+                      id: '1'
+                      descriptor:
+                        name: Affinidi
+                      fulfillments:
+                        - id: '1'
+                          type: REMOTE
+                        - id: '2'
+                          type: HYBRID
+                        - id: '3'
+                          type: ONSITE
+                      locations:
+                        - id: L1
+                          city:
+                            name: Pune
+                            code: std:020
+                          state:
+                            name: Maharastra
+                            code: MH
+                    items:
+                      - id: 0253719F295521CED39EC9C2F3C8DCDE
+                        descriptor:
+                          name: Fullstack Engineer
+                          long_desc: >-
+                            We’re on a search for a Staff Mobile Developer with
+                            the following attributes: Critical Thinking- You are
+                            able to skillfully conceptualise, apply, analyse and
+                            evaluate information gathered from observation,
+                            experience or communication and use it as a guide to
+                            action Data-Driven attitude — You often propose
+                            solutions or make a point in a logical and objective
+                            manner, substantiated with accurate data and
+                            evidence Dealing with Ambiguity — You can
+                            effectively cope with change and uncertainty, and
+                            are comfortable when things are up in the air
+                            Goal-oriented — You are driven and can be counted on
+                            to exceed goals. You steadfastly push yourself and
+                            others to achieve results all the time Problem
+                            Solving — You can easily identify and solve complex
+                            problems in a methodological manner 
+                        fulfillment_ids:
+                          - '1'
+                          - '2'
+                          - '3'
+                        location_ids:
+                          - L1
+                        time:
+                          range:
+                            start: '2023-01-03T13:23:01+00:00'
+                            end: '2023-02-03T13:23:01+00:00'
+                        tags:
+                          - display: true
+                            descriptor:
+                              code: ACADEMIC-ELIGIBILITY
+                              name: Academic eligibility
+                            list:
+                              - descriptor:
+                                  code: COURSE-NAME
+                                  name: Name of the course
+                                value: Class-X
+                                display: true
+                              - descriptor:
+                                  code: MIN-PERCENTAGE
+                                  name: >-
+                                    Minimum percentage of marks to be obtained
+                                    in the course for eligibility
+                                value: '60'
+                                display: true
+                              - descriptor:
+                                  code: MANDATORY-ELIGIBILITY
+                                  name: Mandatory Eligibility
+                                value: 'true'
+                                display: true
+                          - display: true
+                            descriptor:
+                              code: ACADEMIC-ELIGIBILITY
+                              name: Academic eligibility
+                            list:
+                              - descriptor:
+                                  code: COURSE-NAME
+                                  name: Name of the course
+                                value: Class-XII
+                                display: true
+                              - descriptor:
+                                  code: MIN-PERCENTAGE
+                                  name: >-
+                                    Minimum percentage of marks to be obtained
+                                    in the course for eligibility
+                                value: '60'
+                                display: true
+                              - descriptor:
+                                  code: MANDATORY-ELIGIBILITY
+                                  name: Mandatory Eligibility
+                                value: 'true'
+                                display: true
+                          - display: true
+                            descriptor:
+                              code: ACADEMIC-ELIGIBILITY
+                              name: Academic eligibility
+                            list:
+                              - descriptor:
+                                  code: COURSE-LEVEL
+                                  name: Level of the course
+                                value: Under Graduate
+                                display: true
+                              - descriptor:
+                                  code: MIN-PERCENTAGE
+                                  name: >-
+                                    Minimum percentage of marks to be obtained
+                                    in the course for eligibility
+                                value: '60'
+                                display: true
+                              - descriptor:
+                                  code: MANDATORY-ELIGIBILITY
+                                  name: Mandatory Eligibility
+                                value: 'true'
+                                display: true
+                          - display: true
+                            descriptor:
+                              code: ACADEMIC-ELIGIBILITY
+                              name: Academic eligibility
+                            list:
+                              - descriptor:
+                                  code: COURSE-LEVEL
+                                  name: Level of the course
+                                value: Graduate
+                                display: true
+                              - descriptor:
+                                  code: MANDATORY-ELIGIBILITY
+                                  name: Mandatory Eligibility
+                                value: 'false'
+                                display: true
+                          - display: true
+                            descriptor:
+                              code: JOB-REQUIREMENTS
+                              name: Job requirements
+                            list:
+                              - descriptor:
+                                  code: REQ-EXPERIENCE
+                                  name: Required work experience in years
+                                value: '2.5'
+                                display: true
+                              - descriptor:
+                                  code: REQ-PROF-SKILL
+                                  name: Skills required for the role
+                                value: android-development
+                                display: true
+                              - descriptor:
+                                  code: REQ-PROF-SKILL
+                                  name: Skills required for the role
+                                value: dev-ops
+                                display: true
+                              - descriptor:
+                                  code: REQ-PROF-SKILL
+                                  name: Additional skills required for the job
+                                value: >-
+                                  You have 8+ years of engineering experience,
+                                  predominantly in shipping user-facing
+                                  production features
+                                display: true
+                          - display: true
+                            descriptor:
+                              code: JOB-RESPONSIBILITIES
+                              name: Job responsibilities
+                            list:
+                              - descriptor:
+                                  code: RESPONSIBILITY
+                                  name: Responsibility
+                                value: >-
+                                  Build frontend experiences for our tools (Web,
+                                  PWA and React Native)
+                                display: true
+                              - descriptor:
+                                  code: RESPONSIBILITY
+                                  name: Responsibility
+                                value: >-
+                                  Articulate a long term technical direction and
+                                  vision for building, maintaining, and scaling
+                                  our web and mobile platforms
+                                display: true
+                              - descriptor:
+                                  code: RESPONSIBILITY
+                                  name: Responsibility
+                                value: >-
+                                  Create trustworthy user experiences by
+                                  building interfaces that are simple, easy to
+                                  comprehend, performant and reliable using
+                                  modern tools like React, React Native,
+                                  Typescript, Node.js, Jest and Webpack.
+                                display: true
+                              - descriptor:
+                                  code: RESPONSIBILITY
+                                  name: Responsibility
+                                value: >-
+                                  Mentor and train other team members on design
+                                  techniques and coding standards.
+                                display: true
+                          - display: true
+                            descriptor:
+                              code: LISTING-DETAILS
+                              name: Listing details
+                            list:
+                              - descriptor:
+                                  code: INDUSTRY-TYPE
+                                  name: Industry type
+                                value: IT Services & Consulting
+                                display: true
+                              - descriptor:
+                                  code: DEPARTMENT
+                                  name: Department
+                                value: Engineering - Software & QA
+                                display: true
+                              - descriptor:
+                                  code: CTC
+                                  name: Salary Offered
+                                value: 20,00,000
+                                display: true
+                              - descriptor:
+                                  code: POST-START-LOCATION
+                                  name: Post start location
+                                value: Pune
+                                display: true
+                              - descriptor:
+                                  code: WORKING-LOCATION
+                                  name: Working location
+                                value: Hybrid
+                                display: true
+                              - descriptor:
+                                  code: WORKING-TIME
+                                  name: Working hours
+                                value: Full-Time
+                                display: true
 x-attributes: null
 x-errorcodes: null

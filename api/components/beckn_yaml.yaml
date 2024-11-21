@@ -157,39 +157,39 @@ paths:
       responses:
         default:
           $ref: '#/paths/~1init/post/responses/default'
-  # /status:
-  #   post:
-  #     tags:
-  #       - Beckn Provider Platform (BPP)
-  #     description: Fetch the latest order object
-  #     requestBody:
-  #       content:
-  #         application/json:
-  #           schema:
-  #             type: object
-  #             properties:
-  #               context:
-  #                 allOf:
-  #                   - $ref: '#/components/schemas/Context'
-  #                   - properties:
-  #                       action:
-  #                         enum:
-  #                           - status
-  #                     required:
-  #                       - action
-  #               message:
-  #                 type: object
-  #                 properties:
-  #                   order_id:
-  #                     $ref: '#/components/schemas/Order/properties/id'
-  #                 required:
-  #                   - order_id
-  #             required:
-  #               - context
-  #               - message
-  #     responses:
-  #       default:
-  #         $ref: '#/paths/~1init/post/responses/default'
+  /status:
+    post:
+      tags:
+        - Beckn Provider Platform (BPP)
+      description: Fetch the latest order object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - status
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    order_id:
+                      $ref: '#/components/schemas/Order/properties/id'
+                  required:
+                    - order_id
+              required:
+                - context
+                - message
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
   # /track:
   #   post:
   #     tags:
@@ -603,40 +603,40 @@ paths:
       responses:
         default:
           $ref: '#/paths/~1init/post/responses/default'
-  # /on_status:
-  #   post:
-  #     tags:
-  #       - Beckn Application Platform (BAP)
-  #     description: Fetch the status of a Service
-  #     requestBody:
-  #       content:
-  #         application/json:
-  #           schema:
-  #             type: object
-  #             properties:
-  #               context:
-  #                 allOf:
-  #                   - $ref: '#/components/schemas/Context'
-  #                   - properties:
-  #                       action:
-  #                         enum:
-  #                           - on_status
-  #                     required:
-  #                       - action
-  #               message:
-  #                 type: object
-  #                 properties:
-  #                   order:
-  #                     $ref: '#/components/schemas/Order'
-  #                 required:
-  #                   - order
-  #               error:
-  #                 $ref: '#/components/schemas/Error'
-  #             required:
-  #               - context
-  #     responses:
-  #       default:
-  #         $ref: '#/paths/~1init/post/responses/default'
+  /on_status:
+    post:
+      tags:
+        - Beckn Application Platform (BAP)
+      description: Fetch the status of a Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - on_status
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    order:
+                      $ref: '#/components/schemas/Order'
+                  required:
+                    - order
+                error:
+                  $ref: '#/components/schemas/Error'
+              required:
+                - context
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
   # /on_rating:
   #   post:
   #     tags:
