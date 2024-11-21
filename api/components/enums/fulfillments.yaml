@@ -67,3 +67,18 @@ fulfillments:
         - code: Offer Rejected
           description: Name of the fulfillment status		
           reference: <PR/Issue/Discussion Links md format text>
+  customer:
+    person:
+      gender:
+        - code: Male
+          description: Gender of the job applicant
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: Female
+          description: Gender of the job applicant
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: Transgender
+          description: Gender of the job applicant
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: Other
+          description: Gender of the job applicant
+          reference: <PR/Issue/Discussion Links md format text>
