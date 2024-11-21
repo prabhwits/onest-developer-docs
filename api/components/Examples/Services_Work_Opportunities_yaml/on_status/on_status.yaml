@@ -14,7 +14,7 @@ value:
         country:
           code: country_code_value
       timestamp: '2023-02-22T11:50:46.742Z'
-      ttl: PT10M
+      ttl: PT30S
     message:
       order:
         status: In-progress
