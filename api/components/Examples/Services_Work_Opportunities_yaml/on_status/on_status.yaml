@@ -17,6 +17,7 @@ value:
       ttl: PT10M
     message:
       order:
+        status: In-
         provider:
           id: '1'
           descriptor:
@@ -244,3 +245,65 @@ value:
                       name: Working hours
                     value: Full-Time
                     display: true
+            fulfillments:
+              - id: '1'
+                type: REMOTE
+                state:
+                  descriptor:
+                    code: APPLICATION-IN-PROGRESS
+                customer:
+                  person:
+                    name: Sanjay
+                    gender: Male
+                    age: '35'
+                    skills:
+                      - code: Android
+                        name: Android
+                      - code: AWS
+                        name: AWS
+                    languages:
+                      - code: en
+                        name: english
+                      - code: ml
+                        name: Malayalam
+                      - code: hi
+                        name: Hindi
+                    tags:
+                      - display: true
+                        descriptor:
+                          code: EMP-DETAILS
+                          name: Employee Details
+                        list:
+                          - descriptor:
+                              code: EXPECTED-SALARY
+                              name: Expected Salary
+                            value: '1000000'
+                            display: true
+                          - descriptor:
+                              code: TOTAL-EXPERIENCE
+                              name: Total Experience (Years)
+                            value: '4'
+                            display: true
+                      - display: true
+                        descriptor:
+                          code: DOCUMENTS
+                          name: Documents
+                        list:
+                          - descriptor:
+                              code: DOC-TYPE
+                              name: Document Type
+                            value: resume
+                            display: true
+                          - descriptor:
+                              code: LINK
+                              name: Document Link
+                            value: https://example.com/resume.pdf
+                            display: true
+                          - descriptor:
+                              code: FILE-FORMAT
+                              name: File Format
+                            value: pdf
+                            display: true
+                    contact:
+                      phone: '9999999999999'
+                      email: abc@abc.bc
