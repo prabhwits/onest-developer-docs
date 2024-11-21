@@ -5,7 +5,7 @@ domain:
   - code: onest:financial-support
     description: Name of the ONEST Domain	
     reference: <PR/Issue/Discussion Links md format text>
-  - code: onest:work-opportunities
+  - code: ONDC:ONEST10
     description: Name of the ONEST Domain	
     reference: <PR/Issue/Discussion Links md format text>
   - code: onest:expert-connect

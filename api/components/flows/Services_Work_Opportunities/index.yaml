@@ -1,4 +1,4 @@
-summary: Services - Work Opportunities
+summary: ONDC:ONEST10 - Work Opportunities
 description: The following is an illustrative flow for a job application transaction, where a candidate intends to apply for a specific job role.
 details:
 
@@ -144,6 +144,18 @@ steps:
     reference: if any
     example:
       $ref: "../../Examples/Services_Work_Opportunities_yaml/on_confirm/on_confirm.yaml"
+  - summary: Description
+    api: status
+    description: BAP sends request for status of submission of job application.
+    reference: if any
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/status/status.yaml"
+  - summary: Description
+    api: on_status
+    description: BPP sends confirmation of submission of job application.
+    reference: if any
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/on_status/on_status.yaml"
   - summary: Description
     api: update
     description: BAP confirms user wants to submit the job application.

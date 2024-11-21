@@ -19,6 +19,7 @@ value:
   message:
     order:
       id: '1677140405881'
+      status: In-progress
       provider:
         id: '1'
         descriptor:

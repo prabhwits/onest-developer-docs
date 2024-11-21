@@ -9,7 +9,7 @@ paths:
   /search:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
         - Beckn Gateway (BG)
       description: BAP declares the customer's intent to buy/avail products or services
       requestBody:
@@ -39,7 +39,7 @@ paths:
   /select:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
       description: BAP declares the customer's cart (or equivalent) created by selecting objects from the catalog
       requestBody:
         content:
@@ -72,7 +72,7 @@ paths:
   /init:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
       description: Initialize an order by providing billing and/or shipping details
       requestBody:
         content:
@@ -127,7 +127,7 @@ paths:
   /confirm:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
       description: Initialize an order by providing billing and/or shipping details
       requestBody:
         content:
@@ -160,7 +160,7 @@ paths:
   /status:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
       description: Fetch the latest order object
       requestBody:
         content:
@@ -190,42 +190,42 @@ paths:
       responses:
         default:
           $ref: '#/paths/~1init/post/responses/default'
-  /track:
-    post:
-      tags:
-        - Beckn Provider Platform (BPP)
-      description: Track an active order
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                context:
-                  allOf:
-                    - $ref: '#/components/schemas/Context'
-                    - properties:
-                        action:
-                          enum:
-                            - track
-                      required:
-                        - action
-                message:
-                  type: object
-                  properties:
-                    order_id:
-                      $ref: '#/components/schemas/Order/properties/id'
-                    callback_url:
-                      type: string
-                      format: uri
-                  required:
-                    - order_id
-              required:
-                - context
-                - message
-      responses:
-        default:
-          $ref: '#/paths/~1init/post/responses/default'
+  # /track:
+  #   post:
+  #     tags:
+  #       - Beckn Provider Platform (BPP)
+  #     description: Track an active order
+  #     requestBody:
+  #       content:
+  #         application/json:
+  #           schema:
+  #             type: object
+  #             properties:
+  #               context:
+  #                 allOf:
+  #                   - $ref: '#/components/schemas/Context'
+  #                   - properties:
+  #                       action:
+  #                         enum:
+  #                           - track
+  #                     required:
+  #                       - action
+  #               message:
+  #                 type: object
+  #                 properties:
+  #                   order_id:
+  #                     $ref: '#/components/schemas/Order/properties/id'
+  #                   callback_url:
+  #                     type: string
+  #                     format: uri
+  #                 required:
+  #                   - order_id
+  #             required:
+  #               - context
+  #               - message
+  #     responses:
+  #       default:
+  #         $ref: '#/paths/~1init/post/responses/default'
   # /cancel:
   #   post:
   #     tags:
@@ -266,7 +266,7 @@ paths:
   /update:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
       description: Remove object
       requestBody:
         content:
@@ -369,7 +369,7 @@ paths:
   /on_search:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
         - Beckn Gateway (BG)
       description: BPP sends its catalog in response to a search request.
       requestBody:
@@ -404,7 +404,7 @@ paths:
   /on_select:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
       description: Send draft order object with quoted price for selected items
       requestBody:
         content:
@@ -436,7 +436,7 @@ paths:
   /on_init:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
       description: Send order object with payment details updated
       requestBody:
         content:
@@ -470,7 +470,7 @@ paths:
   /on_confirm:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
       description: Send active order object
       requestBody:
         content:
@@ -572,7 +572,7 @@ paths:
   /on_update:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
       description: Returns updated service with updated runtime object
       requestBody:
         content:
@@ -606,7 +606,7 @@ paths:
   /on_status:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
       description: Fetch the status of a Service
       requestBody:
         content:

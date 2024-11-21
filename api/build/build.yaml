@@ -9,7 +9,7 @@ paths:
   /search:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
         - Beckn Gateway (BG)
       description: BAP declares the customer's intent to buy/avail products or services
       requestBody:
@@ -39,7 +39,7 @@ paths:
   /select:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
       description: >-
         BAP declares the customer's cart (or equivalent) created by selecting
         objects from the catalog
@@ -74,7 +74,7 @@ paths:
   /init:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
       description: Initialize an order by providing billing and/or shipping details
       requestBody:
         content:
@@ -131,7 +131,7 @@ paths:
   /confirm:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
       description: Initialize an order by providing billing and/or shipping details
       requestBody:
         content:
@@ -164,7 +164,7 @@ paths:
   /status:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
       description: Fetch the latest order object
       requestBody:
         content:
@@ -194,46 +194,10 @@ paths:
       responses:
         default:
           $ref: '#/paths/~1init/post/responses/default'
-  /track:
-    post:
-      tags:
-        - Beckn Provider Platform (BPP)
-      description: Track an active order
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                context:
-                  allOf:
-                    - $ref: '#/components/schemas/Context'
-                    - properties:
-                        action:
-                          enum:
-                            - track
-                      required:
-                        - action
-                message:
-                  type: object
-                  properties:
-                    order_id:
-                      $ref: '#/components/schemas/Order/properties/id'
-                    callback_url:
-                      type: string
-                      format: uri
-                  required:
-                    - order_id
-              required:
-                - context
-                - message
-      responses:
-        default:
-          $ref: '#/paths/~1init/post/responses/default'
   /update:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - Beckn Application Platform (BAP)
       description: Remove object
       requestBody:
         content:
@@ -275,7 +239,7 @@ paths:
   /on_search:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
         - Beckn Gateway (BG)
       description: BPP sends its catalog in response to a search request.
       requestBody:
@@ -310,7 +274,7 @@ paths:
   /on_select:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
       description: Send draft order object with quoted price for selected items
       requestBody:
         content:
@@ -342,7 +306,7 @@ paths:
   /on_init:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
       description: Send order object with payment details updated
       requestBody:
         content:
@@ -376,7 +340,7 @@ paths:
   /on_confirm:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
       description: Send active order object
       requestBody:
         content:
@@ -410,7 +374,7 @@ paths:
   /on_update:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
       description: Returns updated service with updated runtime object
       requestBody:
         content:
@@ -444,7 +408,7 @@ paths:
   /on_status:
     post:
       tags:
-        - Beckn Application Platform (BAP)
+        - Beckn Provider Platform (BPP)
       description: Fetch the status of a Service
       requestBody:
         content:
@@ -2344,7 +2308,7 @@ x-enum:
         - code: onest:financial-support
           description: Name of the ONEST Domain
           reference: <PR/Issue/Discussion Links md format text>
-        - code: onest:work-opportunities
+        - code: ONDC:ONEST10
           description: Name of the ONEST Domain
           reference: <PR/Issue/Discussion Links md format text>
         - code: onest:expert-connect
@@ -2501,7 +2465,7 @@ x-tags:
       order:
         items: *ref_4
 x-flows:
-  - summary: Services - Work Opportunities
+  - summary: ONDC:ONEST10 - Work Opportunities
     description: >-
       The following is an illustrative flow for a job application transaction,
       where a candidate intends to apply for a specific job role.
@@ -4208,6 +4172,352 @@ x-flows:
                                 phone: '9999999999999'
                                 email: abc@abc.bc
       - summary: Description
+        api: status
+        description: BAP sends request for status of submission of job application.
+        reference: if any
+        example:
+          value:
+            value:
+              context:
+                domain: ONDC:ONEST10
+                action: status
+                version: 2.0.0
+                bap_id: bap-12345
+                bap_uri: https://worker-hub.bap.io
+                bpp_id: job-hub.bpp.io
+                bpp_uri: https://job-hub.bpp.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
+                location:
+                  city:
+                    code: BLR
+                  country:
+                    code: IND
+                timestamp: 2024-09-04T12:34:560Z
+                ttl: PT30M
+              message:
+                order:
+                  id: ORD-67890
+      - summary: Description
+        api: on_status
+        description: BPP sends confirmation of submission of job application.
+        reference: if any
+        example:
+          value:
+            value:
+              context:
+                domain: ONDC:ONEST10
+                action: on_status
+                version: 2.0.0
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: c8e3968c-cd78-4e46-aa34-0d541e46bd73
+                location:
+                  city:
+                    code: city_code_value
+                  country:
+                    code: country_code_value
+                timestamp: '2023-02-22T11:50:46.742Z'
+                ttl: PT10M
+              message:
+                order:
+                  status: In-progress
+                  provider:
+                    id: '1'
+                    descriptor:
+                      name: Affinidi
+                    fulfillments:
+                      - id: '1'
+                        type: REMOTE
+                      - id: '2'
+                        type: HYBRID
+                      - id: '3'
+                        type: ONSITE
+                    locations:
+                      - id: L1
+                        city:
+                          name: Pune
+                          code: std:020
+                        state:
+                          name: Maharastra
+                          code: MH
+                  items:
+                    - id: 0253719F295521CED39EC9C2F3C8DCDE
+                      descriptor:
+                        name: Fullstack Engineer
+                        long_desc: >-
+                          We’re on a search for a Staff Mobile Developer with
+                          the following attributes: Critical Thinking- You are
+                          able to skillfully conceptualise, apply, analyse and
+                          evaluate information gathered from observation,
+                          experience or communication and use it as a guide to
+                          action Data-Driven attitude — You often propose
+                          solutions or make a point in a logical and objective
+                          manner, substantiated with accurate data and evidence
+                          Dealing with Ambiguity — You can effectively cope with
+                          change and uncertainty, and are comfortable when
+                          things are up in the air Goal-oriented — You are
+                          driven and can be counted on to exceed goals. You
+                          steadfastly push yourself and others to achieve
+                          results all the time Problem Solving — You can easily
+                          identify and solve complex problems in a
+                          methodological manner 
+                      fulfillment_ids:
+                        - '1'
+                        - '2'
+                        - '3'
+                      location_ids:
+                        - L1
+                      time:
+                        range:
+                          start: '2023-01-03T13:23:01+00:00'
+                          end: '2023-02-03T13:23:01+00:00'
+                      tags:
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-NAME
+                                name: Name of the course
+                              value: Class-X
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-NAME
+                                name: Name of the course
+                              value: Class-XII
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-LEVEL
+                                name: Level of the course
+                              value: Under Graduate
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-LEVEL
+                                name: Level of the course
+                              value: Graduate
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'false'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: JOB-REQUIREMENTS
+                            name: Job requirements
+                          list:
+                            - descriptor:
+                                code: REQ-EXPERIENCE
+                                name: Required work experience in years
+                              value: '2.5'
+                              display: true
+                            - descriptor:
+                                code: REQ-PROF-SKILL
+                                name: Skills required for the role
+                              value: android-development
+                              display: true
+                            - descriptor:
+                                code: REQ-PROF-SKILL
+                                name: Skills required for the role
+                              value: dev-ops
+                              display: true
+                            - descriptor:
+                                code: REQ-PROF-SKILL
+                                name: Additional skills required for the job
+                              value: >-
+                                You have 8+ years of engineering experience,
+                                predominantly in shipping user-facing production
+                                features
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: JOB-RESPONSIBILITIES
+                            name: Job responsibilities
+                          list:
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Build frontend experiences for our tools (Web,
+                                PWA and React Native)
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Articulate a long term technical direction and
+                                vision for building, maintaining, and scaling
+                                our web and mobile platforms
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Create trustworthy user experiences by building
+                                interfaces that are simple, easy to comprehend,
+                                performant and reliable using modern tools like
+                                React, React Native, Typescript, Node.js, Jest
+                                and Webpack.
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Mentor and train other team members on design
+                                techniques and coding standards.
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: LISTING-DETAILS
+                            name: Listing details
+                          list:
+                            - descriptor:
+                                code: INDUSTRY-TYPE
+                                name: Industry type
+                              value: IT Services & Consulting
+                              display: true
+                            - descriptor:
+                                code: DEPARTMENT
+                                name: Department
+                              value: Engineering - Software & QA
+                              display: true
+                            - descriptor:
+                                code: CTC
+                                name: Salary Offered
+                              value: 20,00,000
+                              display: true
+                            - descriptor:
+                                code: POST-START-LOCATION
+                                name: Post start location
+                              value: Pune
+                              display: true
+                            - descriptor:
+                                code: WORKING-LOCATION
+                                name: Working location
+                              value: Hybrid
+                              display: true
+                            - descriptor:
+                                code: WORKING-TIME
+                                name: Working hours
+                              value: Full-Time
+                              display: true
+                      fulfillments:
+                        - id: '1'
+                          type: REMOTE
+                          state:
+                            descriptor:
+                              code: APPLICATION-IN-PROGRESS
+                          customer:
+                            person:
+                              name: Sanjay
+                              gender: Male
+                              age: '35'
+                              skills:
+                                - code: Android
+                                  name: Android
+                                - code: AWS
+                                  name: AWS
+                              languages:
+                                - code: en
+                                  name: english
+                                - code: ml
+                                  name: Malayalam
+                                - code: hi
+                                  name: Hindi
+                              tags:
+                                - display: true
+                                  descriptor:
+                                    code: EMP-DETAILS
+                                    name: Employee Details
+                                  list:
+                                    - descriptor:
+                                        code: EXPECTED-SALARY
+                                        name: Expected Salary
+                                      value: '1000000'
+                                      display: true
+                                    - descriptor:
+                                        code: TOTAL-EXPERIENCE
+                                        name: Total Experience (Years)
+                                      value: '4'
+                                      display: true
+                                - display: true
+                                  descriptor:
+                                    code: DOCUMENTS
+                                    name: Documents
+                                  list:
+                                    - descriptor:
+                                        code: DOC-TYPE
+                                        name: Document Type
+                                      value: resume
+                                      display: true
+                                    - descriptor:
+                                        code: LINK
+                                        name: Document Link
+                                      value: https://example.com/resume.pdf
+                                      display: true
+                                    - descriptor:
+                                        code: FILE-FORMAT
+                                        name: File Format
+                                      value: pdf
+                                      display: true
+                              contact:
+                                phone: '9999999999999'
+                                email: abc@abc.bc
+      - summary: Description
         api: update
         description: BAP confirms user wants to submit the job application.
         example:
@@ -4265,6 +4575,7 @@ x-flows:
             message:
               order:
                 id: '1677140405881'
+                status: In-progress
                 provider:
                   id: '1'
                   descriptor:
@@ -4537,8 +4848,8 @@ x-flows:
                               phone: '9999999999999'
                               email: abc@abc.bc
 x-examples:
-  Services - Work Opportunities:
-    summary: Services - Work Opportunities
+  ONDC:ONEST10 - Work Opportunities:
+    summary: ONDC:ONEST10 - Work Opportunities
     description: >-
       Job Hub is acting as provider platform(BPP) which hosts the jobs and
       Worker Hub is acting as seeker platform(BAP) which helps the workers to
@@ -7138,6 +7449,7 @@ x-examples:
               message:
                 order:
                   id: '1677140405881'
+                  status: In-progress
                   provider:
                     id: '1'
                     descriptor:
@@ -7431,7 +7743,7 @@ x-examples:
                   ttl: PT10M
                 message:
                   order:
-                    status: In-
+                    status: In-progress
                     provider:
                       id: '1'
                       descriptor:
