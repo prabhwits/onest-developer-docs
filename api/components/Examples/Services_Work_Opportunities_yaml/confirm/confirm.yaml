@@ -18,6 +18,7 @@ value:
     ttl: PT10M
   message:
     order:
+      status: Created
       provider:
         id: '1'
       items:
