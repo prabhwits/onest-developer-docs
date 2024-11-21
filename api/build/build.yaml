@@ -2609,7 +2609,8 @@ x-flows:
                 country:
                   code: country_code_value
               timestamp: '2023-02-22T11:45:10.171Z'
-              ttl: P1M
+              ttl: P30S
+
             message:
               catalog:
                 descriptor:
@@ -3118,7 +3119,8 @@ x-flows:
                 country:
                   code: country_code_value
               timestamp: '2023-02-14T12:11:46.129Z'
-              ttl: P1M
+              ttl: P30S
+
             message:
               order:
                 provider:
@@ -3391,7 +3393,6 @@ x-flows:
           initializing step of the job application process.
         reference: if any
         example:
-<<<<<<< HEAD
           value:
             context:
               domain: ONDC:ONEST10
@@ -3409,314 +3410,74 @@ x-flows:
                 country:
                   code: IND
               timestamp: '2023-02-14T12:12:46Z'
-              ttl: P1M
+              ttl: P30S
+
             message:
               order:
-                id: O1
-                status: Accepted
                 provider:
-                  id: P1
-                  locations:
-                    - id: L1
+                  id: '1'
                 items:
-                  - id: I1
+                  - id: >-
+                      a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
                     fulfillment_ids:
-                      - F1
-                    quantity:
-                      selected:
-                        count: 2
-                billing:
-                  name: ONDC buyer
-                  address: >-
-                    my house or door or floor # | my building name or house # |
-                    my street name
-                  city: Bengaluru
-                  state: Karnataka
-                  email: nobody@nomail.com
-                  phone: '9886098860'
-                  tags:
-                    - descriptor:
-                        code: AUDIT_TIMESTAMP
-                      list:
-                        - descriptor:
-                            code: CREATED_AT
-                          value: '2023-02-03T09:00:00.000Z'
-                        - descriptor:
-                            code: UPDATED_AT
-                          value: '2023-02-03T09:00:00.000Z'
+                      - '1'
                 fulfillments:
-                  id: F1
-                  tags:
-                    - descriptor:
-                        code: CONSIGNMENT
-                      list:
-                        - descriptor:
-                            code: TAT
-                          value: PT60M
-                  state:
-                    descriptor:
-                      code: Pending
-                  type: Delivery
-                  tracking: false
-                  stops:
-                    - type: START
-                      location:
-                        id: start_location_id_value
-                        descriptor:
-                          name: start_location_name_value
-                        gps: 12.453544,77.928379
-                        address: >-
-                          my house or door or floor # | my building name or
-                          house # | my street name
-                        city: Bengaluru
-                        state: Karnataka
-                        area_code: '560037'
-                      time:
-                        range:
-                          start: start_time_range_start_value
-                          end: start_time_range_end_value
-                      instructions:
-                        code: start_instructions_code_value
-                        name: start_instructions_name_value
-                        short_desc: start_instructions_short_desc_value
-                        long_desc: start_instructions_long_desc_value
-                      contact:
-                        phone: start_contact_phone_value
-                        email: start_contact_email_value
-                    - type: END
-                      location:
-                        gps: 12.453544,77.928379
-                        address: >-
-                          my house or door or floor # | my building name or
-                          house # | my street name
-                        city: Bengaluru
-                        state: Karnataka
-                        country: IND
-                        area_code: '560037'
-                      time:
-                        range:
-                          start: end_time_range_start_value
-                          end: end_time_range_end_value
+                  - id: '1'
+                    customer:
                       person:
-                        name: name_of_person
-                      contact:
-                        phone: '9886098860'
-                        email: nobody@nomail.com
-                quote:
-                  breakup:
-                    - item:
-                        id: I1
-                        quantity:
-                          selected:
-                            count: 2
-                        parent_item_id: null
-                        price:
-                          currency: INR
-                          value: '340.00'
+                        name: Sanjay
+                        gender: Male
+                        age: '35'
+                        skills:
+                          - code: Android
+                            name: Android
+                          - code: AWS
+                            name: AWS
+                        languages:
+                          - code: en
+                            name: english
+                          - code: ml
+                            name: Malayalam
+                          - code: hi
+                            name: Hindi
                         tags:
                           - descriptor:
-                              code: PARENT
+                              code: emp-details
                             list:
                               - descriptor:
-                                  code: ID
-                                value: BUY2GET3
+                                  code: expected-salary
+                                value: '1000000'
+                              - descriptor:
+                                  code: total-experience
+                                value: '4'
                           - descriptor:
-                              code: QUOTE
+                              code: documents
+                              name: Documents
                             list:
                               - descriptor:
-                                  code: TYPE
-                                value: item
-                          - descriptor:
-                              code: TYPE
-                            list:
+                                  code: doc-type
+                                value: resume
                               - descriptor:
-                                  code: TYPE
-                                value: Atta
-                      title: item
-                      price:
-                        currency: INR
-                        value: '680.00'
-                payments:
-                  status: NOT-PAID
-                  type: ON-FULFILLMENT
-                  collected_by: BPP
-                  tags:
-                    - descriptor:
-                        code: SETTLEMENT_DETAILS
-                      list:
-                        - descriptor:
-                            code: SETTLEMENT_COUNTERPARTY
-                          value: seller-app
-                        - descriptor:
-                            code: SETTLEMENT_PHASE
-                          value: sale-amount
-                        - descriptor:
-                            code: SETTLEMENT_TYPE
-                          value: upi
-                        - descriptor:
-                            code: UPI_ADDRESS
-                          value: gft@oksbi
-                        - descriptor:
-                            code: SETTLEMENT_BANK_ACCOUNT_NO
-                          value: XXXXXXXXXX
-                        - descriptor:
-                            code: SETTLEMENT_IFSC_CODE
-                          value: XXXXXXXXX
-                        - descriptor:
-                            code: BENEFICIARY_NAME
-                          value: xxxxx
-                        - descriptor:
-                            code: BANK_NAME
-                          value: xxxx
-                        - descriptor:
-                            code: BRANCH_NAME
-                          value: xxxx
-                tags:
-                  - descriptor:
-                      code: BAP_TERMS
-                    list:
-                      - descriptor:
-                          code: BUYER_FINDER_FEE_TYPE
-                        value: percent
-                      - descriptor:
-                          code: BUYER_FINDER_FEE_PERCENTAGE
-                        value: '3'
-                  - descriptor:
-                      code: SETTLEMENT_TERMS
-                    list:
-                      - descriptor:
-                          code: SETTLEMENT_BASIS
-                        value: delivery
-                      - descriptor:
-                          code: SETTLEMENT_WINDOW
-                        value: P1D
-                      - descriptor:
-                          code: WITHHOLDING_AMOUNT
-                        value: '10.00'
-                  - descriptor:
-                      code: BPP_TERMS
-                    list:
-                      - descriptor:
-                          code: MAX_LIABILITY
-                        value: '2'
-                      - descriptor:
-                          code: MAX_LIABILITY_CAP
-                        value: '10000'
-                      - descriptor:
-                          code: MANDATORY_ARBITRATION
-                        value: 'false'
-                      - descriptor:
-                          code: COURT_JURISDICTION
-                        value: Bengaluru
-                      - descriptor:
-                          code: DELAY_INTEREST
-                        value: '7.50'
-                      - descriptor:
-                          code: TAX_NUMBER
-                        value: gst_number_of_sellerNP
-                  - descriptor:
-                      code: BAP_TERMS
-                    list:
-                      - descriptor:
-                          code: ACCEPT_BPP_TERMS
-                        value: 'Y'
-                      - descriptor:
-                          code: STATIC_TERMS
-                        value: >-
-                          https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
-                      - descriptor:
-                          code: TAX_NUMBER
-                        value: gst_number_of_buyerNP
-                cancellation_terms:
-                  fulfillment_state:
-                    descriptor:
-                      short_desc: Pending
-                  cancellation_fee:
-                    amount:
-                      currency: INR
-                      value: '0.00'
-                created_at: '2023-06-03T09:30:00.000Z'
-                updated_at: '2023-06-03T09:30:04.798Z'
-=======
-          context:
-            domain: ONDC:ONEST10
-            action: init
-            version: 2.0.0
-            bap_id: worker-hub.bap.io
-            bap_uri: https://worker-hub.bap.io
-            bpp_id: job-hub.bpp.io
-            bpp_uri: https://job-hub.bpp.io
-            transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
-            message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
-            timestamp: '2023-02-22T11:45:10.171Z'
-            ttl: P1M
-          message:
-            order:
-              provider:
-                id: '1'
-              items:
-                - id: >-
-                    a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
-                  fulfillment_ids:
-                    - '1'
-              fulfillments:
-                - id: '1'
-                  customer:
-                    person:
-                      name: Sanjay
-                      gender: Male
-                      age: '35'
-                      skills:
-                        - code: Android
-                          name: Android
-                        - code: AWS
-                          name: AWS
-                      languages:
-                        - code: en
-                          name: english
-                        - code: ml
-                          name: Malayalam
-                        - code: hi
-                          name: Hindi
-                      tags:
-                        - descriptor:
-                            code: emp-details
-                          list:
-                            - descriptor:
-                                code: expected-salary
-                              value: '1000000'
-                            - descriptor:
-                                code: total-experience
-                              value: '4'
-                        - descriptor:
-                            code: documents
-                            name: Documents
-                          list:
-                            - descriptor:
-                                code: doc-type
-                              value: resume
-                            - descriptor:
-                                code: link
-                              value: https://example.com/resume.pdf
-                            - descriptor:
-                                code: file-format
-                              value: pdf
-                            - descriptor:
-                                code: NP_FEES
-                                name: np_fees
-                              list:
-                                - code: COMMERCIAL_TYPE
-                                  value: percent
-                                - code: COMMERCIAL_VALUE
-                                  value: '0.2'
-                                - code: COMMERCIAL_NAME
-                                  value: qualified
-                                - code: COMMERCIAL_TRIGGERING_STATE
-                                  value: OFFER-EXTENDED
-                  contact:
-                    phone: '9999999999999'
-                    email: abc@abc.bc
->>>>>>> fd4852ec7f9675aa6877853d0cf6b312301ca8a8
+                                  code: link
+                                value: https://example.com/resume.pdf
+                              - descriptor:
+                                  code: file-format
+                                value: pdf
+                              - descriptor:
+                                  code: NP_FEES
+                                  name: np_fees
+                                list:
+                                  - code: COMMERCIAL_TYPE
+                                    value: percent
+                                  - code: COMMERCIAL_VALUE
+                                    value: '0.2'
+                                  - code: COMMERCIAL_NAME
+                                    value: qualified
+                                  - code: COMMERCIAL_TRIGGERING_STATE
+                                    value: OFFER-EXTENDED
+                    contact:
+                      phone: '9999999999999'
+                      email: abc@abc.bc
       - summary: Description
         api: on_init
         description: >-
@@ -3741,7 +3502,8 @@ x-flows:
                 country:
                   code: IND
               timestamp: '2023-02-23T10:14:05Z'
-              ttl: P1M
+              ttl: P30S
+
             message:
               order:
                 provider:
@@ -4199,7 +3961,8 @@ x-flows:
                   country:
                     code: country_code_value
                 timestamp: '2023-02-23T08:20:06Z'
-                ttl: P1M
+                ttl: P30S
+
               message:
                 order:
                   id: '1677140405881'
@@ -4502,7 +4265,8 @@ x-flows:
                   country:
                     code: IND
                 timestamp: 2024-09-04T12:34:560Z
-                ttl: PT30M
+                ttl: P30S
+
               message:
                 order:
                   id: ORD-67890
@@ -4846,7 +4610,8 @@ x-flows:
                 country:
                   code: IND
               timestamp: '2024-09-04T12:34:56Z'
-              ttl: PT30M
+              ttl: P30S
+
             message:
               update_target: fulfillments
               order:
@@ -4879,7 +4644,8 @@ x-flows:
                 country:
                   code: country_code_value
               timestamp: '2023-02-23T08:20:06Z'
-              ttl: P1M
+              ttl: P30S
+
             message:
               order:
                 id: '1677140405881'
@@ -5357,7 +5123,8 @@ x-examples:
                   country:
                     code: country_code_value
                 timestamp: '2023-02-14T12:11:46.129Z'
-                ttl: P1M
+                ttl: P30S
+
               message:
                 order:
                   provider:
@@ -5367,7 +5134,6 @@ x-examples:
                         a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
       init:
         examples:
-<<<<<<< HEAD
           - value:
               context:
                 domain: ONDC:ONEST10
@@ -5385,314 +5151,74 @@ x-examples:
                   country:
                     code: IND
                 timestamp: '2023-02-14T12:12:46Z'
-                ttl: P1M
+                ttl: P30S
+
               message:
                 order:
-                  id: O1
-                  status: Accepted
                   provider:
-                    id: P1
-                    locations:
-                      - id: L1
+                    id: '1'
                   items:
-                    - id: I1
+                    - id: >-
+                        a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
                       fulfillment_ids:
-                        - F1
-                      quantity:
-                        selected:
-                          count: 2
-                  billing:
-                    name: ONDC buyer
-                    address: >-
-                      my house or door or floor # | my building name or house #
-                      | my street name
-                    city: Bengaluru
-                    state: Karnataka
-                    email: nobody@nomail.com
-                    phone: '9886098860'
-                    tags:
-                      - descriptor:
-                          code: AUDIT_TIMESTAMP
-                        list:
-                          - descriptor:
-                              code: CREATED_AT
-                            value: '2023-02-03T09:00:00.000Z'
-                          - descriptor:
-                              code: UPDATED_AT
-                            value: '2023-02-03T09:00:00.000Z'
+                        - '1'
                   fulfillments:
-                    id: F1
-                    tags:
-                      - descriptor:
-                          code: CONSIGNMENT
-                        list:
-                          - descriptor:
-                              code: TAT
-                            value: PT60M
-                    state:
-                      descriptor:
-                        code: Pending
-                    type: Delivery
-                    tracking: false
-                    stops:
-                      - type: START
-                        location:
-                          id: start_location_id_value
-                          descriptor:
-                            name: start_location_name_value
-                          gps: 12.453544,77.928379
-                          address: >-
-                            my house or door or floor # | my building name or
-                            house # | my street name
-                          city: Bengaluru
-                          state: Karnataka
-                          area_code: '560037'
-                        time:
-                          range:
-                            start: start_time_range_start_value
-                            end: start_time_range_end_value
-                        instructions:
-                          code: start_instructions_code_value
-                          name: start_instructions_name_value
-                          short_desc: start_instructions_short_desc_value
-                          long_desc: start_instructions_long_desc_value
-                        contact:
-                          phone: start_contact_phone_value
-                          email: start_contact_email_value
-                      - type: END
-                        location:
-                          gps: 12.453544,77.928379
-                          address: >-
-                            my house or door or floor # | my building name or
-                            house # | my street name
-                          city: Bengaluru
-                          state: Karnataka
-                          country: IND
-                          area_code: '560037'
-                        time:
-                          range:
-                            start: end_time_range_start_value
-                            end: end_time_range_end_value
+                    - id: '1'
+                      customer:
                         person:
-                          name: name_of_person
-                        contact:
-                          phone: '9886098860'
-                          email: nobody@nomail.com
-                  quote:
-                    breakup:
-                      - item:
-                          id: I1
-                          quantity:
-                            selected:
-                              count: 2
-                          parent_item_id: null
-                          price:
-                            currency: INR
-                            value: '340.00'
+                          name: Sanjay
+                          gender: Male
+                          age: '35'
+                          skills:
+                            - code: Android
+                              name: Android
+                            - code: AWS
+                              name: AWS
+                          languages:
+                            - code: en
+                              name: english
+                            - code: ml
+                              name: Malayalam
+                            - code: hi
+                              name: Hindi
                           tags:
                             - descriptor:
-                                code: PARENT
+                                code: emp-details
                               list:
                                 - descriptor:
-                                    code: ID
-                                  value: BUY2GET3
+                                    code: expected-salary
+                                  value: '1000000'
+                                - descriptor:
+                                    code: total-experience
+                                  value: '4'
                             - descriptor:
-                                code: QUOTE
+                                code: documents
+                                name: Documents
                               list:
                                 - descriptor:
-                                    code: TYPE
-                                  value: item
-                            - descriptor:
-                                code: TYPE
-                              list:
+                                    code: doc-type
+                                  value: resume
                                 - descriptor:
-                                    code: TYPE
-                                  value: Atta
-                        title: item
-                        price:
-                          currency: INR
-                          value: '680.00'
-                  payments:
-                    status: NOT-PAID
-                    type: ON-FULFILLMENT
-                    collected_by: BPP
-                    tags:
-                      - descriptor:
-                          code: SETTLEMENT_DETAILS
-                        list:
-                          - descriptor:
-                              code: SETTLEMENT_COUNTERPARTY
-                            value: seller-app
-                          - descriptor:
-                              code: SETTLEMENT_PHASE
-                            value: sale-amount
-                          - descriptor:
-                              code: SETTLEMENT_TYPE
-                            value: upi
-                          - descriptor:
-                              code: UPI_ADDRESS
-                            value: gft@oksbi
-                          - descriptor:
-                              code: SETTLEMENT_BANK_ACCOUNT_NO
-                            value: XXXXXXXXXX
-                          - descriptor:
-                              code: SETTLEMENT_IFSC_CODE
-                            value: XXXXXXXXX
-                          - descriptor:
-                              code: BENEFICIARY_NAME
-                            value: xxxxx
-                          - descriptor:
-                              code: BANK_NAME
-                            value: xxxx
-                          - descriptor:
-                              code: BRANCH_NAME
-                            value: xxxx
-                  tags:
-                    - descriptor:
-                        code: BAP_TERMS
-                      list:
-                        - descriptor:
-                            code: BUYER_FINDER_FEE_TYPE
-                          value: percent
-                        - descriptor:
-                            code: BUYER_FINDER_FEE_PERCENTAGE
-                          value: '3'
-                    - descriptor:
-                        code: SETTLEMENT_TERMS
-                      list:
-                        - descriptor:
-                            code: SETTLEMENT_BASIS
-                          value: delivery
-                        - descriptor:
-                            code: SETTLEMENT_WINDOW
-                          value: P1D
-                        - descriptor:
-                            code: WITHHOLDING_AMOUNT
-                          value: '10.00'
-                    - descriptor:
-                        code: BPP_TERMS
-                      list:
-                        - descriptor:
-                            code: MAX_LIABILITY
-                          value: '2'
-                        - descriptor:
-                            code: MAX_LIABILITY_CAP
-                          value: '10000'
-                        - descriptor:
-                            code: MANDATORY_ARBITRATION
-                          value: 'false'
-                        - descriptor:
-                            code: COURT_JURISDICTION
-                          value: Bengaluru
-                        - descriptor:
-                            code: DELAY_INTEREST
-                          value: '7.50'
-                        - descriptor:
-                            code: TAX_NUMBER
-                          value: gst_number_of_sellerNP
-                    - descriptor:
-                        code: BAP_TERMS
-                      list:
-                        - descriptor:
-                            code: ACCEPT_BPP_TERMS
-                          value: 'Y'
-                        - descriptor:
-                            code: STATIC_TERMS
-                          value: >-
-                            https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf
-                        - descriptor:
-                            code: TAX_NUMBER
-                          value: gst_number_of_buyerNP
-                  cancellation_terms:
-                    fulfillment_state:
-                      descriptor:
-                        short_desc: Pending
-                    cancellation_fee:
-                      amount:
-                        currency: INR
-                        value: '0.00'
-                  created_at: '2023-06-03T09:30:00.000Z'
-                  updated_at: '2023-06-03T09:30:04.798Z'
-=======
-          - context:
-              domain: ONDC:ONEST10
-              action: init
-              version: 2.0.0
-              bap_id: worker-hub.bap.io
-              bap_uri: https://worker-hub.bap.io
-              bpp_id: job-hub.bpp.io
-              bpp_uri: https://job-hub.bpp.io
-              transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
-              message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
-              timestamp: '2023-02-22T11:45:10.171Z'
-              ttl: P1M
-            message:
-              order:
-                provider:
-                  id: '1'
-                items:
-                  - id: >-
-                      a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
-                    fulfillment_ids:
-                      - '1'
-                fulfillments:
-                  - id: '1'
-                    customer:
-                      person:
-                        name: Sanjay
-                        gender: Male
-                        age: '35'
-                        skills:
-                          - code: Android
-                            name: Android
-                          - code: AWS
-                            name: AWS
-                        languages:
-                          - code: en
-                            name: english
-                          - code: ml
-                            name: Malayalam
-                          - code: hi
-                            name: Hindi
-                        tags:
-                          - descriptor:
-                              code: emp-details
-                            list:
-                              - descriptor:
-                                  code: expected-salary
-                                value: '1000000'
-                              - descriptor:
-                                  code: total-experience
-                                value: '4'
-                          - descriptor:
-                              code: documents
-                              name: Documents
-                            list:
-                              - descriptor:
-                                  code: doc-type
-                                value: resume
-                              - descriptor:
-                                  code: link
-                                value: https://example.com/resume.pdf
-                              - descriptor:
-                                  code: file-format
-                                value: pdf
-                              - descriptor:
-                                  code: NP_FEES
-                                  name: np_fees
-                                list:
-                                  - code: COMMERCIAL_TYPE
-                                    value: percent
-                                  - code: COMMERCIAL_VALUE
-                                    value: '0.2'
-                                  - code: COMMERCIAL_NAME
-                                    value: qualified
-                                  - code: COMMERCIAL_TRIGGERING_STATE
-                                    value: OFFER-EXTENDED
-                    contact:
-                      phone: '9999999999999'
-                      email: abc@abc.bc
->>>>>>> fd4852ec7f9675aa6877853d0cf6b312301ca8a8
+                                    code: link
+                                  value: https://example.com/resume.pdf
+                                - descriptor:
+                                    code: file-format
+                                  value: pdf
+                                - descriptor:
+                                    code: NP_FEES
+                                    name: np_fees
+                                  list:
+                                    - code: COMMERCIAL_TYPE
+                                      value: percent
+                                    - code: COMMERCIAL_VALUE
+                                      value: '0.2'
+                                    - code: COMMERCIAL_NAME
+                                      value: qualified
+                                    - code: COMMERCIAL_TRIGGERING_STATE
+                                      value: OFFER-EXTENDED
+                      contact:
+                        phone: '9999999999999'
+                        email: abc@abc.bc
       confirm:
         examples:
           - value:
@@ -5841,7 +5367,8 @@ x-examples:
                   country:
                     code: IND
                 timestamp: '2024-09-04T12:34:56Z'
-                ttl: PT30M
+                ttl: P30S
+
               message:
                 update_target: fulfillments
                 order:
@@ -5872,7 +5399,8 @@ x-examples:
                     country:
                       code: IND
                   timestamp: 2024-09-04T12:34:560Z
-                  ttl: PT30M
+                  ttl: P30S
+
                 message:
                   order:
                     id: ORD-67890
@@ -5893,7 +5421,8 @@ x-examples:
                   country:
                     code: country_code_value
                 timestamp: '2023-02-22T11:45:10.171Z'
-                ttl: P1M
+                ttl: P30S
+
               message:
                 catalog:
                   descriptor:
@@ -6395,7 +5924,8 @@ x-examples:
                     country:
                       code: country_code_value
                   timestamp: '2023-02-22T11:45:10.171Z'
-                  ttl: P1M
+                  ttl: P30S
+
                 message:
                   catalog:
                     descriptor:
@@ -7152,7 +6682,8 @@ x-examples:
                   country:
                     code: IND
                 timestamp: '2023-02-23T10:14:05Z'
-                ttl: P1M
+                ttl: P30S
+
               message:
                 order:
                   provider:
@@ -7474,7 +7005,8 @@ x-examples:
                   country:
                     code: IND
                 timestamp: '2023-02-23T10:14:05Z'
-                ttl: P1M
+                ttl: P30S
+
               message:
                 order:
                   provider:
@@ -7782,7 +7314,8 @@ x-examples:
                     country:
                       code: country_code_value
                   timestamp: '2023-02-23T08:20:06Z'
-                  ttl: P1M
+                  ttl: P30S
+
                 message:
                   order:
                     id: '1677140405881'
@@ -8083,7 +7616,8 @@ x-examples:
                   country:
                     code: country_code_value
                 timestamp: '2023-02-23T08:20:06Z'
-                ttl: P1M
+                ttl: P30S
+
               message:
                 order:
                   id: '1677140405881'

@@ -10,11 +10,12 @@ value:
       message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
       location:
         city:
-          code: city_code_value
+          code: std:080
         country:
           code: country_code_value
       timestamp: '2023-02-22T11:20:10.122Z'
-      ttl: P1M
+      ttl: P30S
+
     message:
       intent:
         payment:

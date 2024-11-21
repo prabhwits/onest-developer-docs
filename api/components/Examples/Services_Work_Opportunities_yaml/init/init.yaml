@@ -1,77 +1,83 @@
-context:
-  domain: ONDC:ONEST10
-  action: init
-  version: 2.0.0
-  bap_id: worker-hub.bap.io
-  bap_uri: https://worker-hub.bap.io
-  bpp_id: job-hub.bpp.io
-  bpp_uri: https://job-hub.bpp.io
-  transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
-  message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
-  timestamp: '2023-02-22T11:45:10.171Z'
-  ttl: P1M
-message:
-  order:
-    provider:
-      id: "1"
-    items:
-      - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
-        fulfillment_ids:
-          - "1"
-    fulfillments:
-      - id: "1"
-        customer:
-          person:
-            name: Sanjay
-            gender: Male
-            age: "35"
-            skills:
-              - code: Android
-                name: Android
-              - code: AWS
-                name: AWS
-            languages:
-              - code: en
-                name: english
-              - code: ml
-                name: Malayalam
-              - code: hi
-                name: Hindi
-            tags:
-              - descriptor:
-                  code: emp-details
-                list:
-                  - descriptor:
-                      code: expected-salary
-                    value: "1000000"
-                  - descriptor:
-                      code: total-experience
-                    value: "4"
-              - descriptor:
-                  code: documents
-                  name: Documents
-                list:
-                  - descriptor:
-                      code: doc-type
-                    value: resume
-                  - descriptor:
-                      code: link
-                    value: https://example.com/resume.pdf
-                  - descriptor:
-                      code: file-format
-                    value: pdf
-                  - descriptor:
-                      code: NP_FEES
-                      name: np_fees
-                    list:
-                      - code: COMMERCIAL_TYPE
-                        value: percent
-                      - code: COMMERCIAL_VALUE
-                        value: "0.2"
-                      - code: COMMERCIAL_NAME
-                        value: qualified
-                      - code: COMMERCIAL_TRIGGERING_STATE
-                        value: OFFER-EXTENDED
-        contact:
-          phone: "9999999999999"
-          email: abc@abc.bc
+value:
+  context:
+    domain: ONDC:ONEST10
+    action: init
+    version: 2.0.0
+    bap_id: worker-hub.bap.io
+    bap_uri: https://worker-hub.bap.io
+    bpp_id: job-hub.bpp.io
+    bpp_uri: https://job-hub.bpp.io
+    transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+    message_id: $89bdae17-9942-40c8-869a-5bd413356407
+    location:
+      city:
+        code: std:080
+      country:
+        code: IND
+    timestamp: '2023-02-14T12:12:46Z'
+    ttl: P30S
+  message:
+    order:
+      provider:
+        id: "1"
+      items:
+        - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+          fulfillment_ids:
+            - "1"
+      fulfillments:
+        - id: "1"
+          customer:
+            person:
+              name: Sanjay
+              gender: Male
+              age: "35"
+              skills:
+                - code: Android
+                  name: Android
+                - code: AWS
+                  name: AWS
+              languages:
+                - code: en
+                  name: english
+                - code: ml
+                  name: Malayalam
+                - code: hi
+                  name: Hindi
+              tags:
+                - descriptor:
+                    code: emp-details
+                  list:
+                    - descriptor:
+                        code: expected-salary
+                      value: "1000000"
+                    - descriptor:
+                        code: total-experience
+                      value: "4"
+                - descriptor:
+                    code: documents
+                    name: Documents
+                  list:
+                    - descriptor:
+                        code: doc-type
+                      value: resume
+                    - descriptor:
+                        code: link
+                      value: https://example.com/resume.pdf
+                    - descriptor:
+                        code: file-format
+                      value: pdf
+                    - descriptor:
+                        code: NP_FEES
+                        name: np_fees
+                      list:
+                        - code: COMMERCIAL_TYPE
+                          value: percent
+                        - code: COMMERCIAL_VALUE
+                          value: "0.2"
+                        - code: COMMERCIAL_NAME
+                          value: qualified
+                        - code: COMMERCIAL_TRIGGERING_STATE
+                          value: OFFER-EXTENDED
+          contact:
+            phone: "9999999999999"
+            email: abc@abc.bc

@@ -11,11 +11,12 @@ value:
     message_id: af58aa7b-6745-47d0-9b0d-62dcb262ee87
     location:
       city:
-        code: BLR
+        code: std:080
       country:
         code: IND
     timestamp: '2023-02-23T10:14:05Z'
-    ttl: P1M
+    ttl: P30S
+
   message:
     order:
       provider:

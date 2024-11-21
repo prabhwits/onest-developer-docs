@@ -12,11 +12,12 @@ value:
       message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
       location:
         city:
-          code: BLR
+          code: std:080
         country:
           code: IND
       timestamp: 2024-09-04T12:34:560Z
-      ttl: PT30M
+      ttl: P30S
+
     message:
       order:
         id: ORD-67890

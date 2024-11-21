@@ -9,7 +9,7 @@ value:
     message_id: c8e3968c-cd78-4e46-aa34-0d541e46bd73
     location:
       city:
-        code: city_code_value
+        code: std:080
       country:
         code: country_code_value
     timestamp: '2023-02-22T11:50:46.742Z'

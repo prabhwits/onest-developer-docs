@@ -12,11 +12,12 @@ value:
       message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
       location:
         city:
-          code: city_code_value
+          code: std:080
         country:
           code: country_code_value
       timestamp: '2023-02-23T08:20:06Z'
-      ttl: P1M
+      ttl: P30S
+
     message:
       order:
         id: '1677140405881'

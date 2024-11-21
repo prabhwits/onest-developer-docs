@@ -11,9 +11,9 @@ value:
     message_id: "8cbb5e99-5d06-4855-81e9-a4fc8013dbff"
     location:
       city:
-        code: "BLR"
+        code: std:080
       country:
-        code: "IND"
+        code: IND
     timestamp: "2024-09-04T12:34:56Z" # Corrected timestamp
     ttl: "PT30M"
   message:

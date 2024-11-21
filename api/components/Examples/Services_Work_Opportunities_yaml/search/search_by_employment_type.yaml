@@ -9,7 +9,7 @@ value:
     message_id: $89bdae17-9942-40c8-869a-5bd413356407
     location:
       city:
-        code: city_code_value
+        code: std:080
       country:
         code: country_code_value
     timestamp: '2022-10-11T09:55:41.161Z'
