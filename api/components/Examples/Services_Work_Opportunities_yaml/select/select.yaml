@@ -2,7 +2,7 @@ value:
   context:
     domain: ONDC:ONEST10
     action: select
-    version: 2.x
+    version: 2.0.0
     bap_id: worker-hub.bap.io
     bap_uri: https://worker-hub.bap.io
     bpp_id: job-hub.bpp.io
