@@ -263,45 +263,45 @@ paths:
   #     responses:
   #       default:
   #         $ref: '#/paths/~1init/post/responses/default'
-  # /update:
-  #   post:
-  #     tags:
-  #       - Beckn Provider Platform (BPP)
-  #     description: Remove object
-  #     requestBody:
-  #       content:
-  #         application/json:
-  #           schema:
-  #             type: object
-  #             properties:
-  #               context:
-  #                 allOf:
-  #                   - $ref: '#/components/schemas/Context'
-  #                   - properties:
-  #                       action:
-  #                         enum:
-  #                           - update
-  #                     required:
-  #                       - action
-  #               message:
-  #                 type: object
-  #                 properties:
-  #                   update_target:
-  #                     description: 'Comma separated values of order objects being updated. For example: ```"update_target":"item,billing,fulfillment"```'
-  #                     type: string
-  #                   order:
-  #                     description: Updated order object
-  #                     allOf:
-  #                       - $ref: '#/components/schemas/Order'
-  #                 required:
-  #                   - update_target
-  #                   - order
-  #             required:
-  #               - context
-  #               - message
-  #     responses:
-  #       default:
-  #         $ref: '#/paths/~1init/post/responses/default'
+  /update:
+    post:
+      tags:
+        - Beckn Provider Platform (BPP)
+      description: Remove object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - update
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    update_target:
+                      description: 'Comma separated values of order objects being updated. For example: ```"update_target":"item,billing,fulfillment"```'
+                      type: string
+                    order:
+                      description: Updated order object
+                      allOf:
+                        - $ref: '#/components/schemas/Order'
+                  required:
+                    - update_target
+                    - order
+              required:
+                - context
+                - message
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
   # /rating:
   #   post:
   #     tags:
@@ -569,40 +569,40 @@ paths:
   #     responses:
   #       default:
   #         $ref: '#/paths/~1init/post/responses/default'
-  # /on_update:
-  #   post:
-  #     tags:
-  #       - Beckn Application Platform (BAP)
-  #     description: Returns updated service with updated runtime object
-  #     requestBody:
-  #       content:
-  #         application/json:
-  #           schema:
-  #             type: object
-  #             properties:
-  #               context:
-  #                 allOf:
-  #                   - $ref: '#/components/schemas/Context'
-  #                   - properties:
-  #                       action:
-  #                         enum:
-  #                           - on_update
-  #                     required:
-  #                       - action
-  #               message:
-  #                 type: object
-  #                 properties:
-  #                   order:
-  #                     $ref: '#/components/schemas/Order'
-  #                 required:
-  #                   - order
-  #               error:
-  #                 $ref: '#/components/schemas/Error'
-  #             required:
-  #               - context
-  #     responses:
-  #       default:
-  #         $ref: '#/paths/~1init/post/responses/default'
+  /on_update:
+    post:
+      tags:
+        - Beckn Application Platform (BAP)
+      description: Returns updated service with updated runtime object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - on_update
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    order:
+                      $ref: '#/components/schemas/Order'
+                  required:
+                    - order
+                error:
+                  $ref: '#/components/schemas/Error'
+              required:
+                - context
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
   # /on_status:
   #   post:
   #     tags:

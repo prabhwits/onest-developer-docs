@@ -161,6 +161,48 @@ paths:
       responses:
         default:
           $ref: '#/paths/~1init/post/responses/default'
+  /update:
+    post:
+      tags:
+        - Beckn Provider Platform (BPP)
+      description: Remove object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - update
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    update_target:
+                      description: >-
+                        Comma separated values of order objects being updated.
+                        For example:
+                        ```"update_target":"item,billing,fulfillment"```
+                      type: string
+                    order:
+                      description: Updated order object
+                      allOf:
+                        - $ref: '#/components/schemas/Order'
+                  required:
+                    - update_target
+                    - order
+              required:
+                - context
+                - message
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
   /on_search:
     post:
       tags:
@@ -280,6 +322,40 @@ paths:
                         action:
                           enum:
                             - on_confirm
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    order:
+                      $ref: '#/components/schemas/Order'
+                  required:
+                    - order
+                error:
+                  $ref: '#/components/schemas/Error'
+              required:
+                - context
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
+  /on_update:
+    post:
+      tags:
+        - Beckn Application Platform (BAP)
+      description: Returns updated service with updated runtime object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - on_update
                       required:
                         - action
                 message:
@@ -2410,7 +2486,7 @@ x-flows:
         example:
           value:
             context:
-              domain: onest:work-opportunities
+              domain: ONDC:ONEST10
               action: search
               version: 2.x
               bap_id: worker-hub.bap.io
@@ -2438,7 +2514,7 @@ x-flows:
         example:
           value:
             context:
-              domain: onest:work-opportunities
+              domain: ONDC:ONEST10
               action: on_search
               version: 2.x
               bap_id: worker-hub.bap.io
@@ -2945,7 +3021,7 @@ x-flows:
         example:
           value:
             context:
-              domain: onest:work-opportunities
+              domain: ONDC:ONEST10
               action: select
               version: 2.x
               bap_id: worker-hub.bap.io
@@ -2978,7 +3054,7 @@ x-flows:
         example:
           value:
             context:
-              domain: onest:work-opportunities
+              domain: ONDC:ONEST10
               action: on_select
               version: 2.x
               bap_id: worker-hub.bap.io
@@ -3239,7 +3315,7 @@ x-flows:
         example:
           value:
             context:
-              domain: onest:work-opportunities
+              domain: ONDC:ONEST10
               action: init
               version: 2.x
               bap_id: worker-hub.bap.io
@@ -3264,7 +3340,7 @@ x-flows:
         example:
           value:
             context:
-              domain: onest:work-opportunities
+              domain: ONDC:ONEST10
               action: on_init
               version: 2.x
               bap_id: worker-hub.bap.io
@@ -3593,7 +3669,7 @@ x-flows:
         example:
           value:
             context:
-              domain: onest:work-opportunities
+              domain: ONDC:ONEST10
               version: 2.x
               action: confirm
               bap_id: worker-hub.bap.io
@@ -3724,8 +3800,341 @@ x-flows:
         example:
           value:
             context:
-              domain: onest:work-opportunities
+              domain: ONDC:ONEST10
               action: on_confirm
+              version: 2.x
+              bap_id: worker-hub.bap.io
+              bap_uri: https://worker-hub.bap.io
+              bpp_id: job-hub.bpp.io
+              bpp_uri: https://job-hub.bpp.io
+              transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+              message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
+              location:
+                city:
+                  code: city_code_value
+                country:
+                  code: country_code_value
+              timestamp: '2023-02-23T08:20:06Z'
+              ttl: P1M
+            message:
+              order:
+                id: '1677140405881'
+                provider:
+                  id: '1'
+                  descriptor:
+                    name: Affinidi
+                  locations:
+                    - id: L1
+                      city:
+                        name: Pune
+                        code: std:020
+                      state:
+                        name: Maharastra
+                        code: MH
+                items:
+                  - id: >-
+                      a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+                    descriptor:
+                      name: Fullstack Engineer
+                      long_desc: >-
+                        We’re on a search for a Staff Mobile Developer with the
+                        following attributes: Critical Thinking- You are able to
+                        skillfully conceptualise, apply, analyse and evaluate
+                        information gathered from observation, experience or
+                        communication and use it as a guide to action
+                        Data-Driven attitude — You often propose solutions or
+                        make a point in a logical and objective manner,
+                        substantiated with accurate data and evidence Dealing
+                        with Ambiguity — You can effectively cope with change
+                        and uncertainty, and are comfortable when things are up
+                        in the air Goal-oriented — You are driven and can be
+                        counted on to exceed goals. You steadfastly push
+                        yourself and others to achieve results all the time
+                        Problem Solving — You can easily identify and solve
+                        complex problems in a methodological manner 
+                    fulfillment_ids:
+                      - '1'
+                    location_ids:
+                      - L1
+                    time:
+                      range:
+                        start: '2023-01-03T13:23:01+00:00'
+                        end: '2023-02-03T13:23:01+00:00'
+                    tags:
+                      - display: true
+                        descriptor:
+                          code: ACADEMIC-ELIGIBILITY
+                          name: Academic Eligibility
+                        list:
+                          - descriptor:
+                              code: COURSE-NAME
+                              name: Name of the Course
+                            value: Class-X
+                            display: true
+                          - descriptor:
+                              code: MIN-PERCENTAGE
+                              name: Minimum Percentage of Marks for Eligibility
+                            value: '60'
+                            display: true
+                          - descriptor:
+                              code: MANDATORY-ELIGIBILITY
+                              name: Mandatory Eligibility
+                            value: 'true'
+                            display: true
+                      - display: true
+                        descriptor:
+                          code: ACADEMIC-ELIGIBILITY
+                          name: Academic Eligibility
+                        list:
+                          - descriptor:
+                              code: COURSE-NAME
+                              name: Name of the Course
+                            value: Class-XII
+                            display: true
+                          - descriptor:
+                              code: MIN-PERCENTAGE
+                              name: Minimum Percentage of Marks for Eligibility
+                            value: '60'
+                            display: true
+                          - descriptor:
+                              code: MANDATORY-ELIGIBILITY
+                              name: Mandatory Eligibility
+                            value: 'true'
+                            display: true
+                      - display: true
+                        descriptor:
+                          code: ACADEMIC-ELIGIBILITY
+                          name: Academic Eligibility
+                        list:
+                          - descriptor:
+                              code: COURSE-LEVEL
+                              name: Level of the Course
+                            value: Under Graduate
+                            display: true
+                          - descriptor:
+                              code: MIN-PERCENTAGE
+                              name: Minimum Percentage of Marks for Eligibility
+                            value: '60'
+                            display: true
+                          - descriptor:
+                              code: MANDATORY-ELIGIBILITY
+                              name: Mandatory Eligibility
+                            value: 'true'
+                            display: true
+                      - display: true
+                        descriptor:
+                          code: ACADEMIC-ELIGIBILITY
+                          name: Academic Eligibility
+                        list:
+                          - descriptor:
+                              code: COURSE-LEVEL
+                              name: Level of the Course
+                            value: Graduate
+                            display: true
+                          - descriptor:
+                              code: MANDATORY-ELIGIBILITY
+                              name: Mandatory Eligibility
+                            value: 'false'
+                            display: true
+                      - display: true
+                        descriptor:
+                          code: JOB-REQUIREMENTS
+                          name: Job Requirements
+                        list:
+                          - descriptor:
+                              code: REQ-EXPERIENCE
+                              name: Required Work Experience in Years
+                            value: '2.5'
+                            display: true
+                          - descriptor:
+                              code: REQ-PROF-SKILL
+                              name: Skills Required for the Role
+                            value: android-development
+                            display: true
+                          - descriptor:
+                              code: REQ-PROF-SKILL
+                              name: Skills Required for the Role
+                            value: dev-ops
+                            display: true
+                          - descriptor:
+                              code: REQ-ADDL-SKILL
+                              name: Additional Skills Required for the Job
+                            value: >-
+                              8+ years of engineering experience in shipping
+                              user-facing production features
+                            display: true
+                      - display: true
+                        descriptor:
+                          code: JOB-RESPONSIBILITIES
+                          name: Job Responsibilities
+                        list:
+                          - descriptor:
+                              code: RESPONSIBILITY
+                              name: Responsibility
+                            value: >-
+                              Build frontend experiences for tools (Web, PWA,
+                              React Native)
+                            display: true
+                          - descriptor:
+                              code: RESPONSIBILITY
+                              name: Responsibility
+                            value: Define long-term technical direction and vision
+                            display: true
+                          - descriptor:
+                              code: RESPONSIBILITY
+                              name: Responsibility
+                            value: >-
+                              Create reliable interfaces using modern tools like
+                              React, React Native, Typescript, Node.js, Jest,
+                              and Webpack.
+                            display: true
+                          - descriptor:
+                              code: RESPONSIBILITY
+                              name: Responsibility
+                            value: >-
+                              Mentor team members on design techniques and
+                              coding standards.
+                            display: true
+                      - display: true
+                        descriptor:
+                          code: LISTING-DETAILS
+                          name: Listing Details
+                        list:
+                          - descriptor:
+                              code: INDUSTRY-TYPE
+                              name: Industry Type
+                            value: IT Services & Consulting
+                            display: true
+                          - descriptor:
+                              code: DEPARTMENT
+                              name: Department
+                            value: Engineering - Software & QA
+                            display: true
+                          - descriptor:
+                              code: EMPLOYMENT-TYPE
+                              name: Employment Type
+                            value: Full-Time
+                            display: true
+                          - descriptor:
+                              code: JOB-ROLE
+                              name: Job Role
+                            value: DevOps Engineer
+                            display: true
+                      - display: true
+                        descriptor:
+                          code: SALARY-INFO
+                          name: Salary Information
+                        list:
+                          - descriptor:
+                              code: GROSS-MIN
+                              name: Minimum Gross Pay
+                            value: '900000'
+                            display: true
+                          - descriptor:
+                              code: GROSS-MAX
+                              name: Maximum Gross Pay
+                            value: '1200000'
+                            display: true
+                    fulfillments:
+                      - id: '1'
+                        type: REMOTE
+                        customer:
+                          person:
+                            name: Sanjay
+                            gender: Male
+                            age: '35'
+                            skills:
+                              - code: Android
+                                name: Android
+                              - code: AWS
+                                name: AWS
+                            languages:
+                              - code: en
+                                name: english
+                              - code: ml
+                                name: Malayalam
+                              - code: hi
+                                name: Hindi
+                            tags:
+                              - display: true
+                                descriptor:
+                                  code: EMP-DETAILS
+                                  name: Employee Details
+                                list:
+                                  - descriptor:
+                                      code: EXPECTED-SALARY
+                                      name: Expected Salary
+                                    value: '1000000'
+                                    display: true
+                                  - descriptor:
+                                      code: TOTAL-EXPERIENCE
+                                      name: Total Experience (Years)
+                                    value: '4'
+                                    display: true
+                              - display: true
+                                descriptor:
+                                  code: DOCUMENTS
+                                  name: Documents
+                                list:
+                                  - descriptor:
+                                      code: DOC-TYPE
+                                      name: Document Type
+                                    value: resume
+                                    display: true
+                                  - descriptor:
+                                      code: LINK
+                                      name: Document Link
+                                    value: https://example.com/resume.pdf
+                                    display: true
+                                  - descriptor:
+                                      code: FILE-FORMAT
+                                      name: File Format
+                                    value: pdf
+                                    display: true
+                            contact:
+                              phone: '9999999999999'
+                              email: abc@abc.bc
+      - summary: Description
+        api: update
+        description: BAP confirms user wants to submit the job application.
+        example:
+          value:
+            context:
+              domain: ONDC:ONEST10
+              action: update
+              version: 2.X
+              bap_id: bap-12345
+              bap_uri: https://worker-hub.bap.io
+              bpp_id: job-hub.bpp.io
+              bpp_uri: https://job-hub.bpp.io
+              transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+              message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
+              location:
+                city:
+                  code: BLR
+                country:
+                  code: IND
+              timestamp: '2024-09-04T12:34:56Z'
+              ttl: PT30M
+            message:
+              update_target: fulfillments
+              order:
+                id: order_id_value
+                fulfillments:
+                  - id: fulfillment_id_value
+                    type: FULFILLMENT_TYPE_VALUE
+                    contact:
+                      phone: '9999999999'
+                      email: abc@abc.bc
+      - summary: Description
+        api: on_update
+        description: BPP sends confirmation of submission of job application.
+        reference: if any
+        example:
+          value:
+            context:
+              domain: ONDC:ONEST10
+              action: on_update
               version: 2.x
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
@@ -4030,7 +4439,7 @@ x-examples:
         examples:
           - value:
               context:
-                domain: onest:work-opportunities
+                domain: ONDC:ONEST10
                 action: search
                 version: 2.x
                 bap_id: worker-hub.bap.io
@@ -4049,11 +4458,141 @@ x-examples:
                   item:
                     descriptor:
                       name: Engineer
+          - value:
+              context:
+                domain: ONDC:ONEST10
+                action: search
+                version: 2.x
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io/
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: $89bdae17-9942-40c8-869a-5bd413356407
+                location:
+                  city:
+                    code: city_code_value
+                  country:
+                    code: country_code_value
+                timestamp: '2022-10-11T09:55:41.161Z'
+                ttl: PT30S
+              message:
+                intent:
+                  provider:
+                    descriptor:
+                      name: ABC Tech
+          - value:
+              context:
+                domain: ONDC:ONEST10
+                action: search
+                version: 2.x
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io/
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: $89bdae17-9942-40c8-869a-5bd413356407
+                location:
+                  city:
+                    code: city_code_value
+                  country:
+                    code: country_code_value
+                timestamp: '2022-10-11T09:55:41.161Z'
+                ttl: PT30S
+              message:
+                intent:
+                  provider:
+                    locations:
+                      - city:
+                          name: Bangalore
+                          code: std:080
+                        state:
+                          name: Karnataka
+                          code: IN-KA
+                        country:
+                          name: India
+                          code: IN
+          - value:
+              context:
+                domain: ONDC:ONEST10
+                action: search
+                version: 2.x
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io/
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: $89bdae17-9942-40c8-869a-5bd413356407
+                location:
+                  city:
+                    code: city_code_value
+                  country:
+                    code: country_code_value
+                timestamp: '2022-10-11T09:55:41.161Z'
+                ttl: PT30S
+              message:
+                intent:
+                  fulfillment:
+                    customer:
+                      person:
+                        age: '25'
+                        gender: male
+                        skills:
+                          - code: ASSEMBLY-OPERATOR
+                            name: Assembly Operator
+                          - code: ELECTRICIAN
+                            name: Electrician
+          - value:
+              context:
+                domain: ONDC:ONEST10
+                action: search
+                version: 2.x
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io/
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: $89bdae17-9942-40c8-869a-5bd413356407
+                location:
+                  city:
+                    code: city_code_value
+                  country:
+                    code: country_code_value
+                timestamp: '2022-10-11T09:55:41.161Z'
+                ttl: PT30S
+              message:
+                intent:
+                  item:
+                    tags:
+                      - descriptor:
+                          code: LISTING-DETAILS
+                        list:
+                          - descriptor:
+                              code: INDUSTRY-TYPE
+                            value: IT Services & Consulting
+          - value:
+              context:
+                domain: ONDC:ONEST10
+                action: search
+                version: 2.x
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io/
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: $89bdae17-9942-40c8-869a-5bd413356407
+                location:
+                  city:
+                    code: city_code_value
+                  country:
+                    code: country_code_value
+                timestamp: '2022-10-11T09:55:41.161Z'
+                ttl: PT30S
+              message:
+                intent:
+                  item:
+                    tags:
+                      - descriptor:
+                          code: LISTING-DETAILS
+                        list:
+                          - descriptor:
+                              code: EMPLOYMENT-TYPE
+                            value: full-time
       select:
         examples:
           - value:
               context:
-                domain: onest:work-opportunities
+                domain: ONDC:ONEST10
                 action: select
                 version: 2.x
                 bap_id: worker-hub.bap.io
@@ -4080,7 +4619,7 @@ x-examples:
         examples:
           - value:
               context:
-                domain: onest:work-opportunities
+                domain: ONDC:ONEST10
                 action: init
                 version: 2.x
                 bap_id: worker-hub.bap.io
@@ -4100,7 +4639,7 @@ x-examples:
         examples:
           - value:
               context:
-                domain: onest:work-opportunities
+                domain: ONDC:ONEST10
                 version: 2.x
                 action: confirm
                 bap_id: worker-hub.bap.io
@@ -4224,11 +4763,41 @@ x-examples:
                                 name: Agent Verified
                               value: 'true'
                               display: true
+      update:
+        examples:
+          - value:
+              context:
+                domain: ONDC:ONEST10
+                action: update
+                version: 2.X
+                bap_id: bap-12345
+                bap_uri: https://worker-hub.bap.io
+                bpp_id: job-hub.bpp.io
+                bpp_uri: https://job-hub.bpp.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
+                location:
+                  city:
+                    code: BLR
+                  country:
+                    code: IND
+                timestamp: '2024-09-04T12:34:56Z'
+                ttl: PT30M
+              message:
+                update_target: fulfillments
+                order:
+                  id: order_id_value
+                  fulfillments:
+                    - id: fulfillment_id_value
+                      type: FULFILLMENT_TYPE_VALUE
+                      contact:
+                        phone: '9999999999'
+                        email: abc@abc.bc
       on_search:
         examples:
           - value:
               context:
-                domain: onest:work-opportunities
+                domain: ONDC:ONEST10
                 action: on_search
                 version: 2.x
                 bap_id: worker-hub.bap.io
@@ -4729,7 +5298,7 @@ x-examples:
                               display: true
           - value:
               context:
-                domain: onest:work-opportunities
+                domain: ONDC:ONEST10
                 action: on_search
                 version: 2.x
                 bap_id: worker-hub.bap.io
@@ -4896,7 +5465,7 @@ x-examples:
         examples:
           - value:
               context:
-                domain: onest:work-opportunities
+                domain: ONDC:ONEST10
                 action: on_select
                 version: 2.x
                 bap_id: worker-hub.bap.io
@@ -5153,7 +5722,7 @@ x-examples:
         examples:
           - value:
               context:
-                domain: onest:work-opportunities
+                domain: ONDC:ONEST10
                 action: on_init
                 version: 2.x
                 bap_id: worker-hub.bap.io
@@ -5477,12 +6046,620 @@ x-examples:
                                         name: File Format
                                       value: pdf
                                       display: true
+          - value:
+              context:
+                domain: ONDC:ONEST10
+                action: on_init
+                version: 2.x
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io
+                bpp_id: job-hub.bpp.io
+                bpp_uri: https://job-hub.bpp.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: af58aa7b-6745-47d0-9b0d-62dcb262ee87
+                location:
+                  city:
+                    code: BLR
+                  country:
+                    code: IND
+                timestamp: '2023-02-23T10:14:05Z'
+                ttl: P1M
+              message:
+                order:
+                  provider:
+                    descriptor:
+                      name: Affinidi
+                    locations:
+                      - id: L1
+                        city:
+                          name: Pune
+                          code: std:020
+                        state:
+                          name: Maharastra
+                          code: MH
+                  items:
+                    - id: >-
+                        a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+                      descriptor:
+                        name: Fullstack Engineer
+                        long_desc: >-
+                          We’re on a search for a Staff Mobile Developer with
+                          the following attributes: Critical Thinking- You are
+                          able to skillfully conceptualise, apply, analyse and
+                          evaluate information gathered from observation,
+                          experience or communication and use it as a guide to
+                          action Data-Driven attitude — You often propose
+                          solutions or make a point in a logical and objective
+                          manner, substantiated with accurate data and evidence
+                          Dealing with Ambiguity — You can effectively cope with
+                          change and uncertainty, and are comfortable when
+                          things are up in the air Goal-oriented — You are
+                          driven and can be counted on to exceed goals. You
+                          steadfastly push yourself and others to achieve
+                          results all the time Problem Solving — You can easily
+                          identify and solve complex problems in a
+                          methodological manner 
+                      fulfillment_ids:
+                        - '1'
+                      location_ids:
+                        - L1
+                      time:
+                        range:
+                          start: '2023-01-03T13:23:01+00:00'
+                          end: '2023-02-03T13:23:01+00:00'
+                      tags:
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic Eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-NAME
+                                name: Name of the course
+                              value: Class-X
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic Eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-NAME
+                                name: Name of the course
+                              value: Class-XII
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic Eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-LEVEL
+                                name: Level of the course
+                              value: Under Graduate
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: >-
+                                  Minimum percentage of marks to be obtained in
+                                  the course for eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic Eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-LEVEL
+                                name: Level of the course
+                              value: Graduate
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'false'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: JOB-REQUIREMENTS
+                            name: Job Requirements
+                          list:
+                            - descriptor:
+                                code: REQ-EXPERIENCE
+                                name: Required work experience in years
+                              value: '2.5'
+                              display: true
+                            - descriptor:
+                                code: REQ-PROF-SKILL
+                                name: Skills required for the role
+                              value: android-development
+                              display: true
+                            - descriptor:
+                                code: REQ-PROF-SKILL
+                                name: Skills required for the role
+                              value: dev-ops
+                              display: true
+                            - descriptor:
+                                code: REQ-PROF-SKILL
+                                name: Additional skills required for the job
+                              value: >-
+                                You have 8+ years of engineering experience,
+                                predominantly in shipping user-facing production
+                                features
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: JOB-RESPONSIBILITIES
+                            name: Job Responsibilities
+                          list:
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Build frontend experiences for our tools (Web,
+                                PWA and React Native)
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Articulate a long term technical direction and
+                                vision for building, maintaining, and scaling
+                                our web and mobile platforms
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Create trustworthy user experiences by building
+                                interfaces that are simple, easy to comprehend,
+                                performant and reliable using modern tools like
+                                React, React Native, Typescript, Node.js, Jest
+                                and Webpack.
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Mentor and train other team members on design
+                                techniques and coding standards.
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: LISTING-DETAILS
+                            name: Listing Details
+                          list:
+                            - descriptor:
+                                code: INDUSTRY-TYPE
+                                name: Industry type
+                              value: IT Services & Consulting
+                              display: true
+                            - descriptor:
+                                code: DEPARTMENT
+                                name: Department
+                              value: Engineering - Software & QA
+                              display: true
+                            - descriptor:
+                                code: EMPLOYMENT-TYPE
+                                name: Employment type
+                              value: full-time
+                              display: true
+                            - descriptor:
+                                code: JOB-ROLE
+                                name: Job role
+                              value: DevOps Engineer
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: SALARY-INFO
+                            name: Salary Information
+                          list:
+                            - descriptor:
+                                code: GROSS-MIN
+                                name: Minimum gross pay
+                              value: '900000'
+                              display: true
+                            - descriptor:
+                                code: GROSS-MAX
+                                name: Maximum gross pay
+                              value: '1200000'
+                              display: true
+                      fulfillments:
+                        - id: '1'
+                          type: REMOTE
+                          state:
+                            descriptor:
+                              code: APPLICATION-FILLED
+                              name: Application Filled
+                            updated_at: '2023-02-06T09:55:41.161Z'
+                          customer:
+                            person:
+                              name: Sanjay
+                              gender: Male
+                              age: '35'
+                              skills:
+                                - code: Android
+                                  name: Android
+                                - code: AWS
+                                  name: AWS
+                              languages:
+                                - code: en
+                                  name: english
+                                - code: ml
+                                  name: Malayalam
+                                - code: hi
+                                  name: Hindi
+                              tags:
+                                - display: true
+                                  descriptor:
+                                    code: EMP-DETAILS
+                                    name: Employee Details
+                                  list:
+                                    - descriptor:
+                                        code: EXPECTED-SALARY
+                                        name: Expected Salary
+                                      value: '1000000'
+                                      display: true
+                                    - descriptor:
+                                        code: TOTAL-EXPERIENCE
+                                        name: Total Experience
+                                      value: '4'
+                                      display: true
+                                - display: true
+                                  descriptor:
+                                    code: DOCUMENTS
+                                    name: Documents
+                                  list:
+                                    - descriptor:
+                                        code: DOC-TYPE
+                                        name: Document Type
+                                      value: resume
+                                      display: true
+                                    - descriptor:
+                                        code: LINK
+                                        name: Document Link
+                                      value: https://example.com/resume.pdf
+                                      display: true
+                                    - descriptor:
+                                        code: FILE-FORMAT
+                                        name: File Format
+                                      value: pdf
+                                      display: true
       on_confirm:
         examples:
           - value:
               context:
-                domain: onest:work-opportunities
+                domain: ONDC:ONEST10
                 action: on_confirm
+                version: 2.x
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io
+                bpp_id: job-hub.bpp.io
+                bpp_uri: https://job-hub.bpp.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
+                location:
+                  city:
+                    code: city_code_value
+                  country:
+                    code: country_code_value
+                timestamp: '2023-02-23T08:20:06Z'
+                ttl: P1M
+              message:
+                order:
+                  id: '1677140405881'
+                  provider:
+                    id: '1'
+                    descriptor:
+                      name: Affinidi
+                    locations:
+                      - id: L1
+                        city:
+                          name: Pune
+                          code: std:020
+                        state:
+                          name: Maharastra
+                          code: MH
+                  items:
+                    - id: >-
+                        a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+                      descriptor:
+                        name: Fullstack Engineer
+                        long_desc: >-
+                          We’re on a search for a Staff Mobile Developer with
+                          the following attributes: Critical Thinking- You are
+                          able to skillfully conceptualise, apply, analyse and
+                          evaluate information gathered from observation,
+                          experience or communication and use it as a guide to
+                          action Data-Driven attitude — You often propose
+                          solutions or make a point in a logical and objective
+                          manner, substantiated with accurate data and evidence
+                          Dealing with Ambiguity — You can effectively cope with
+                          change and uncertainty, and are comfortable when
+                          things are up in the air Goal-oriented — You are
+                          driven and can be counted on to exceed goals. You
+                          steadfastly push yourself and others to achieve
+                          results all the time Problem Solving — You can easily
+                          identify and solve complex problems in a
+                          methodological manner 
+                      fulfillment_ids:
+                        - '1'
+                      location_ids:
+                        - L1
+                      time:
+                        range:
+                          start: '2023-01-03T13:23:01+00:00'
+                          end: '2023-02-03T13:23:01+00:00'
+                      tags:
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic Eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-NAME
+                                name: Name of the Course
+                              value: Class-X
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: Minimum Percentage of Marks for Eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic Eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-NAME
+                                name: Name of the Course
+                              value: Class-XII
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: Minimum Percentage of Marks for Eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic Eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-LEVEL
+                                name: Level of the Course
+                              value: Under Graduate
+                              display: true
+                            - descriptor:
+                                code: MIN-PERCENTAGE
+                                name: Minimum Percentage of Marks for Eligibility
+                              value: '60'
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'true'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: ACADEMIC-ELIGIBILITY
+                            name: Academic Eligibility
+                          list:
+                            - descriptor:
+                                code: COURSE-LEVEL
+                                name: Level of the Course
+                              value: Graduate
+                              display: true
+                            - descriptor:
+                                code: MANDATORY-ELIGIBILITY
+                                name: Mandatory Eligibility
+                              value: 'false'
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: JOB-REQUIREMENTS
+                            name: Job Requirements
+                          list:
+                            - descriptor:
+                                code: REQ-EXPERIENCE
+                                name: Required Work Experience in Years
+                              value: '2.5'
+                              display: true
+                            - descriptor:
+                                code: REQ-PROF-SKILL
+                                name: Skills Required for the Role
+                              value: android-development
+                              display: true
+                            - descriptor:
+                                code: REQ-PROF-SKILL
+                                name: Skills Required for the Role
+                              value: dev-ops
+                              display: true
+                            - descriptor:
+                                code: REQ-ADDL-SKILL
+                                name: Additional Skills Required for the Job
+                              value: >-
+                                8+ years of engineering experience in shipping
+                                user-facing production features
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: JOB-RESPONSIBILITIES
+                            name: Job Responsibilities
+                          list:
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Build frontend experiences for tools (Web, PWA,
+                                React Native)
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: Define long-term technical direction and vision
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Create reliable interfaces using modern tools
+                                like React, React Native, Typescript, Node.js,
+                                Jest, and Webpack.
+                              display: true
+                            - descriptor:
+                                code: RESPONSIBILITY
+                                name: Responsibility
+                              value: >-
+                                Mentor team members on design techniques and
+                                coding standards.
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: LISTING-DETAILS
+                            name: Listing Details
+                          list:
+                            - descriptor:
+                                code: INDUSTRY-TYPE
+                                name: Industry Type
+                              value: IT Services & Consulting
+                              display: true
+                            - descriptor:
+                                code: DEPARTMENT
+                                name: Department
+                              value: Engineering - Software & QA
+                              display: true
+                            - descriptor:
+                                code: EMPLOYMENT-TYPE
+                                name: Employment Type
+                              value: Full-Time
+                              display: true
+                            - descriptor:
+                                code: JOB-ROLE
+                                name: Job Role
+                              value: DevOps Engineer
+                              display: true
+                        - display: true
+                          descriptor:
+                            code: SALARY-INFO
+                            name: Salary Information
+                          list:
+                            - descriptor:
+                                code: GROSS-MIN
+                                name: Minimum Gross Pay
+                              value: '900000'
+                              display: true
+                            - descriptor:
+                                code: GROSS-MAX
+                                name: Maximum Gross Pay
+                              value: '1200000'
+                              display: true
+                      fulfillments:
+                        - id: '1'
+                          type: REMOTE
+                          customer:
+                            person:
+                              name: Sanjay
+                              gender: Male
+                              age: '35'
+                              skills:
+                                - code: Android
+                                  name: Android
+                                - code: AWS
+                                  name: AWS
+                              languages:
+                                - code: en
+                                  name: english
+                                - code: ml
+                                  name: Malayalam
+                                - code: hi
+                                  name: Hindi
+                              tags:
+                                - display: true
+                                  descriptor:
+                                    code: EMP-DETAILS
+                                    name: Employee Details
+                                  list:
+                                    - descriptor:
+                                        code: EXPECTED-SALARY
+                                        name: Expected Salary
+                                      value: '1000000'
+                                      display: true
+                                    - descriptor:
+                                        code: TOTAL-EXPERIENCE
+                                        name: Total Experience (Years)
+                                      value: '4'
+                                      display: true
+                                - display: true
+                                  descriptor:
+                                    code: DOCUMENTS
+                                    name: Documents
+                                  list:
+                                    - descriptor:
+                                        code: DOC-TYPE
+                                        name: Document Type
+                                      value: resume
+                                      display: true
+                                    - descriptor:
+                                        code: LINK
+                                        name: Document Link
+                                      value: https://example.com/resume.pdf
+                                      display: true
+                                    - descriptor:
+                                        code: FILE-FORMAT
+                                        name: File Format
+                                      value: pdf
+                                      display: true
+                              contact:
+                                phone: '9999999999999'
+                                email: abc@abc.bc
+      on_update:
+        examples:
+          - value:
+              context:
+                domain: ONDC:ONEST10
+                action: on_update
                 version: 2.x
                 bap_id: worker-hub.bap.io
                 bap_uri: https://worker-hub.bap.io

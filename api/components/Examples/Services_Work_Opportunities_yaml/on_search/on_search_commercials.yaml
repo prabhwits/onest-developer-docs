@@ -1,6 +1,6 @@
 value:
   context:
-    domain: onest:work-opportunities
+    domain: ONDC:ONEST10
     action: on_search
     version: 2.x
     bap_id: worker-hub.bap.io
