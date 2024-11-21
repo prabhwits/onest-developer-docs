@@ -31,7 +31,6 @@ const SKIP_VALIDATION = {
 };
 async function baseYMLFile(file) {
   try {
-    console.log(`Parsing file: ${file}`); // Add this line
     const schema = await $RefParser.dereference(file);
     return schema;
   } catch (error) {
