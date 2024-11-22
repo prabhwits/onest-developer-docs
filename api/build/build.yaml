@@ -2417,6 +2417,37 @@ x-tags:
               description: Employment Type
               reference: <PR/Issue/Discussion Links md format text>
               list: *ref_2
+            - code: NP_FEES
+              description: NP_FEES
+              reference: <PR/Issue/Discussion Links md format text>
+              list:
+                - code: COMMERCIAL_TYPE
+                  description: commercial type - [percent, value]
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: COMMERCIAL_VALUE
+                  description: commercial value - [percentage, number]
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: COMMERCIAL_NAME
+                  description: commercial name - [verified, recruitment, qualified]
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: COMMERCIAL_TRIGGERING_STATE
+                  description: >-
+                    commercial triggering - [APPLICATION-SUBMITTED,
+                    OFFER-ACCEPTED, OFFER-EXTENDED]
+                  reference: <PR/Issue/Discussion Links md format text>
+            - code: SALARY
+              description: SALARY
+              reference: <PR/Issue/Discussion Links md format text>
+              list:
+                - code: GROSS-MIN
+                  description: Minimum gross pay
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: GROSS-MAX
+                  description: Maximum gross pay
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: AVERAGE
+                  description: Average gross pay
+                  reference: <PR/Issue/Discussion Links md format text>
           items:
             tags:
               - code: EMPLOYMENT-TYPE
@@ -4749,7 +4780,7 @@ x-flows:
                   country:
                     code: IND
                 timestamp: '2023-02-22T11:45:10.171Z'
-                ttl: P30S
+                ttl: PT30S
               message:
                 catalog:
                   descriptor:
@@ -4792,6 +4823,7 @@ x-flows:
                             code: UP
                       items:
                         - id: D7F8606A370DA9966DF15E62A81C374B
+                          category_id: DevOps
                           descriptor:
                             name: DevOps Engineer
                             long_desc: >-
@@ -4876,6 +4908,7 @@ x-flows:
                                     name: Job role
                                   value: DevOps Engineer
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
+                          category_id: Software development
                           descriptor:
                             name: Fullstack Engineer
                             long_desc: >-
@@ -5085,6 +5118,7 @@ x-flows:
                                 - code: COMMERCIAL_TRIGGERING_STATE
                                   value: OFFER-ACCEPTED
                         - id: 34H1BH24GBH4BHH6DF15E62A81C374B
+                          category_id: DevOps
                           descriptor:
                             name: Sr. Devops Engineer
                             long_desc: >-

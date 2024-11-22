@@ -179,6 +179,32 @@ CHECKLIST_DOCUMENTS:
   - code: TERMS_OF_USAGE
     description: Terms of uses for equipment hiring if applicable (Optional)
     reference: <PR/Issue/Discussion Links md format text>
+
+NP_FEES:
+  - code: COMMERCIAL_TYPE
+    description: commercial type - [percent, value]
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: COMMERCIAL_VALUE
+    description: commercial value - [percentage, number]
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: COMMERCIAL_NAME
+    description: commercial name - [verified, recruitment, qualified]
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: COMMERCIAL_TRIGGERING_STATE
+    description: commercial triggering - [APPLICATION-SUBMITTED, OFFER-ACCEPTED, OFFER-EXTENDED]
+    reference: <PR/Issue/Discussion Links md format text>
+
+SALARY:
+  - code: GROSS-MIN
+    description: Minimum gross pay
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: GROSS-MAX
+    description: Maximum gross pay
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: AVERAGE
+    description: Average gross pay
+    reference: <PR/Issue/Discussion Links md format text>  
+  
 EQUIPMENT_ATTRIBUTES:
   - code: ALIAS
     description: Item alias name or alternate name (Optional)
