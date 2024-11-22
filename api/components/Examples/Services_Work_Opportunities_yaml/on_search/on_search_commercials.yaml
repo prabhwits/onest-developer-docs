@@ -14,7 +14,7 @@ value:
         country:
           code: IND
       timestamp: '2023-02-22T11:45:10.171Z'
-      ttl: P30S
+      ttl: PT30S
 
     message:
       catalog:
@@ -58,6 +58,7 @@ value:
                   code: UP
             items:
               - id: D7F8606A370DA9966DF15E62A81C374B
+                category_id: DevOps
                 descriptor:
                   name: DevOps Engineer
                   long_desc: >-
@@ -106,8 +107,7 @@ value:
                       - descriptor:
                           code: GROSS-MAX
                           name: Maximum gross pay
-                        value: '1200000'
-                        
+                        value: '1200000'                       
                   - descriptor:
                       code: NP_FEES
                       name: np_fees
@@ -145,6 +145,7 @@ value:
                         value: DevOps Engineer
                         
               - id: 0253719F295521CED39EC9C2F3C8DCDE
+                category_id: Software development
                 descriptor:
                   name: Fullstack Engineer
                   long_desc: >-
@@ -376,6 +377,7 @@ value:
                       - code: COMMERCIAL_TRIGGERING_STATE
                         value: OFFER-ACCEPTED
               - id: 34H1BH24GBH4BHH6DF15E62A81C374B
+                category_id: DevOps
                 descriptor:
                   name: Sr. Devops Engineer
                   long_desc: >-

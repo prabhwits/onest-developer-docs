@@ -16,7 +16,7 @@ value:
         country:
           code: IND
       timestamp: '2023-02-14T12:12:46Z'
-      ttl: P30S
+      ttl: PT30S
     message:
       order:
         provider:
@@ -68,18 +68,18 @@ value:
                       - descriptor:
                           code: file-format
                         value: pdf
-                      - descriptor:
-                          code: NP_FEES
-                          name: np_fees
-                        list:
-                          - code: COMMERCIAL_TYPE
-                            value: percent
-                          - code: COMMERCIAL_VALUE
-                            value: '0.2'
-                          - code: COMMERCIAL_NAME
-                            value: qualified
-                          - code: COMMERCIAL_TRIGGERING_STATE
-                            value: OFFER-EXTENDED
+                  - descriptor:
+                      code: NP_FEES
+                      name: np_fees
+                    list:
+                      - code: COMMERCIAL_TYPE
+                        value: percent
+                      - code: COMMERCIAL_VALUE
+                        value: '0.2'
+                      - code: COMMERCIAL_NAME
+                        value: qualified
+                      - code: COMMERCIAL_TRIGGERING_STATE
+                        value: OFFER-EXTENDED
         contact:
           phone: '9999999999999'
           email: abc@abc.bc

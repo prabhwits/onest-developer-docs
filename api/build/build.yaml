@@ -2286,16 +2286,16 @@ x-enum:
     context:
       domain: &ref_0
         - code: ONDC:ONEST10
-          description: Name of the ONEST Domain
+          description: Work Opportunities
           reference: <PR/Issue/Discussion Links md format text>
         - code: ONDC:ONEST11
-          description: Name of the ONEST Domain
+          description: Learning Experiences
           reference: <PR/Issue/Discussion Links md format text>
         - code: ONDC:ONEST12
-          description: Name of the ONEST Domain
+          description: Scholarships
           reference: <PR/Issue/Discussion Links md format text>
         - code: ONDC:ONEST13
-          description: Name of the ONEST Domain
+          description: Mentorship
           reference: <PR/Issue/Discussion Links md format text>
     message:
       intent:
@@ -2592,7 +2592,7 @@ x-flows:
                 country:
                   code: IND
               timestamp: '2023-02-22T11:45:10.171Z'
-              ttl: P30S
+              ttl: PT30S
             message:
               catalog:
                 descriptor:
@@ -3035,7 +3035,7 @@ x-flows:
                 country:
                   code: IND
               timestamp: '2023-02-14T12:11:46.129Z'
-              ttl: P30S
+              ttl: PT30S
             message:
               order:
                 provider:
@@ -3293,7 +3293,7 @@ x-flows:
                   country:
                     code: IND
                 timestamp: '2023-02-14T12:12:46Z'
-                ttl: P30S
+                ttl: PT30S
               message:
                 order:
                   provider:
@@ -3346,18 +3346,18 @@ x-flows:
                                 - descriptor:
                                     code: file-format
                                   value: pdf
-                                - descriptor:
-                                    code: NP_FEES
-                                    name: np_fees
-                                  list:
-                                    - code: COMMERCIAL_TYPE
-                                      value: percent
-                                    - code: COMMERCIAL_VALUE
-                                      value: '0.2'
-                                    - code: COMMERCIAL_NAME
-                                      value: qualified
-                                    - code: COMMERCIAL_TRIGGERING_STATE
-                                      value: OFFER-EXTENDED
+                            - descriptor:
+                                code: NP_FEES
+                                name: np_fees
+                              list:
+                                - code: COMMERCIAL_TYPE
+                                  value: percent
+                                - code: COMMERCIAL_VALUE
+                                  value: '0.2'
+                                - code: COMMERCIAL_NAME
+                                  value: qualified
+                                - code: COMMERCIAL_TRIGGERING_STATE
+                                  value: OFFER-EXTENDED
                   contact:
                     phone: '9999999999999'
                     email: abc@abc.bc
@@ -3385,7 +3385,7 @@ x-flows:
                 country:
                   code: IND
               timestamp: '2023-02-23T10:14:05Z'
-              ttl: P30S
+              ttl: PT30S
             message:
               order:
                 provider:
@@ -3788,7 +3788,7 @@ x-flows:
                   country:
                     code: IND
                 timestamp: '2023-02-23T08:20:06Z'
-                ttl: P30S
+                ttl: PT30S
               message:
                 order:
                   id: '1677140405881'
@@ -4051,7 +4051,7 @@ x-flows:
                   country:
                     code: IND
                 timestamp: 2024-09-04T12:34:560Z
-                ttl: P30S
+                ttl: PT30S
               message:
                 order:
                   id: ORD-67890
@@ -4389,7 +4389,7 @@ x-flows:
                 country:
                   code: IND
               timestamp: '2023-02-23T08:20:06Z'
-              ttl: P30S
+              ttl: PT30S
             message:
               order:
                 id: '1677140405881'
@@ -5441,7 +5441,7 @@ x-examples:
                   country:
                     code: IND
                 timestamp: '2023-02-14T12:11:46.129Z'
-                ttl: P30S
+                ttl: PT30S
               message:
                 order:
                   provider:
@@ -5469,7 +5469,7 @@ x-examples:
                     country:
                       code: IND
                   timestamp: '2023-02-14T12:12:46Z'
-                  ttl: P30S
+                  ttl: PT30S
                 message:
                   order:
                     provider:
@@ -5522,18 +5522,18 @@ x-examples:
                                   - descriptor:
                                       code: file-format
                                     value: pdf
-                                  - descriptor:
-                                      code: NP_FEES
-                                      name: np_fees
-                                    list:
-                                      - code: COMMERCIAL_TYPE
-                                        value: percent
-                                      - code: COMMERCIAL_VALUE
-                                        value: '0.2'
-                                      - code: COMMERCIAL_NAME
-                                        value: qualified
-                                      - code: COMMERCIAL_TRIGGERING_STATE
-                                        value: OFFER-EXTENDED
+                              - descriptor:
+                                  code: NP_FEES
+                                  name: np_fees
+                                list:
+                                  - code: COMMERCIAL_TYPE
+                                    value: percent
+                                  - code: COMMERCIAL_VALUE
+                                    value: '0.2'
+                                  - code: COMMERCIAL_NAME
+                                    value: qualified
+                                  - code: COMMERCIAL_TRIGGERING_STATE
+                                    value: OFFER-EXTENDED
                     contact:
                       phone: '9999999999999'
                       email: abc@abc.bc
@@ -5701,7 +5701,7 @@ x-examples:
                     country:
                       code: IND
                   timestamp: 2024-09-04T12:34:560Z
-                  ttl: P30S
+                  ttl: PT30S
                 message:
                   order:
                     id: ORD-67890
@@ -5722,7 +5722,7 @@ x-examples:
                   country:
                     code: IND
                 timestamp: '2023-02-22T11:45:10.171Z'
-                ttl: P30S
+                ttl: PT30S
               message:
                 catalog:
                   descriptor:
@@ -6158,7 +6158,7 @@ x-examples:
                     country:
                       code: IND
                   timestamp: '2023-02-22T11:45:10.171Z'
-                  ttl: P30S
+                  ttl: PT30S
                 message:
                   catalog:
                     descriptor:
@@ -6201,6 +6201,7 @@ x-examples:
                               code: UP
                         items:
                           - id: D7F8606A370DA9966DF15E62A81C374B
+                            category_id: DevOps
                             descriptor:
                               name: DevOps Engineer
                               long_desc: >-
@@ -6285,6 +6286,7 @@ x-examples:
                                       name: Job role
                                     value: DevOps Engineer
                           - id: 0253719F295521CED39EC9C2F3C8DCDE
+                            category_id: Software development
                             descriptor:
                               name: Fullstack Engineer
                               long_desc: >-
@@ -6496,6 +6498,7 @@ x-examples:
                                   - code: COMMERCIAL_TRIGGERING_STATE
                                     value: OFFER-ACCEPTED
                           - id: 34H1BH24GBH4BHH6DF15E62A81C374B
+                            category_id: DevOps
                             descriptor:
                               name: Sr. Devops Engineer
                               long_desc: >-
@@ -6832,7 +6835,7 @@ x-examples:
                   country:
                     code: IND
                 timestamp: '2023-02-23T10:14:05Z'
-                ttl: P30S
+                ttl: PT30S
               message:
                 order:
                   provider:
@@ -7114,7 +7117,7 @@ x-examples:
                   country:
                     code: IND
                 timestamp: '2023-02-23T10:14:05Z'
-                ttl: P30S
+                ttl: PT30S
               message:
                 order:
                   provider:
@@ -7382,7 +7385,7 @@ x-examples:
                     country:
                       code: IND
                   timestamp: '2023-02-23T08:20:06Z'
-                  ttl: P30S
+                  ttl: PT30S
                 message:
                   order:
                     id: '1677140405881'
@@ -7643,7 +7646,7 @@ x-examples:
                   country:
                     code: IND
                 timestamp: '2023-02-23T08:20:06Z'
-                ttl: P30S
+                ttl: PT30S
               message:
                 order:
                   id: '1677140405881'

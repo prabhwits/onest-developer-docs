@@ -16,7 +16,7 @@ value:
         country:
           code: IND
       timestamp: 2024-09-04T12:34:560Z
-      ttl: P30S
+      ttl: PT30S
 
     message:
       order:

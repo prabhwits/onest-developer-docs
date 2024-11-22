@@ -14,7 +14,7 @@ value:
         country:
           code: IND
       timestamp: '2023-02-22T11:20:10.122Z'
-      ttl: P30S
+      ttl: PT30S
 
     message:
       intent:
