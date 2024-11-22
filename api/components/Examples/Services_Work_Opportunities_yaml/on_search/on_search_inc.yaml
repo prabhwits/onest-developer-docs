@@ -12,14 +12,14 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: '2023-02-22T11:45:10.171Z'
+    timestamp: "2023-02-22T11:45:10.171Z"
     ttl: PT30S
   message:
     catalog:
       descriptor:
         name: Affindi Jobs
       providers:
-        - id: '1'
+        - id: "1"
           items:
             - id: A1B2C3D4E5F67890GHIJK1LMNOPQ2RS
               descriptor:
@@ -28,10 +28,9 @@ value:
                   We are looking for a Data Scientist who has strong
                   analytical skills, with experience in machine learning,
                   statistical analysis, and data modeling. You should be
-                  comfortable working with large datasets, identifying
-                  trends, and creating predictive models. This role requires
-                  the ability to apply data-driven insights to business
-                  problems.
+                  comfortable working with large datasets, identifying trends,
+                  and creating predictive models. This role requires the
+                  ability to apply data-driven insights to business problems.
                 media:
                   - mimetype: audio/mp4
                     url: http://url-to-audio-about-data-scientist-job
@@ -42,14 +41,14 @@ value:
                   count: 30
               time:
                 range:
-                  start: '2023-01-04T09:32:10.560Z'
-                  end: '2023-02-04T08:20:00.230Z'
+                  start: "2023-01-04T09:32:10.560Z"
+                  end: "2023-02-04T08:20:00.230Z"
               location_ids:
                 - L3
               fulfillment_ids:
-                - '4'
-                - '5'
-                - '6'
+                - "4"
+                - "5"
+                - "6"
               tags:
                 - descriptor:
                     code: SALARY-INFO
@@ -58,11 +57,11 @@ value:
                     - descriptor:
                         code: GROSS-MIN
                         name: Minimum gross pay
-                      value: '800000'
+                      value: "800000"
                     - descriptor:
                         code: GROSS-MAX
                         name: Maximum gross pay
-                      value: '1000000'
+                      value: "1000000"
                 - descriptor:
                     code: NP_FEES
                     name: np_fees
@@ -70,7 +69,7 @@ value:
                     - code: COMMERCIAL_TYPE
                       value: percentage
                     - code: COMMERCIAL_VALUE
-                      value: '2'
+                      value: "2"
                     - code: COMMERCIAL_NAME
                       value: recruitment
                     - code: COMMERCIAL_TRIGGERING_STATE

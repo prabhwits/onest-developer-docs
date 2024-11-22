@@ -12,7 +12,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: '2022-10-11T09:55:41.161Z'
+    timestamp: "2022-10-11T09:55:41.161Z"
     ttl: PT30S
   message:
     intent:
@@ -26,7 +26,7 @@ value:
                 value: IT Services & Consulting
       payment:
         BUYER_FINDER_FEE_TYPE: AMOUNT
-        BUYER_FINDER_FEE_AMOUNT: '100'
+        BUYER_FINDER_FEE_AMOUNT: "100"
       tags:
         - descriptor:
             code: BAP_TERMS
@@ -39,4 +39,4 @@ value:
               value: static_terms_new_value
             - descriptor:
                 code: EFFECTIVE_DATE
-              value: '2023-02-22T11:20:10.122Z'
+              value: "2023-02-22T11:20:10.122Z"

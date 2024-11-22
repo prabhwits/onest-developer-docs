@@ -14,23 +14,23 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: '2023-02-14T12:12:46Z'
+    timestamp: "2023-02-14T12:12:46Z"
     ttl: PT30S
   message:
     order:
       provider:
-        id: '1'
+        id: "1"
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
-            - '1'
+            - "1"
       fulfillments:
-        - id: '1'
+        - id: "1"
           customer:
             person:
               name: Sanjay
               gender: Male
-              age: '35'
+              age: "35"
               skills:
                 - code: Android
                   name: Android
@@ -50,10 +50,10 @@ value:
                   list:
                     - descriptor:
                         code: expected-salary
-                      value: '1000000'
+                      value: "1000000"
                     - descriptor:
                         code: total-experience
-                      value: '4'
+                      value: "4"
                 - descriptor:
                     code: documents
                     name: Documents
@@ -74,11 +74,61 @@ value:
                     - code: COMMERCIAL_TYPE
                       value: percent
                     - code: COMMERCIAL_VALUE
-                      value: '0.2'
+                      value: "0.2"
                     - code: COMMERCIAL_NAME
                       value: qualified
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: OFFER-EXTENDED
           contact:
-            phone: '9999999999999'
+            phone: "9999999999999"
             email: abc@abc.bc
+      quote:
+        price:
+          currency: INR
+          value: "1400"
+        breakup:
+          - id: 0253719F295521CED39EC9C2F3C8DCDE
+            price:
+              currency: INR
+              value: "1100"
+            title: Fullstack Engineer
+            tags:
+              - descriptor:
+                  code: TYPE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: item
+          - title: NP Fees
+            id: "1"
+            price:
+              currency: INR
+              value: "300.00"
+            tags:
+              - descriptor:
+                  code: QUOTE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: item
+              - descriptor:
+                  code: NP_FEES
+                  name: np_fees
+                list:
+                  - code: id
+                    value: "1"
+                  - code: COMMERCIAL_TYPE
+                    value: percent
+                  - code: COMMERCIAL_VALUE
+                    value: "0.5"
+                  - code: COMMERCIAL_NAME
+                    value: qualified
+                  - code: COMMERCIAL_TRIGGERING_STATE
+                    value: OFFER-EXTENDED
+              - descriptor:
+                  code: TYPE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: misc
+        ttl: P1D

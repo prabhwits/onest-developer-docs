@@ -14,14 +14,14 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: '2023-02-23T08:20:06Z'
+    timestamp: "2023-02-23T08:20:06Z"
     ttl: PT30S
   message:
     order:
-      id: '1677140405881'
+      id: "1677140405881"
       status: Active
       provider:
-        id: '1'
+        id: "1"
         descriptor:
           name: Affinidi
         locations:
@@ -35,19 +35,19 @@ value:
       items:
         - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
           fulfillment_ids:
-            - '1'
+            - "1"
           location_ids:
             - L1
           quote:
             price:
               currency: INR
-              value: '1100'
+              value: "1100"
             breakup:
               - item:
                   id: 0253719F295521CED39EC9C2F3C8DCDE
                   price:
                     currency: INR
-                    value: '1100.00'
+                    value: "1100.00"
                   tags:
                     - descriptor:
                         code: TYPE
@@ -57,7 +57,7 @@ value:
                           value: item
                 price:
                   currency: INR
-                  value: '1100'
+                  value: "1100"
                 title: Fullstack Engineer
             ttl: P1D
           tags:
@@ -69,17 +69,14 @@ value:
                     code: COURSE-NAME
                     name: Name of the Course
                   value: Class-X
-                  
                 - descriptor:
                     code: MIN-PERCENTAGE
                     name: Minimum Percentage of Marks for Eligibility
-                  value: '60'
-                  
+                  value: "60"
                 - descriptor:
                     code: MANDATORY-ELIGIBILITY
                     name: Mandatory Eligibility
-                  value: 'true'
-                  
+                  value: "true"
             - descriptor:
                 code: ACADEMIC-ELIGIBILITY
                 name: Academic Eligibility
@@ -88,17 +85,14 @@ value:
                     code: COURSE-NAME
                     name: Name of the Course
                   value: Class-XII
-                  
                 - descriptor:
                     code: MIN-PERCENTAGE
                     name: Minimum Percentage of Marks for Eligibility
-                  value: '60'
-                  
+                  value: "60"
                 - descriptor:
                     code: MANDATORY-ELIGIBILITY
                     name: Mandatory Eligibility
-                  value: 'true'
-                  
+                  value: "true"
             - descriptor:
                 code: ACADEMIC-ELIGIBILITY
                 name: Academic Eligibility
@@ -107,17 +101,14 @@ value:
                     code: COURSE-LEVEL
                     name: Level of the Course
                   value: Under Graduate
-                  
                 - descriptor:
                     code: MIN-PERCENTAGE
                     name: Minimum Percentage of Marks for Eligibility
-                  value: '60'
-                  
+                  value: "60"
                 - descriptor:
                     code: MANDATORY-ELIGIBILITY
                     name: Mandatory Eligibility
-                  value: 'true'
-                  
+                  value: "true"
             - descriptor:
                 code: ACADEMIC-ELIGIBILITY
                 name: Academic Eligibility
@@ -126,12 +117,10 @@ value:
                     code: COURSE-LEVEL
                     name: Level of the Course
                   value: Graduate
-                  
                 - descriptor:
                     code: MANDATORY-ELIGIBILITY
                     name: Mandatory Eligibility
-                  value: 'false'
-                  
+                  value: "false"
             - descriptor:
                 code: JOB-REQUIREMENTS
                 name: Job Requirements
@@ -139,25 +128,21 @@ value:
                 - descriptor:
                     code: REQ-EXPERIENCE
                     name: Required Work Experience in Years
-                  value: '2.5'
-                  
+                  value: "2.5"
                 - descriptor:
                     code: REQ-PROF-SKILL
                     name: Skills Required for the Role
                   value: android-development
-                  
                 - descriptor:
                     code: REQ-PROF-SKILL
                     name: Skills Required for the Role
                   value: dev-ops
-                  
                 - descriptor:
                     code: REQ-ADDL-SKILL
                     name: Additional Skills Required for the Job
                   value: >-
                     8+ years of engineering experience in shipping user-facing
                     production features
-                  
             - descriptor:
                 code: JOB-RESPONSIBILITIES
                 name: Job Responsibilities
@@ -168,26 +153,22 @@ value:
                   value: >-
                     Build frontend experiences for tools (Web, PWA, React
                     Native)
-                  
                 - descriptor:
                     code: RESPONSIBILITY
                     name: Responsibility
                   value: Define long-term technical direction and vision
-                  
                 - descriptor:
                     code: RESPONSIBILITY
                     name: Responsibility
                   value: >-
                     Create reliable interfaces using modern tools like React,
                     React Native, Typescript, Node.js, Jest, and Webpack.
-                  
                 - descriptor:
                     code: RESPONSIBILITY
                     name: Responsibility
                   value: >-
                     Mentor team members on design techniques and coding
                     standards.
-                  
             - descriptor:
                 code: LISTING-DETAILS
                 name: Listing Details
@@ -196,22 +177,18 @@ value:
                     code: INDUSTRY-TYPE
                     name: Industry Type
                   value: IT Services & Consulting
-                  
                 - descriptor:
                     code: DEPARTMENT
                     name: Department
                   value: Engineering - Software & QA
-                  
                 - descriptor:
                     code: EMPLOYMENT-TYPE
                     name: Employment Type
                   value: Full-Time
-                  
                 - descriptor:
                     code: JOB-ROLE
                     name: Job Role
                   value: DevOps Engineer
-                  
             - descriptor:
                 code: SALARY-INFO
                 name: Salary Information
@@ -219,20 +196,19 @@ value:
                 - descriptor:
                     code: GROSS-MIN
                     name: Minimum Gross Pay
-                  value: '900000'
-                  
+                  value: "900000"
                 - descriptor:
                     code: GROSS-MAX
                     name: Maximum Gross Pay
-                  value: '1200000'
+                  value: "1200000"
           fulfillments:
-            - id: '1'
+            - id: "1"
               type: REMOTE
               customer:
                 person:
                   name: Sanjay
                   gender: Male
-                  age: '35'
+                  age: "35"
                   skills:
                     - code: Android
                       name: Android
@@ -253,11 +229,11 @@ value:
                         - descriptor:
                             code: EXPECTED-SALARY
                             name: Expected Salary
-                          value: '1000000'
+                          value: "1000000"
                         - descriptor:
                             code: TOTAL-EXPERIENCE
                             name: Total Experience (Years)
-                          value: '4'
+                          value: "4"
                     - descriptor:
                         code: DOCUMENTS
                         name: Documents
@@ -275,5 +251,5 @@ value:
                             name: File Format
                           value: pdf
                   contact:
-                    phone: '9999999999999'
+                    phone: "9999999999999"
                     email: abc@abc.bc

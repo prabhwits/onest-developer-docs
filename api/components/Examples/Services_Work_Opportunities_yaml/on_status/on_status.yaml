@@ -12,13 +12,13 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: '2023-02-22T11:50:46.742Z'
+    timestamp: "2023-02-22T11:50:46.742Z"
     ttl: PT30S
   message:
     order:
       status: Active
       provider:
-        id: '1'
+        id: "1"
         descriptor:
           name: Affinidi
         locations:
@@ -32,21 +32,21 @@ value:
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
-            - '1'
+            - "1"
           time:
             range:
-              start: '2023-01-03T13:23:01+00:00'
-              end: '2023-02-03T13:23:01+00:00'
+              start: "2023-01-03T13:23:01+00:00"
+              end: "2023-02-03T13:23:01+00:00"
           quote:
             price:
               currency: INR
-              value: '1100'
+              value: "1100"
             breakup:
               - item:
                   id: 0253719F295521CED39EC9C2F3C8DCDE
                   price:
                     currency: INR
-                    value: '1100.00'
+                    value: "1100.00"
                   tags:
                     - descriptor:
                         code: TYPE
@@ -56,183 +56,159 @@ value:
                           value: item
                 price:
                   currency: INR
-                  value: '1100'
+                  value: "1100"
                 title: Fullstack Engineer
             ttl: P1D
           tags:
-              - descriptor:
-                  code: ACADEMIC-ELIGIBILITY
-                  name: Academic eligibility
-                list:
-                  - descriptor:
-                      code: COURSE-NAME
-                      name: Name of the course
-                    value: Class-X
-                    
-                  - descriptor:
-                      code: MIN-PERCENTAGE
-                      name: >-
-                        Minimum percentage of marks to be obtained in the course
-                        for eligibility
-                    value: '60'
-                    
-                  - descriptor:
-                      code: MANDATORY-ELIGIBILITY
-                      name: Mandatory Eligibility
-                    value: 'true'
-                    
-              - descriptor:
-                  code: ACADEMIC-ELIGIBILITY
-                  name: Academic eligibility
-                list:
-                  - descriptor:
-                      code: COURSE-NAME
-                      name: Name of the course
-                    value: Class-XII
-                    
-                  - descriptor:
-                      code: MIN-PERCENTAGE
-                      name: >-
-                        Minimum percentage of marks to be obtained in the course
-                        for eligibility
-                    value: '60'
-                    
-                  - descriptor:
-                      code: MANDATORY-ELIGIBILITY
-                      name: Mandatory Eligibility
-                    value: 'true'
-                    
-              - descriptor:
-                  code: ACADEMIC-ELIGIBILITY
-                  name: Academic eligibility
-                list:
-                  - descriptor:
-                      code: COURSE-LEVEL
-                      name: Level of the course
-                    value: Under Graduate
-                    
-                  - descriptor:
-                      code: MIN-PERCENTAGE
-                      name: >-
-                        Minimum percentage of marks to be obtained in the course
-                        for eligibility
-                    value: '60'
-                    
-                  - descriptor:
-                      code: MANDATORY-ELIGIBILITY
-                      name: Mandatory Eligibility
-                    value: 'true'
-                    
-              - descriptor:
-                  code: ACADEMIC-ELIGIBILITY
-                  name: Academic eligibility
-                list:
-                  - descriptor:
-                      code: COURSE-LEVEL
-                      name: Level of the course
-                    value: Graduate
-                    
-                  - descriptor:
-                      code: MANDATORY-ELIGIBILITY
-                      name: Mandatory Eligibility
-                    value: 'false'
-                    
-              - descriptor:
-                  code: JOB-REQUIREMENTS
-                  name: Job requirements
-                list:
-                  - descriptor:
-                      code: REQ-EXPERIENCE
-                      name: Required work experience in years
-                    value: '2.5'
-                    
-                  - descriptor:
-                      code: REQ-PROF-SKILL
-                      name: Skills required for the role
-                    value: android-development
-                    
-                  - descriptor:
-                      code: REQ-PROF-SKILL
-                      name: Skills required for the role
-                    value: dev-ops
-                    
-                  - descriptor:
-                      code: REQ-PROF-SKILL
-                      name: Additional skills required for the job
-                    value: >-
-                      You have 8+ years of engineering experience, predominantly
-                      in shipping user-facing production features
-                    
-              - descriptor:
-                  code: JOB-RESPONSIBILITIES
-                  name: Job responsibilities
-                list:
-                  - descriptor:
-                      code: RESPONSIBILITY
-                      name: Responsibility
-                    value: >-
-                      Build frontend experiences for our tools (Web, PWA and
-                      React Native)
-                    
-                  - descriptor:
-                      code: RESPONSIBILITY
-                      name: Responsibility
-                    value: >-
-                      Articulate a long term technical direction and vision for
-                      building, maintaining, and scaling our web and mobile
-                      platforms
-                    
-                  - descriptor:
-                      code: RESPONSIBILITY
-                      name: Responsibility
-                    value: >-
-                      Create trustworthy user experiences by building interfaces
-                      that are simple, easy to comprehend, performant and
-                      reliable using modern tools like React, React Native,
-                      Typescript, Node.js, Jest and Webpack.
-                    
-                  - descriptor:
-                      code: RESPONSIBILITY
-                      name: Responsibility
-                    value: >-
-                      Mentor and train other team members on design techniques
-                      and coding standards.
-                    
-              - descriptor:
-                  code: LISTING-DETAILS
-                  name: Listing details
-                list:
-                  - descriptor:
-                      code: INDUSTRY-TYPE
-                      name: Industry type
-                    value: IT Services & Consulting
-                    
-                  - descriptor:
-                      code: DEPARTMENT
-                      name: Department
-                    value: Engineering - Software & QA
-                    
-                  - descriptor:
-                      code: CTC
-                      name: Salary Offered
-                    value: 20,00,000
-                    
-                  - descriptor:
-                      code: POST-START-LOCATION
-                      name: Post start location
-                    value: Pune
-                    
-                  - descriptor:
-                      code: WORKING-LOCATION
-                      name: Working location
-                    value: Hybrid
-                    
-                  - descriptor:
-                      code: WORKING-TIME
-                      name: Working hours
-                    value: Full-Time
+            - descriptor:
+                code: ACADEMIC-ELIGIBILITY
+                name: Academic eligibility
+              list:
+                - descriptor:
+                    code: COURSE-NAME
+                    name: Name of the course
+                  value: Class-X
+                - descriptor:
+                    code: MIN-PERCENTAGE
+                    name: >-
+                      Minimum percentage of marks to be obtained in the course
+                      for eligibility
+                  value: "60"
+                - descriptor:
+                    code: MANDATORY-ELIGIBILITY
+                    name: Mandatory Eligibility
+                  value: "true"
+            - descriptor:
+                code: ACADEMIC-ELIGIBILITY
+                name: Academic eligibility
+              list:
+                - descriptor:
+                    code: COURSE-NAME
+                    name: Name of the course
+                  value: Class-XII
+                - descriptor:
+                    code: MIN-PERCENTAGE
+                    name: >-
+                      Minimum percentage of marks to be obtained in the course
+                      for eligibility
+                  value: "60"
+                - descriptor:
+                    code: MANDATORY-ELIGIBILITY
+                    name: Mandatory Eligibility
+                  value: "true"
+            - descriptor:
+                code: ACADEMIC-ELIGIBILITY
+                name: Academic eligibility
+              list:
+                - descriptor:
+                    code: COURSE-LEVEL
+                    name: Level of the course
+                  value: Under Graduate
+                - descriptor:
+                    code: MIN-PERCENTAGE
+                    name: >-
+                      Minimum percentage of marks to be obtained in the course
+                      for eligibility
+                  value: "60"
+                - descriptor:
+                    code: MANDATORY-ELIGIBILITY
+                    name: Mandatory Eligibility
+                  value: "true"
+            - descriptor:
+                code: ACADEMIC-ELIGIBILITY
+                name: Academic eligibility
+              list:
+                - descriptor:
+                    code: COURSE-LEVEL
+                    name: Level of the course
+                  value: Graduate
+                - descriptor:
+                    code: MANDATORY-ELIGIBILITY
+                    name: Mandatory Eligibility
+                  value: "false"
+            - descriptor:
+                code: JOB-REQUIREMENTS
+                name: Job requirements
+              list:
+                - descriptor:
+                    code: REQ-EXPERIENCE
+                    name: Required work experience in years
+                  value: "2.5"
+                - descriptor:
+                    code: REQ-PROF-SKILL
+                    name: Skills required for the role
+                  value: android-development
+                - descriptor:
+                    code: REQ-PROF-SKILL
+                    name: Skills required for the role
+                  value: dev-ops
+                - descriptor:
+                    code: REQ-PROF-SKILL
+                    name: Additional skills required for the job
+                  value: >-
+                    You have 8+ years of engineering experience, predominantly
+                    in shipping user-facing production features
+            - descriptor:
+                code: JOB-RESPONSIBILITIES
+                name: Job responsibilities
+              list:
+                - descriptor:
+                    code: RESPONSIBILITY
+                    name: Responsibility
+                  value: >-
+                    Build frontend experiences for our tools (Web, PWA and
+                    React Native)
+                - descriptor:
+                    code: RESPONSIBILITY
+                    name: Responsibility
+                  value: >-
+                    Articulate a long term technical direction and vision for
+                    building, maintaining, and scaling our web and mobile
+                    platforms
+                - descriptor:
+                    code: RESPONSIBILITY
+                    name: Responsibility
+                  value: >-
+                    Create trustworthy user experiences by building interfaces
+                    that are simple, easy to comprehend, performant and
+                    reliable using modern tools like React, React Native,
+                    Typescript, Node.js, Jest and Webpack.
+                - descriptor:
+                    code: RESPONSIBILITY
+                    name: Responsibility
+                  value: >-
+                    Mentor and train other team members on design techniques
+                    and coding standards.
+            - descriptor:
+                code: LISTING-DETAILS
+                name: Listing details
+              list:
+                - descriptor:
+                    code: INDUSTRY-TYPE
+                    name: Industry type
+                  value: IT Services & Consulting
+                - descriptor:
+                    code: DEPARTMENT
+                    name: Department
+                  value: Engineering - Software & QA
+                - descriptor:
+                    code: CTC
+                    name: Salary Offered
+                  value: 20,00,000
+                - descriptor:
+                    code: POST-START-LOCATION
+                    name: Post start location
+                  value: Pune
+                - descriptor:
+                    code: WORKING-LOCATION
+                    name: Working location
+                  value: Hybrid
+                - descriptor:
+                    code: WORKING-TIME
+                    name: Working hours
+                  value: Full-Time
           fulfillments:
-            - id: '1'
+            - id: "1"
               type: REMOTE
               state:
                 descriptor:
@@ -241,7 +217,7 @@ value:
                 person:
                   name: Sanjay
                   gender: Male
-                  age: '35'
+                  age: "35"
                   skills:
                     - code: Android
                       name: Android
@@ -262,11 +238,11 @@ value:
                         - descriptor:
                             code: EXPECTED-SALARY
                             name: Expected Salary
-                          value: '1000000'
+                          value: "1000000"
                         - descriptor:
                             code: TOTAL-EXPERIENCE
                             name: Total Experience (Years)
-                          value: '4'
+                          value: "4"
                     - descriptor:
                         code: DOCUMENTS
                         name: Documents
@@ -284,5 +260,5 @@ value:
                             name: File Format
                           value: pdf
                   contact:
-                    phone: '9999999999999'
+                    phone: "9999999999999"
                     email: abc@abc.bc

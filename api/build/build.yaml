@@ -3056,7 +3056,7 @@ x-flows:
                             to exceed goals. You steadfastly push yourself and
                             others to achieve results all the time Problem
                             Solving — You can easily identify and solve complex
-                            problems in a methodological manner 
+                            problems in a methodological manner
                           media:
                             - mimetype: audio/mp4
                               url: http://url-to-audio-about-job
@@ -3309,7 +3309,7 @@ x-flows:
                             to exceed goals. You steadfastly push yourself and
                             others to achieve results all the time Problem
                             Solving — You can easily identify and solve complex
-                            problems in a methodological manner 
+                            problems in a methodological manner
                           media:
                             - mimetype: audio/mp4
                               url: http://url-to-audio-about-job
@@ -3609,6 +3609,13 @@ x-flows:
                   id: '1'
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
+                    tags:
+                      - descriptor:
+                          code: NP_FEES
+                          name: np_fees
+                        list:
+                          - code: id
+                            value: '1'
       - summary: Description
         api: on_select
         description: >-
@@ -3656,186 +3663,56 @@ x-flows:
                         code: MH
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
-                    fulfillment_ids:
-                      - '1'
-                      - '2'
-                      - '3'
-                    tags:
-                      - descriptor:
-                          code: ACADEMIC-ELIGIBILITY
-                          name: Academic eligibility
-                        list:
-                          - descriptor:
-                              code: COURSE-NAME
-                              name: Name of the course
-                            value: Class-X
-                          - descriptor:
-                              code: MIN-PERCENTAGE
-                              name: >-
-                                Minimum percentage of marks to be obtained in
-                                the course for eligibility
-                            value: '60'
-                          - descriptor:
-                              code: MANDATORY-ELIGIBILITY
-                              name: Mandatory Eligibility
-                            value: 'true'
-                      - descriptor:
-                          code: ACADEMIC-ELIGIBILITY
-                          name: Academic eligibility
-                        list:
-                          - descriptor:
-                              code: COURSE-NAME
-                              name: Name of the course
-                            value: Class-XII
-                          - descriptor:
-                              code: MIN-PERCENTAGE
-                              name: >-
-                                Minimum percentage of marks to be obtained in
-                                the course for eligibility
-                            value: '60'
-                          - descriptor:
-                              code: MANDATORY-ELIGIBILITY
-                              name: Mandatory Eligibility
-                            value: 'true'
-                      - descriptor:
-                          code: ACADEMIC-ELIGIBILITY
-                          name: Academic eligibility
-                        list:
-                          - descriptor:
-                              code: COURSE-LEVEL
-                              name: Level of the course
-                            value: Under Graduate
-                          - descriptor:
-                              code: MIN-PERCENTAGE
-                              name: >-
-                                Minimum percentage of marks to be obtained in
-                                the course for eligibility
-                            value: '60'
-                          - descriptor:
-                              code: MANDATORY-ELIGIBILITY
-                              name: Mandatory Eligibility
-                            value: 'true'
-                      - descriptor:
-                          code: ACADEMIC-ELIGIBILITY
-                          name: Academic eligibility
-                        list:
-                          - descriptor:
-                              code: COURSE-LEVEL
-                              name: Level of the course
-                            value: Graduate
-                          - descriptor:
-                              code: MANDATORY-ELIGIBILITY
-                              name: Mandatory Eligibility
-                            value: 'false'
-                      - descriptor:
-                          code: JOB-REQUIREMENTS
-                          name: Job requirements
-                        list:
-                          - descriptor:
-                              code: REQ-EXPERIENCE
-                              name: Required work experience in years
-                            value: '2.5'
-                          - descriptor:
-                              code: REQ-PROF-SKILL
-                              name: Skills required for the role
-                            value: android-development
-                          - descriptor:
-                              code: REQ-PROF-SKILL
-                              name: Skills required for the role
-                            value: dev-ops
-                          - descriptor:
-                              code: REQ-PROF-SKILL
-                              name: Additional skills required for the job
-                            value: >-
-                              You have 8+ years of engineering experience,
-                              predominantly in shipping user-facing production
-                              features
-                      - descriptor:
-                          code: JOB-RESPONSIBILITIES
-                          name: Job responsibilities
-                        list:
-                          - descriptor:
-                              code: RESPONSIBILITY
-                              name: Responsibility
-                            value: >-
-                              Build frontend experiences for our tools (Web, PWA
-                              and React Native)
-                          - descriptor:
-                              code: RESPONSIBILITY
-                              name: Responsibility
-                            value: >-
-                              Articulate a long term technical direction and
-                              vision for building, maintaining, and scaling our
-                              web and mobile platforms
-                          - descriptor:
-                              code: RESPONSIBILITY
-                              name: Responsibility
-                            value: >-
-                              Create trustworthy user experiences by building
-                              interfaces that are simple, easy to comprehend,
-                              performant and reliable using modern tools like
-                              React, React Native, Typescript, Node.js, Jest and
-                              Webpack.
-                          - descriptor:
-                              code: RESPONSIBILITY
-                              name: Responsibility
-                            value: >-
-                              Mentor and train other team members on design
-                              techniques and coding standards.
-                      - descriptor:
-                          code: LISTING-DETAILS
-                          name: Listing details
-                        list:
-                          - descriptor:
-                              code: INDUSTRY-TYPE
-                              name: Industry type
-                            value: IT Services & Consulting
-                          - descriptor:
-                              code: DEPARTMENT
-                              name: Department
-                            value: Engineering - Software & QA
-                          - descriptor:
-                              code: EMPLOYMENT-TYPE
-                              name: Employment type
-                            value: full-time
-                          - descriptor:
-                              code: JOB-ROLE
-                              name: Job role
-                            value: DevOps Engineer
-                      - descriptor:
-                          code: SALARY-INFO
-                          name: Salary information
-                        list:
-                          - descriptor:
-                              code: GROSS-MIN
-                              name: Minimum gross pay
-                            value: '900000'
-                          - descriptor:
-                              code: GROSS-MAX
-                              name: Maximum gross pay
-                            value: '1200000'
-                    quote:
+                quote:
+                  price:
+                    currency: INR
+                    value: '1400'
+                  breakup:
+                    - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
                         currency: INR
                         value: '1100'
-                      breakup:
-                        - item:
-                            id: 0253719F295521CED39EC9C2F3C8DCDE
-                            price:
-                              currency: INR
-                              value: '1100.00'
-                            tags:
-                              - descriptor:
-                                  code: TYPE
-                                list:
-                                  - descriptor:
-                                      code: TYPE
-                                    value: item
-                          price:
-                            currency: INR
-                            value: '1100'
-                          title: Fullstack Engineer
-                      ttl: P1D
+                      title: Fullstack Engineer
+                      tags:
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                    - title: NP Fees
+                      id: '1'
+                      price:
+                        currency: INR
+                        value: '300.00'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: np_fees
+                          list:
+                            - code: id
+                              value: '1'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: qualified
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER-EXTENDED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                  ttl: P1D
       - summary: Description
         api: init
         description: >-
@@ -3927,6 +3804,56 @@ x-flows:
                     contact:
                       phone: '9999999999999'
                       email: abc@abc.bc
+                quote:
+                  price:
+                    currency: INR
+                    value: '1400'
+                  breakup:
+                    - id: 0253719F295521CED39EC9C2F3C8DCDE
+                      price:
+                        currency: INR
+                        value: '1100'
+                      title: Fullstack Engineer
+                      tags:
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                    - title: NP Fees
+                      id: '1'
+                      price:
+                        currency: INR
+                        value: '300.00'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: np_fees
+                          list:
+                            - code: id
+                              value: '1'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: qualified
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER-EXTENDED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                  ttl: P1D
       - summary: Description
         api: on_init
         description: >-
@@ -4331,6 +4258,56 @@ x-flows:
                               code: AGENT-VERIFIED
                               name: Agent Verified
                             value: 'true'
+                quote:
+                  price:
+                    currency: INR
+                    value: '1400'
+                  breakup:
+                    - id: 0253719F295521CED39EC9C2F3C8DCDE
+                      price:
+                        currency: INR
+                        value: '1100'
+                      title: Fullstack Engineer
+                      tags:
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                    - title: NP Fees
+                      id: '1'
+                      price:
+                        currency: INR
+                        value: '300.00'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: np_fees
+                          list:
+                            - code: id
+                              value: '1'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: qualified
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER-EXTENDED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                  ttl: P1D
       - summary: Description
         api: on_confirm
         description: BPP sends confirmation of submission of job application.
@@ -4357,7 +4334,7 @@ x-flows:
             message:
               order:
                 id: '1677140405881'
-                status: Created
+                status: Accepted
                 provider:
                   id: '1'
                   descriptor:
@@ -4589,6 +4566,140 @@ x-flows:
                             contact:
                               phone: '9999999999999'
                               email: abc@abc.bc
+                quote:
+                  price:
+                    currency: INR
+                    value: '1400'
+                  breakup:
+                    - id: 0253719F295521CED39EC9C2F3C8DCDE
+                      price:
+                        currency: INR
+                        value: '1100'
+                      title: Fullstack Engineer
+                      tags:
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                    - title: NP Fees
+                      id: '1'
+                      price:
+                        currency: INR
+                        value: '300.00'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: np_fees
+                          list:
+                            - code: id
+                              value: '1'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: qualified
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER-EXTENDED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                  ttl: P1D
+                fulfillments:
+                  - id: '1'
+                    customer:
+                      person:
+                        name: Sanjay
+                        gender: Male
+                        age: '35'
+                        skills:
+                          - code: Android
+                            name: Android
+                          - code: AWS
+                            name: AWS
+                        languages:
+                          - code: en
+                            name: english
+                          - code: ml
+                            name: Malayalam
+                          - code: hi
+                            name: Hindi
+                        tags:
+                          - descriptor:
+                              code: CURRENT-EXPERIENCE
+                              name: Current Experience
+                            list:
+                              - descriptor:
+                                  code: EXP-YEARS
+                                  name: Experience
+                                value: P4Y2M
+                              - descriptor:
+                                  code: CURRENT-COMPANY
+                                  name: Current Company
+                                value: ABC tech
+                          - descriptor:
+                              code: SALARY-DETAILS
+                              name: Salary Details
+                            list:
+                              - descriptor:
+                                  code: EXPECTED-SALARY
+                                  name: Expected Salary
+                                value: '80000'
+                              - descriptor:
+                                  code: CURRENT-SALARY
+                                  name: Current Salary
+                                value: '50000'
+                          - descriptor:
+                              code: DOCUMENTS
+                              name: Documents
+                            list:
+                              - descriptor:
+                                  code: RESUME
+                                  name: Resume
+                                value: https://link-to-the-document.com
+                      contact:
+                        phone: '9999999999999'
+                        email: abc@abc.bc
+                    tags:
+                      - descriptor:
+                          code: DISTRIBUTOR-DETAILS
+                          name: Distributor Details
+                        list:
+                          - descriptor:
+                              code: DISTRIBUTOR-ID
+                              name: Distributor Id
+                            value: PNB
+                          - descriptor:
+                              code: DISTRIBUTOR-NAME
+                              name: Distributor Name
+                            value: Pay Near By
+                          - descriptor:
+                              code: DISTRIBUTOR-PHONE
+                              name: Distributor Phone
+                            value: '9123456789'
+                          - descriptor:
+                              code: DISTRIBUTOR-EMAIL
+                              name: Distributor Email
+                            value: support@pnb.com
+                          - descriptor:
+                              code: AGENT-ID
+                              name: Agent Id
+                            value: agent-123
+                          - descriptor:
+                              code: AGENT-VERIFIED
+                              name: Agent Verified
+                            value: 'true'
       - summary: Description
         api: status
         description: BAP sends request for status of submission of job application.
@@ -5771,6 +5882,13 @@ x-examples:
                     id: '1'
                   items:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
+                      tags:
+                        - descriptor:
+                            code: NP_FEES
+                            name: np_fees
+                          list:
+                            - code: id
+                              value: '1'
       init:
         examples:
           - value:
@@ -5857,6 +5975,56 @@ x-examples:
                       contact:
                         phone: '9999999999999'
                         email: abc@abc.bc
+                  quote:
+                    price:
+                      currency: INR
+                      value: '1400'
+                    breakup:
+                      - id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '1100'
+                        title: Fullstack Engineer
+                        tags:
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                      - title: NP Fees
+                        id: '1'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: np_fees
+                            list:
+                              - code: id
+                                value: '1'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.5'
+                              - code: COMMERCIAL_NAME
+                                value: qualified
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER-EXTENDED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                    ttl: P1D
       confirm:
         examples:
           - value:
@@ -5970,6 +6138,56 @@ x-examples:
                                 code: AGENT-VERIFIED
                                 name: Agent Verified
                               value: 'true'
+                  quote:
+                    price:
+                      currency: INR
+                      value: '1400'
+                    breakup:
+                      - id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '1100'
+                        title: Fullstack Engineer
+                        tags:
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                      - title: NP Fees
+                        id: '1'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: np_fees
+                            list:
+                              - code: id
+                                value: '1'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.5'
+                              - code: COMMERCIAL_NAME
+                                value: qualified
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER-EXTENDED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                    ttl: P1D
       update:
         examples:
           - value:
@@ -6380,7 +6598,7 @@ x-examples:
                               push yourself and others to achieve results all
                               the time Problem Solving — You can easily identify
                               and solve complex problems in a methodological
-                              manner 
+                              manner
                             media:
                               - mimetype: audio/mp4
                                 url: http://url-to-audio-about-job
@@ -6634,7 +6852,7 @@ x-examples:
                               push yourself and others to achieve results all
                               the time Problem Solving — You can easily identify
                               and solve complex problems in a methodological
-                              manner 
+                              manner
                             media:
                               - mimetype: audio/mp4
                                 url: http://url-to-audio-about-job
@@ -6943,186 +7161,56 @@ x-examples:
                           code: MH
                   items:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
-                      fulfillment_ids:
-                        - '1'
-                        - '2'
-                        - '3'
-                      tags:
-                        - descriptor:
-                            code: ACADEMIC-ELIGIBILITY
-                            name: Academic eligibility
-                          list:
-                            - descriptor:
-                                code: COURSE-NAME
-                                name: Name of the course
-                              value: Class-X
-                            - descriptor:
-                                code: MIN-PERCENTAGE
-                                name: >-
-                                  Minimum percentage of marks to be obtained in
-                                  the course for eligibility
-                              value: '60'
-                            - descriptor:
-                                code: MANDATORY-ELIGIBILITY
-                                name: Mandatory Eligibility
-                              value: 'true'
-                        - descriptor:
-                            code: ACADEMIC-ELIGIBILITY
-                            name: Academic eligibility
-                          list:
-                            - descriptor:
-                                code: COURSE-NAME
-                                name: Name of the course
-                              value: Class-XII
-                            - descriptor:
-                                code: MIN-PERCENTAGE
-                                name: >-
-                                  Minimum percentage of marks to be obtained in
-                                  the course for eligibility
-                              value: '60'
-                            - descriptor:
-                                code: MANDATORY-ELIGIBILITY
-                                name: Mandatory Eligibility
-                              value: 'true'
-                        - descriptor:
-                            code: ACADEMIC-ELIGIBILITY
-                            name: Academic eligibility
-                          list:
-                            - descriptor:
-                                code: COURSE-LEVEL
-                                name: Level of the course
-                              value: Under Graduate
-                            - descriptor:
-                                code: MIN-PERCENTAGE
-                                name: >-
-                                  Minimum percentage of marks to be obtained in
-                                  the course for eligibility
-                              value: '60'
-                            - descriptor:
-                                code: MANDATORY-ELIGIBILITY
-                                name: Mandatory Eligibility
-                              value: 'true'
-                        - descriptor:
-                            code: ACADEMIC-ELIGIBILITY
-                            name: Academic eligibility
-                          list:
-                            - descriptor:
-                                code: COURSE-LEVEL
-                                name: Level of the course
-                              value: Graduate
-                            - descriptor:
-                                code: MANDATORY-ELIGIBILITY
-                                name: Mandatory Eligibility
-                              value: 'false'
-                        - descriptor:
-                            code: JOB-REQUIREMENTS
-                            name: Job requirements
-                          list:
-                            - descriptor:
-                                code: REQ-EXPERIENCE
-                                name: Required work experience in years
-                              value: '2.5'
-                            - descriptor:
-                                code: REQ-PROF-SKILL
-                                name: Skills required for the role
-                              value: android-development
-                            - descriptor:
-                                code: REQ-PROF-SKILL
-                                name: Skills required for the role
-                              value: dev-ops
-                            - descriptor:
-                                code: REQ-PROF-SKILL
-                                name: Additional skills required for the job
-                              value: >-
-                                You have 8+ years of engineering experience,
-                                predominantly in shipping user-facing production
-                                features
-                        - descriptor:
-                            code: JOB-RESPONSIBILITIES
-                            name: Job responsibilities
-                          list:
-                            - descriptor:
-                                code: RESPONSIBILITY
-                                name: Responsibility
-                              value: >-
-                                Build frontend experiences for our tools (Web,
-                                PWA and React Native)
-                            - descriptor:
-                                code: RESPONSIBILITY
-                                name: Responsibility
-                              value: >-
-                                Articulate a long term technical direction and
-                                vision for building, maintaining, and scaling
-                                our web and mobile platforms
-                            - descriptor:
-                                code: RESPONSIBILITY
-                                name: Responsibility
-                              value: >-
-                                Create trustworthy user experiences by building
-                                interfaces that are simple, easy to comprehend,
-                                performant and reliable using modern tools like
-                                React, React Native, Typescript, Node.js, Jest
-                                and Webpack.
-                            - descriptor:
-                                code: RESPONSIBILITY
-                                name: Responsibility
-                              value: >-
-                                Mentor and train other team members on design
-                                techniques and coding standards.
-                        - descriptor:
-                            code: LISTING-DETAILS
-                            name: Listing details
-                          list:
-                            - descriptor:
-                                code: INDUSTRY-TYPE
-                                name: Industry type
-                              value: IT Services & Consulting
-                            - descriptor:
-                                code: DEPARTMENT
-                                name: Department
-                              value: Engineering - Software & QA
-                            - descriptor:
-                                code: EMPLOYMENT-TYPE
-                                name: Employment type
-                              value: full-time
-                            - descriptor:
-                                code: JOB-ROLE
-                                name: Job role
-                              value: DevOps Engineer
-                        - descriptor:
-                            code: SALARY-INFO
-                            name: Salary information
-                          list:
-                            - descriptor:
-                                code: GROSS-MIN
-                                name: Minimum gross pay
-                              value: '900000'
-                            - descriptor:
-                                code: GROSS-MAX
-                                name: Maximum gross pay
-                              value: '1200000'
-                      quote:
+                  quote:
+                    price:
+                      currency: INR
+                      value: '1400'
+                    breakup:
+                      - id: 0253719F295521CED39EC9C2F3C8DCDE
                         price:
                           currency: INR
                           value: '1100'
-                        breakup:
-                          - item:
-                              id: 0253719F295521CED39EC9C2F3C8DCDE
-                              price:
-                                currency: INR
-                                value: '1100.00'
-                              tags:
-                                - descriptor:
-                                    code: TYPE
-                                  list:
-                                    - descriptor:
-                                        code: TYPE
-                                      value: item
-                            price:
-                              currency: INR
-                              value: '1100'
-                            title: Fullstack Engineer
-                        ttl: P1D
+                        title: Fullstack Engineer
+                        tags:
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                      - title: NP Fees
+                        id: '1'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: np_fees
+                            list:
+                              - code: id
+                                value: '1'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.5'
+                              - code: COMMERCIAL_NAME
+                                value: qualified
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER-EXTENDED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                    ttl: P1D
       on_init:
         examples:
           - value:
@@ -7442,182 +7530,6 @@ x-examples:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       fulfillment_ids:
                         - '1'
-                      quote:
-                        price:
-                          currency: INR
-                          value: '1100'
-                        breakup:
-                          - item:
-                              id: 0253719F295521CED39EC9C2F3C8DCDE
-                              price:
-                                currency: INR
-                                value: '1100.00'
-                              tags:
-                                - descriptor:
-                                    code: TYPE
-                                  list:
-                                    - descriptor:
-                                        code: TYPE
-                                      value: item
-                            price:
-                              currency: INR
-                              value: '1100'
-                            title: Fullstack Engineer
-                        ttl: P1D
-                      tags:
-                        - descriptor:
-                            code: ACADEMIC-ELIGIBILITY
-                            name: Academic Eligibility
-                          list:
-                            - descriptor:
-                                code: COURSE-NAME
-                                name: Name of the course
-                              value: Class-X
-                            - descriptor:
-                                code: MIN-PERCENTAGE
-                                name: >-
-                                  Minimum percentage of marks to be obtained in
-                                  the course for eligibility
-                              value: '60'
-                            - descriptor:
-                                code: MANDATORY-ELIGIBILITY
-                                name: Mandatory Eligibility
-                              value: 'true'
-                        - descriptor:
-                            code: ACADEMIC-ELIGIBILITY
-                            name: Academic Eligibility
-                          list:
-                            - descriptor:
-                                code: COURSE-NAME
-                                name: Name of the course
-                              value: Class-XII
-                            - descriptor:
-                                code: MIN-PERCENTAGE
-                                name: >-
-                                  Minimum percentage of marks to be obtained in
-                                  the course for eligibility
-                              value: '60'
-                            - descriptor:
-                                code: MANDATORY-ELIGIBILITY
-                                name: Mandatory Eligibility
-                              value: 'true'
-                        - descriptor:
-                            code: ACADEMIC-ELIGIBILITY
-                            name: Academic Eligibility
-                          list:
-                            - descriptor:
-                                code: COURSE-LEVEL
-                                name: Level of the course
-                              value: Under Graduate
-                            - descriptor:
-                                code: MIN-PERCENTAGE
-                                name: >-
-                                  Minimum percentage of marks to be obtained in
-                                  the course for eligibility
-                              value: '60'
-                            - descriptor:
-                                code: MANDATORY-ELIGIBILITY
-                                name: Mandatory Eligibility
-                              value: 'true'
-                        - descriptor:
-                            code: ACADEMIC-ELIGIBILITY
-                            name: Academic Eligibility
-                          list:
-                            - descriptor:
-                                code: COURSE-LEVEL
-                                name: Level of the course
-                              value: Graduate
-                            - descriptor:
-                                code: MANDATORY-ELIGIBILITY
-                                name: Mandatory Eligibility
-                              value: 'false'
-                        - descriptor:
-                            code: JOB-REQUIREMENTS
-                            name: Job Requirements
-                          list:
-                            - descriptor:
-                                code: REQ-EXPERIENCE
-                                name: Required work experience in years
-                              value: '2.5'
-                            - descriptor:
-                                code: REQ-PROF-SKILL
-                                name: Skills required for the role
-                              value: android-development
-                            - descriptor:
-                                code: REQ-PROF-SKILL
-                                name: Skills required for the role
-                              value: dev-ops
-                            - descriptor:
-                                code: REQ-PROF-SKILL
-                                name: Additional skills required for the job
-                              value: >-
-                                You have 8+ years of engineering experience,
-                                predominantly in shipping user-facing production
-                                features
-                        - descriptor:
-                            code: JOB-RESPONSIBILITIES
-                            name: Job Responsibilities
-                          list:
-                            - descriptor:
-                                code: RESPONSIBILITY
-                                name: Responsibility
-                              value: >-
-                                Build frontend experiences for our tools (Web,
-                                PWA and React Native)
-                            - descriptor:
-                                code: RESPONSIBILITY
-                                name: Responsibility
-                              value: >-
-                                Articulate a long term technical direction and
-                                vision for building, maintaining, and scaling
-                                our web and mobile platforms
-                            - descriptor:
-                                code: RESPONSIBILITY
-                                name: Responsibility
-                              value: >-
-                                Create trustworthy user experiences by building
-                                interfaces that are simple, easy to comprehend,
-                                performant and reliable using modern tools like
-                                React, React Native, Typescript, Node.js, Jest
-                                and Webpack.
-                            - descriptor:
-                                code: RESPONSIBILITY
-                                name: Responsibility
-                              value: >-
-                                Mentor and train other team members on design
-                                techniques and coding standards.
-                        - descriptor:
-                            code: LISTING-DETAILS
-                            name: Listing Details
-                          list:
-                            - descriptor:
-                                code: INDUSTRY-TYPE
-                                name: Industry type
-                              value: IT Services & Consulting
-                            - descriptor:
-                                code: DEPARTMENT
-                                name: Department
-                              value: Engineering - Software & QA
-                            - descriptor:
-                                code: EMPLOYMENT-TYPE
-                                name: Employment type
-                              value: full-time
-                            - descriptor:
-                                code: JOB-ROLE
-                                name: Job role
-                              value: DevOps Engineer
-                        - descriptor:
-                            code: SALARY-INFO
-                            name: Salary Information
-                          list:
-                            - descriptor:
-                                code: GROSS-MIN
-                                name: Minimum gross pay
-                              value: '900000'
-                            - descriptor:
-                                code: GROSS-MAX
-                                name: Maximum gross pay
-                              value: '1200000'
                       fulfillments:
                         - id: '1'
                           type: REMOTE
@@ -7672,6 +7584,56 @@ x-examples:
                                         code: FILE-FORMAT
                                         name: File Format
                                       value: pdf
+                  quote:
+                    price:
+                      currency: INR
+                      value: '1400'
+                    breakup:
+                      - id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '1100'
+                        title: Fullstack Engineer
+                        tags:
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                      - title: NP Fees
+                        id: '1'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: np_fees
+                            list:
+                              - code: id
+                                value: '1'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.5'
+                              - code: COMMERCIAL_NAME
+                                value: qualified
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER-EXTENDED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                    ttl: P1D
       on_confirm:
         examples:
           - value:
@@ -7695,7 +7657,7 @@ x-examples:
               message:
                 order:
                   id: '1677140405881'
-                  status: Created
+                  status: Accepted
                   provider:
                     id: '1'
                     descriptor:
@@ -7927,6 +7889,140 @@ x-examples:
                               contact:
                                 phone: '9999999999999'
                                 email: abc@abc.bc
+                  quote:
+                    price:
+                      currency: INR
+                      value: '1400'
+                    breakup:
+                      - id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '1100'
+                        title: Fullstack Engineer
+                        tags:
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                      - title: NP Fees
+                        id: '1'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: np_fees
+                            list:
+                              - code: id
+                                value: '1'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.5'
+                              - code: COMMERCIAL_NAME
+                                value: qualified
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER-EXTENDED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                    ttl: P1D
+                  fulfillments:
+                    - id: '1'
+                      customer:
+                        person:
+                          name: Sanjay
+                          gender: Male
+                          age: '35'
+                          skills:
+                            - code: Android
+                              name: Android
+                            - code: AWS
+                              name: AWS
+                          languages:
+                            - code: en
+                              name: english
+                            - code: ml
+                              name: Malayalam
+                            - code: hi
+                              name: Hindi
+                          tags:
+                            - descriptor:
+                                code: CURRENT-EXPERIENCE
+                                name: Current Experience
+                              list:
+                                - descriptor:
+                                    code: EXP-YEARS
+                                    name: Experience
+                                  value: P4Y2M
+                                - descriptor:
+                                    code: CURRENT-COMPANY
+                                    name: Current Company
+                                  value: ABC tech
+                            - descriptor:
+                                code: SALARY-DETAILS
+                                name: Salary Details
+                              list:
+                                - descriptor:
+                                    code: EXPECTED-SALARY
+                                    name: Expected Salary
+                                  value: '80000'
+                                - descriptor:
+                                    code: CURRENT-SALARY
+                                    name: Current Salary
+                                  value: '50000'
+                            - descriptor:
+                                code: DOCUMENTS
+                                name: Documents
+                              list:
+                                - descriptor:
+                                    code: RESUME
+                                    name: Resume
+                                  value: https://link-to-the-document.com
+                        contact:
+                          phone: '9999999999999'
+                          email: abc@abc.bc
+                      tags:
+                        - descriptor:
+                            code: DISTRIBUTOR-DETAILS
+                            name: Distributor Details
+                          list:
+                            - descriptor:
+                                code: DISTRIBUTOR-ID
+                                name: Distributor Id
+                              value: PNB
+                            - descriptor:
+                                code: DISTRIBUTOR-NAME
+                                name: Distributor Name
+                              value: Pay Near By
+                            - descriptor:
+                                code: DISTRIBUTOR-PHONE
+                                name: Distributor Phone
+                              value: '9123456789'
+                            - descriptor:
+                                code: DISTRIBUTOR-EMAIL
+                                name: Distributor Email
+                              value: support@pnb.com
+                            - descriptor:
+                                code: AGENT-ID
+                                name: Agent Id
+                              value: agent-123
+                            - descriptor:
+                                code: AGENT-VERIFIED
+                                name: Agent Verified
+                              value: 'true'
       on_update:
         examples:
           - value:
@@ -8575,4 +8671,3 @@ x-examples:
       find jobs.
     example_set: *ref_17
 x-attributes: null
-x-errorcodes: null

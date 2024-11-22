@@ -22,3 +22,10 @@ value:
         id: "1"
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
+          tags:
+            - descriptor:
+                code: NP_FEES
+                name: np_fees
+              list:
+                - code: id
+                  value: "1"
