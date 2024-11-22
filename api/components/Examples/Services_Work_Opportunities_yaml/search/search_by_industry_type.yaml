@@ -29,12 +29,6 @@ value:
         BUYER_FINDER_FEE_AMOUNT: '100'
       tags:
         - descriptor:
-            code: CATALOG_INC
-          list:
-            - descriptor:
-                code: MODE
-              value: start
-        - descriptor:
             code: BAP_TERMS
           list:
             - descriptor:

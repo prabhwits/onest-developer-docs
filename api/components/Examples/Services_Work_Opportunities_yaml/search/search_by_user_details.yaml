@@ -16,6 +16,9 @@ value:
     ttl: PT30S
   message:
     intent:
+      payment:
+          BUYER_FINDER_FEE_TYPE: PERCENT
+          BUYER_FINDER_FEE_PERCENTAGE: '3'
       fulfillment:
         customer:
           person:
@@ -26,3 +29,16 @@ value:
                 name: Assembly Operator
               - code: ELECTRICIAN
                 name: Electrician
+      tags:
+          - descriptor:
+              code: BAP_TERMS
+            list:
+              - descriptor:
+                  code: STATIC_TERMS
+                value: static_terms_value
+              - descriptor:
+                  code: STATIC_TERMS_NEW
+                value: static_terms_new_value
+              - descriptor:
+                  code: EFFECTIVE_DATE
+                value: '2023-02-22T11:20:10.122Z'
