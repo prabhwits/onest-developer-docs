@@ -205,6 +205,21 @@ SALARY:
     description: Average gross pay
     reference: <PR/Issue/Discussion Links md format text>  
   
+LISTING-DETAILS:
+  - code: INDUSTRY-TYPE
+    description: Industry Type - ["Information Technology", "Healthcare", "Education", "Finance", "Manufacturing", "Retail", "Hospitality", "Transportation", "Real Estate", "Media & Entertainment"]
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: DEPARTMENT
+    description: Department - ["Engineering", "Sales", "Marketing", "Human Resources", "Operations", "Finance", "Legal", "Customer Support", "IT Support", "Research & Development", "Logistics", "Design"]
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: JOB-LEVEL
+    description: Job Level - ["Entry-level", "First-level management", "Intermediate Manager", "Middle management", "Mid-level", "Senior Manager", "Senior-level", "Executive management", "Vice President", "Chief Financial Officer", "Chief Executive Officer"]
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: GENDER
+    description: Gender - ["Male", "Female", "Transgender", "Others"]
+    reference: <PR/Issue/Discussion Links md format text>
+
+  
 EQUIPMENT_ATTRIBUTES:
   - code: ALIAS
     description: Item alias name or alternate name (Optional)
