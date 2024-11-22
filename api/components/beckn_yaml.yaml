@@ -226,43 +226,43 @@ paths:
   #     responses:
   #       default:
   #         $ref: '#/paths/~1init/post/responses/default'
-  # /cancel:
-  #   post:
-  #     tags:
-  #       - Beckn Provider Platform (BPP)
-  #     description: Cancel an order
-  #     requestBody:
-  #       content:
-  #         application/json:
-  #           schema:
-  #             type: object
-  #             properties:
-  #               context:
-  #                 allOf:
-  #                   - $ref: '#/components/schemas/Context'
-  #                   - properties:
-  #                       action:
-  #                         enum:
-  #                           - cancel
-  #                     required:
-  #                       - action
-  #               message:
-  #                 type: object
-  #                 properties:
-  #                   order_id:
-  #                     $ref: '#/components/schemas/Order/properties/id'
-  #                   cancellation_reason_id:
-  #                     $ref: '#/components/schemas/Option/properties/id'
-  #                   descriptor:
-  #                     $ref: '#/components/schemas/Descriptor'
-  #                 required:
-  #                   - order_id
-  #             required:
-  #               - context
-  #               - message
-  #     responses:
-  #       default:
-  #         $ref: '#/paths/~1init/post/responses/default'
+  /cancel:
+    post:
+      tags:
+        - Beckn Application Platform (BAP)
+      description: Cancel an order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - cancel
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    order_id:
+                      $ref: '#/components/schemas/Order/properties/id'
+                    cancellation_reason_id:
+                      $ref: '#/components/schemas/Option/properties/id'
+                    descriptor:
+                      $ref: '#/components/schemas/Descriptor'
+                  required:
+                    - order_id
+              required:
+                - context
+                - message
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
   /update:
     post:
       tags:
@@ -535,40 +535,40 @@ paths:
   #     responses:
   #       default:
   #         $ref: '#/paths/~1init/post/responses/default'
-  # /on_cancel:
-  #   post:
-  #     tags:
-  #       - Beckn Application Platform (BAP)
-  #     description: Send cancellation request_id with reasons list in case of cancellation request. Else send cancelled order object
-  #     requestBody:
-  #       content:
-  #         application/json:
-  #           schema:
-  #             type: object
-  #             properties:
-  #               context:
-  #                 allOf:
-  #                   - $ref: '#/components/schemas/Context'
-  #                   - properties:
-  #                       action:
-  #                         enum:
-  #                           - on_cancel
-  #                     required:
-  #                       - action
-  #               message:
-  #                 type: object
-  #                 properties:
-  #                   order:
-  #                     $ref: '#/components/schemas/Order'
-  #                 required:
-  #                   - order
-  #               error:
-  #                 $ref: '#/components/schemas/Error'
-  #             required:
-  #               - context
-  #     responses:
-  #       default:
-  #         $ref: '#/paths/~1init/post/responses/default'
+  /on_cancel:
+    post:
+      tags:
+        - Beckn Provider Platform (BPP)
+      description: Send cancellation request_id with reasons list in case of cancellation request. Else send cancelled order object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  allOf:
+                    - $ref: '#/components/schemas/Context'
+                    - properties:
+                        action:
+                          enum:
+                            - on_cancel
+                      required:
+                        - action
+                message:
+                  type: object
+                  properties:
+                    order:
+                      $ref: '#/components/schemas/Order'
+                  required:
+                    - order
+                error:
+                  $ref: '#/components/schemas/Error'
+              required:
+                - context
+      responses:
+        default:
+          $ref: '#/paths/~1init/post/responses/default'
   /on_update:
     post:
       tags:

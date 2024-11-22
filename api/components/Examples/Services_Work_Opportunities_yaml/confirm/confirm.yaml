@@ -22,7 +22,7 @@ value:
       provider:
         id: '1'
       items:
-        - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+        - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
             - '1'
       fulfillments:
@@ -53,12 +53,10 @@ value:
                         code: EXP-YEARS
                         name: Experience
                       value: P4Y2M
-                      
                     - descriptor:
                         code: CURRENT-COMPANY
                         name: Current Company
                       value: ABC tech
-                      
                 - descriptor:
                     code: SALARY-DETAILS
                     name: Salary Details
@@ -67,12 +65,10 @@ value:
                         code: EXPECTED-SALARY
                         name: Expected Salary
                       value: '80000'
-                      
                     - descriptor:
                         code: CURRENT-SALARY
                         name: Current Salary
                       value: '50000'
-                      
                 - descriptor:
                     code: DOCUMENTS
                     name: Documents
@@ -81,7 +77,6 @@ value:
                         code: RESUME
                         name: Resume
                       value: https://link-to-the-document.com
-                      
             contact:
               phone: '9999999999999'
               email: abc@abc.bc
