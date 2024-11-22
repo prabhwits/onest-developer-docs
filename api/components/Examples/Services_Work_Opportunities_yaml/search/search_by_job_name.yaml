@@ -12,26 +12,26 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: '2022-10-11T09:55:41.161Z'
+    timestamp: "2022-10-11T09:55:41.161Z"
     ttl: PT30S
   message:
     intent:
       payment:
-          BUYER_FINDER_FEE_TYPE: PERCENT
-          BUYER_FINDER_FEE_PERCENTAGE: '3'
+        BUYER_FINDER_FEE_TYPE: PERCENT
+        BUYER_FINDER_FEE_PERCENTAGE: "3"
       item:
         descriptor:
           name: Engineer
       tags:
-          - descriptor:
-              code: BAP_TERMS
-            list:
-              - descriptor:
-                  code: STATIC_TERMS
-                value: static_terms_value
-              - descriptor:
-                  code: STATIC_TERMS_NEW
-                value: static_terms_new_value
-              - descriptor:
-                  code: EFFECTIVE_DATE
-                value: '2023-02-22T11:20:10.122Z'
+        - descriptor:
+            code: BAP_TERMS
+          list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: static_terms_value
+            - descriptor:
+                code: STATIC_TERMS_NEW
+              value: static_terms_new_value
+            - descriptor:
+                code: EFFECTIVE_DATE
+              value: "2023-02-22T11:20:10.122Z"

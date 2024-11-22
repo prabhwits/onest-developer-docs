@@ -157,6 +157,18 @@ steps:
     example:
       $ref: "../../Examples/Services_Work_Opportunities_yaml/on_status/on_status.yaml"
   - summary: Description
+    api: cancel
+    description: BAP sends request for cancellation of job application.
+    reference: if any
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/cancel/cancel.yaml"
+  - summary: Description
+    api: on_cancel
+    description: BPP sends confirmation of cancellation of job application.
+    reference: if any
+    example:
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/on_cancel/on_cancel.yaml"
+  - summary: Description
     api: update
     description: BAP confirms user wants to submit the job application.
     example:

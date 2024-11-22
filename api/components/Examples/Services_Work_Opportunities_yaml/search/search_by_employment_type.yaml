@@ -17,8 +17,8 @@ value:
   message:
     intent:
       payment:
-            BUYER_FINDER_FEE_TYPE: PERCENT
-            BUYER_FINDER_FEE_PERCENTAGE: '3'
+        BUYER_FINDER_FEE_TYPE: PERCENT
+        BUYER_FINDER_FEE_PERCENTAGE: '3'
       item:
         tags:
           - descriptor:
@@ -28,15 +28,15 @@ value:
                   code: EMPLOYMENT-TYPE
                 value: full-time
       tags:
-          - descriptor:
-              code: BAP_TERMS
-            list:
-              - descriptor:
-                  code: STATIC_TERMS
-                value: static_terms_value
-              - descriptor:
-                  code: STATIC_TERMS_NEW
-                value: static_terms_new_value
-              - descriptor:
-                  code: EFFECTIVE_DATE
-                value: '2023-02-22T11:20:10.122Z'
+        - descriptor:
+            code: BAP_TERMS
+          list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: static_terms_value
+            - descriptor:
+                code: STATIC_TERMS_NEW
+              value: static_terms_new_value
+            - descriptor:
+                code: EFFECTIVE_DATE
+              value: '2023-02-22T11:20:10.122Z'

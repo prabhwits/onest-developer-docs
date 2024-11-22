@@ -16,7 +16,6 @@ value:
         code: IND
     timestamp: '2023-02-23T10:14:05Z'
     ttl: PT30S
-
   message:
     order:
       provider:
@@ -32,37 +31,18 @@ value:
               name: Maharastra
               code: MH
       items:
-        - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
-          descriptor:
-            name: Fullstack Engineer
-            long_desc: >-
-              We’re on a search for a Staff Mobile Developer with the following
-              attributes: Critical Thinking- You are able to skillfully
-              conceptualise, apply, analyse and evaluate information gathered
-              from observation, experience or communication and use it as a
-              guide to action Data-Driven attitude — You often propose solutions
-              or make a point in a logical and objective manner, substantiated
-              with accurate data and evidence Dealing with Ambiguity — You can
-              effectively cope with change and uncertainty, and are comfortable
-              when things are up in the air Goal-oriented — You are driven and
-              can be counted on to exceed goals. You steadfastly push yourself
-              and others to achieve results all the time Problem Solving — You
-              can easily identify and solve complex problems in a methodological
-              manner 
+        - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
             - '1'
-          location_ids:
-            - L1
-          
           xinput:
             required: true
             head:
               descriptor:
                 name: Application Form
               index:
-                min: 0
-                cur: 0
-                max: 0
+                min: 1
+                cur: 1
+                max: 2
               headings:
                 - Candidate Details
             form:
@@ -70,6 +50,28 @@ value:
               url: >-
                 https://6vs8xnx5i7.jobhub.co.in/loans-kyc/xinput/formid/a23f2fdfbbb8ac402bfd54f-1
               resubmit: false
+          quote:
+            price:
+              currency: INR
+              value: '1100'
+            breakup:
+              - item:
+                  id: 0253719F295521CED39EC9C2F3C8DCDE
+                  price:
+                    currency: INR
+                    value: '1100.00'
+                  tags:
+                    - descriptor:
+                        code: TYPE
+                      list:
+                        - descriptor:
+                            code: TYPE
+                          value: item
+                price:
+                  currency: INR
+                  value: '1100'
+                title: Fullstack Engineer
+            ttl: P1D
           tags:
             - descriptor:
                 code: ACADEMIC-ELIGIBILITY
@@ -246,7 +248,6 @@ value:
                     code: GROSS-MAX
                     name: Maximum gross pay
                   value: '1200000'
-                  
           fulfillments:
             - id: '1'
               type: REMOTE
@@ -281,12 +282,10 @@ value:
                             code: EXPECTED-SALARY
                             name: Expected Salary
                           value: '1000000'
-                          
                         - descriptor:
                             code: TOTAL-EXPERIENCE
                             name: Total Experience
                           value: '4'
-                          
                     - descriptor:
                         code: DOCUMENTS
                         name: Documents
@@ -295,14 +294,11 @@ value:
                             code: DOC-TYPE
                             name: Document Type
                           value: resume
-                          
                         - descriptor:
                             code: LINK
                             name: Document Link
                           value: https://example.com/resume.pdf
-                          
                         - descriptor:
                             code: FILE-FORMAT
                             name: File Format
                           value: pdf
-                          

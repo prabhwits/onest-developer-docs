@@ -41,9 +41,6 @@ value:
             - '1'
             - '2'
             - '3'
-          location_ids:
-            - L1
-          
           tags:
             - descriptor:
                 code: ACADEMIC-ELIGIBILITY
@@ -220,4 +217,25 @@ value:
                     code: GROSS-MAX
                     name: Maximum gross pay
                   value: '1200000'
-                  
+          quote:
+            price:
+              currency: INR
+              value: '1100'
+            breakup:
+              - item:
+                  id: 0253719F295521CED39EC9C2F3C8DCDE
+                  price:
+                    currency: INR
+                    value: '1100.00'
+                  tags:
+                    - descriptor:
+                        code: TYPE
+                      list:
+                        - descriptor:
+                            code: TYPE
+                          value: item
+                price:
+                  currency: INR
+                  value: '1100'
+                title: Fullstack Engineer
+            ttl: P1D

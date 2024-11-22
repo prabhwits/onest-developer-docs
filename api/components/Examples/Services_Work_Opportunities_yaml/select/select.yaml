@@ -14,12 +14,11 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: '2023-02-14T12:11:46.129Z'
+    timestamp: "2023-02-14T12:11:46.129Z"
     ttl: PT30S
-
   message:
     order:
       provider:
-        id: '1'
+        id: "1"
       items:
-        - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+        - id: 0253719F295521CED39EC9C2F3C8DCDE
