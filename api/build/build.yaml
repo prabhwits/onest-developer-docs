@@ -2548,7 +2548,7 @@ x-flows:
           BAP will make search request with an intent, example :- job name, job
           provider, location etc.
         reference: if any
-        example:
+        example: &ref_5
           value:
             context:
               domain: ONDC:ONEST10
@@ -3017,7 +3017,7 @@ x-flows:
           to the user. Once the user chooses a job, BAP will make select API
           with item ID to get the complete details about the job.
         reference: if any
-        example:
+        example: &ref_6
           value:
             context:
               domain: ONDC:ONEST10
@@ -3050,7 +3050,7 @@ x-flows:
           valid. If the listing is still valid, BPP will send the on_select call
           with complete details of the job listing.
         reference: if any
-        example:
+        example: &ref_7
           value:
             context:
               domain: ONDC:ONEST10
@@ -3274,7 +3274,7 @@ x-flows:
           BAP sends the customer details to the BPP in the init API. This is the
           initializing step of the job application process.
         reference: if any
-        example:
+        example: &ref_8
           value:
             value:
               context:
@@ -3367,7 +3367,7 @@ x-flows:
           If BPP wants to collect additional details of the user, it will send
           an xinput form in the on_init request.
         reference: if any
-        example:
+        example: &ref_9
           value:
             context:
               domain: ONDC:ONEST10
@@ -3652,7 +3652,7 @@ x-flows:
       - summary: Description
         api: confirm
         description: BAP confirms user wants to submit the job application.
-        example:
+        example: &ref_10
           value:
             context:
               domain: ONDC:ONEST10
@@ -3769,7 +3769,7 @@ x-flows:
         api: on_confirm
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example:
+        example: &ref_11
           value:
             value:
               context:
@@ -4032,7 +4032,7 @@ x-flows:
         api: status
         description: BAP sends request for status of submission of job application.
         reference: if any
-        example:
+        example: &ref_12
           value:
             value:
               context:
@@ -4059,7 +4059,7 @@ x-flows:
         api: on_status
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example:
+        example: &ref_13
           value:
             value:
               context:
@@ -4338,7 +4338,7 @@ x-flows:
       - summary: Description
         api: update
         description: BAP confirms user wants to submit the job application.
-        example:
+        example: &ref_14
           value:
             context:
               domain: ONDC:ONEST10
@@ -4371,7 +4371,7 @@ x-flows:
         api: on_update
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example:
+        example: &ref_15
           value:
             context:
               domain: ONDC:ONEST10
@@ -4625,6 +4625,620 @@ x-flows:
                             contact:
                               phone: '9999999999999'
                               email: abc@abc.bc
+  - summary: ONDC:ONEST10 - Work Opportunities(Commercials)
+    description: >-
+      The following is an illustrative flow for a job application transaction,
+      where a candidate intends to apply for a specific job role.
+    details:
+      - description: Sequence Diagram for Services Work Opportunities(Commercials)
+        mermaidGraph: |-
+          sequenceDiagram
+            participant BAP
+            participant ONEST_Gateway
+            participant BPP
+
+            BAP->>ONEST_Gateway: search
+            ONEST_Gateway->>BPP: search
+            BPP-->>ONEST_Gateway: on_search
+            ONEST_Gateway-->>BAP: on_search
+
+            BAP->>ONEST_Gateway: select
+            ONEST_Gateway->>BPP: select
+            BPP-->>ONEST_Gateway: on_select
+            ONEST_Gateway-->>BAP: on_select
+
+            BAP->>ONEST_Gateway: init
+            ONEST_Gateway->>BPP: init
+            BPP-->>ONEST_Gateway: on_init
+            ONEST_Gateway-->>BAP: on_init
+
+            BAP->>ONEST_Gateway: confirm
+            ONEST_Gateway->>BPP: confirm
+            BPP-->>ONEST_Gateway: on_confirm
+            ONEST_Gateway-->>BAP: on_confirm
+
+            BAP->>ONEST_Gateway: status
+            ONEST_Gateway->>BPP: status
+            BPP-->>ONEST_Gateway: on_status
+            ONEST_Gateway-->>BAP: on_status
+
+            BAP->>ONEST_Gateway: update
+            ONEST_Gateway->>BPP: update
+            BPP-->>ONEST_Gateway: on_update
+            ONEST_Gateway-->>BAP: on_update
+
+            BAP->>ONEST_Gateway: cancel
+            ONEST_Gateway->>BPP: cancel
+            BPP-->>ONEST_Gateway: on_cancel
+            ONEST_Gateway-->>BAP: on_cancel
+      - description: Ordering
+        mermaidGraph: |-
+          sequenceDiagram
+            participant B as Buyer
+            participant BA as BuyerApp
+            participant G as Gateway
+            participant SA as SellerApp
+            Note Over B,SA: **SELECT FLOW**
+            B ->> BA: Selects one of the <br>providers for job
+            BA ->> SA: **/select** - A job is selected with a <br>TTL for receiving response
+            SA ->> BA: **/on_select** - Responds to the selection with <br>breakup, quote including logistics charges
+            BA ->> B: Shows response with price details
+      - description: Initializing the order
+        mermaidGraph: |-
+          sequenceDiagram
+            participant B as Buyer
+            participant BA as BuyerApp
+            participant G as Gateway
+            participant SA as SellerApp
+            Note Over B,SA: **INITIALIZATION FLOW**
+            B ->> BA: Proceeds with the Order
+            BA ->> SA: **/init** - Initializes the order and <br>sends billing details
+            SA ->> BA: **/on_init** - Order initialization with <br>fulfillment & settlement information <br>including UPI or NEFT/IMPS/Bank Transfer
+            BA ->> B: Confirms initialization
+      - description: Order Confirmation
+        mermaidGraph: |-
+          sequenceDiagram
+            participant B as Buyer
+            participant BA as BuyerApp
+            participant SA as SellerApp
+            Note Over B,SA: **CONFIRMATION FLOW**
+            B ->> BA: Confirms the Order
+            BA ->> SA: **/confirm** - Creates order to create final digital contract
+            SA ->> BA: **/on_confirm** - Accepts the order 
+            BA ->> B: Confirms order and delivery 
+      - description: Fulfillment
+        mermaidGraph: |-
+          sequenceDiagram
+            participant B as Buyer
+            participant BA as BuyerApp
+            participant SA as SellerApp 
+            Note Over B,SA: **ORDER STATUS FLOW**
+            B ->> BA: Checks the order status
+            BA ->> SA: **/status** - Enquire order status <br>or tracking information
+            SA ->> BA: **/on_status** - Latest order and fulfillment status is sent
+            BA ->> B: Updates the latest order <br>and fulfillment information
+    reference: if any
+    steps:
+      - summary: Description
+        api: search
+        description: >-
+          BAP will make search request with an intent, example :- job name, job
+          provider, location etc.
+        reference: if any
+        example: *ref_5
+      - summary: Description
+        api: on_search
+        description: >-
+          BPP will create a catalogue containing jobs with matching criteria and
+          sends it as on_search request.
+        reference: if any
+        example:
+          value:
+            value:
+              context:
+                domain: ONDC:ONEST10
+                action: on_search
+                version: 2.0.0
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
+                location:
+                  city:
+                    code: std:080
+                  country:
+                    code: IND
+                timestamp: '2023-02-22T11:45:10.171Z'
+                ttl: P30S
+              message:
+                catalog:
+                  descriptor:
+                    name: Affindi Jobs
+                  providers:
+                    - id: '1'
+                      descriptor:
+                        name: Affinidi
+                        short_desc: Short Description about the company
+                        images:
+                          - url: url of the image of the provider
+                      fulfillments:
+                        - id: '1'
+                          type: REMOTE
+                        - id: '2'
+                          type: HYBRID
+                        - id: '3'
+                          type: ONSITE
+                      locations:
+                        - id: L1
+                          city:
+                            name: Pune
+                            code: std:020
+                          state:
+                            name: Maharastra
+                            code: MH
+                        - id: L2
+                          city:
+                            name: Thane
+                            code: std:022
+                          state:
+                            name: Maharastra
+                            code: MH
+                        - id: L3
+                          city:
+                            name: Lucknow
+                            code: std:0522
+                          state:
+                            name: Uttar Pradesh
+                            code: UP
+                      items:
+                        - id: D7F8606A370DA9966DF15E62A81C374B
+                          descriptor:
+                            name: DevOps Engineer
+                            long_desc: >-
+                              We’re on a search for a DevOps Engineer with the
+                              following attributes: Critical Thinking- You are
+                              able to skillfully conceptualise, apply, analyse
+                              and evaluate information gathered from
+                              observation, experience or communication and use
+                              it as a guide to action Data-Driven attitude — You
+                              often propose solutions or make a point in a
+                              logical and objective manner, substantiated with
+                              accurate data and evidence Dealing with Ambiguity
+                              — You can effectively cope with change and
+                              uncertainty, and are comfortable when things are
+                              up in the air Goal-oriented — You are driven and
+                              can be counted on to exceed goals. You steadfastly
+                              push yourself and others to achieve results all
+                              the time Problem Solving — You can easily identify
+                              and solve complex problems in a methodological
+                              manner 
+                            media:
+                              - mimetype: audio/mp4
+                                url: http://url-to-audio-about-job
+                              - mimetype: video/mp4
+                                url: http://url-to-video-about-job
+                          quantity:
+                            available:
+                              count: 150
+                          location_ids:
+                            - L1
+                          fulfillment_ids:
+                            - '1'
+                            - '2'
+                            - '3'
+                          time:
+                            range:
+                              start: '2023-01-03T13:23:10.171Z'
+                              end: '2023-02-03T13:23:10.171Z '
+                          tags:
+                            - descriptor:
+                                code: SALARY-INFO
+                                name: Salary information
+                              list:
+                                - descriptor:
+                                    code: GROSS-MIN
+                                    name: Minimum gross pay
+                                  value: '900000'
+                                - descriptor:
+                                    code: GROSS-MAX
+                                    name: Maximum gross pay
+                                  value: '1200000'
+                            - descriptor:
+                                code: NP_FEES
+                                name: np_fees
+                              list:
+                                - code: COMMERCIAL_TYPE
+                                  value: amount
+                                - code: COMMERCIAL_VALUE
+                                  value: '300'
+                                - code: COMMERCIAL_NAME
+                                  value: verified
+                                - code: COMMERCIAL_TRIGGERING_STATE
+                                  value: APPLICATION-SUBMITTED
+                            - descriptor:
+                                code: LISTING-DETAILS
+                                name: Listing details
+                              list:
+                                - descriptor:
+                                    code: INDUSTRY-TYPE
+                                    name: Industry type
+                                  value: IT Services & Consulting
+                                - descriptor:
+                                    code: DEPARTMENT
+                                    name: Department
+                                  value: Engineering - Software & QA
+                                - descriptor:
+                                    code: EMPLOYMENT-TYPE
+                                    name: Employment type
+                                  value: full-time
+                                - descriptor:
+                                    code: JOB-ROLE
+                                    name: Job role
+                                  value: DevOps Engineer
+                        - id: 0253719F295521CED39EC9C2F3C8DCDE
+                          descriptor:
+                            name: Fullstack Engineer
+                            long_desc: >-
+                              We’re on a search for a Staff Mobile Developer
+                              with the following attributes: Critical Thinking-
+                              You are able to skillfully conceptualise, apply,
+                              analyse and evaluate information gathered from
+                              observation, experience or communication and use
+                              it as a guide to action Data-Driven attitude — You
+                              often propose solutions or make a point in a
+                              logical and objective manner, substantiated with
+                              accurate data and evidence Dealing with Ambiguity
+                              — You can effectively cope with change and
+                              uncertainty, and are comfortable when things are
+                              up in the air Goal-oriented — You are driven and
+                              can be counted on to exceed goals. You steadfastly
+                              push yourself and others to achieve results all
+                              the time Problem Solving — You can easily identify
+                              and solve complex problems in a methodological
+                              manner
+                            media:
+                              - mimetype: audio/mp4
+                                url: http://url-to-audio-about-job
+                              - mimetype: video/mp4
+                                url: http://url-to-video-about-job
+                          quantity:
+                            available:
+                              count: 50
+                          time:
+                            range:
+                              start: '2023-01-03T13:23:10.171Z'
+                              end: '2023-02-03T13:23:10.171Z '
+                          location_ids:
+                            - L2
+                          fulfillment_ids:
+                            - '1'
+                            - '2'
+                            - '3'
+                          tags:
+                            - descriptor:
+                                code: ACADEMIC-ELIGIBILITY
+                                name: Academic eligibility
+                              list:
+                                - descriptor:
+                                    code: COURSE-NAME
+                                    name: Name of the course
+                                  value: Class-X
+                                - descriptor:
+                                    code: MIN-PERCENTAGE
+                                    name: >-
+                                      Minimum percentage of marks to be obtained
+                                      in the course for eligibility
+                                  value: '60'
+                                - descriptor:
+                                    code: MANDATORY-ELIGIBILITY
+                                    name: Mandatory Eligibility
+                                  value: 'true'
+                            - descriptor:
+                                code: ACADEMIC-ELIGIBILITY
+                                name: Academic eligibility
+                              list:
+                                - descriptor:
+                                    code: COURSE-NAME
+                                    name: Name of the course
+                                  value: Class-XII
+                                - descriptor:
+                                    code: MIN-PERCENTAGE
+                                    name: >-
+                                      Minimum percentage of marks to be obtained
+                                      in the course for eligibility
+                                  value: '60'
+                                - descriptor:
+                                    code: MANDATORY-ELIGIBILITY
+                                    name: Mandatory Eligibility
+                                  value: 'true'
+                            - descriptor:
+                                code: ACADEMIC-ELIGIBILITY
+                                name: Academic eligibility
+                              list:
+                                - descriptor:
+                                    code: COURSE-LEVEL
+                                    name: Level of the course
+                                  value: Under Graduate
+                                - descriptor:
+                                    code: MIN-PERCENTAGE
+                                    name: >-
+                                      Minimum percentage of marks to be obtained
+                                      in the course for eligibility
+                                  value: '60'
+                                - descriptor:
+                                    code: MANDATORY-ELIGIBILITY
+                                    name: Mandatory Eligibility
+                                  value: 'true'
+                            - descriptor:
+                                code: ACADEMIC-ELIGIBILITY
+                                name: Academic eligibility
+                              list:
+                                - descriptor:
+                                    code: COURSE-LEVEL
+                                    name: Level of the course
+                                  value: Graduate
+                                - descriptor:
+                                    code: MANDATORY-ELIGIBILITY
+                                    name: Mandatory Eligibility
+                                  value: 'false'
+                            - descriptor:
+                                code: JOB-REQUIREMENTS
+                                name: Job requirements
+                              list:
+                                - descriptor:
+                                    code: REQ-EXPERIENCE
+                                    name: Required work experience in years
+                                  value: '2.5'
+                                - descriptor:
+                                    code: REQ-PROF-SKILL
+                                    name: Skills required for the role
+                                  value: android-development
+                                - descriptor:
+                                    code: REQ-PROF-SKILL
+                                    name: Skills required for the role
+                                  value: dev-ops
+                                - descriptor:
+                                    code: REQ-PROF-SKILL
+                                    name: Additional skills required for the job
+                                  value: >-
+                                    You have 8+ years of engineering experience,
+                                    predominantly in shipping user-facing
+                                    production features
+                            - descriptor:
+                                code: JOB-RESPONSIBILITIES
+                                name: Job responsibilities
+                              list:
+                                - descriptor:
+                                    code: RESPONSIBILITY
+                                    name: Responsibility
+                                  value: >-
+                                    Build frontend experiences for our tools
+                                    (Web, PWA and React Native)
+                                - descriptor:
+                                    code: RESPONSIBILITY
+                                    name: Responsibility
+                                  value: >-
+                                    Articulate a long term technical direction
+                                    and vision for building, maintaining, and
+                                    scaling our web and mobile platforms
+                                - descriptor:
+                                    code: RESPONSIBILITY
+                                    name: Responsibility
+                                  value: >-
+                                    Create trustworthy user experiences by
+                                    building interfaces that are simple, easy to
+                                    comprehend, performant and reliable using
+                                    modern tools like React, React Native,
+                                    Typescript, Node.js, Jest and Webpack.
+                                - descriptor:
+                                    code: RESPONSIBILITY
+                                    name: Responsibility
+                                  value: >-
+                                    Mentor and train other team members on
+                                    design techniques and coding standards.
+                            - descriptor:
+                                code: LISTING-DETAILS
+                                name: Listing details
+                              list:
+                                - descriptor:
+                                    code: INDUSTRY-TYPE
+                                    name: Industry type
+                                  value: IT Services & Consulting
+                                - descriptor:
+                                    code: DEPARTMENT
+                                    name: Department
+                                  value: Engineering - Software & QA
+                                - descriptor:
+                                    code: EMPLOYMENT-TYPE
+                                    name: Employment type
+                                  value: part-time
+                                - descriptor:
+                                    code: WORKING-HOURS
+                                    name: working hours
+                                  value: 1300-1700
+                                - descriptor:
+                                    code: JOB-ROLE
+                                    name: Job role
+                                  value: Fullstack Engineer
+                            - descriptor:
+                                code: SALARY-INFO
+                                name: Salary information
+                              list:
+                                - descriptor:
+                                    code: GROSS-MIN
+                                    name: Minimum gross pay
+                                  value: '900000'
+                                - descriptor:
+                                    code: GROSS-MAX
+                                    name: Maximum gross pay
+                                  value: '1200000'
+                            - descriptor:
+                                code: NP_FEES
+                                name: np_fees
+                              list:
+                                - code: COMMERCIAL_TYPE
+                                  value: percent
+                                - code: COMMERCIAL_VALUE
+                                  value: '0.5'
+                                - code: COMMERCIAL_NAME
+                                  value: recruitment
+                                - code: COMMERCIAL_TRIGGERING_STATE
+                                  value: OFFER-ACCEPTED
+                        - id: 34H1BH24GBH4BHH6DF15E62A81C374B
+                          descriptor:
+                            name: Sr. Devops Engineer
+                            long_desc: >-
+                              We’re on a search for a Staff Mobile Developer
+                              with the following attributes: Critical Thinking-
+                              You are able to skillfully conceptualise, apply,
+                              analyse and evaluate information gathered from
+                              observation, experience or communication and use
+                              it as a guide to action Data-Driven attitude — You
+                              often propose solutions or make a point in a
+                              logical and objective manner, substantiated with
+                              accurate data and evidence Dealing with Ambiguity
+                              — You can effectively cope with change and
+                              uncertainty, and are comfortable when things are
+                              up in the air Goal-oriented — You are driven and
+                              can be counted on to exceed goals. You steadfastly
+                              push yourself and others to achieve results all
+                              the time Problem Solving — You can easily identify
+                              and solve complex problems in a methodological
+                              manner 
+                            media:
+                              - mimetype: audio/mp4
+                                url: http://url-to-audio-about-job
+                              - mimetype: video/mp4
+                                url: http://url-to-video-about-job
+                          quantity:
+                            available:
+                              count: 150
+                          location_ids:
+                            - L1
+                          fulfillment_ids:
+                            - '1'
+                            - '2'
+                            - '3'
+                          time:
+                            range:
+                              start: '2023-01-03T13:23:10.171Z'
+                              end: '2023-02-03T13:23:10.171Z '
+                          tags:
+                            - descriptor:
+                                code: SALARY-INFO
+                                name: Salary information
+                              list:
+                                - descriptor:
+                                    code: AVERAGE
+                                    name: Average gross pay
+                                  value: '2200000'
+                            - descriptor:
+                                code: NP_FEES
+                                name: np_fees
+                              list:
+                                - code: COMMERCIAL_TYPE
+                                  value: amount
+                                - code: COMMERCIAL_VALUE
+                                  value: '500'
+                                - code: COMMERCIAL_NAME
+                                  value: verified
+                                - code: COMMERCIAL_TRIGGERING_STATE
+                                  value: APPLICATION-SUBMITTED
+                            - descriptor:
+                                code: LISTING-DETAILS
+                                name: Listing details
+                              list:
+                                - descriptor:
+                                    code: INDUSTRY-TYPE
+                                    name: Industry type
+                                  value: IT Services & Consulting
+                                - descriptor:
+                                    code: DEPARTMENT
+                                    name: Department
+                                  value: Engineering - Software & QA
+                                - descriptor:
+                                    code: EMPLOYMENT-TYPE
+                                    name: Employment type
+                                  value: contractual
+                                - descriptor:
+                                    code: WORK-DURATION
+                                    name: Work Duration
+                                  value: 120 days
+                                - descriptor:
+                                    code: JOB-ROLE
+                                    name: Job role
+                                  value: Sr. DevOps Engineer
+                      tags:
+                        - descriptor:
+                            code: NP_FEES
+                            name: np_fees
+                          list:
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.2'
+                            - code: COMMERCIAL_NAME
+                              value: qualified
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER-EXTENDED
+      - summary: Description
+        api: select
+        description: >-
+          BAP will receive the on_search request and displays the list of jobs
+          to the user. Once the user chooses a job, BAP will make select API
+          with item ID to get the complete details about the job.
+        reference: if any
+        example: *ref_6
+      - summary: Description
+        api: on_select
+        description: >-
+          BPP will receive the select request and check if the listing is still
+          valid. If the listing is still valid, BPP will send the on_select call
+          with complete details of the job listing.
+        reference: if any
+        example: *ref_7
+      - summary: Description
+        api: init
+        description: >-
+          BAP sends the customer details to the BPP in the init API. This is the
+          initializing step of the job application process.
+        reference: if any
+        example: *ref_8
+      - summary: Description
+        api: on_init
+        description: >-
+          If BPP wants to collect additional details of the user, it will send
+          an xinput form in the on_init request.
+        reference: if any
+        example: *ref_9
+      - summary: Description
+        api: confirm
+        description: BAP confirms user wants to submit the job application.
+        example: *ref_10
+      - summary: Description
+        api: on_confirm
+        description: BPP sends confirmation of submission of job application.
+        reference: if any
+        example: *ref_11
+      - summary: Description
+        api: status
+        description: BAP sends request for status of submission of job application.
+        reference: if any
+        example: *ref_12
+      - summary: Description
+        api: on_status
+        description: BPP sends confirmation of submission of job application.
+        reference: if any
+        example: *ref_13
+      - summary: Description
+        api: update
+        description: BAP confirms user wants to submit the job application.
+        example: *ref_14
+      - summary: Description
+        api: on_update
+        description: BPP sends confirmation of submission of job application.
+        reference: if any
+        example: *ref_15
 x-examples:
   ONDC:ONEST10 - Work Opportunities:
     summary: ONDC:ONEST10 - Work Opportunities
@@ -4632,7 +5246,7 @@ x-examples:
       Job Hub is acting as provider platform(BPP) which hosts the jobs and
       Worker Hub is acting as seeker platform(BAP) which helps the workers to
       find jobs.
-    example_set:
+    example_set: &ref_16
       search:
         examples:
           - value:
@@ -7543,5 +8157,12 @@ x-examples:
                                 contact:
                                   phone: '9999999999999'
                                   email: abc@abc.bc
+  ONDC:ONEST10 - Work Opportunities(Commercials):
+    summary: ONDC:ONEST10 - Work Opportunities(Commercials)
+    description: >-
+      Job Hub is acting as provider platform(BPP) which hosts the jobs and
+      Worker Hub is acting as seeker platform(BAP) which helps the workers to
+      find jobs.
+    example_set: *ref_16
 x-attributes: null
 x-errorcodes: null
