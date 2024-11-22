@@ -1,14 +1,14 @@
 domain:
-  - code: onest:learning-experiences
-    description: Name of the ONEST Domain	
-    reference: <PR/Issue/Discussion Links md format text>
-  - code: onest:financial-support
-    description: Name of the ONEST Domain	
-    reference: <PR/Issue/Discussion Links md format text>
   - code: ONDC:ONEST10
     description: Name of the ONEST Domain	
     reference: <PR/Issue/Discussion Links md format text>
-  - code: onest:expert-connect
+  - code: ONDC:ONEST11
+    description: Name of the ONEST Domain	
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: ONDC:ONEST12
+    description: Name of the ONEST Domain	
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: ONDC:ONEST13
     description: Name of the ONEST Domain	
     reference: <PR/Issue/Discussion Links md format text>
 action:

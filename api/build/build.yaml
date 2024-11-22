@@ -2302,16 +2302,16 @@ x-enum:
   search:
     context:
       domain: &ref_0
-        - code: onest:learning-experiences
-          description: Name of the ONEST Domain
-          reference: <PR/Issue/Discussion Links md format text>
-        - code: onest:financial-support
-          description: Name of the ONEST Domain
-          reference: <PR/Issue/Discussion Links md format text>
         - code: ONDC:ONEST10
           description: Name of the ONEST Domain
           reference: <PR/Issue/Discussion Links md format text>
-        - code: onest:expert-connect
+        - code: ONDC:ONEST11
+          description: Name of the ONEST Domain
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: ONDC:ONEST12
+          description: Name of the ONEST Domain
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: ONDC:ONEST13
           description: Name of the ONEST Domain
           reference: <PR/Issue/Discussion Links md format text>
     message:
@@ -2555,7 +2555,7 @@ x-flows:
             Note Over B,SA: **ORDER STATUS FLOW**
             B ->> BA: Checks the order status
             BA ->> SA: **/status** - Enquire order status <br>or tracking information
-            SA ->> BA: **/on_status_in_transit** - Latest order and fulfillment status is sent
+            SA ->> BA: **/on_status** - Latest order and fulfillment status is sent
             BA ->> B: Updates the latest order <br>and fulfillment information
     reference: if any
     steps:
@@ -2579,7 +2579,7 @@ x-flows:
                 city:
                   code: std:080
                 country:
-                  code: country_code_value
+                  code: IND
               timestamp: '2022-10-11T09:55:41.161Z'
               ttl: PT30S
             message:
@@ -2607,7 +2607,7 @@ x-flows:
                 city:
                   code: std:080
                 country:
-                  code: country_code_value
+                  code: IND
               timestamp: '2023-02-22T11:45:10.171Z'
               ttl: P30S
             message:
@@ -3116,7 +3116,7 @@ x-flows:
                 city:
                   code: std:080
                 country:
-                  code: country_code_value
+                  code: IND
               timestamp: '2023-02-14T12:11:46.129Z'
               ttl: P30S
             message:
@@ -3147,7 +3147,7 @@ x-flows:
                 city:
                   code: std:080
                 country:
-                  code: country_code_value
+                  code: IND
               timestamp: '2023-02-22T11:50:46.742Z'
               ttl: PT30S
             message:
@@ -3957,7 +3957,7 @@ x-flows:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2023-02-23T08:20:06Z'
                 ttl: P30S
               message:
@@ -4285,7 +4285,7 @@ x-flows:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2023-02-22T11:50:46.742Z'
                 ttl: PT30S
               message:
@@ -4637,7 +4637,7 @@ x-flows:
                 city:
                   code: std:080
                 country:
-                  code: country_code_value
+                  code: IND
               timestamp: '2023-02-23T08:20:06Z'
               ttl: P30S
             message:
@@ -4938,7 +4938,7 @@ x-examples:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2022-10-11T09:55:41.161Z'
                 ttl: PT30S
               message:
@@ -4959,7 +4959,7 @@ x-examples:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2022-10-11T09:55:41.161Z'
                 ttl: PT30S
               message:
@@ -4980,7 +4980,7 @@ x-examples:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2022-10-11T09:55:41.161Z'
                 ttl: PT30S
               message:
@@ -5009,7 +5009,7 @@ x-examples:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2022-10-11T09:55:41.161Z'
                 ttl: PT30S
               message:
@@ -5037,7 +5037,7 @@ x-examples:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2022-10-11T09:55:41.161Z'
                 ttl: PT30S
               message:
@@ -5085,7 +5085,7 @@ x-examples:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2022-10-11T09:55:41.161Z'
                 ttl: PT30S
               message:
@@ -5115,7 +5115,7 @@ x-examples:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2023-02-14T12:11:46.129Z'
                 ttl: P30S
               message:
@@ -5411,7 +5411,7 @@ x-examples:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2023-02-22T11:45:10.171Z'
                 ttl: P30S
               message:
@@ -5913,7 +5913,7 @@ x-examples:
                     city:
                       code: std:080
                     country:
-                      code: country_code_value
+                      code: IND
                   timestamp: '2023-02-22T11:45:10.171Z'
                   ttl: P30S
                 message:
@@ -6415,7 +6415,7 @@ x-examples:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2023-02-22T11:50:46.742Z'
                 ttl: PT30S
               message:
@@ -7300,7 +7300,7 @@ x-examples:
                     city:
                       code: std:080
                     country:
-                      code: country_code_value
+                      code: IND
                   timestamp: '2023-02-23T08:20:06Z'
                   ttl: P30S
                 message:
@@ -7601,7 +7601,7 @@ x-examples:
                   city:
                     code: std:080
                   country:
-                    code: country_code_value
+                    code: IND
                 timestamp: '2023-02-23T08:20:06Z'
                 ttl: P30S
               message:
@@ -7896,7 +7896,7 @@ x-examples:
                     city:
                       code: std:080
                     country:
-                      code: country_code_value
+                      code: IND
                   timestamp: '2023-02-22T11:50:46.742Z'
                   ttl: PT30S
                 message:

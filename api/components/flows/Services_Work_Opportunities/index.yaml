@@ -92,7 +92,7 @@ details:
         Note Over B,SA: **ORDER STATUS FLOW**
         B ->> BA: Checks the order status
         BA ->> SA: **/status** - Enquire order status <br>or tracking information
-        SA ->> BA: **/on_status_in_transit** - Latest order and fulfillment status is sent
+        SA ->> BA: **/on_status** - Latest order and fulfillment status is sent
         BA ->> B: Updates the latest order <br>and fulfillment information
 
 reference: if any

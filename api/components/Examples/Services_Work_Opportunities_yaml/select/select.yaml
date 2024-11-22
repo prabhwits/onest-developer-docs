@@ -13,7 +13,7 @@ value:
       city:
         code: std:080
       country:
-        code: country_code_value
+        code: IND
     timestamp: '2023-02-14T12:11:46.129Z'
     ttl: P30S
 

@@ -11,7 +11,7 @@ value:
       city:
         code: std:080
       country:
-        code: country_code_value
+        code: IND
     timestamp: '2022-10-11T09:55:41.161Z'
     ttl: PT30S
   message:
