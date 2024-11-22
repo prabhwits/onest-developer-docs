@@ -24,7 +24,6 @@ status:
 on_search:
   examples:
     - $ref: "./on_search/on_search.yaml"
-    - $ref: "./on_search/on_search_commercials.yaml"
 on_select:
   examples:
     - $ref: "./on_select/on_select.yaml"
