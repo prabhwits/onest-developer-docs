@@ -94,8 +94,7 @@ value:
                     start: '2023-01-03T13:23:10.171Z'
                     end: '2023-02-03T13:23:10.171Z '
                 tags:
-                  - display: true
-                    descriptor:
+                  - descriptor:
                       code: SALARY-INFO
                       name: Salary information
                     list:
@@ -103,12 +102,12 @@ value:
                           code: GROSS-MIN
                           name: Minimum gross pay
                         value: '900000'
-                        display: true
+                        
                       - descriptor:
                           code: GROSS-MAX
                           name: Maximum gross pay
                         value: '1200000'
-                        display: true
+                        
                   - descriptor:
                       code: NP_FEES
                       name: np_fees
@@ -121,8 +120,7 @@ value:
                         value: verified
                       - code: COMMERCIAL_TRIGGERING_STATE
                         value: APPLICATION-SUBMITTED
-                  - display: true
-                    descriptor:
+                  - descriptor:
                       code: LISTING-DETAILS
                       name: Listing details
                     list:
@@ -130,22 +128,22 @@ value:
                           code: INDUSTRY-TYPE
                           name: Industry type
                         value: IT Services & Consulting
-                        display: true
+                        
                       - descriptor:
                           code: DEPARTMENT
                           name: Department
                         value: Engineering - Software & QA
-                        display: true
+                        
                       - descriptor:
                           code: EMPLOYMENT-TYPE
                           name: Employment type
                         value: full-time
-                        display: true
+                        
                       - descriptor:
                           code: JOB-ROLE
                           name: Job role
                         value: DevOps Engineer
-                        display: true
+                        
               - id: 0253719F295521CED39EC9C2F3C8DCDE
                 descriptor:
                   name: Fullstack Engineer
@@ -183,8 +181,7 @@ value:
                   - '2'
                   - '3'
                 tags:
-                  - display: true
-                    descriptor:
+                  - descriptor:
                       code: ACADEMIC-ELIGIBILITY
                       name: Academic eligibility
                     list:
@@ -192,21 +189,20 @@ value:
                           code: COURSE-NAME
                           name: Name of the course
                         value: Class-X
-                        display: true
+                        
                       - descriptor:
                           code: MIN-PERCENTAGE
                           name: >-
                             Minimum percentage of marks to be obtained in the
                             course for eligibility
                         value: '60'
-                        display: true
+                        
                       - descriptor:
                           code: MANDATORY-ELIGIBILITY
                           name: Mandatory Eligibility
                         value: 'true'
-                        display: true
-                  - display: true
-                    descriptor:
+                        
+                  - descriptor:
                       code: ACADEMIC-ELIGIBILITY
                       name: Academic eligibility
                     list:
@@ -214,21 +210,20 @@ value:
                           code: COURSE-NAME
                           name: Name of the course
                         value: Class-XII
-                        display: true
+                        
                       - descriptor:
                           code: MIN-PERCENTAGE
                           name: >-
                             Minimum percentage of marks to be obtained in the
                             course for eligibility
                         value: '60'
-                        display: true
+                        
                       - descriptor:
                           code: MANDATORY-ELIGIBILITY
                           name: Mandatory Eligibility
                         value: 'true'
-                        display: true
-                  - display: true
-                    descriptor:
+                        
+                  - descriptor:
                       code: ACADEMIC-ELIGIBILITY
                       name: Academic eligibility
                     list:
@@ -236,21 +231,20 @@ value:
                           code: COURSE-LEVEL
                           name: Level of the course
                         value: Under Graduate
-                        display: true
+                        
                       - descriptor:
                           code: MIN-PERCENTAGE
                           name: >-
                             Minimum percentage of marks to be obtained in the
                             course for eligibility
                         value: '60'
-                        display: true
+                        
                       - descriptor:
                           code: MANDATORY-ELIGIBILITY
                           name: Mandatory Eligibility
                         value: 'true'
-                        display: true
-                  - display: true
-                    descriptor:
+                        
+                  - descriptor:
                       code: ACADEMIC-ELIGIBILITY
                       name: Academic eligibility
                     list:
@@ -258,14 +252,13 @@ value:
                           code: COURSE-LEVEL
                           name: Level of the course
                         value: Graduate
-                        display: true
+                        
                       - descriptor:
                           code: MANDATORY-ELIGIBILITY
                           name: Mandatory Eligibility
                         value: 'false'
-                        display: true
-                  - display: true
-                    descriptor:
+                        
+                  - descriptor:
                       code: JOB-REQUIREMENTS
                       name: Job requirements
                     list:
@@ -273,17 +266,17 @@ value:
                           code: REQ-EXPERIENCE
                           name: Required work experience in years
                         value: '2.5'
-                        display: true
+                        
                       - descriptor:
                           code: REQ-PROF-SKILL
                           name: Skills required for the role
                         value: android-development
-                        display: true
+                        
                       - descriptor:
                           code: REQ-PROF-SKILL
                           name: Skills required for the role
                         value: dev-ops
-                        display: true
+                        
                       - descriptor:
                           code: REQ-PROF-SKILL
                           name: Additional skills required for the job
@@ -291,9 +284,8 @@ value:
                           You have 8+ years of engineering experience,
                           predominantly in shipping user-facing production
                           features
-                        display: true
-                  - display: true
-                    descriptor:
+                        
+                  - descriptor:
                       code: JOB-RESPONSIBILITIES
                       name: Job responsibilities
                     list:
@@ -303,7 +295,7 @@ value:
                         value: >-
                           Build frontend experiences for our tools (Web, PWA and
                           React Native)
-                        display: true
+                        
                       - descriptor:
                           code: RESPONSIBILITY
                           name: Responsibility
@@ -311,7 +303,7 @@ value:
                           Articulate a long term technical direction and vision
                           for building, maintaining, and scaling our web and
                           mobile platforms
-                        display: true
+                        
                       - descriptor:
                           code: RESPONSIBILITY
                           name: Responsibility
@@ -320,16 +312,15 @@ value:
                           interfaces that are simple, easy to comprehend,
                           performant and reliable using modern tools like React,
                           React Native, Typescript, Node.js, Jest and Webpack.
-                        display: true
+                        
                       - descriptor:
                           code: RESPONSIBILITY
                           name: Responsibility
                         value: >-
                           Mentor and train other team members on design
                           techniques and coding standards.
-                        display: true
-                  - display: true
-                    descriptor:
+                        
+                  - descriptor:
                       code: LISTING-DETAILS
                       name: Listing details
                     list:
@@ -337,29 +328,28 @@ value:
                           code: INDUSTRY-TYPE
                           name: Industry type
                         value: IT Services & Consulting
-                        display: true
+                        
                       - descriptor:
                           code: DEPARTMENT
                           name: Department
                         value: Engineering - Software & QA
-                        display: true
+                        
                       - descriptor:
                           code: EMPLOYMENT-TYPE
                           name: Employment type
                         value: part-time
-                        display: true
+                        
                       - descriptor:
                           code: WORKING-HOURS
                           name: working hours
                         value: 1300-1700
-                        display: true
+                        
                       - descriptor:
                           code: JOB-ROLE
                           name: Job role
                         value: Fullstack Engineer
-                        display: true
-                  - display: true
-                    descriptor:
+                        
+                  - descriptor:
                       code: SALARY-INFO
                       name: Salary information
                     list:
@@ -367,12 +357,12 @@ value:
                           code: GROSS-MIN
                           name: Minimum gross pay
                         value: '900000'
-                        display: true
+                        
                       - descriptor:
                           code: GROSS-MAX
                           name: Maximum gross pay
                         value: '1200000'
-                        display: true
+                        
                   - descriptor:
                       code: NP_FEES
                       name: np_fees
@@ -422,8 +412,7 @@ value:
                     start: '2023-01-03T13:23:10.171Z'
                     end: '2023-02-03T13:23:10.171Z '
                 tags:
-                  - display: true
-                    descriptor:
+                  - descriptor:
                       code: SALARY-INFO
                       name: Salary information
                     list:
@@ -431,7 +420,7 @@ value:
                           code: AVERAGE
                           name: Average gross pay
                         value: '2200000'
-                        display: true
+                        
                   - descriptor:
                       code: NP_FEES
                       name: np_fees
@@ -444,8 +433,7 @@ value:
                         value: verified
                       - code: COMMERCIAL_TRIGGERING_STATE
                         value: APPLICATION-SUBMITTED
-                  - display: true
-                    descriptor:
+                  - descriptor:
                       code: LISTING-DETAILS
                       name: Listing details
                     list:
@@ -453,27 +441,27 @@ value:
                           code: INDUSTRY-TYPE
                           name: Industry type
                         value: IT Services & Consulting
-                        display: true
+                        
                       - descriptor:
                           code: DEPARTMENT
                           name: Department
                         value: Engineering - Software & QA
-                        display: true
+                        
                       - descriptor:
                           code: EMPLOYMENT-TYPE
                           name: Employment type
                         value: contractual
-                        display: true
+                        
                       - descriptor:
                           code: WORK-DURATION
                           name: Work Duration
                         value: 120 days
-                        display: true
+                        
                       - descriptor:
                           code: JOB-ROLE
                           name: Job role
                         value: Sr. DevOps Engineer
-                        display: true
+                        
             tags:
               - descriptor:
                   code: NP_FEES

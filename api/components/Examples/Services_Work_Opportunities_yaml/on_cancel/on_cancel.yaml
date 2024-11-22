@@ -96,8 +96,7 @@ value:
                       - code: hi
                         name: Hindi
                     tags:
-                      - display: true
-                        descriptor:
+                      - descriptor:
                           code: EMP-DETAILS
                           name: Employee Details
                         list:
@@ -105,14 +104,13 @@ value:
                               code: EXPECTED-SALARY
                               name: Expected Salary
                             value: '1000000'
-                            display: true
+                            
                           - descriptor:
                               code: TOTAL-EXPERIENCE
                               name: Total Experience (Years)
                             value: '4'
-                            display: true
-                      - display: true
-                        descriptor:
+                            
+                      - descriptor:
                           code: DOCUMENTS
                           name: Documents
                         list:
@@ -120,17 +118,17 @@ value:
                               code: DOC-TYPE
                               name: Document Type
                             value: resume
-                            display: true
+                            
                           - descriptor:
                               code: LINK
                               name: Document Link
                             value: https://example.com/resume.pdf
-                            display: true
+                            
                           - descriptor:
                               code: FILE-FORMAT
                               name: File Format
                             value: pdf
-                            display: true
+                            
                     contact:
                       phone: '9999999999999'
                       email: abc@abc.bc

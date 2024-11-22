@@ -57,8 +57,7 @@ value:
             location_ids:
               - L1
             tags:
-              - display: true
-                descriptor:
+              - descriptor:
                   code: ACADEMIC-ELIGIBILITY
                   name: Academic Eligibility
                 list:
@@ -66,19 +65,18 @@ value:
                       code: COURSE-NAME
                       name: Name of the Course
                     value: Class-X
-                    display: true
+                    
                   - descriptor:
                       code: MIN-PERCENTAGE
                       name: Minimum Percentage of Marks for Eligibility
                     value: '60'
-                    display: true
+                    
                   - descriptor:
                       code: MANDATORY-ELIGIBILITY
                       name: Mandatory Eligibility
                     value: 'true'
-                    display: true
-              - display: true
-                descriptor:
+                    
+              - descriptor:
                   code: ACADEMIC-ELIGIBILITY
                   name: Academic Eligibility
                 list:
@@ -86,19 +84,18 @@ value:
                       code: COURSE-NAME
                       name: Name of the Course
                     value: Class-XII
-                    display: true
+                    
                   - descriptor:
                       code: MIN-PERCENTAGE
                       name: Minimum Percentage of Marks for Eligibility
                     value: '60'
-                    display: true
+                    
                   - descriptor:
                       code: MANDATORY-ELIGIBILITY
                       name: Mandatory Eligibility
                     value: 'true'
-                    display: true
-              - display: true
-                descriptor:
+                    
+              - descriptor:
                   code: ACADEMIC-ELIGIBILITY
                   name: Academic Eligibility
                 list:
@@ -106,19 +103,18 @@ value:
                       code: COURSE-LEVEL
                       name: Level of the Course
                     value: Under Graduate
-                    display: true
+                    
                   - descriptor:
                       code: MIN-PERCENTAGE
                       name: Minimum Percentage of Marks for Eligibility
                     value: '60'
-                    display: true
+                    
                   - descriptor:
                       code: MANDATORY-ELIGIBILITY
                       name: Mandatory Eligibility
                     value: 'true'
-                    display: true
-              - display: true
-                descriptor:
+                    
+              - descriptor:
                   code: ACADEMIC-ELIGIBILITY
                   name: Academic Eligibility
                 list:
@@ -126,14 +122,13 @@ value:
                       code: COURSE-LEVEL
                       name: Level of the Course
                     value: Graduate
-                    display: true
+                    
                   - descriptor:
                       code: MANDATORY-ELIGIBILITY
                       name: Mandatory Eligibility
                     value: 'false'
-                    display: true
-              - display: true
-                descriptor:
+                    
+              - descriptor:
                   code: JOB-REQUIREMENTS
                   name: Job Requirements
                 list:
@@ -141,26 +136,25 @@ value:
                       code: REQ-EXPERIENCE
                       name: Required Work Experience in Years
                     value: '2.5'
-                    display: true
+                    
                   - descriptor:
                       code: REQ-PROF-SKILL
                       name: Skills Required for the Role
                     value: android-development
-                    display: true
+                    
                   - descriptor:
                       code: REQ-PROF-SKILL
                       name: Skills Required for the Role
                     value: dev-ops
-                    display: true
+                    
                   - descriptor:
                       code: REQ-ADDL-SKILL
                       name: Additional Skills Required for the Job
                     value: >-
                       8+ years of engineering experience in shipping user-facing
                       production features
-                    display: true
-              - display: true
-                descriptor:
+                    
+              - descriptor:
                   code: JOB-RESPONSIBILITIES
                   name: Job Responsibilities
                 list:
@@ -170,28 +164,27 @@ value:
                     value: >-
                       Build frontend experiences for tools (Web, PWA, React
                       Native)
-                    display: true
+                    
                   - descriptor:
                       code: RESPONSIBILITY
                       name: Responsibility
                     value: Define long-term technical direction and vision
-                    display: true
+                    
                   - descriptor:
                       code: RESPONSIBILITY
                       name: Responsibility
                     value: >-
                       Create reliable interfaces using modern tools like React,
                       React Native, Typescript, Node.js, Jest, and Webpack.
-                    display: true
+                    
                   - descriptor:
                       code: RESPONSIBILITY
                       name: Responsibility
                     value: >-
                       Mentor team members on design techniques and coding
                       standards.
-                    display: true
-              - display: true
-                descriptor:
+                    
+              - descriptor:
                   code: LISTING-DETAILS
                   name: Listing Details
                 list:
@@ -199,24 +192,23 @@ value:
                       code: INDUSTRY-TYPE
                       name: Industry Type
                     value: IT Services & Consulting
-                    display: true
+                    
                   - descriptor:
                       code: DEPARTMENT
                       name: Department
                     value: Engineering - Software & QA
-                    display: true
+                    
                   - descriptor:
                       code: EMPLOYMENT-TYPE
                       name: Employment Type
                     value: Full-Time
-                    display: true
+                    
                   - descriptor:
                       code: JOB-ROLE
                       name: Job Role
                     value: DevOps Engineer
-                    display: true
-              - display: true
-                descriptor:
+                    
+              - descriptor:
                   code: SALARY-INFO
                   name: Salary Information
                 list:
@@ -224,12 +216,12 @@ value:
                       code: GROSS-MIN
                       name: Minimum Gross Pay
                     value: '900000'
-                    display: true
+                    
                   - descriptor:
                       code: GROSS-MAX
                       name: Maximum Gross Pay
                     value: '1200000'
-                    display: true
+                    
             fulfillments:
               - id: '1'
                 type: REMOTE
@@ -254,8 +246,7 @@ value:
                       - code: hi
                         name: Hindi
                     tags:
-                      - display: true
-                        descriptor:
+                      - descriptor:
                           code: EMP-DETAILS
                           name: Employee Details
                         list:
@@ -263,14 +254,13 @@ value:
                               code: EXPECTED-SALARY
                               name: Expected Salary
                             value: '1000000'
-                            display: true
+                            
                           - descriptor:
                               code: TOTAL-EXPERIENCE
                               name: Total Experience (Years)
                             value: '4'
-                            display: true
-                      - display: true
-                        descriptor:
+                            
+                      - descriptor:
                           code: DOCUMENTS
                           name: Documents
                         list:
@@ -278,17 +268,17 @@ value:
                               code: DOC-TYPE
                               name: Document Type
                             value: resume
-                            display: true
+                            
                           - descriptor:
                               code: LINK
                               name: Document Link
                             value: https://example.com/resume.pdf
-                            display: true
+                            
                           - descriptor:
                               code: FILE-FORMAT
                               name: File Format
                             value: pdf
-                            display: true
+                            
                     contact:
                       phone: '9999999999999'
                       email: abc@abc.bc

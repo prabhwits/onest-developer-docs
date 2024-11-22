@@ -187,7 +187,7 @@ Seeker can search using the age, gender and skills of the user.
 			"item": {
 				"tags": [
 					{
-						"display": true,
+						
 						"descriptor": {
 							"code": "listing-details",
 							"name": "Listing details"
@@ -234,7 +234,7 @@ Seeker can search using the age, gender and skills of the user.
 			"item": {
 				"tags": [
 					{
-						"display": true,
+						
 						"descriptor": {
 							"code": "listing-details",
 							"name": "Listing details"
@@ -382,7 +382,7 @@ The request will contain only minimal details about the job like job name, job d
               ],
               "tags": [
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "academic-eligibility",
                     "name": "Academic eligibility"
@@ -415,7 +415,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "academic-eligibility",
                     "name": "Academic eligibility"
@@ -448,7 +448,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "academic-eligibility",
                     "name": "Academic eligibility"
@@ -481,7 +481,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "academic-eligibility",
                     "name": "Academic eligibility"
@@ -506,7 +506,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "job-requirements",
                     "name": "Job requirements"
@@ -547,7 +547,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "job-responsibilities",
                     "name": "Job responsibilities"
@@ -588,7 +588,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "listing-details",
                     "name": "Listing details"
@@ -629,7 +629,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "salary-info",
                     "name": "Salary information"
@@ -686,7 +686,7 @@ The request will contain only minimal details about the job like job name, job d
               ],
               "tags": [
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "academic-eligibility",
                     "name": "Academic eligibility"
@@ -719,7 +719,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "academic-eligibility",
                     "name": "Academic eligibility"
@@ -752,7 +752,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "academic-eligibility",
                     "name": "Academic eligibility"
@@ -785,7 +785,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "academic-eligibility",
                     "name": "Academic eligibility"
@@ -810,7 +810,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "job-requirements",
                     "name": "Job requirements"
@@ -851,7 +851,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "job-responsibilities",
                     "name": "Job responsibilities"
@@ -892,7 +892,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "listing-details",
                     "name": "Listing details"
@@ -933,7 +933,7 @@ The request will contain only minimal details about the job like job name, job d
                   ]
                 },
                 {
-                  "display": true,
+                  
                   "descriptor": {
                     "code": "salary-info",
                     "name": "Salary information"
@@ -1086,7 +1086,7 @@ The request will contain only minimal details about the job like job name, job d
                     },
                     "tags": [
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -1119,7 +1119,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -1152,7 +1152,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -1185,7 +1185,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -1210,7 +1210,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "job-requirements",
                                 "name": "Job requirements"
@@ -1251,7 +1251,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "job-responsibilities",
                                 "name": "Job responsibilities"
@@ -1292,7 +1292,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "listing-details",
                                 "name": "Listing details"
@@ -1333,7 +1333,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "salary-info",
                                 "name": "Salary information"
@@ -1587,7 +1587,7 @@ The request will contain only minimal details about the job like job name, job d
                     },
                     "tags": [
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -1620,7 +1620,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -1653,7 +1653,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -1686,7 +1686,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -1711,7 +1711,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "job-requirements",
                                 "name": "Job requirements"
@@ -1752,7 +1752,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "job-responsibilities",
                                 "name": "Job responsibilities"
@@ -1793,7 +1793,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "listing-details",
                                 "name": "Listing details"
@@ -1834,7 +1834,7 @@ The request will contain only minimal details about the job like job name, job d
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "salary-info",
                                 "name": "Salary information"
@@ -2025,7 +2025,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                     },
                     "tags": [
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -2058,7 +2058,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -2091,7 +2091,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -2124,7 +2124,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -2149,7 +2149,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "job-requirements",
                                 "name": "Job requirements"
@@ -2190,7 +2190,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "job-responsibilities",
                                 "name": "Job responsibilities"
@@ -2231,7 +2231,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "listing-details",
                                 "name": "Listing details"
@@ -2272,7 +2272,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "salary-info",
                                 "name": "Salary information"
@@ -2651,7 +2651,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                     },
                     "tags": [
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -2684,7 +2684,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -2717,7 +2717,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -2750,7 +2750,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -2775,7 +2775,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "job-requirements",
                                 "name": "Job requirements"
@@ -2816,7 +2816,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "job-responsibilities",
                                 "name": "Job responsibilities"
@@ -2857,7 +2857,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "listing-details",
                                 "name": "Listing details"
@@ -2898,7 +2898,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "salary-info",
                                 "name": "Salary information"
@@ -3109,7 +3109,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                     },
                     "tags": [
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -3142,7 +3142,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -3175,7 +3175,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -3208,7 +3208,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "academic-eligibility",
                                 "name": "Academic eligibility"
@@ -3233,7 +3233,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "job-requirements",
                                 "name": "Job requirements"
@@ -3274,7 +3274,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "job-responsibilities",
                                 "name": "Job responsibilities"
@@ -3315,7 +3315,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "listing-details",
                                 "name": "Listing details"
@@ -3356,7 +3356,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                             ]
                         },
                         {
-                            "display": true,
+                            
                             "descriptor": {
                                 "code": "salary-info",
                                 "name": "Salary information"

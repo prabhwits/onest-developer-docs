@@ -45,8 +45,7 @@ value:
                 - code: hi
                   name: Hindi
               tags:
-                - display: true
-                  descriptor:
+                - descriptor:
                     code: CURRENT-EXPERIENCE
                     name: Current Experience
                   list:
@@ -54,14 +53,13 @@ value:
                         code: EXP-YEARS
                         name: Experience
                       value: P4Y2M
-                      display: true
+                      
                     - descriptor:
                         code: CURRENT-COMPANY
                         name: Current Company
                       value: ABC tech
-                      display: true
-                - display: true
-                  descriptor:
+                      
+                - descriptor:
                     code: SALARY-DETAILS
                     name: Salary Details
                   list:
@@ -69,14 +67,13 @@ value:
                         code: EXPECTED-SALARY
                         name: Expected Salary
                       value: '80000'
-                      display: true
+                      
                     - descriptor:
                         code: CURRENT-SALARY
                         name: Current Salary
                       value: '50000'
-                      display: true
-                - display: true
-                  descriptor:
+                      
+                - descriptor:
                     code: DOCUMENTS
                     name: Documents
                   list:
@@ -84,13 +81,12 @@ value:
                         code: RESUME
                         name: Resume
                       value: https://link-to-the-document.com
-                      display: true
+                      
             contact:
               phone: '9999999999999'
               email: abc@abc.bc
           tags:
-            - display: true
-              descriptor:
+            - descriptor:
                 code: DISTRIBUTOR-DETAILS
                 name: Distributor Details
               list:
@@ -98,29 +94,29 @@ value:
                     code: DISTRIBUTOR-ID
                     name: Distributor Id
                   value: PNB
-                  display: true
+                  
                 - descriptor:
                     code: DISTRIBUTOR-NAME
                     name: Distributor Name
                   value: Pay Near By
-                  display: true
+                  
                 - descriptor:
                     code: DISTRIBUTOR-PHONE
                     name: Distributor Phone
                   value: '9123456789'
-                  display: true
+                  
                 - descriptor:
                     code: DISTRIBUTOR-EMAIL
                     name: Distributor Email
                   value: support@pnb.com
-                  display: true
+                  
                 - descriptor:
                     code: AGENT-ID
                     name: Agent Id
                   value: agent-123
-                  display: true
+                  
                 - descriptor:
                     code: AGENT-VERIFIED
                     name: Agent Verified
                   value: 'true'
-                  display: true
+                  

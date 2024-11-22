@@ -52,8 +52,7 @@ value:
                   - '5'
                   - '6'
                 tags:
-                  - display: true
-                    descriptor:
+                  - descriptor:
                       code: SALARY-INFO
                       name: Salary information
                     list:
@@ -61,12 +60,12 @@ value:
                           code: GROSS-MIN
                           name: Minimum gross pay
                         value: '800000'
-                        display: true
+                        
                       - descriptor:
                           code: GROSS-MAX
                           name: Maximum gross pay
                         value: '1000000'
-                        display: true
+                        
                   - descriptor:
                       code: NP_FEES
                       name: np_fees
@@ -79,8 +78,7 @@ value:
                         value: recruitment
                       - code: COMMERCIAL_TRIGGERING_STATE
                         value: OFFER-ACCEPTED
-                  - display: true
-                    descriptor:
+                  - descriptor:
                       code: LISTING-DETAILS
                       name: Listing details
                     list:
@@ -88,19 +86,19 @@ value:
                           code: INDUSTRY-TYPE
                           name: Industry type
                         value: Data Science
-                        display: true
+                        
                       - descriptor:
                           code: DEPARTMENT
                           name: Department
                         value: Data Science & Analytics
-                        display: true
+                        
                       - descriptor:
                           code: EMPLOYMENT-TYPE
                           name: Employment type
                         value: full-time
-                        display: true
+                        
                       - descriptor:
                           code: JOB-ROLE
                           name: Job role
                         value: Data Scientist
-                        display: true
+                        
