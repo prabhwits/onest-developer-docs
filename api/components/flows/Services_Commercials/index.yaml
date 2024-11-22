@@ -108,7 +108,7 @@ steps:
     description: BPP will create a catalogue containing jobs with matching criteria and sends it as on_search request.
     reference: if any
     example:
-      $ref: "../../Examples/Services_Work_Opportunities_yaml/on_search/on_search_commercials.yaml"
+      $ref: "../../Examples/Services_Work_Opportunities_yaml/on_search/on_search.yaml"
   - summary: Description
     api: select
     description:  BAP will receive the on_search request and displays the list of jobs to the user. Once the user chooses a job, BAP will make select API with item ID to get the complete details about the job.
