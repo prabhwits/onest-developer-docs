@@ -23,6 +23,16 @@ catalog:
         reference: <PR/Issue/Discussion Links md format text>
         list:
           $ref: "./Tag.yaml#/EMPLOYMENT-TYPE"
+      - code: NP_FEES
+        description: NP_FEES
+        reference: <PR/Issue/Discussion Links md format text>
+        list:
+          $ref: "./Tag.yaml#/NP_FEES"
+      - code: SALARY
+        description: SALARY
+        reference: <PR/Issue/Discussion Links md format text>
+        list:
+          $ref: "./Tag.yaml#/SALARY"
       # - code: serviceability
       #   description: Serviceability Details (Required)
       #   reference: <PR/Issue/Discussion Links md format text>
@@ -97,11 +107,6 @@ order:
         reference: <PR/Issue/Discussion Links md format text>
         list:
           $ref: "./Tag.yaml#/EMPLOYMENT-TYPE"
-      # - code: EQUIPMENT_ATTRIBUTES
-      #   description: Attribute of a particular equipment item (Optional)
-      #   reference: <PR/Issue/Discussion Links md format text>
-      #   list:
-      #     $ref: "./Tag.yaml#/EQUIPMENT_ATTRIBUTES"
   # quote:
   #   breakup:
   #     tags: &ref2
