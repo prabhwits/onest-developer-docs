@@ -199,7 +199,7 @@ Seeker can search using the age, gender and skills of the user.
 									"name": "Industry type"
 								},
 								"value": "IT Services & Consulting",
-								"display": true
+								
 							}
 						]
 					}
@@ -246,7 +246,7 @@ Seeker can search using the age, gender and skills of the user.
 									"name": "Employment type"
 								},
 								"value": "full-time",
-								"display": true
+								
 							}
 						]
 					}
@@ -394,7 +394,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Name of the course"
                       },
                       "value": "Class-X",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -402,7 +402,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                       },
                       "value": "60",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -410,7 +410,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Mandatory Eligibility"
                       },
                       "value": "true",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -427,7 +427,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Name of the course"
                       },
                       "value": "Class-XII",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -435,7 +435,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                       },
                       "value": "60",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -443,7 +443,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Mandatory Eligibility"
                       },
                       "value": "true",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -460,7 +460,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Level of the course"
                       },
                       "value": "Under Graduate",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -468,7 +468,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                       },
                       "value": "60",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -476,7 +476,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Mandatory Eligibility"
                       },
                       "value": "true",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -493,7 +493,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Level of the course"
                       },
                       "value": "Graduate",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -501,7 +501,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Mandatory Eligibility"
                       },
                       "value": "false",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -518,7 +518,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Required work experience in years"
                       },
                       "value": "2.5",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -526,7 +526,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Skills required for the role"
                       },
                       "value": "android-development",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -534,7 +534,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Skills required for the role"
                       },
                       "value": "dev-ops",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -542,7 +542,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Additional skills required for the job"
                       },
                       "value": "You have 8+ years of engineering experience, predominantly in shipping user-facing production features",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -559,7 +559,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Responsibility"
                       },
                       "value": "Build frontend experiences for our tools (Web, PWA and React Native)",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -567,7 +567,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Responsibility"
                       },
                       "value": "Articulate a long term technical direction and vision for building, maintaining, and scaling our web and mobile platforms",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -575,7 +575,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Responsibility"
                       },
                       "value": "Create trustworthy user experiences by building interfaces that are simple, easy to comprehend, performant and reliable using modern tools like React, React Native, Typescript, Node.js, Jest and Webpack.",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -583,7 +583,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Responsibility"
                       },
                       "value": "Mentor and train other team members on design techniques and coding standards.",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -600,7 +600,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Industry type"
                       },
                       "value": "IT Services & Consulting",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -608,7 +608,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Department"
                       },
                       "value": "Engineering - Software & QA",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -616,7 +616,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Employment type"
                       },
                       "value": "full-time",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -624,7 +624,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Job role"
                       },
                       "value": "DevOps Engineer",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -641,7 +641,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Minimum gross pay"
                       },
                       "value": "900000",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -649,7 +649,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Maximum gross pay"
                       },
                       "value": "1200000",
-                      "display": true
+                      
                     }
                   ]
                 }
@@ -698,7 +698,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Name of the course"
                       },
                       "value": "Class-X",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -706,7 +706,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                       },
                       "value": "60",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -714,7 +714,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Mandatory Eligibility"
                       },
                       "value": "true",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -731,7 +731,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Name of the course"
                       },
                       "value": "Class-XII",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -739,7 +739,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                       },
                       "value": "60",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -747,7 +747,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Mandatory Eligibility"
                       },
                       "value": "true",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -764,7 +764,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Level of the course"
                       },
                       "value": "Under Graduate",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -772,7 +772,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                       },
                       "value": "60",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -780,7 +780,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Mandatory Eligibility"
                       },
                       "value": "true",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -797,7 +797,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Level of the course"
                       },
                       "value": "Graduate",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -805,7 +805,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Mandatory Eligibility"
                       },
                       "value": "false",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -822,7 +822,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Required work experience in years"
                       },
                       "value": "2.5",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -830,7 +830,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Skills required for the role"
                       },
                       "value": "android-development",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -838,7 +838,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Skills required for the role"
                       },
                       "value": "dev-ops",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -846,7 +846,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Additional skills required for the job"
                       },
                       "value": "You have 8+ years of engineering experience, predominantly in shipping user-facing production features",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -863,7 +863,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Responsibility"
                       },
                       "value": "Build frontend experiences for our tools (Web, PWA and React Native)",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -871,7 +871,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Responsibility"
                       },
                       "value": "Articulate a long term technical direction and vision for building, maintaining, and scaling our web and mobile platforms",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -879,7 +879,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Responsibility"
                       },
                       "value": "Create trustworthy user experiences by building interfaces that are simple, easy to comprehend, performant and reliable using modern tools like React, React Native, Typescript, Node.js, Jest and Webpack.",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -887,7 +887,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Responsibility"
                       },
                       "value": "Mentor and train other team members on design techniques and coding standards.",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -904,7 +904,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Industry type"
                       },
                       "value": "IT Services & Consulting",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -912,7 +912,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Department"
                       },
                       "value": "Engineering - Software & QA",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -920,7 +920,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Employment type"
                       },
                       "value": "full-time",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -928,7 +928,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Job role"
                       },
                       "value": "DevOps Engineer",
-                      "display": true
+                      
                     }
                   ]
                 },
@@ -945,7 +945,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Minimum gross pay"
                       },
                       "value": "900000",
-                      "display": true
+                      
                     },
                     {
                       "descriptor": {
@@ -953,7 +953,7 @@ The request will contain only minimal details about the job like job name, job d
                         "name": "Maximum gross pay"
                       },
                       "value": "1200000",
-                      "display": true
+                      
                     }
                   ]
                 }
@@ -1098,7 +1098,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Name of the course"
                                     },
                                     "value": "Class-X",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1106,7 +1106,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1114,7 +1114,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1131,7 +1131,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Name of the course"
                                     },
                                     "value": "Class-XII",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1139,7 +1139,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1147,7 +1147,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1164,7 +1164,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Level of the course"
                                     },
                                     "value": "Under Graduate",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1172,7 +1172,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1180,7 +1180,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1197,7 +1197,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Level of the course"
                                     },
                                     "value": "Graduate",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1205,7 +1205,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "false",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1222,7 +1222,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Required work experience in years"
                                     },
                                     "value": "2.5",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1230,7 +1230,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Skills required for the role"
                                     },
                                     "value": "android-development",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1238,7 +1238,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Skills required for the role"
                                     },
                                     "value": "dev-ops",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1246,7 +1246,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Additional skills required for the job"
                                     },
                                     "value": "You have 8+ years of engineering experience, predominantly in shipping user-facing production features",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1263,7 +1263,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Responsibility"
                                     },
                                     "value": "Build frontend experiences for our tools (Web, PWA and React Native)",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1271,7 +1271,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Responsibility"
                                     },
                                     "value": "Articulate a long term technical direction and vision for building, maintaining, and scaling our web and mobile platforms",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1279,7 +1279,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Responsibility"
                                     },
                                     "value": "Create trustworthy user experiences by building interfaces that are simple, easy to comprehend, performant and reliable using modern tools like React, React Native, Typescript, Node.js, Jest and Webpack.",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1287,7 +1287,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Responsibility"
                                     },
                                     "value": "Mentor and train other team members on design techniques and coding standards.",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1304,7 +1304,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Industry type"
                                     },
                                     "value": "IT Services & Consulting",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1312,7 +1312,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Department"
                                     },
                                     "value": "Engineering - Software & QA",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1320,7 +1320,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Employment type"
                                     },
                                     "value": "full-time",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1328,7 +1328,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Job role"
                                     },
                                     "value": "DevOps Engineer",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1345,7 +1345,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Minimum gross pay"
                                     },
                                     "value": "900000",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1353,7 +1353,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Maximum gross pay"
                                     },
                                     "value": "1200000",
-                                    "display": true
+                                    
                                 }
                             ]
                         }
@@ -1599,7 +1599,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Name of the course"
                                     },
                                     "value": "Class-X",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1607,7 +1607,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1615,7 +1615,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1632,7 +1632,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Name of the course"
                                     },
                                     "value": "Class-XII",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1640,7 +1640,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1648,7 +1648,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1665,7 +1665,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Level of the course"
                                     },
                                     "value": "Under Graduate",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1673,7 +1673,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1681,7 +1681,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1698,7 +1698,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Level of the course"
                                     },
                                     "value": "Graduate",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1706,7 +1706,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "false",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1723,7 +1723,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Required work experience in years"
                                     },
                                     "value": "2.5",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1731,7 +1731,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Skills required for the role"
                                     },
                                     "value": "android-development",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1739,7 +1739,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Skills required for the role"
                                     },
                                     "value": "dev-ops",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1747,7 +1747,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Additional skills required for the job"
                                     },
                                     "value": "You have 8+ years of engineering experience, predominantly in shipping user-facing production features",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1764,7 +1764,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Responsibility"
                                     },
                                     "value": "Build frontend experiences for our tools (Web, PWA and React Native)",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1772,7 +1772,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Responsibility"
                                     },
                                     "value": "Articulate a long term technical direction and vision for building, maintaining, and scaling our web and mobile platforms",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1780,7 +1780,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Responsibility"
                                     },
                                     "value": "Create trustworthy user experiences by building interfaces that are simple, easy to comprehend, performant and reliable using modern tools like React, React Native, Typescript, Node.js, Jest and Webpack.",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1788,7 +1788,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Responsibility"
                                     },
                                     "value": "Mentor and train other team members on design techniques and coding standards.",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1805,7 +1805,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Industry type"
                                     },
                                     "value": "IT Services & Consulting",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1813,7 +1813,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Department"
                                     },
                                     "value": "Engineering - Software & QA",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1821,7 +1821,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Employment type"
                                     },
                                     "value": "full-time",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1829,7 +1829,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Job role"
                                     },
                                     "value": "DevOps Engineer",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -1846,7 +1846,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Minimum gross pay"
                                     },
                                     "value": "900000",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -1854,7 +1854,7 @@ The request will contain only minimal details about the job like job name, job d
                                         "name": "Maximum gross pay"
                                     },
                                     "value": "1200000",
-                                    "display": true
+                                    
                                 }
                             ]
                         }
@@ -2037,7 +2037,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Name of the course"
                                     },
                                     "value": "Class-X",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2045,7 +2045,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2053,7 +2053,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2070,7 +2070,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Name of the course"
                                     },
                                     "value": "Class-XII",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2078,7 +2078,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2086,7 +2086,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2103,7 +2103,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Level of the course"
                                     },
                                     "value": "Under Graduate",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2111,7 +2111,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2119,7 +2119,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2136,7 +2136,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Level of the course"
                                     },
                                     "value": "Graduate",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2144,7 +2144,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "false",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2161,7 +2161,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Required work experience in years"
                                     },
                                     "value": "2.5",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2169,7 +2169,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Skills required for the role"
                                     },
                                     "value": "android-development",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2177,7 +2177,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Skills required for the role"
                                     },
                                     "value": "dev-ops",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2185,7 +2185,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Additional skills required for the job"
                                     },
                                     "value": "You have 8+ years of engineering experience, predominantly in shipping user-facing production features",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2202,7 +2202,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Responsibility"
                                     },
                                     "value": "Build frontend experiences for our tools (Web, PWA and React Native)",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2210,7 +2210,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Responsibility"
                                     },
                                     "value": "Articulate a long term technical direction and vision for building, maintaining, and scaling our web and mobile platforms",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2218,7 +2218,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Responsibility"
                                     },
                                     "value": "Create trustworthy user experiences by building interfaces that are simple, easy to comprehend, performant and reliable using modern tools like React, React Native, Typescript, Node.js, Jest and Webpack.",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2226,7 +2226,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Responsibility"
                                     },
                                     "value": "Mentor and train other team members on design techniques and coding standards.",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2243,7 +2243,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Industry type"
                                     },
                                     "value": "IT Services & Consulting",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2251,7 +2251,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Department"
                                     },
                                     "value": "Engineering - Software & QA",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2259,7 +2259,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Employment type"
                                     },
                                     "value": "full-time",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2267,7 +2267,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Job role"
                                     },
                                     "value": "DevOps Engineer",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2284,7 +2284,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Minimum gross pay"
                                     },
                                     "value": "900000",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2292,7 +2292,7 @@ Here in this example the BPP has only one form to send. So the cur, min and max 
                                         "name": "Maximum gross pay"
                                     },
                                     "value": "1200000",
-                                    "display": true
+                                    
                                 }
                             ]
                         }
@@ -2663,7 +2663,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Name of the course"
                                     },
                                     "value": "Class-X",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2671,7 +2671,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2679,7 +2679,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2696,7 +2696,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Name of the course"
                                     },
                                     "value": "Class-XII",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2704,7 +2704,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2712,7 +2712,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2729,7 +2729,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Level of the course"
                                     },
                                     "value": "Under Graduate",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2737,7 +2737,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2745,7 +2745,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2762,7 +2762,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Level of the course"
                                     },
                                     "value": "Graduate",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2770,7 +2770,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "false",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2787,7 +2787,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Required work experience in years"
                                     },
                                     "value": "2.5",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2795,7 +2795,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Skills required for the role"
                                     },
                                     "value": "android-development",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2803,7 +2803,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Skills required for the role"
                                     },
                                     "value": "dev-ops",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2811,7 +2811,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Additional skills required for the job"
                                     },
                                     "value": "You have 8+ years of engineering experience, predominantly in shipping user-facing production features",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2828,7 +2828,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Responsibility"
                                     },
                                     "value": "Build frontend experiences for our tools (Web, PWA and React Native)",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2836,7 +2836,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Responsibility"
                                     },
                                     "value": "Articulate a long term technical direction and vision for building, maintaining, and scaling our web and mobile platforms",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2844,7 +2844,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Responsibility"
                                     },
                                     "value": "Create trustworthy user experiences by building interfaces that are simple, easy to comprehend, performant and reliable using modern tools like React, React Native, Typescript, Node.js, Jest and Webpack.",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2852,7 +2852,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Responsibility"
                                     },
                                     "value": "Mentor and train other team members on design techniques and coding standards.",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2869,7 +2869,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Industry type"
                                     },
                                     "value": "IT Services & Consulting",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2877,7 +2877,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Department"
                                     },
                                     "value": "Engineering - Software & QA",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2885,7 +2885,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Employment type"
                                     },
                                     "value": "full-time",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2893,7 +2893,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Job role"
                                     },
                                     "value": "DevOps Engineer",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -2910,7 +2910,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Minimum gross pay"
                                     },
                                     "value": "900000",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -2918,7 +2918,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Maximum gross pay"
                                     },
                                     "value": "1200000",
-                                    "display": true
+                                    
                                 }
                             ]
                         }
@@ -3121,7 +3121,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Name of the course"
                                     },
                                     "value": "Class-X",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3129,7 +3129,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3137,7 +3137,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -3154,7 +3154,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Name of the course"
                                     },
                                     "value": "Class-XII",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3162,7 +3162,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3170,7 +3170,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -3187,7 +3187,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Level of the course"
                                     },
                                     "value": "Under Graduate",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3195,7 +3195,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Minimum percentage of marks to be obtained in the course for eligibility"
                                     },
                                     "value": "60",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3203,7 +3203,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "true",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -3220,7 +3220,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Level of the course"
                                     },
                                     "value": "Graduate",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3228,7 +3228,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Mandatory Eligibility"
                                     },
                                     "value": "false",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -3245,7 +3245,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Required work experience in years"
                                     },
                                     "value": "2.5",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3253,7 +3253,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Skills required for the role"
                                     },
                                     "value": "android-development",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3261,7 +3261,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Skills required for the role"
                                     },
                                     "value": "dev-ops",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3269,7 +3269,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Additional skills required for the job"
                                     },
                                     "value": "You have 8+ years of engineering experience, predominantly in shipping user-facing production features",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -3286,7 +3286,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Responsibility"
                                     },
                                     "value": "Build frontend experiences for our tools (Web, PWA and React Native)",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3294,7 +3294,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Responsibility"
                                     },
                                     "value": "Articulate a long term technical direction and vision for building, maintaining, and scaling our web and mobile platforms",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3302,7 +3302,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Responsibility"
                                     },
                                     "value": "Create trustworthy user experiences by building interfaces that are simple, easy to comprehend, performant and reliable using modern tools like React, React Native, Typescript, Node.js, Jest and Webpack.",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3310,7 +3310,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Responsibility"
                                     },
                                     "value": "Mentor and train other team members on design techniques and coding standards.",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -3327,7 +3327,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Industry type"
                                     },
                                     "value": "IT Services & Consulting",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3335,7 +3335,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Department"
                                     },
                                     "value": "Engineering - Software & QA",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3343,7 +3343,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Employment type"
                                     },
                                     "value": "full-time",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3351,7 +3351,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Job role"
                                     },
                                     "value": "DevOps Engineer",
-                                    "display": true
+                                    
                                 }
                             ]
                         },
@@ -3368,7 +3368,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Minimum gross pay"
                                     },
                                     "value": "900000",
-                                    "display": true
+                                    
                                 },
                                 {
                                     "descriptor": {
@@ -3376,7 +3376,7 @@ Once the form has been submitted the BPP will send on\_init without any form. Fu
                                         "name": "Maximum gross pay"
                                     },
                                     "value": "1200000",
-                                    "display": true
+                                    
                                 }
                             ]
                         }
