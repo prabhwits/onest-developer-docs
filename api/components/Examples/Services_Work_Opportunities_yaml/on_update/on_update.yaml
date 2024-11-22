@@ -38,28 +38,6 @@ value:
             - "1"
           location_ids:
             - L1
-          quote:
-            price:
-              currency: INR
-              value: "1100"
-            breakup:
-              - item:
-                  id: 0253719F295521CED39EC9C2F3C8DCDE
-                  price:
-                    currency: INR
-                    value: "1100.00"
-                  tags:
-                    - descriptor:
-                        code: TYPE
-                      list:
-                        - descriptor:
-                            code: TYPE
-                          value: item
-                price:
-                  currency: INR
-                  value: "1100"
-                title: Fullstack Engineer
-            ttl: P1D
           tags:
             - descriptor:
                 code: ACADEMIC-ELIGIBILITY
@@ -253,3 +231,54 @@ value:
                   contact:
                     phone: "9999999999999"
                     email: abc@abc.bc
+          quote:
+            price:
+              currency: INR
+              value: "1400"
+            breakup:
+              - id: 0253719F295521CED39EC9C2F3C8DCDE
+                price:
+                  currency: INR
+                  value: "1100"
+                title: Fullstack Engineer
+                tags:
+                  - descriptor:
+                      code: TYPE
+                    list:
+                      - descriptor:
+                          code: TYPE
+                        value: item
+              - title: NP Fees
+                id: "1"
+                price:
+                  currency: INR
+                  value: "300.00"
+                tags:
+                  - descriptor:
+                      code: QUOTE
+                    list:
+                      - descriptor:
+                          code: TYPE
+                        value: item
+                  - descriptor:
+                      code: NP_FEES
+                      name: np_fees
+                    list:
+                      - code: id
+                        value: "1"
+                      - code: COMMERCIAL_TYPE
+                        value: percent
+                      - code: COMMERCIAL_VALUE
+                        value: "0.5"
+                      - code: COMMERCIAL_NAME
+                        value: qualified
+                      - code: COMMERCIAL_TRIGGERING_STATE
+                        value: OFFER-EXTENDED
+                  - descriptor:
+                      code: TYPE
+                    list:
+                      - descriptor:
+                          code: TYPE
+                        value: misc
+            ttl: P1D
+          

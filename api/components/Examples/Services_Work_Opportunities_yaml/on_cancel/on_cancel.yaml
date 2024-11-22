@@ -108,3 +108,138 @@ value:
                   contact:
                     phone: "9999999999999"
                     email: abc@abc.bc
+      quote:
+        price:
+          currency: INR
+          value: "1400"
+        breakup:
+          - id: 0253719F295521CED39EC9C2F3C8DCDE
+            price:
+              currency: INR
+              value: "1100"
+            title: Fullstack Engineer
+            tags:
+              - descriptor:
+                  code: TYPE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: item
+          - title: NP Fees
+            id: "1"
+            price:
+              currency: INR
+              value: "300.00"
+            tags:
+              - descriptor:
+                  code: QUOTE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: item
+              - descriptor:
+                  code: NP_FEES
+                  name: np_fees
+                list:
+                  - code: id
+                    value: "1"
+                  - code: COMMERCIAL_TYPE
+                    value: percent
+                  - code: COMMERCIAL_VALUE
+                    value: "0.5"
+                  - code: COMMERCIAL_NAME
+                    value: qualified
+                  - code: COMMERCIAL_TRIGGERING_STATE
+                    value: OFFER-EXTENDED
+              - descriptor:
+                  code: TYPE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: misc
+        ttl: P1D
+      fulfillments:
+        - id: "1"
+          customer:
+            person:
+              name: Sanjay
+              gender: Male
+              age: "35"
+              skills:
+                - code: Android
+                  name: Android
+                - code: AWS
+                  name: AWS
+              languages:
+                - code: en
+                  name: english
+                - code: ml
+                  name: Malayalam
+                - code: hi
+                  name: Hindi
+              tags:
+                - descriptor:
+                    code: CURRENT-EXPERIENCE
+                    name: Current Experience
+                  list:
+                    - descriptor:
+                        code: EXP-YEARS
+                        name: Experience
+                      value: P4Y2M
+                    - descriptor:
+                        code: CURRENT-COMPANY
+                        name: Current Company
+                      value: ABC tech
+                - descriptor:
+                    code: SALARY-DETAILS
+                    name: Salary Details
+                  list:
+                    - descriptor:
+                        code: EXPECTED-SALARY
+                        name: Expected Salary
+                      value: "80000"
+                    - descriptor:
+                        code: CURRENT-SALARY
+                        name: Current Salary
+                      value: "50000"
+                - descriptor:
+                    code: DOCUMENTS
+                    name: Documents
+                  list:
+                    - descriptor:
+                        code: RESUME
+                        name: Resume
+                      value: https://link-to-the-document.com
+            contact:
+              phone: "9999999999999"
+              email: abc@abc.bc
+          tags:
+            - descriptor:
+                code: DISTRIBUTOR-DETAILS
+                name: Distributor Details
+              list:
+                - descriptor:
+                    code: DISTRIBUTOR-ID
+                    name: Distributor Id
+                  value: PNB
+                - descriptor:
+                    code: DISTRIBUTOR-NAME
+                    name: Distributor Name
+                  value: Pay Near By
+                - descriptor:
+                    code: DISTRIBUTOR-PHONE
+                    name: Distributor Phone
+                  value: "9123456789"
+                - descriptor:
+                    code: DISTRIBUTOR-EMAIL
+                    name: Distributor Email
+                  value: support@pnb.com
+                - descriptor:
+                    code: AGENT-ID
+                    name: Agent Id
+                  value: agent-123
+                - descriptor:
+                    code: AGENT-VERIFIED
+                    name: Agent Verified
+                  value: "true"
+
