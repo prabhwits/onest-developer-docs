@@ -33,11 +33,6 @@ catalog:
         reference: <PR/Issue/Discussion Links md format text>
         list:
           $ref: "./Tag.yaml#/SALARY"
-      - code: LISTING-DETAILS
-        description: LISTING-DETAILS
-        reference: <PR/Issue/Discussion Links md format text>
-        list:
-          $ref: "./Tag.yaml#/LISTING-DETAILS"
       # - code: serviceability
       #   description: Serviceability Details (Required)
       #   reference: <PR/Issue/Discussion Links md format text>
@@ -50,6 +45,17 @@ catalog:
           reference: <PR/Issue/Discussion Links md format text>
           list:
             $ref: "./Tag.yaml#/EMPLOYMENT-TYPE"
+        - code: LISTING-DETAILS
+          description: LISTING-DETAILS
+          reference: <PR/Issue/Discussion Links md format text>
+          list:
+            $ref: "./Tag.yaml#/LISTING-DETAILS"
+        - code: ACADEMIC-ELIGIBILITY
+          description: ACADEMIC-ELIGIBILITY
+          reference: <PR/Issue/Discussion Links md format text>
+          list:
+            $ref: "./Tag.yaml#/ACADEMIC-ELIGIBILITY"
+        
         # - code: SERVICE_INFORMATION
         #   description: Information of the service (Required)
         #   reference: <PR/Issue/Discussion Links md format text>
