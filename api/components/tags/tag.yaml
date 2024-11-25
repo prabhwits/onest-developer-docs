@@ -223,6 +223,15 @@ ACADEMIC-ELIGIBILITY:
   - code: COURSE-NAME
     description: Course name - ["Class X", "Class-XII", "Bachelor of Arts (B.A.)", "Bachelor of Fine Arts (BFA)", "Bachelor of Design (B.Des)", "Bachelor of Science (B.Sc.)", "Bachelor of Commerce (B.Com)", "Bachelor of Business Administration (BBA)", "Bachelor of Technology (B.Tech)", "Bachelor of Engineering (B.E.)", "Bachelor of Architecture (B.Arch)", "Bachelor of Computer Applications (BCA)", "Bachelor of Pharmacy (B.Pharm)", "Bachelor of Laws (LLB)", "Bachelor of Medicine and Bachelor of Surgery (MBBS)", "Bachelor of Dental Surgery (BDS)", "Bachelor of Education (B.Ed)", "Master of Arts (M.A.)", "Master of Science (M.Sc.)", "Master of Fine Arts (MFA)", "Master of Design (M.Des)", "Master of Commerce (M.Com)", "Master of Business Administration (MBA)", "Master of Technology (M.Tech)", "Master of Engineering (M.E.)", "Master of Computer Applications (MCA)", "Master of Pharmacy (M.Pharm)", "Master of Laws (LLM)", "Doctor of Medicine (MD)", "Master of Surgery (MS)", "Master of Education (M.Ed)"]
     reference: <PR/Issue/Discussion Links md format text>
+  - code: COURSE-LEVEL
+    description: Course level - ["Primary Education", "Secondary Education", "Under Graduate", "Post Graduate", "Doctoral"]
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: MIN-PERCENTAGE
+    description: Minimum percentage of marks to be obtained in the course for eligibility
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: MIN-CGPA
+    description: Minimum CGPA of marks to be obtained in the course for eligibility
+    reference: <PR/Issue/Discussion Links md format text>
 EQUIPMENT_ATTRIBUTES:
   - code: ALIAS
     description: Item alias name or alternate name (Optional)
