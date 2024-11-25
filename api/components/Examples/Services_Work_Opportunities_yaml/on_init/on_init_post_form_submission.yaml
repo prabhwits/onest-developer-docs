@@ -33,60 +33,6 @@ value:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
             - "1"
-          fulfillments:
-            - id: "1"
-              type: REMOTE
-              state:
-                descriptor:
-                  code: APPLICATION-FILLED
-                  name: Application Filled
-                updated_at: "2023-02-06T09:55:41.161Z"
-              customer:
-                person:
-                  name: Sanjay
-                  gender: Male
-                  age: "35"
-                  skills:
-                    - code: Android
-                      name: Android
-                    - code: AWS
-                      name: AWS
-                  languages:
-                    - code: en
-                      name: english
-                    - code: ml
-                      name: Malayalam
-                    - code: hi
-                      name: Hindi
-                  tags:
-                    - descriptor:
-                        code: EMP-DETAILS
-                        name: Employee Details
-                      list:
-                        - descriptor:
-                            code: EXPECTED-SALARY
-                            name: Expected Salary
-                          value: "1000000"
-                        - descriptor:
-                            code: TOTAL-EXPERIENCE
-                            name: Total Experience
-                          value: "4"
-                    - descriptor:
-                        code: DOCUMENTS
-                        name: Documents
-                      list:
-                        - descriptor:
-                            code: DOC-TYPE
-                            name: Document Type
-                          value: resume
-                        - descriptor:
-                            code: LINK
-                            name: Document Link
-                          value: https://example.com/resume.pdf
-                        - descriptor:
-                            code: FILE-FORMAT
-                            name: File Format
-                          value: pdf
       quote:
         price:
           currency: INR
@@ -137,3 +83,57 @@ value:
                       code: TYPE
                     value: misc
         ttl: P1D
+      fulfillments:
+        - id: "1"
+          type: REMOTE
+          state:
+            descriptor:
+              code: APPLICATION-FILLED
+              name: Application Filled
+            updated_at: "2023-02-06T09:55:41.161Z"
+          customer:
+            person:
+              name: Sanjay
+              gender: Male
+              age: "35"
+              skills:
+                - code: Android
+                  name: Android
+                - code: AWS
+                  name: AWS
+              languages:
+                - code: en
+                  name: english
+                - code: ml
+                  name: Malayalam
+                - code: hi
+                  name: Hindi
+              tags:
+                - descriptor:
+                    code: EMP-DETAILS
+                    name: Employee Details
+                  list:
+                    - descriptor:
+                        code: EXPECTED-SALARY
+                        name: Expected Salary
+                      value: "1000000"
+                    - descriptor:
+                        code: TOTAL-EXPERIENCE
+                        name: Total Experience
+                      value: "4"
+                - descriptor:
+                    code: DOCUMENTS
+                    name: Documents
+                  list:
+                    - descriptor:
+                        code: DOC-TYPE
+                        name: Document Type
+                      value: resume
+                    - descriptor:
+                        code: LINK
+                        name: Document Link
+                      value: https://example.com/resume.pdf
+                    - descriptor:
+                        code: FILE-FORMAT
+                        name: File Format
+                      value: pdf

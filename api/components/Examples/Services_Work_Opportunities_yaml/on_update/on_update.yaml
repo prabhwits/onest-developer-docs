@@ -179,106 +179,105 @@ value:
                     code: GROSS-MAX
                     name: Maximum Gross Pay
                   value: "1200000"
-          fulfillments:
-            - id: "1"
-              type: REMOTE
-              customer:
-                person:
-                  name: Sanjay
-                  gender: Male
-                  age: "35"
-                  skills:
-                    - code: Android
-                      name: Android
-                    - code: AWS
-                      name: AWS
-                  languages:
-                    - code: en
-                      name: english
-                    - code: ml
-                      name: Malayalam
-                    - code: hi
-                      name: Hindi
-                  tags:
+      fulfillments:
+        - id: "1"
+          type: REMOTE
+          customer:
+            person:
+              name: Sanjay
+              gender: Male
+              age: "35"
+              skills:
+                - code: Android
+                  name: Android
+                - code: AWS
+                  name: AWS
+              languages:
+                - code: en
+                  name: english
+                - code: ml
+                  name: Malayalam
+                - code: hi
+                  name: Hindi
+              tags:
+                - descriptor:
+                    code: EMP-DETAILS
+                    name: Employee Details
+                  list:
                     - descriptor:
-                        code: EMP-DETAILS
-                        name: Employee Details
-                      list:
-                        - descriptor:
-                            code: EXPECTED-SALARY
-                            name: Expected Salary
-                          value: "1000000"
-                        - descriptor:
-                            code: TOTAL-EXPERIENCE
-                            name: Total Experience (Years)
-                          value: "4"
+                        code: EXPECTED-SALARY
+                        name: Expected Salary
+                      value: "1000000"
                     - descriptor:
-                        code: DOCUMENTS
-                        name: Documents
-                      list:
-                        - descriptor:
-                            code: DOC-TYPE
-                            name: Document Type
-                          value: resume
-                        - descriptor:
-                            code: LINK
-                            name: Document Link
-                          value: https://example.com/resume.pdf
-                        - descriptor:
-                            code: FILE-FORMAT
-                            name: File Format
-                          value: pdf
-                  contact:
-                    phone: "9999999999999"
-                    email: abc@abc.bc
-          quote:
+                        code: TOTAL-EXPERIENCE
+                        name: Total Experience (Years)
+                      value: "4"
+                - descriptor:
+                    code: DOCUMENTS
+                    name: Documents
+                  list:
+                    - descriptor:
+                        code: DOC-TYPE
+                        name: Document Type
+                      value: resume
+                    - descriptor:
+                        code: LINK
+                        name: Document Link
+                      value: https://example.com/resume.pdf
+                    - descriptor:
+                        code: FILE-FORMAT
+                        name: File Format
+                      value: pdf
+              contact:
+                phone: "9999999999999"
+                email: abc@abc.bc
+      quote:
+        price:
+          currency: INR
+          value: "1400"
+        breakup:
+          - id: 0253719F295521CED39EC9C2F3C8DCDE
             price:
               currency: INR
-              value: "1400"
-            breakup:
-              - id: 0253719F295521CED39EC9C2F3C8DCDE
-                price:
-                  currency: INR
-                  value: "1100"
-                title: Fullstack Engineer
-                tags:
+              value: "1100"
+            title: Fullstack Engineer
+            tags:
+              - descriptor:
+                  code: TYPE
+                list:
                   - descriptor:
                       code: TYPE
-                    list:
-                      - descriptor:
-                          code: TYPE
-                        value: item
-              - title: NP Fees
-                id: "1"
-                price:
-                  currency: INR
-                  value: "300.00"
-                tags:
-                  - descriptor:
-                      code: QUOTE
-                    list:
-                      - descriptor:
-                          code: TYPE
-                        value: item
-                  - descriptor:
-                      code: NP_FEES
-                      name: np_fees
-                    list:
-                      - code: id
-                        value: "1"
-                      - code: COMMERCIAL_TYPE
-                        value: percent
-                      - code: COMMERCIAL_VALUE
-                        value: "0.5"
-                      - code: COMMERCIAL_NAME
-                        value: qualified
-                      - code: COMMERCIAL_TRIGGERING_STATE
-                        value: OFFER-EXTENDED
+                    value: item
+          - title: NP Fees
+            id: "1"
+            price:
+              currency: INR
+              value: "300.00"
+            tags:
+              - descriptor:
+                  code: QUOTE
+                list:
                   - descriptor:
                       code: TYPE
-                    list:
-                      - descriptor:
-                          code: TYPE
-                        value: misc
-            ttl: P1D
-          
+                    value: item
+              - descriptor:
+                  code: NP_FEES
+                  name: np_fees
+                list:
+                  - code: id
+                    value: "1"
+                  - code: COMMERCIAL_TYPE
+                    value: percent
+                  - code: COMMERCIAL_VALUE
+                    value: "0.5"
+                  - code: COMMERCIAL_NAME
+                    value: qualified
+                  - code: COMMERCIAL_TRIGGERING_STATE
+                    value: OFFER-EXTENDED
+              - descriptor:
+                  code: TYPE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: misc
+        ttl: P1D

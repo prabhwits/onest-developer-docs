@@ -50,28 +50,6 @@ value:
               url: >-
                 https://6vs8xnx5i7.jobhub.co.in/loans-kyc/xinput/formid/a23f2fdfbbb8ac402bfd54f-1
               resubmit: false
-          quote:
-            price:
-              currency: INR
-              value: "1100"
-            breakup:
-              - item:
-                  id: 0253719F295521CED39EC9C2F3C8DCDE
-                  price:
-                    currency: INR
-                    value: "1100.00"
-                  tags:
-                    - descriptor:
-                        code: TYPE
-                      list:
-                        - descriptor:
-                            code: TYPE
-                          value: item
-                price:
-                  currency: INR
-                  value: "1100"
-                title: Fullstack Engineer
-            ttl: P1D
           tags:
             - descriptor:
                 code: ACADEMIC-ELIGIBILITY
@@ -224,57 +202,79 @@ value:
                     code: GROSS-MAX
                     name: Maximum gross pay
                   value: "1200000"
-          fulfillments:
-            - id: "1"
-              type: REMOTE
-              state:
-                descriptor:
-                  code: APPLICATION-STARTED
-                  name: Application started
-                updated_at: "2023-02-06T09:55:41.161Z"
-              customer:
-                person:
-                  name: Sanjay
-                  gender: Male
-                  age: "35"
-                  skills:
-                    - code: Android
-                      name: Android
-                    - code: AWS
-                      name: AWS
-                  languages:
-                    - code: en
-                      name: english
-                    - code: ml
-                      name: Malayalam
-                    - code: hi
-                      name: Hindi
-                  tags:
+      quote:
+        price:
+          currency: INR
+          value: "1100"
+        breakup:
+          - item:
+              id: 0253719F295521CED39EC9C2F3C8DCDE
+              price:
+                currency: INR
+                value: "1100.00"
+              tags:
+                - descriptor:
+                    code: TYPE
+                  list:
                     - descriptor:
-                        code: EMP-DETAILS
-                        name: Employee Details
-                      list:
-                        - descriptor:
-                            code: EXPECTED-SALARY
-                            name: Expected Salary
-                          value: "1000000"
-                        - descriptor:
-                            code: TOTAL-EXPERIENCE
-                            name: Total Experience
-                          value: "4"
+                        code: TYPE
+                      value: item
+            price:
+              currency: INR
+              value: "1100"
+            title: Fullstack Engineer
+        ttl: P1D
+      fulfillments:
+        - id: "1"
+          type: REMOTE
+          state:
+            descriptor:
+              code: APPLICATION-STARTED
+              name: Application started
+            updated_at: "2023-02-06T09:55:41.161Z"
+          customer:
+            person:
+              name: Sanjay
+              gender: Male
+              age: "35"
+              skills:
+                - code: Android
+                  name: Android
+                - code: AWS
+                  name: AWS
+              languages:
+                - code: en
+                  name: english
+                - code: ml
+                  name: Malayalam
+                - code: hi
+                  name: Hindi
+              tags:
+                - descriptor:
+                    code: EMP-DETAILS
+                    name: Employee Details
+                  list:
                     - descriptor:
-                        code: DOCUMENTS
-                        name: Documents
-                      list:
-                        - descriptor:
-                            code: DOC-TYPE
-                            name: Document Type
-                          value: resume
-                        - descriptor:
-                            code: LINK
-                            name: Document Link
-                          value: https://example.com/resume.pdf
-                        - descriptor:
-                            code: FILE-FORMAT
-                            name: File Format
-                          value: pdf
+                        code: EXPECTED-SALARY
+                        name: Expected Salary
+                      value: "1000000"
+                    - descriptor:
+                        code: TOTAL-EXPERIENCE
+                        name: Total Experience
+                      value: "4"
+                - descriptor:
+                    code: DOCUMENTS
+                    name: Documents
+                  list:
+                    - descriptor:
+                        code: DOC-TYPE
+                        name: Document Type
+                      value: resume
+                    - descriptor:
+                        code: LINK
+                        name: Document Link
+                      value: https://example.com/resume.pdf
+                    - descriptor:
+                        code: FILE-FORMAT
+                        name: File Format
+                      value: pdf
