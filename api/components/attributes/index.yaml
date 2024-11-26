@@ -1,3 +1,3 @@
-# Flow 1:
-#   attribute_set:
-#     $ref: "./flow_1_other_product/index.yaml"
+ONDC:ONEST10 - Work Opportunities:
+  attribute_set:
+    $ref: "./Services_Work_Opportunities/index.yaml"
