@@ -10388,3 +10388,318 @@ x-attributes:
                     required: mandatory
                     usage: abc@abc.bc
                     reference: null
+      update:
+        parent: true
+        context:
+          parent: true
+          domain:
+            description: domain
+            required: mandatory
+            usage: ONDC:ONEST10
+            reference: if any
+          action:
+            description: action
+            required: mandatory
+            usage: update
+            reference: if any
+          version:
+            description: version
+            required: mandatory
+            usage: 2.0.0
+            reference: if any
+          bap_id:
+            description: bap_id
+            required: mandatory
+            usage: bap-12345
+            reference: if any
+          bap_uri:
+            description: bap_uri
+            required: mandatory
+            usage: https://worker-hub.bap.io
+            reference: if any
+          bpp_id:
+            description: bpp_id
+            required: mandatory
+            usage: job-hub.bpp.io
+            reference: if any
+          bpp_uri:
+            description: bpp_uri
+            required: mandatory
+            usage: https://job-hub.bpp.io
+            reference: if any
+          transaction_id:
+            description: transaction_id
+            required: mandatory
+            usage: a9aaecca-10b7-4d19-b640-b047a7c62195
+            reference: if any
+          message_id:
+            description: message_id
+            required: mandatory
+            usage: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
+            reference: if any
+          location:
+            city:
+              code: null
+              description: code
+              required: mandatory
+              usage: std:080
+              reference: if any
+            country:
+              code: null
+              description: code
+              required: mandatory
+              usage: IND
+              reference: if any
+          timestamp:
+            description: timestamp
+            required: mandatory
+            usage: '2024-09-04T12:34:56Z'
+            reference: if any
+          ttl:
+            description: ttl
+            required: mandatory
+            usage: PT30M
+            reference: if any
+        message:
+          parent: true
+          update_target:
+            description: update_target
+            required: mandatory
+            usage: fulfillments
+            reference: if any
+          order:
+            id:
+              description: order_id
+              required: mandatory
+              usage: '1677140405881'
+              reference: if any
+          fulfillments:
+            id:
+              description: fulfillment_id
+              required: mandatory
+              usage: fulfillment_id_value
+              reference: if any
+            type:
+              description: fulfillment_type
+              required: mandatory
+              usage: FULFILLMENT_TYPE_VALUE
+              reference: if any
+            contact:
+              phone:
+                description: phone
+                required: mandatory
+                usage: '9999999999'
+                reference: if any
+              email:
+                description: email
+                required: mandatory
+                usage: abc@abc.bc
+                reference: if any
+      on_update:
+        parent: true
+        context:
+          parent: true
+          domain:
+            description: The domain of the ONDC network.
+            required: mandatory
+            usage: ONDC:ONEST10
+            reference: if any
+          action:
+            description: The action being performed in the ONDC flow.
+            required: mandatory
+            usage: on_update
+            reference: if any
+          version:
+            description: The version of the ONDC API being used.
+            required: mandatory
+            usage: 2.0.0
+            reference: if any
+          bap_id:
+            description: The unique identifier of the Buyer Application Provider (BAP).
+            required: mandatory
+            usage: worker-hub.bap.io
+            reference: if any
+          bap_uri:
+            description: The URI of the Buyer Application Provider (BAP).
+            required: mandatory
+            usage: https://worker-hub.bap.io
+            reference: if any
+          bpp_id:
+            description: The unique identifier of the Seller Application Provider (BPP).
+            required: mandatory
+            usage: job-hub.bpp.io
+            reference: if any
+          bpp_uri:
+            description: The URI of the Seller Application Provider (BPP).
+            required: mandatory
+            usage: https://job-hub.bpp.io
+            reference: if any
+          transaction_id:
+            description: The unique transaction identifier for the operation.
+            required: mandatory
+            usage: a9aaecca-10b7-4d19-b640-b047a7c62195
+            reference: if any
+          message_id:
+            description: The unique identifier of the message in the ONDC flow.
+            required: mandatory
+            usage: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
+            reference: if any
+          location:
+            city:
+              code:
+                description: The city code in the ONDC ecosystem.
+                required: mandatory
+                usage: std:080
+                reference: if any
+            country:
+              code:
+                description: The country code in the ONDC ecosystem.
+                required: mandatory
+                usage: IND
+                reference: if any
+          timestamp:
+            description: The timestamp of the operation in ISO 8601 format.
+            required: mandatory
+            usage: '2023-02-23T08:20:06Z'
+            reference: if any
+          ttl:
+            description: >-
+              The Time-to-Live (TTL) of the operation in ISO 8601 duration
+              format.
+            required: mandatory
+            usage: PT30S
+            reference: if any
+        message:
+          parent: true
+          update_target:
+            description: The target entity being updated in the message.
+            required: mandatory
+            usage: fulfillments
+            reference: if any
+          order:
+            parent: true
+            id:
+              description: The unique identifier of the order.
+              required: mandatory
+              usage: '1677140405881'
+              reference: if any
+          status:
+            parent: true
+            description: The status of the order.
+            required: mandatory
+            usage: Active
+            reference: if any
+          provider:
+            parent: true
+            id:
+              description: The unique identifier of the provider offering the service.
+              required: mandatory
+              usage: '1'
+              reference: if any
+            descriptor:
+              name:
+                description: The name of the provider.
+                required: mandatory
+                usage: Affinidi
+                reference: if any
+          locations:
+            parent: true
+            id:
+              description: The unique identifier of the location.
+              required: mandatory
+              usage: L1
+              reference: if any
+            city:
+              name:
+                description: The name of the city.
+                required: mandatory
+                usage: Pune
+                reference: if any
+              code:
+                description: The city code.
+                required: mandatory
+                usage: std:020
+                reference: if any
+            state:
+              name:
+                description: The name of the state.
+                required: mandatory
+                usage: Maharashtra
+                reference: if any
+              code:
+                description: The state code.
+                required: mandatory
+                usage: MH
+                reference: if any
+          items:
+            parent: true
+            id:
+              description: The unique identifier of the item being selected.
+              required: mandatory
+              usage: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+              reference: if any
+            fulfillment_ids:
+              description: The fulfillment IDs associated with the item.
+              required: mandatory
+              usage: '1'
+              reference: if any
+            location_ids:
+              description: The location IDs associated with the item.
+              required: mandatory
+              usage: L1
+              reference: if any
+          fulfillments:
+            parent: true
+            id:
+              description: The unique identifier of the fulfillment.
+              required: mandatory
+              usage: '1'
+              reference: if any
+            type:
+              description: The type of fulfillment.
+              required: mandatory
+              usage: REMOTE
+              reference: if any
+            customer:
+              person:
+                name:
+                  description: The name of the customer.
+                  required: mandatory
+                  usage: Sanjay
+                  reference: if any
+                gender:
+                  description: The gender of the customer.
+                  required: mandatory
+                  usage: Male
+                  reference: if any
+                age:
+                  description: The age of the customer.
+                  required: mandatory
+                  usage: '35'
+                  reference: if any
+                skills:
+                  description: The skills of the customer.
+                  required: mandatory
+                  usage:
+                    - Android
+                    - AWS
+                  reference: if any
+                languages:
+                  description: The languages spoken by the customer.
+                  required: mandatory
+                  usage:
+                    - English
+                    - Malayalam
+                    - Hindi
+                  reference: if any
+            contact:
+              phone:
+                description: The phone number of the customer.
+                required: mandatory
+                usage: '9999999999999'
+                reference: if any
+              email:
+                description: The email address of the customer.
+                required: mandatory
+                usage: abc@abc.bc
+                reference: if any
