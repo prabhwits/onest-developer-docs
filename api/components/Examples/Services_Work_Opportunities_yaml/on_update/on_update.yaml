@@ -229,7 +229,7 @@ value:
                         name: File Format
                       value: pdf
               contact:
-                phone: "9999999999999"
+                phone: "9999999999"
                 email: abc@abc.bc
       quote:
         price:

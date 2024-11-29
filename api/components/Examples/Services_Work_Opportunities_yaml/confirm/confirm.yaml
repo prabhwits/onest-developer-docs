@@ -78,7 +78,7 @@ value:
                         name: Resume
                       value: https://link-to-the-document.com
             contact:
-              phone: "9999999999999"
+              phone: "9999999999"
               email: abc@abc.bc
           tags:
             - descriptor:

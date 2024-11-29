@@ -80,7 +80,7 @@ value:
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: OFFER-EXTENDED
           contact:
-            phone: "9999999999999"
+            phone: "9999999999"
             email: abc@abc.bc
       quote:
         price:

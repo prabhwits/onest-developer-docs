@@ -76,20 +76,17 @@ message:
     usage: "fulfillments"
     reference: "if any"
   order:
-    parent: true
     id:
       description: "The unique identifier of the order."
       required: mandatory
       usage: "1677140405881"
       reference: "if any"
   status:
-    parent: true
     description: "The status of the order."
     required: mandatory
     usage: "Active"
     reference: "if any"
   provider:
-    parent: true
     id:
       description: "The unique identifier of the provider offering the service."
       required: mandatory
@@ -102,7 +99,6 @@ message:
         usage: "Affinidi"
         reference: "if any"
   locations:
-    parent: true
     id:
       description: "The unique identifier of the location."
       required: mandatory
@@ -131,7 +127,6 @@ message:
         usage: "MH"
         reference: "if any"
   items:
-    parent: true
     id:
       description: "The unique identifier of the item being selected."
       required: mandatory
@@ -148,7 +143,6 @@ message:
       usage: "L1"
       reference: "if any"
   fulfillments:
-    parent: true
     id:
       description: "The unique identifier of the fulfillment."
       required: mandatory
@@ -177,23 +171,74 @@ message:
           usage: "35"
           reference: "if any"
         skills:
-          description: "The skills of the customer."
-          required: mandatory
-          usage: ["Android", "AWS"]
-          reference: "if any"
+          code:
+            description: "The code of the skill."
+            required: mandatory
+            usage: "Android"
+            reference: null
+          name:
+            description: "The name of the skill."
+            required: mandatory
+            usage: "Android"
+            reference: null
         languages:
-          description: "The languages spoken by the customer."
-          required: mandatory
-          usage: ["English", "Malayalam", "Hindi"]
-          reference: "if any"
+          code:
+            description: "The language code."
+            required: mandatory
+            usage: "en"
+            reference: null
+          name:
+            description: "The language name."
+            required: mandatory
+            usage: "English"
+            reference: null
     contact:
       phone:
         description: "The phone number of the customer."
         required: mandatory
-        usage: "9999999999999"
+        usage: "9999999999"
         reference: "if any"
       email:
         description: "The email address of the customer."
         required: mandatory
         usage: "abc@abc.bc"
         reference: "if any"
+  quote:
+    price:
+      currency:
+        description: "The currency of the quoted price."
+        required: mandatory
+        usage: "INR"
+        reference: null
+      value:
+        description: "The value of the quoted price."
+        required: mandatory
+        usage: "1400"
+        reference: null
+    breakup:
+      id:
+        description: "The unique identifier for the quote breakup item."
+        required: mandatory
+        usage: "0253719F295521CED39EC9C2F3C8DCDE"
+        reference: null
+      price:
+        currency:
+          description: "The currency of the breakup price."
+          required: mandatory
+          usage: "INR"
+          reference: null
+        value:
+          description: "The value of the breakup price."
+          required: mandatory
+          usage: "1100"
+          reference: null
+      title:
+        description: "The title of the breakup item."
+        required: mandatory
+        usage: "Fullstack Engineer"
+        reference: null
+    ttl:
+      description: "The Time-to-Live (TTL) for the quoted order."
+      required: mandatory
+      usage: "P1D"
+      reference: null
