@@ -30,6 +30,14 @@ on_confirm:
   parent: true
   $ref: "./on_confirm/on_confirm.yaml"
 
+status:
+  parent: true
+  $ref: "./status/status.yaml"
+
+on_status:
+  parent: true
+  $ref: "./on_status/on_status.yaml"
+
 cancel:
   parent: true
   $ref: "./cancel/cancel.yaml"
