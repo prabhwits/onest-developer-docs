@@ -22,6 +22,14 @@ on_init:
   parent: true
   $ref: "./on_init/on_init.yaml"
 
+confirm:
+  parent: true
+  $ref: "./confirm/confirm.yaml"
+
+on_confirm:
+  parent: true
+  $ref: "./on_confirm/on_confirm.yaml"
+
 cancel:
   parent: true
   $ref: "./cancel/cancel.yaml"
