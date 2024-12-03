@@ -5169,17 +5169,17 @@ x-flows:
                           end: '2023-02-03T13:23:01+00:00'
                       tags:
                         - descriptor:
-                            code: CANCEL REQUEST
+                            code: CANCEL_REQUEST
                             name: Cancel request
                           list:
                             - descriptor:
-                                code: REASON-ID
+                                code: REASON_ID
                                 name: Reason id
                               value: '001'
                             - descriptor:
-                                code: INITIATED BY
+                                code: INITIATED_BY
                                 name: Initiated by
-                              value: Buyer
+                              value: Subscriber ID
                   quote:
                     price:
                       currency: INR
@@ -8792,17 +8792,17 @@ x-examples:
                             end: '2023-02-03T13:23:01+00:00'
                         tags:
                           - descriptor:
-                              code: CANCEL REQUEST
+                              code: CANCEL_REQUEST
                               name: Cancel request
                             list:
                               - descriptor:
-                                  code: REASON-ID
+                                  code: REASON_ID
                                   name: Reason id
                                 value: '001'
                               - descriptor:
-                                  code: INITIATED BY
+                                  code: INITIATED_BY
                                   name: Initiated by
-                                value: Buyer
+                                value: Subscriber ID
                     quote:
                       price:
                         currency: INR
