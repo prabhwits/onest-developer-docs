@@ -21,14 +21,6 @@ value:
         id: "1"
         descriptor:
           name: Affinidi
-        locations:
-          - id: L1
-            city:
-              name: Pune
-              code: std:020
-            state:
-              name: Maharastra
-              code: MH
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
@@ -38,6 +30,11 @@ value:
               start: "2023-01-03T13:23:01+00:00"
               end: "2023-02-03T13:23:01+00:00"
           tags:
+            - descriptor:
+                code: NP_FEES
+                list:
+                  - code: ID
+                    value: "1"
             - descriptor:
                 code: ACADEMIC-ELIGIBILITY
                 name: Academic eligibility
@@ -111,7 +108,7 @@ value:
                 - descriptor:
                     code: REQ-EXPERIENCE
                     name: Required work experience in years
-                  value: "2.5"
+                  value: "P2Y6M"
                 - descriptor:
                     code: REQ-PROF-SKILL
                     name: Skills required for the role
@@ -188,24 +185,51 @@ value:
       quote:
         price:
           currency: INR
-          value: "1100"
+          value: "1400"
         breakup:
-          - item:
-              id: 0253719F295521CED39EC9C2F3C8DCDE
-              price:
-                currency: INR
-                value: "1100.00"
-              tags:
-                - descriptor:
-                    code: TYPE
-                  list:
-                    - descriptor:
-                        code: TYPE
-                      value: item
+          - id: 0253719F295521CED39EC9C2F3C8DCDE
             price:
               currency: INR
               value: "1100"
             title: Fullstack Engineer
+            tags:
+              - descriptor:
+                  code: TYPE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: item
+          - title: NP Fees
+            id: "1"
+            price:
+              currency: INR
+              value: "300.00"
+            tags:
+              - descriptor:
+                  code: QUOTE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: item
+              - descriptor:
+                  code: NP_FEES
+                list:
+                  - code: ID
+                    value: "1"
+                  - code: COMMERCIAL_TYPE
+                    value: percent
+                  - code: COMMERCIAL_VALUE
+                    value: "0.5"
+                  - code: COMMERCIAL_NAME
+                    value: qualified
+                  - code: COMMERCIAL_TRIGGERING_STATE
+                    value: OFFER-EXTENDED
+              - descriptor:
+                  code: TYPE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: misc
         ttl: P1D
       fulfillments:
         - id: "1"
@@ -241,8 +265,8 @@ value:
                       value: "1000000"
                     - descriptor:
                         code: TOTAL-EXPERIENCE
-                        name: Total Experience (Years)
-                      value: "4"
+                        name: Total Experience
+                      value: "P4Y"
                 - descriptor:
                     code: DOCUMENTS
                     name: Documents

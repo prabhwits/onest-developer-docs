@@ -274,7 +274,7 @@ function addEnumTag(base, layer) {
   base["x-flows"] = layer["flows"];
   base["x-examples"] = layer["examples"];
   base["x-attributes"] = layer["attributes"];
-  // base["x-errorcodes"] = layer["error_codes"];
+  base["x-errorcodes"] = layer["error_codes"];
 }
 function GenerateYaml(base, layer, output_yaml) {
   const output = yaml.dump(base);

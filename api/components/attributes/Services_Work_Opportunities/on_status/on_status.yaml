@@ -118,18 +118,6 @@ message:
         required: mandatory
         usage: ["1"]
         reference: null
-      time:
-        range:
-          start:
-            description: "The start time for the item's availability."
-            required: mandatory
-            usage: "2023-01-03T13:23:01+00:00"
-            reference: null
-          end:
-            description: "The end time for the item's availability."
-            required: mandatory
-            usage: "2023-02-03T13:23:01+00:00"
-            reference: null
     quote:
       price:
         currency:

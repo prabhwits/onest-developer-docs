@@ -82,10 +82,10 @@ value:
               quantity:
                 available:
                   count: 50
-              time:
+              application_validity_time:
                 range:
                   start: "2023-01-03T13:23:10.171Z"
-                  end: "2023-02-03T13:23:10.171Z "
+                  end: "2023-02-03T13:23:10.171Z"
               location_ids:
                 - L2
               fulfillment_ids:
@@ -168,7 +168,7 @@ value:
                     - descriptor:
                         code: REQ-EXPERIENCE
                         name: Required work experience in years
-                      value: "2.5"
+                      value: "P2Y6M"
                     - descriptor:
                         code: REQ-PROF-SKILL
                         name: Skills required for the role
@@ -247,24 +247,23 @@ value:
                         code: GENDER
                         name: Gender
                       value: Male
-                - descriptor:
-                    code: SALARY-INFO
-                    name: Salary information
-                  list:
-                    - descriptor:
-                        code: GROSS-MIN
-                        name: Minimum gross pay
-                      value: "900000"
-                    - descriptor:
-                        code: GROSS-MAX
-                        name: Maximum gross pay
-                      value: "1200000"
+                # - descriptor:
+                #     code: SALARY-INFO
+                #     name: Salary information
+                #   list:
+                #     - descriptor:
+                #         code: GROSS-MIN
+                #         name: Minimum gross pay
+                #       value: "900000"
+                #     - descriptor:
+                #         code: GROSS-MAX
+                #         name: Maximum gross pay
+                #       value: "1200000"
                 - descriptor:
                     code: NP_FEES
-                    name: np_fees
                   list:
                     - code: ID
-                      value: 1
+                      value: "1"
                     - code: COMMERCIAL_TYPE
                       value: percent
                     - code: COMMERCIAL_VALUE
@@ -275,10 +274,9 @@ value:
                       value: OFFER-ACCEPTED
                 - descriptor:
                     code: NP_FEES
-                    name: np_fees
                   list:
                     - code: ID
-                      value: 2
+                      value: "2"
                     - code: COMMERCIAL_TYPE
                       value: percent
                     - code: COMMERCIAL_VALUE
@@ -289,10 +287,9 @@ value:
                       value: OFFER-EXTENDED
                 - descriptor:
                     code: NP_FEES
-                    name: np_fees
                   list:
                     - code: ID
-                      value: 3
+                      value: "3"
                     - code: COMMERCIAL_TYPE
                       value: amount
                     - code: COMMERCIAL_VALUE
@@ -301,10 +298,6 @@ value:
                       value: verified
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: APPLICATION-SUBMITTED
-              price:
-                currency: INR
-                value: "1100.00"
-                maximum_value: "1200.0"
             - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
               category_id: DevOps
               descriptor:
@@ -338,10 +331,10 @@ value:
                 - "1"
                 - "2"
                 - "3"
-              time:
+              application_validity_time:
                 range:
                   start: "2023-01-03T13:23:10.171Z"
-                  end: "2023-02-03T13:23:10.171Z "
+                  end: "2023-02-03T13:23:10.171Z"
               tags:
                 - descriptor:
                     code: ACADEMIC-ELIGIBILITY
@@ -418,7 +411,7 @@ value:
                     - descriptor:
                         code: REQ-EXPERIENCE
                         name: Required work experience in years
-                      value: "2.5"
+                      value: "P2Y6M"
                     - descriptor:
                         code: REQ-PROF-SKILL
                         name: Skills required for the role
@@ -484,7 +477,7 @@ value:
                     - descriptor:
                         code: WORK-DURATION
                         name: Duration of contract
-                      value: 120 days
+                      value: "P120D"
                     - descriptor:
                         code: JOB-ROLE
                         name: Job role
@@ -511,10 +504,9 @@ value:
                       value: "1200000"
                 - descriptor:
                     code: NP_FEES
-                    name: np_fees
                   list:
                     - code: ID
-                      value: 1
+                      value: "1"
                     - code: COMMERCIAL_TYPE
                       value: percent
                     - code: COMMERCIAL_VALUE
@@ -525,10 +517,9 @@ value:
                       value: OFFER-ACCEPTED
                 - descriptor:
                     code: NP_FEES
-                    name: np_fees
                   list:
                     - code: ID
-                      value: 2
+                      value: "2"
                     - code: COMMERCIAL_TYPE
                       value: percent
                     - code: COMMERCIAL_VALUE
@@ -539,10 +530,9 @@ value:
                       value: OFFER-EXTENDED
                 - descriptor:
                     code: NP_FEES
-                    name: np_fees
                   list:
                     - code: ID
-                      value: 3
+                      value: "3"
                     - code: COMMERCIAL_TYPE
                       value: amount
                     - code: COMMERCIAL_VALUE
@@ -588,10 +578,10 @@ value:
                 - "1"
                 - "2"
                 - "3"
-              time:
+              application_validity_time:
                 range:
                   start: "2023-01-03T13:23:10.171Z"
-                  end: "2023-02-03T13:23:10.171Z "
+                  end: "2023-02-03T13:23:10.171Z"
               tags:
                 - descriptor:
                     code: ACADEMIC-ELIGIBILITY
@@ -668,7 +658,7 @@ value:
                     - descriptor:
                         code: REQ-EXPERIENCE
                         name: Required work experience in years
-                      value: "0.5"
+                      value: "P6M"
                     - descriptor:
                         code: REQ-PROF-SKILL
                         name: Skills required for the role
@@ -753,10 +743,9 @@ value:
                       value: "900000"
                 - descriptor:
                     code: NP_FEES
-                    name: np_fees
                   list:
                     - code: ID
-                      value: 1
+                      value: "1"
                     - code: COMMERCIAL_TYPE
                       value: percent
                     - code: COMMERCIAL_VALUE
@@ -767,10 +756,9 @@ value:
                       value: OFFER-ACCEPTED
                 - descriptor:
                     code: NP_FEES
-                    name: np_fees
                   list:
                     - code: ID
-                      value: 2
+                      value: "2"
                     - code: COMMERCIAL_TYPE
                       value: percent
                     - code: COMMERCIAL_VALUE
@@ -781,10 +769,9 @@ value:
                       value: OFFER-EXTENDED
                 - descriptor:
                     code: NP_FEES
-                    name: np_fees
                   list:
                     - code: ID
-                      value: 3
+                      value: "3"
                     - code: COMMERCIAL_TYPE
                       value: amount
                     - code: COMMERCIAL_VALUE
@@ -797,46 +784,3 @@ value:
                 currency: INR
                 value: "1000.00"
                 maximum_value: "1500.0"
-          tags:
-            - descriptor:
-                code: NP_FEES
-                name: np_fees
-              list:
-                - code: ID
-                  value: 1
-                - code: COMMERCIAL_TYPE
-                  value: percent
-                - code: COMMERCIAL_VALUE
-                  value: "1.5"
-                - code: COMMERCIAL_NAME
-                  value: recruitment
-                - code: COMMERCIAL_TRIGGERING_STATE
-                  value: OFFER-ACCEPTED
-            - descriptor:
-                code: NP_FEES
-                name: np_fees
-              list:
-                - code: ID
-                  value: 2
-                - code: COMMERCIAL_TYPE
-                  value: percent
-                - code: COMMERCIAL_VALUE
-                  value: "0.5"
-                - code: COMMERCIAL_NAME
-                  value: qualified
-                - code: COMMERCIAL_TRIGGERING_STATE
-                  value: OFFER-EXTENDED
-            - descriptor:
-                code: NP_FEES
-                name: np_fees
-              list:
-                - code: ID
-                  value: 3
-                - code: COMMERCIAL_TYPE
-                  value: amount
-                - code: COMMERCIAL_VALUE
-                  value: "500"
-                - code: COMMERCIAL_NAME
-                  value: verified
-                - code: COMMERCIAL_TRIGGERING_STATE
-                  value: APPLICATION-SUBMITTED

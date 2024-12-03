@@ -14,25 +14,23 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-23T10:14:05Z"
+    timestamp: "2023-02-23T10:14:051Z"
     ttl: PT30S
   message:
     order:
       provider:
         descriptor:
           name: Affinidi
-        locations:
-          - id: L1
-            city:
-              name: Pune
-              code: std:020
-            state:
-              name: Maharastra
-              code: MH
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
             - "1"
+          tags:
+          - descriptor:
+              code: NP_FEES
+            list:
+              - code: ID
+                value: "1"
       quote:
         price:
           currency: INR
@@ -64,9 +62,8 @@ value:
                     value: item
               - descriptor:
                   code: NP_FEES
-                  name: np_fees
                 list:
-                  - code: id
+                  - code: ID
                     value: "1"
                   - code: COMMERCIAL_TYPE
                     value: percent
@@ -120,7 +117,7 @@ value:
                     - descriptor:
                         code: TOTAL-EXPERIENCE
                         name: Total Experience
-                      value: "4"
+                      value: "P4Y"
                 - descriptor:
                     code: DOCUMENTS
                     name: Documents

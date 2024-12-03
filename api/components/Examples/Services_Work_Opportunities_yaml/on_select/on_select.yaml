@@ -20,23 +20,16 @@ value:
         id: "1"
         descriptor:
           name: Affinidi
-        fulfillments:
-          - id: "1"
-            type: REMOTE
-          - id: "2"
-            type: HYBRID
-          - id: "3"
-            type: ONSITE
-        locations:
-          - id: L1
-            city:
-              name: Pune
-              code: std:020
-            state:
-              name: Maharastra
-              code: MH
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
+          fulfillment_ids:
+            - "1"
+          tags:
+          - descriptor:
+              code: NP_FEES
+            list:
+              - code: ID
+                value: "1"
       quote:
         price:
           currency: INR
@@ -68,9 +61,8 @@ value:
                     value: item
               - descriptor:
                   code: NP_FEES
-                  name: np_fees
                 list:
-                  - code: id
+                  - code: ID
                     value: "1"
                   - code: COMMERCIAL_TYPE
                     value: percent

@@ -39,7 +39,7 @@ value:
               quantity:
                 available:
                   count: 30
-              time:
+              application_validity_time:
                 range:
                   start: "2023-01-04T09:32:10.560Z"
                   end: "2023-02-04T08:20:00.230Z"
@@ -50,22 +50,23 @@ value:
                 - "5"
                 - "6"
               tags:
-                - descriptor:
-                    code: SALARY-INFO
-                    name: Salary information
-                  list:
-                    - descriptor:
-                        code: GROSS-MIN
-                        name: Minimum gross pay
-                      value: "800000"
-                    - descriptor:
-                        code: GROSS-MAX
-                        name: Maximum gross pay
-                      value: "1000000"
+                # - descriptor:
+                #     code: SALARY-INFO
+                #     name: Salary information
+                #   list:
+                #     - descriptor:
+                #         code: GROSS-MIN
+                #         name: Minimum gross pay
+                #       value: "800000"
+                #     - descriptor:
+                #         code: GROSS-MAX
+                #         name: Maximum gross pay
+                #       value: "1000000"
                 - descriptor:
                     code: NP_FEES
-                    name: np_fees
                   list:
+                    - code: ID
+                      value: "1"
                     - code: COMMERCIAL_TYPE
                       value: percentage
                     - code: COMMERCIAL_VALUE

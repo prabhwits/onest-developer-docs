@@ -25,14 +25,6 @@ value:
           id: '1'
           descriptor:
             name: Affinidi
-          locations:
-            - id: L1
-              city:
-                name: Pune
-                code: std:020
-              state:
-                name: Maharastra
-                code: MH
         items:
           - id: 0253719F295521CED39EC9C2F3C8DCDE
             fulfillment_ids:
@@ -44,17 +36,22 @@ value:
                 end: '2023-02-03T13:23:01+00:00'
             tags:
               - descriptor:
-                  code: CANCEL REQUEST
+                  code: NP_FEES
+                  list:
+                    - code: ID
+                      value: "1"
+              - descriptor:
+                  code: CANCEL_REQUEST
                   name: Cancel request
                 list:
                   - descriptor:
-                      code: REASON-ID
+                      code: REASON_ID
                       name: Reason id
                     value: '001'
                   - descriptor:
-                      code: INITIATED BY
+                      code: INITIATED_BY
                       name: Initiated by
-                    value: Buyer
+                    value: Subscriber ID
         quote:
           price:
             currency: INR

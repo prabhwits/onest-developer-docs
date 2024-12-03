@@ -6,43 +6,30 @@ details:
     mermaidGraph: >-
       sequenceDiagram
         participant BAP
-        participant ONEST_Gateway
         participant BPP
+        participant Gateway
 
-        BAP->>ONEST_Gateway: search
-        ONEST_Gateway->>BPP: search
-        BPP-->>ONEST_Gateway: on_search
-        ONEST_Gateway-->>BAP: on_search
+        BAP->>Gateway: search
+        Gateway->>BPP: search
+        BPP-->>BAP: on_search
 
-        BAP->>ONEST_Gateway: select
-        ONEST_Gateway->>BPP: select
-        BPP-->>ONEST_Gateway: on_select
-        ONEST_Gateway-->>BAP: on_select
+        BAP->>BPP: select
+        BPP-->>BAP: on_select
 
-        BAP->>ONEST_Gateway: init
-        ONEST_Gateway->>BPP: init
-        BPP-->>ONEST_Gateway: on_init
-        ONEST_Gateway-->>BAP: on_init
+        BAP->>BPP: init
+        BPP-->>BAP: on_init
 
-        BAP->>ONEST_Gateway: confirm
-        ONEST_Gateway->>BPP: confirm
-        BPP-->>ONEST_Gateway: on_confirm
-        ONEST_Gateway-->>BAP: on_confirm
+        BAP->>BPP: confirm
+        BPP-->>BAP: on_confirm
 
-        BAP->>ONEST_Gateway: status
-        ONEST_Gateway->>BPP: status
-        BPP-->>ONEST_Gateway: on_status
-        ONEST_Gateway-->>BAP: on_status
+        BAP->>BPP: status
+        BPP-->>BAP: on_status
 
-        BAP->>ONEST_Gateway: update
-        ONEST_Gateway->>BPP: update
-        BPP-->>ONEST_Gateway: on_update
-        ONEST_Gateway-->>BAP: on_update
+        BAP->>BPP: update
+        BPP-->>BAP: on_update
 
-        BAP->>ONEST_Gateway: cancel
-        ONEST_Gateway->>BPP: cancel
-        BPP-->>ONEST_Gateway: on_cancel
-        ONEST_Gateway-->>BAP: on_cancel
+        BAP->>BPP: cancel
+        BPP-->>BAP: on_cancel
 
 
   - description: Ordering
@@ -50,7 +37,7 @@ details:
       sequenceDiagram
         participant B as Buyer
         participant BA as BuyerApp
-        participant G as Gateway
+        participant G as 
         participant SA as SellerApp
         Note Over B,SA: **SELECT FLOW**
         B ->> BA: Selects one of the <br>providers for job
@@ -63,7 +50,6 @@ details:
       sequenceDiagram
         participant B as Buyer
         participant BA as BuyerApp
-        participant G as Gateway
         participant SA as SellerApp
         Note Over B,SA: **INITIALIZATION FLOW**
         B ->> BA: Proceeds with the Order

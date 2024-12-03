@@ -14,7 +14,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-23T10:14:05Z"
+    timestamp: "2023-02-23T10:14:051Z"
     ttl: PT30S
   message:
     order:
@@ -22,14 +22,6 @@ value:
         id: "1"
         descriptor:
           name: Affinidi
-        locations:
-          - id: L1
-            city:
-              name: Pune
-              code: std:020
-            state:
-              name: Maharastra
-              code: MH
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
@@ -51,6 +43,11 @@ value:
                 https://6vs8xnx5i7.jobhub.co.in/loans-kyc/xinput/formid/a23f2fdfbbb8ac402bfd54f-1
               resubmit: false
           tags:
+            - descriptor:
+                code: NP_FEES
+                list:
+                  - code: ID
+                    value: "1"
             - descriptor:
                 code: ACADEMIC-ELIGIBILITY
                 name: Academic eligibility
@@ -124,7 +121,7 @@ value:
                 - descriptor:
                     code: REQ-EXPERIENCE
                     name: Required work experience in years
-                  value: "2.5"
+                  value: "P2Y6M"
                 - descriptor:
                     code: REQ-PROF-SKILL
                     name: Skills required for the role
@@ -190,39 +187,66 @@ value:
                     code: JOB-ROLE
                     name: Job role
                   value: DevOps Engineer
-            - descriptor:
-                code: SALARY-INFO
-                name: Salary information
-              list:
-                - descriptor:
-                    code: GROSS-MIN
-                    name: Minimum gross pay
-                  value: "900000"
-                - descriptor:
-                    code: GROSS-MAX
-                    name: Maximum gross pay
-                  value: "1200000"
+            # - descriptor:
+            #     code: SALARY-INFO
+            #     name: Salary information
+            #   list:
+            #     - descriptor:
+            #         code: GROSS-MIN
+            #         name: Minimum gross pay
+            #       value: "900000"
+            #     - descriptor:
+            #         code: GROSS-MAX
+            #         name: Maximum gross pay
+            #       value: "1200000"
       quote:
         price:
           currency: INR
-          value: "1100"
+          value: "1400"
         breakup:
-          - item:
-              id: 0253719F295521CED39EC9C2F3C8DCDE
-              price:
-                currency: INR
-                value: "1100.00"
-              tags:
-                - descriptor:
-                    code: TYPE
-                  list:
-                    - descriptor:
-                        code: TYPE
-                      value: item
+          - id: 0253719F295521CED39EC9C2F3C8DCDE
             price:
               currency: INR
               value: "1100"
             title: Fullstack Engineer
+            tags:
+              - descriptor:
+                  code: TYPE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: item
+          - title: NP Fees
+            id: "1"
+            price:
+              currency: INR
+              value: "300.00"
+            tags:
+              - descriptor:
+                  code: QUOTE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: item
+              - descriptor:
+                  code: NP_FEES
+                list:
+                  - code: ID
+                    value: "1"
+                  - code: COMMERCIAL_TYPE
+                    value: percent
+                  - code: COMMERCIAL_VALUE
+                    value: "0.5"
+                  - code: COMMERCIAL_NAME
+                    value: qualified
+                  - code: COMMERCIAL_TRIGGERING_STATE
+                    value: OFFER-EXTENDED
+              - descriptor:
+                  code: TYPE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: misc
         ttl: P1D
       fulfillments:
         - id: "1"
@@ -261,7 +285,7 @@ value:
                     - descriptor:
                         code: TOTAL-EXPERIENCE
                         name: Total Experience
-                      value: "4"
+                      value: "P4Y"
                 - descriptor:
                     code: DOCUMENTS
                     name: Documents

@@ -168,7 +168,7 @@ message:
                 required: mandatory
                 usage: "50"
                 reference: null
-          time:
+          application_validity_time:
             range:
               start:
                 description: "start time"

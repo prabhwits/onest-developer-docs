@@ -4,6 +4,10 @@
 
 Job Hub is acting as provider platform(BPP) which hosts the jobs and Worker Hub is acting as seeker platform(BAP) which helps the workers to find jobs.
 
+PRD
+BRD
+
+
 ### Flow Diagram:
 
 <figure><img src="../brd_images/work-opportunities-flow.jpg" alt=""><figcaption></figcaption></figure>

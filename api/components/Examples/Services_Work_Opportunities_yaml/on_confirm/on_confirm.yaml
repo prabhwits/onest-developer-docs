@@ -24,15 +24,16 @@ value:
         id: "1"
         descriptor:
           name: Affinidi
-        locations:
-          state:
-            name: Maharastra
-            code: MH
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
-            - "1"
+            - "1"    
           tags:
+            - descriptor:
+                code: NP_FEES
+                list:
+                  - code: ID
+                    value: "1"
             - descriptor:
                 code: ACADEMIC-ELIGIBILITY
                 name: Academic Eligibility
@@ -100,7 +101,7 @@ value:
                 - descriptor:
                     code: REQ-EXPERIENCE
                     name: Required Work Experience in Years
-                  value: "2.5"
+                  value: "P2Y6M"
                 - descriptor:
                     code: REQ-PROF-SKILL
                     name: Skills Required for the Role
@@ -161,18 +162,18 @@ value:
                     code: JOB-ROLE
                     name: Job Role
                   value: DevOps Engineer
-            - descriptor:
-                code: SALARY-INFO
-                name: Salary Information
-              list:
-                - descriptor:
-                    code: GROSS-MIN
-                    name: Minimum Gross Pay
-                  value: "900000"
-                - descriptor:
-                    code: GROSS-MAX
-                    name: Maximum Gross Pay
-                  value: "1200000"
+            # - descriptor:
+            #     code: SALARY-INFO
+            #     name: Salary Information
+            #   list:
+            #     - descriptor:
+            #         code: GROSS-MIN
+            #         name: Minimum Gross Pay
+            #       value: "900000"
+            #     - descriptor:
+            #         code: GROSS-MAX
+            #         name: Maximum Gross Pay
+            #       value: "1200000"
       quote:
         price:
           currency: INR
@@ -204,9 +205,8 @@ value:
                     value: item
               - descriptor:
                   code: NP_FEES
-                  name: np_fees
                 list:
-                  - code: id
+                  - code: ID
                     value: "1"
                   - code: COMMERCIAL_TYPE
                     value: percent

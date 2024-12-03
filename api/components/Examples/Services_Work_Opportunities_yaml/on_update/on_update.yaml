@@ -14,7 +14,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-23T08:20:06Z"
+    timestamp: "2023-02-23T08:20:061Z"
     ttl: PT30S
   message:
     order:
@@ -24,14 +24,6 @@ value:
         id: "1"
         descriptor:
           name: Affinidi
-        locations:
-          - id: L1
-            city:
-              name: Pune
-              code: std:020
-            state:
-              name: Maharastra
-              code: MH
       items:
         - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
           fulfillment_ids:
@@ -39,6 +31,11 @@ value:
           location_ids:
             - L1
           tags:
+            - descriptor:
+                code: NP_FEES
+                list:
+                  - code: ID
+                    value: "1"
             - descriptor:
                 code: ACADEMIC-ELIGIBILITY
                 name: Academic Eligibility
@@ -106,7 +103,7 @@ value:
                 - descriptor:
                     code: REQ-EXPERIENCE
                     name: Required Work Experience in Years
-                  value: "2.5"
+                  value: "P2Y6M"
                 - descriptor:
                     code: REQ-PROF-SKILL
                     name: Skills Required for the Role
@@ -167,18 +164,18 @@ value:
                     code: JOB-ROLE
                     name: Job Role
                   value: DevOps Engineer
-            - descriptor:
-                code: SALARY-INFO
-                name: Salary Information
-              list:
-                - descriptor:
-                    code: GROSS-MIN
-                    name: Minimum Gross Pay
-                  value: "900000"
-                - descriptor:
-                    code: GROSS-MAX
-                    name: Maximum Gross Pay
-                  value: "1200000"
+            # - descriptor:
+            #     code: SALARY-INFO
+            #     name: Salary Information
+            #   list:
+            #     - descriptor:
+            #         code: GROSS-MIN
+            #         name: Minimum Gross Pay
+            #       value: "900000"
+            #     - descriptor:
+            #         code: GROSS-MAX
+            #         name: Maximum Gross Pay
+            #       value: "1200000"
       fulfillments:
         - id: "1"
           type: REMOTE
@@ -210,8 +207,8 @@ value:
                       value: "1000000"
                     - descriptor:
                         code: TOTAL-EXPERIENCE
-                        name: Total Experience (Years)
-                      value: "4"
+                        name: Total Experience
+                      value: "P4Y"
                 - descriptor:
                     code: DOCUMENTS
                     name: Documents
@@ -262,9 +259,8 @@ value:
                     value: item
               - descriptor:
                   code: NP_FEES
-                  name: np_fees
                 list:
-                  - code: id
+                  - code: ID
                     value: "1"
                   - code: COMMERCIAL_TYPE
                     value: percent

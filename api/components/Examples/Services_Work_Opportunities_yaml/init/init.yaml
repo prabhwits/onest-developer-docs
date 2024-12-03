@@ -14,7 +14,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-14T12:12:46Z"
+    timestamp: "2023-02-14T12:12:461Z"
     ttl: PT30S
   message:
     order:
@@ -24,6 +24,12 @@ value:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
             - "1"
+          tags:
+          - descriptor:
+              code: NP_FEES
+            list:
+              - code: ID
+                value: "1"
       fulfillments:
         - id: "1"
           customer:
@@ -52,8 +58,9 @@ value:
                         code: expected-salary
                       value: "1000000"
                     - descriptor:
-                        code: total-experience
-                      value: "4"
+                        code: TOTAL-EXPERIENCE
+                        name: Total Experience
+                      value: "P4Y"
                 - descriptor:
                     code: documents
                     name: Documents
@@ -69,8 +76,9 @@ value:
                       value: pdf
                 - descriptor:
                     code: NP_FEES
-                    name: np_fees
                   list:
+                    - code: ID
+                      value: "1"
                     - code: COMMERCIAL_TYPE
                       value: percent
                     - code: COMMERCIAL_VALUE
@@ -113,9 +121,8 @@ value:
                     value: item
               - descriptor:
                   code: NP_FEES
-                  name: np_fees
                 list:
-                  - code: id
+                  - code: ID
                     value: "1"
                   - code: COMMERCIAL_TYPE
                     value: percent
