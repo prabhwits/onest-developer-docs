@@ -79,7 +79,7 @@ value:
                   - code: COMMERCIAL_NAME
                     value: qualified
                   - code: COMMERCIAL_TRIGGERING_STATE
-                    value: OFFER-EXTENDED
+                    value: OFFER_EXTENDED
               - descriptor:
                   code: TYPE
                 list:

@@ -75,7 +75,7 @@ value:
                   - code: COMMERCIAL_NAME
                     value: qualified
                   - code: COMMERCIAL_TRIGGERING_STATE
-                    value: OFFER-EXTENDED
+                    value: OFFER_EXTENDED
               - descriptor:
                   code: TYPE
                 list:
@@ -88,7 +88,7 @@ value:
           type: REMOTE
           state:
             descriptor:
-              code: APPLICATION-FILLED
+              code: APPLICATION_FILLED
               name: Application Filled
             updated_at: "2023-02-06T09:55:41.161Z"
           customer:
@@ -110,15 +110,15 @@ value:
                   name: Hindi
               tags:
                 - descriptor:
-                    code: EMP-DETAILS
+                    code: EMP_DETAILS
                     name: Employee Details
                   list:
                     - descriptor:
-                        code: EXPECTED-SALARY
+                        code: EXPECTED_SALARY
                         name: Expected Salary
                       value: "1000000"
                     - descriptor:
-                        code: TOTAL-EXPERIENCE
+                        code: TOTAL_EXPERIENCE
                         name: Total Experience
                       value: "4"
                 - descriptor:
@@ -126,7 +126,7 @@ value:
                     name: Documents
                   list:
                     - descriptor:
-                        code: DOC-TYPE
+                        code: DOC_TYPE
                         name: Document Type
                       value: resume
                     - descriptor:
@@ -134,6 +134,6 @@ value:
                         name: Document Link
                       value: https://example.com/resume.pdf
                     - descriptor:
-                        code: FILE-FORMAT
+                        code: FILE_FORMAT
                         name: File Format
                       value: pdf

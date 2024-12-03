@@ -22,10 +22,10 @@ value:
       item:
         tags:
           - descriptor:
-              code: LISTING-DETAILS
+              code: LISTING_DETAILS
             list:
               - descriptor:
-                  code: EMPLOYMENT-TYPE
+                  code: EMPLOYMENT_TYPE
                 value: full-time
       tags:
         - descriptor:

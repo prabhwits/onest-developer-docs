@@ -12,16 +12,16 @@ fulfillments:
   state:
     descriptor:
       code:
-        - code: APPLICATION-STARTED
+        - code: APPLICATION_STARTED
           name: Human readble code of the fulfillment status	
           reference: <PR/Issue/Discussion Links md format text>
-        - code: APPLICATION-IN-PROGRESS
+        - code: APPLICATION_IN_PROGRESS
           description: Human readble code of the fulfillment status	
           reference: <PR/Issue/Discussion Links md format text>
-        - code: APPLICATION-FILLED
+        - code: APPLICATION_FILLED
           description: Human readble code of the fulfillment status	
           reference: <PR/Issue/Discussion Links md format text>
-        - code: APPLICATION-SUBMITTED
+        - code: APPLICATION_SUBMITTED
           description: Human readble code of the fulfillment status	
           reference: <PR/Issue/Discussion Links md format text>
         - code: APPLICATION-REJECTED
@@ -30,10 +30,10 @@ fulfillments:
         - code: ASSESSMENT-IN-PROGRESS
           description: Human readble code of the fulfillment status	
           reference: <PR/Issue/Discussion Links md format text>
-        - code: OFFER-EXTENDED
+        - code: OFFER_EXTENDED
           description: Human readble code of the fulfillment status	
           reference: <PR/Issue/Discussion Links md format text>
-        - code: OFFER-ACCEPTED
+        - code: OFFER_ACCEPTED
           description: Human readble code of the fulfillment status	
           reference: <PR/Issue/Discussion Links md format text>
         - code: OFFER-REJECTED

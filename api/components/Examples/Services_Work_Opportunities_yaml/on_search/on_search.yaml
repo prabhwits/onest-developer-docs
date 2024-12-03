@@ -94,98 +94,98 @@ value:
                 - "3"
               tags:
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-NAME
+                        code: COURSE_NAME
                         name: Name of the course
                       value: Class-X
                     - descriptor:
-                        code: MIN-CGPA
+                        code: MIN_CGPA
                         name: >-
                           Minimum CGPA of marks to be obtained in the course
                           for eligibility
                       value: "6.5"
                     - descriptor:
-                        code: MANDATORY-ELIGIBILITY
+                        code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
                       value: "true"
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-NAME
+                        code: COURSE_NAME
                         name: Name of the course
                       value: Class-XII
                     - descriptor:
-                        code: MIN-PERCENTAGE
+                        code: MIN_PERCENTAGE
                         name: >-
                           Minimum percentage of marks to be obtained in the
                           course for eligibility
                       value: "60"
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-LEVEL
+                        code: COURSE_LEVEL
                         name: Level of the course
                       value: Under Graduate
                     - descriptor:
-                        code: MIN-PERCENTAGE
+                        code: MIN_PERCENTAGE
                         name: >-
                           Minimum percentage of marks to be obtained in the
                           course for eligibility
                       value: "60"
                     - descriptor:
-                        code: MANDATORY-ELIGIBILITY
+                        code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
                       value: "true"
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-LEVEL
+                        code: COURSE_LEVEL
                         name: Level of the course
                       value: Graduate
                     - descriptor:
-                        code: MIN-PERCENTAGE
+                        code: MIN_PERCENTAGE
                         name: >-
                           Minimum percentage of marks to be obtained in the
                           course for eligibility
                       value: "60"
                     - descriptor:
-                        code: MANDATORY-ELIGIBILITY
+                        code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
                       value: "true"
                 - descriptor:
-                    code: JOB-REQUIREMENTS
+                    code: JOB_REQUIREMENTS
                     name: Job requirements
                   list:
                     - descriptor:
-                        code: REQ-EXPERIENCE
+                        code: REQ_EXPERIENCE
                         name: Required work experience in years
                       value: "2.5"
                     - descriptor:
-                        code: REQ-PROF-SKILL
+                        code: REQ_PROF_SKILL
                         name: Skills required for the role
                       value: android-development
                     - descriptor:
-                        code: REQ-PROF-SKILL
+                        code: REQ_PROF_SKILL
                         name: Skills required for the role
                       value: dev-ops
                     - descriptor:
-                        code: REQ-PROF-SKILL
+                        code: REQ_PROF_SKILL
                         name: Additional skills required for the job
                       value: >-
                         You have 8+ years of engineering experience,
                         predominantly in shipping user-facing production
                         features
                 - descriptor:
-                    code: JOB-RESPONSIBILITIES
+                    code: JOB_RESPONSIBILITIES
                     name: Job responsibilities
                   list:
                     - descriptor:
@@ -216,11 +216,11 @@ value:
                         Mentor and train other team members on design
                         techniques and coding standards.
                 - descriptor:
-                    code: LISTING-DETAILS
+                    code: LISTING_DETAILS
                     name: Listing details
                   list:
                     - descriptor:
-                        code: INDUSTRY-TYPE
+                        code: INDUSTRY_TYPE
                         name: Industry type
                       value: IT Services & Consulting
                     - descriptor:
@@ -228,7 +228,7 @@ value:
                         name: Department
                       value: Engineering - Software & QA
                     - descriptor:
-                        code: EMPLOYMENT-TYPE
+                        code: EMPLOYMENT_TYPE
                         name: Employment type
                       value: part-time
                     - descriptor:
@@ -236,11 +236,11 @@ value:
                         name: working hours
                       value: 1300-1700
                     - descriptor:
-                        code: JOB-ROLE
+                        code: JOB_ROLE
                         name: Job role
                       value: Fullstack Engineer
                     - descriptor:
-                        code: JOB-LEVEL
+                        code: JOB_LEVEL
                         name: Job level
                       value: Mid-level
                     - descriptor:
@@ -248,15 +248,15 @@ value:
                         name: Gender
                       value: Male
                 - descriptor:
-                    code: SALARY-INFO
+                    code: SALARY_INFO
                     name: Salary information
                   list:
                     - descriptor:
-                        code: GROSS-MIN
+                        code: GROSS_MIN
                         name: Minimum gross pay
                       value: "900000"
                     - descriptor:
-                        code: GROSS-MAX
+                        code: GROSS_MAX
                         name: Maximum gross pay
                       value: "1200000"
                 - descriptor:
@@ -272,7 +272,7 @@ value:
                     - code: COMMERCIAL_NAME
                       value: recruitment
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER-ACCEPTED
+                      value: OFFER_ACCEPTED
                 - descriptor:
                     code: NP_FEES
                     name: np_fees
@@ -286,7 +286,7 @@ value:
                     - code: COMMERCIAL_NAME
                       value: qualified
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER-EXTENDED
+                      value: OFFER_EXTENDED
                 - descriptor:
                     code: NP_FEES
                     name: np_fees
@@ -300,7 +300,7 @@ value:
                     - code: COMMERCIAL_NAME
                       value: verified
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: APPLICATION-SUBMITTED
+                      value: APPLICATION_SUBMITTED
               price:
                 currency: INR
                 value: "1100.00"
@@ -344,98 +344,98 @@ value:
                   end: "2023-02-03T13:23:10.171Z "
               tags:
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-NAME
+                        code: COURSE_NAME
                         name: Name of the course
                       value: Class-X
                     - descriptor:
-                        code: MIN-CGPA
+                        code: MIN_CGPA
                         name: >-
                           Minimum CGPA of marks to be obtained in the course
                           for eligibility
                       value: "6.5"
                     - descriptor:
-                        code: MANDATORY-ELIGIBILITY
+                        code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
                       value: "true"
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-NAME
+                        code: COURSE_NAME
                         name: Name of the course
                       value: Class-XII
                     - descriptor:
-                        code: MIN-PERCENTAGE
+                        code: MIN_PERCENTAGE
                         name: >-
                           Minimum percentage of marks to be obtained in the
                           course for eligibility
                       value: "60"
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-LEVEL
+                        code: COURSE_LEVEL
                         name: Level of the course
                       value: Under Graduate
                     - descriptor:
-                        code: MIN-PERCENTAGE
+                        code: MIN_PERCENTAGE
                         name: >-
                           Minimum percentage of marks to be obtained in the
                           course for eligibility
                       value: "60"
                     - descriptor:
-                        code: MANDATORY-ELIGIBILITY
+                        code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
                       value: "true"
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-LEVEL
+                        code: COURSE_LEVEL
                         name: Level of the course
                       value: Graduate
                     - descriptor:
-                        code: MIN-PERCENTAGE
+                        code: MIN_PERCENTAGE
                         name: >-
                           Minimum percentage of marks to be obtained in the
                           course for eligibility
                       value: "60"
                     - descriptor:
-                        code: MANDATORY-ELIGIBILITY
+                        code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
                       value: "true"
                 - descriptor:
-                    code: JOB-REQUIREMENTS
+                    code: JOB_REQUIREMENTS
                     name: Job requirements
                   list:
                     - descriptor:
-                        code: REQ-EXPERIENCE
+                        code: REQ_EXPERIENCE
                         name: Required work experience in years
                       value: "2.5"
                     - descriptor:
-                        code: REQ-PROF-SKILL
+                        code: REQ_PROF_SKILL
                         name: Skills required for the role
                       value: pipeline-development
                     - descriptor:
-                        code: REQ-PROF-SKILL
+                        code: REQ_PROF_SKILL
                         name: Skills required for the role
                       value: dev-ops
                     - descriptor:
-                        code: REQ-PROF-SKILL
+                        code: REQ_PROF_SKILL
                         name: Additional skills required for the job
                       value: >-
                         You have 8+ years of engineering experience,
                         predominantly in shipping user-facing production
                         features
                 - descriptor:
-                    code: JOB-RESPONSIBILITIES
+                    code: JOB_RESPONSIBILITIES
                     name: Job responsibilities
                   list:
                     - descriptor:
@@ -466,11 +466,11 @@ value:
                         Mentor and train other team members on design
                         techniques and coding standards.
                 - descriptor:
-                    code: LISTING-DETAILS
+                    code: LISTING_DETAILS
                     name: Listing details
                   list:
                     - descriptor:
-                        code: INDUSTRY-TYPE
+                        code: INDUSTRY_TYPE
                         name: Industry type
                       value: IT Services & Consulting
                     - descriptor:
@@ -478,19 +478,19 @@ value:
                         name: Department
                       value: Engineering - Software & QA
                     - descriptor:
-                        code: EMPLOYMENT-TYPE
+                        code: EMPLOYMENT_TYPE
                         name: Employment type
                       value: contractual
                     - descriptor:
-                        code: WORK-DURATION
+                        code: WORK_DURATION
                         name: Duration of contract
                       value: 120 days
                     - descriptor:
-                        code: JOB-ROLE
+                        code: JOB_ROLE
                         name: Job role
                       value: Fullstack Engineer
                     - descriptor:
-                        code: JOB-LEVEL
+                        code: JOB_LEVEL
                         name: Job level
                       value: Mid-level
                     - descriptor:
@@ -498,15 +498,15 @@ value:
                         name: Gender
                       value: Male
                 - descriptor:
-                    code: SALARY-INFO
+                    code: SALARY_INFO
                     name: Salary information
                   list:
                     - descriptor:
-                        code: GROSS-MIN
+                        code: GROSS_MIN
                         name: Minimum gross pay
                       value: "900000"
                     - descriptor:
-                        code: GROSS-MAX
+                        code: GROSS_MAX
                         name: Maximum gross pay
                       value: "1200000"
                 - descriptor:
@@ -522,7 +522,7 @@ value:
                     - code: COMMERCIAL_NAME
                       value: recruitment
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER-ACCEPTED
+                      value: OFFER_ACCEPTED
                 - descriptor:
                     code: NP_FEES
                     name: np_fees
@@ -536,7 +536,7 @@ value:
                     - code: COMMERCIAL_NAME
                       value: qualified
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER-EXTENDED
+                      value: OFFER_EXTENDED
                 - descriptor:
                     code: NP_FEES
                     name: np_fees
@@ -550,7 +550,7 @@ value:
                     - code: COMMERCIAL_NAME
                       value: verified
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: APPLICATION-SUBMITTED
+                      value: APPLICATION_SUBMITTED
               price:
                 currency: INR
                 value: "1000.00"
@@ -594,98 +594,98 @@ value:
                   end: "2023-02-03T13:23:10.171Z "
               tags:
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-NAME
+                        code: COURSE_NAME
                         name: Name of the course
                       value: Class-X
                     - descriptor:
-                        code: MIN-CGPA
+                        code: MIN_CGPA
                         name: >-
                           Minimum CGPA of marks to be obtained in the course
                           for eligibility
                       value: "6.5"
                     - descriptor:
-                        code: MANDATORY-ELIGIBILITY
+                        code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
                       value: "true"
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-NAME
+                        code: COURSE_NAME
                         name: Name of the course
                       value: Class-XII
                     - descriptor:
-                        code: MIN-PERCENTAGE
+                        code: MIN_PERCENTAGE
                         name: >-
                           Minimum percentage of marks to be obtained in the
                           course for eligibility
                       value: "60"
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-LEVEL
+                        code: COURSE_LEVEL
                         name: Level of the course
                       value: Under Graduate
                     - descriptor:
-                        code: MIN-PERCENTAGE
+                        code: MIN_PERCENTAGE
                         name: >-
                           Minimum percentage of marks to be obtained in the
                           course for eligibility
                       value: "60"
                     - descriptor:
-                        code: MANDATORY-ELIGIBILITY
+                        code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
                       value: "true"
                 - descriptor:
-                    code: ACADEMIC-ELIGIBILITY
+                    code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
                   list:
                     - descriptor:
-                        code: COURSE-LEVEL
+                        code: COURSE_LEVEL
                         name: Level of the course
                       value: Graduate
                     - descriptor:
-                        code: MIN-PERCENTAGE
+                        code: MIN_PERCENTAGE
                         name: >-
                           Minimum percentage of marks to be obtained in the
                           course for eligibility
                       value: "60"
                     - descriptor:
-                        code: MANDATORY-ELIGIBILITY
+                        code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
                       value: "true"
                 - descriptor:
-                    code: JOB-REQUIREMENTS
+                    code: JOB_REQUIREMENTS
                     name: Job requirements
                   list:
                     - descriptor:
-                        code: REQ-EXPERIENCE
+                        code: REQ_EXPERIENCE
                         name: Required work experience in years
                       value: "0.5"
                     - descriptor:
-                        code: REQ-PROF-SKILL
+                        code: REQ_PROF_SKILL
                         name: Skills required for the role
                       value: pipeline-development
                     - descriptor:
-                        code: REQ-PROF-SKILL
+                        code: REQ_PROF_SKILL
                         name: Skills required for the role
                       value: dev-ops
                     - descriptor:
-                        code: REQ-PROF-SKILL
+                        code: REQ_PROF_SKILL
                         name: Additional skills required for the job
                       value: >-
                         You have 8+ years of engineering experience,
                         predominantly in shipping user-facing production
                         features
                 - descriptor:
-                    code: JOB-RESPONSIBILITIES
+                    code: JOB_RESPONSIBILITIES
                     name: Job responsibilities
                   list:
                     - descriptor:
@@ -716,11 +716,11 @@ value:
                         Mentor and train other team members on design
                         techniques and coding standards.
                 - descriptor:
-                    code: LISTING-DETAILS
+                    code: LISTING_DETAILS
                     name: Listing details
                   list:
                     - descriptor:
-                        code: INDUSTRY-TYPE
+                        code: INDUSTRY_TYPE
                         name: Industry type
                       value: IT Services & Consulting
                     - descriptor:
@@ -728,15 +728,15 @@ value:
                         name: Department
                       value: Engineering - Software & QA
                     - descriptor:
-                        code: EMPLOYMENT-TYPE
+                        code: EMPLOYMENT_TYPE
                         name: Employment type
                       value: full-time
                     - descriptor:
-                        code: JOB-ROLE
+                        code: JOB_ROLE
                         name: Job role
                       value: DevOps Engineer
                     - descriptor:
-                        code: JOB-LEVEL
+                        code: JOB_LEVEL
                         name: Job level
                       value: Entry-level
                     - descriptor:
@@ -744,7 +744,7 @@ value:
                         name: Gender
                       value: Male
                 - descriptor:
-                    code: SALARY-INFO
+                    code: SALARY_INFO
                     name: Salary information
                   list:
                     - descriptor:
@@ -764,7 +764,7 @@ value:
                     - code: COMMERCIAL_NAME
                       value: recruitment
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER-ACCEPTED
+                      value: OFFER_ACCEPTED
                 - descriptor:
                     code: NP_FEES
                     name: np_fees
@@ -778,7 +778,7 @@ value:
                     - code: COMMERCIAL_NAME
                       value: qualified
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER-EXTENDED
+                      value: OFFER_EXTENDED
                 - descriptor:
                     code: NP_FEES
                     name: np_fees
@@ -792,7 +792,7 @@ value:
                     - code: COMMERCIAL_NAME
                       value: verified
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: APPLICATION-SUBMITTED
+                      value: APPLICATION_SUBMITTED
               price:
                 currency: INR
                 value: "1000.00"
@@ -811,7 +811,7 @@ value:
                 - code: COMMERCIAL_NAME
                   value: recruitment
                 - code: COMMERCIAL_TRIGGERING_STATE
-                  value: OFFER-ACCEPTED
+                  value: OFFER_ACCEPTED
             - descriptor:
                 code: NP_FEES
                 name: np_fees
@@ -825,7 +825,7 @@ value:
                 - code: COMMERCIAL_NAME
                   value: qualified
                 - code: COMMERCIAL_TRIGGERING_STATE
-                  value: OFFER-EXTENDED
+                  value: OFFER_EXTENDED
             - descriptor:
                 code: NP_FEES
                 name: np_fees
@@ -839,4 +839,4 @@ value:
                 - code: COMMERCIAL_NAME
                   value: verified
                 - code: COMMERCIAL_TRIGGERING_STATE
-                  value: APPLICATION-SUBMITTED
+                  value: APPLICATION_SUBMITTED

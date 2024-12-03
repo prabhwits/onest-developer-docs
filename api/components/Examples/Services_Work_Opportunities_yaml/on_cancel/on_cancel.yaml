@@ -97,7 +97,7 @@ value:
                     - code: COMMERCIAL_NAME
                       value: qualified
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER-EXTENDED
+                      value: OFFER_EXTENDED
                 - descriptor:
                     code: TYPE
                   list:
@@ -130,27 +130,27 @@ value:
                     name: Hindi
                 tags:
                   - descriptor:
-                      code: CURRENT-EXPERIENCE
+                      code: CURRENT_EXPERIENCE
                       name: Current Experience
                     list:
                       - descriptor:
-                          code: EXP-YEARS
+                          code: EXP_YEARS
                           name: Experience
                         value: P4Y2M
                       - descriptor:
-                          code: CURRENT-COMPANY
+                          code: CURRENT_COMPANY
                           name: Current Company
                         value: ABC tech
                   - descriptor:
-                      code: SALARY-DETAILS
+                      code: SALARY_DETAILS
                       name: Salary Details
                     list:
                       - descriptor:
-                          code: EXPECTED-SALARY
+                          code: EXPECTED_SALARY
                           name: Expected Salary
                         value: '80000'
                       - descriptor:
-                          code: CURRENT-SALARY
+                          code: CURRENT_SALARY
                           name: Current Salary
                         value: '50000'
                   - descriptor:
@@ -166,31 +166,31 @@ value:
                 email: abc@abc.bc
             tags:
               - descriptor:
-                  code: DISTRIBUTOR-DETAILS
+                  code: DISTRIBUTOR_DETAILS
                   name: Distributor Details
                 list:
                   - descriptor:
-                      code: DISTRIBUTOR-ID
+                      code: DISTRIBUTOR_ID
                       name: Distributor Id
                     value: PNB
                   - descriptor:
-                      code: DISTRIBUTOR-NAME
+                      code: DISTRIBUTOR_NAME
                       name: Distributor Name
                     value: Pay Near By
                   - descriptor:
-                      code: DISTRIBUTOR-PHONE
+                      code: DISTRIBUTOR_PHONE
                       name: Distributor Phone
                     value: '9123456789'
                   - descriptor:
-                      code: DISTRIBUTOR-EMAIL
+                      code: DISTRIBUTOR_EMAIL
                       name: Distributor Email
                     value: support@pnb.com
                   - descriptor:
-                      code: AGENT-ID
+                      code: AGENT_ID
                       name: Agent Id
                     value: agent-123
                   - descriptor:
-                      code: AGENT-VERIFIED
+                      code: AGENT_VERIFIED
                       name: Agent Verified
                     value: 'true'
           - id: C1

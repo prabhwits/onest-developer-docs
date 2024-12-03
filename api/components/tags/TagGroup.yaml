@@ -1,10 +1,10 @@
 intent:
   tags:
-    - code: EMPLOYMENT-TYPE
+    - code: EMPLOYMENT_TYPE
       description: Employment Type
       reference: <PR/Issue/Discussion Links md format text>
       list:
-        $ref: "./Tag.yaml#/EMPLOYMENT-TYPE"
+        $ref: "./Tag.yaml#/EMPLOYMENT_TYPE"
     # - code: CATALOG_FULL
     #   description: The format in which the buyer Np wants the catalog
     #   reference: <PR/Issue/Discussion Links md format text>
@@ -18,11 +18,11 @@ intent:
 catalog:
   providers:
     tags:
-      - code: EMPLOYMENT-TYPE
+      - code: EMPLOYMENT_TYPE
         description: Employment Type
         reference: <PR/Issue/Discussion Links md format text>
         list:
-          $ref: "./Tag.yaml#/EMPLOYMENT-TYPE"
+          $ref: "./Tag.yaml#/EMPLOYMENT_TYPE"
       - code: NP_FEES
         description: NP_FEES
         reference: <PR/Issue/Discussion Links md format text>
@@ -40,21 +40,21 @@ catalog:
       #     $ref: "./Tag.yaml#/serviceability"
     items:
       tags:
-        - code: EMPLOYMENT-TYPE
+        - code: EMPLOYMENT_TYPE
           description: Employment Type
           reference: <PR/Issue/Discussion Links md format text>
           list:
-            $ref: "./Tag.yaml#/EMPLOYMENT-TYPE"
-        - code: LISTING-DETAILS
-          description: LISTING-DETAILS
+            $ref: "./Tag.yaml#/EMPLOYMENT_TYPE"
+        - code: LISTING_DETAILS
+          description: LISTING_DETAILS
           reference: <PR/Issue/Discussion Links md format text>
           list:
-            $ref: "./Tag.yaml#/LISTING-DETAILS"
-        - code: ACADEMIC-ELIGIBILITY
-          description: ACADEMIC-ELIGIBILITY
+            $ref: "./Tag.yaml#/LISTING_DETAILS"
+        - code: ACADEMIC_ELIGIBILITY
+          description: ACADEMIC_ELIGIBILITY
           reference: <PR/Issue/Discussion Links md format text>
           list:
-            $ref: "./Tag.yaml#/ACADEMIC-ELIGIBILITY"
+            $ref: "./Tag.yaml#/ACADEMIC_ELIGIBILITY"
         
         # - code: SERVICE_INFORMATION
         #   description: Information of the service (Required)
@@ -113,11 +113,11 @@ catalog:
 order:
   items:
     tags:
-      - code: LISTING-DETAILS
-        description: LISTING-DETAILS
+      - code: LISTING_DETAILS
+        description: LISTING_DETAILS
         reference: <PR/Issue/Discussion Links md format text>
         list:
-          $ref: "./Tag.yaml#/EMPLOYMENT-TYPE"
+          $ref: "./Tag.yaml#/EMPLOYMENT_TYPE"
   # quote:
   #   breakup:
   #     tags: &ref2

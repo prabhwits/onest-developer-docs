@@ -172,7 +172,7 @@ message:
           code:
             description: "The state code of the fulfillment."
             required: mandatory
-            usage: "APPLICATION-STARTED"
+            usage: "APPLICATION_STARTED"
             reference: null
       customer:
         contact:
