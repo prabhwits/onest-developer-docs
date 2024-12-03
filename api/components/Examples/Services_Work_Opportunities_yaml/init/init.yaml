@@ -51,14 +51,14 @@ value:
                   name: Hindi
               tags:
                 - descriptor:
-                    code: emp-details
+                    code: EMP_DETAILS
                     name: Employee Details
                   list:
                     - descriptor:
-                        code: expected-salary
+                        code: EXPECTED_SALARY
                       value: "1000000"
                     - descriptor:
-                        code: TOTAL-EXPERIENCE
+                        code: TOTAL_EXPERIENCE
                         name: Total Experience
                       value: "P4Y"
                 - descriptor:
@@ -66,13 +66,13 @@ value:
                     name: Documents
                   list:
                     - descriptor:
-                        code: doc-type
+                        code: DOC_TYPE
                       value: resume
                     - descriptor:
                         code: link
                       value: https://example.com/resume.pdf
                     - descriptor:
-                        code: file-format
+                        code: FILE_FORMAT
                       value: pdf
                 - descriptor:
                     code: NP_FEES
@@ -86,7 +86,7 @@ value:
                     - code: COMMERCIAL_NAME
                       value: qualified
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER-EXTENDED
+                      value: OFFER_EXTENDED
           contact:
             phone: "9999999999"
             email: abc@abc.bc
@@ -131,7 +131,7 @@ value:
                   - code: COMMERCIAL_NAME
                     value: qualified
                   - code: COMMERCIAL_TRIGGERING_STATE
-                    value: OFFER-EXTENDED
+                    value: OFFER_EXTENDED
               - descriptor:
                   code: TYPE
                 list:

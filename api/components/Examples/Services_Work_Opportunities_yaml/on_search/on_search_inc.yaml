@@ -51,15 +51,15 @@ value:
                 - "6"
               tags:
                 # - descriptor:
-                #     code: SALARY-INFO
+                #     code: SALARY_INFO
                 #     name: Salary information
                 #   list:
                 #     - descriptor:
-                #         code: GROSS-MIN
+                #         code: GROSS_MIN
                 #         name: Minimum gross pay
                 #       value: "800000"
                 #     - descriptor:
-                #         code: GROSS-MAX
+                #         code: GROSS_MAX
                 #         name: Maximum gross pay
                 #       value: "1000000"
                 - descriptor:
@@ -74,13 +74,13 @@ value:
                     - code: COMMERCIAL_NAME
                       value: recruitment
                     - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER-ACCEPTED
+                      value: OFFER_ACCEPTED
                 - descriptor:
-                    code: LISTING-DETAILS
+                    code: LISTING_DETAILS
                     name: Listing details
                   list:
                     - descriptor:
-                        code: INDUSTRY-TYPE
+                        code: INDUSTRY_TYPE
                         name: Industry type
                       value: Data Science
                     - descriptor:
@@ -88,10 +88,10 @@ value:
                         name: Department
                       value: Data Science & Analytics
                     - descriptor:
-                        code: EMPLOYMENT-TYPE
+                        code: EMPLOYMENT_TYPE
                         name: Employment type
                       value: full-time
                     - descriptor:
-                        code: JOB-ROLE
+                        code: JOB_ROLE
                         name: Job role
                       value: Data Scientist

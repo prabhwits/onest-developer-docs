@@ -244,7 +244,7 @@ message:
           code:
             description: Fulfillment state code
             required: mandatory
-            usage: APPLICATION-STARTED
+            usage: APPLICATION_STARTED
             reference: if any
           name:
             description: Fulfillment state name

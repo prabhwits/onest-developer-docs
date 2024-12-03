@@ -174,7 +174,7 @@ message:
           code:
             description: "The code describing the fulfillment state."
             required: mandatory
-            usage: "APPLICATION-IN-PROGRESS"
+            usage: "APPLICATION_IN_PROGRESS"
             reference: null
       customer:
         person:

@@ -19,10 +19,10 @@ value:
       item:
         tags:
           - descriptor:
-              code: LISTING-DETAILS
+              code: LISTING_DETAILS
             list:
               - descriptor:
-                  code: INDUSTRY-TYPE
+                  code: INDUSTRY_TYPE
                 value: IT Services & Consulting
       payment:
         BUYER_FINDER_FEE_TYPE: AMOUNT
