@@ -370,7 +370,6 @@ paths:
     post:
       tags:
         - Beckn Provider Platform (BPP)
-        - Beckn Gateway (BG)
       description: BPP sends its catalog in response to a search request.
       requestBody:
         content:
