@@ -33,6 +33,7 @@ value:
                 value: "1"
       fulfillments:
         - id: "1"
+          type: REMOTE
           customer:
             person:
               name: Sanjay

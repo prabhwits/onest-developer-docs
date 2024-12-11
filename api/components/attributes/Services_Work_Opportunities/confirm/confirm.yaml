@@ -100,6 +100,11 @@ message:
           required: mandatory
           usage: "1"
           reference: null
+        type:
+          description: "Type of fulfillment"
+          required: mandatory
+          usage: "REMOTE"
+          reference: null
         customer:
           person:
             name:

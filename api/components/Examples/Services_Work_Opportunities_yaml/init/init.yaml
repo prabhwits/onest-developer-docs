@@ -32,6 +32,7 @@ value:
                 value: "1"
       fulfillments:
         - id: "1"
+          type: REMOTE
           customer:
             person:
               name: Sanjay
@@ -74,19 +75,6 @@ value:
                     - descriptor:
                         code: FILE_FORMAT
                       value: pdf
-                - descriptor:
-                    code: NP_FEES
-                  list:
-                    - code: ID
-                      value: "1"
-                    - code: COMMERCIAL_TYPE
-                      value: percent
-                    - code: COMMERCIAL_VALUE
-                      value: "0.2"
-                    - code: COMMERCIAL_NAME
-                      value: qualified
-                    - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER_EXTENDED
           contact:
             phone: "9999999999"
             email: abc@abc.bc

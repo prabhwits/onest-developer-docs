@@ -79,40 +79,6 @@ message:
         required: mandatory
         usage: 1
         reference: if any
-      descriptor:
-        name:
-          description: Provider name
-          required: mandatory
-          usage: Affinidi
-          reference: if any
-      locations:
-        id:
-          description: Provider location ID
-          required: mandatory
-          usage: L1
-          reference: if any
-        city:
-          name:
-            description: City name
-            required: mandatory
-            usage: Pune
-            reference: if any
-          code:
-            description: City code
-            required: mandatory
-            usage: std:020
-            reference: if any
-        state:
-          name:
-            description: State name
-            required: mandatory
-            usage: Maharastra
-            reference: if any
-          code:
-            description: State code
-            required: mandatory
-            usage: MH
-            reference: if any
     items:
       parent: true
       id:

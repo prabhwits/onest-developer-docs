@@ -22,8 +22,6 @@ value:
       status: Active
       provider:
         id: "1"
-        descriptor:
-          name: Affinidi
       items:
         - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
           fulfillment_ids:
