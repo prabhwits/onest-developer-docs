@@ -34,9 +34,10 @@ value:
           tags:
             - descriptor:
                 code: NP_FEES
-                list:
-                  - code: ID
-                    value: "1"
+                name: "Np Fees"
+              list:
+                - code: ID
+                  value: "1"
             - descriptor:
                 code: CANCEL_REQUEST
                 name: Cancel request
@@ -80,7 +81,7 @@ value:
                     value: item
               - descriptor:
                   code: NP_FEES
-                  name: np_fees
+                  name: "Np Fees"
                 list:
                   - code: id
                     value: "1"

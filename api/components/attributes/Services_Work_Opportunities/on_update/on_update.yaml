@@ -158,17 +158,17 @@ message:
             required: mandatory
             usage: "English"
             reference: null
-    contact:
-      phone:
-        description: "The phone number of the customer."
-        required: mandatory
-        usage: "9999999999"
-        reference: "if any"
-      email:
-        description: "The email address of the customer."
-        required: mandatory
-        usage: "abc@abc.bc"
-        reference: "if any"
+      contact:
+        phone:
+          description: "The phone number of the customer."
+          required: mandatory
+          usage: "9999999999"
+          reference: "if any"
+        email:
+          description: "The email address of the customer."
+          required: mandatory
+          usage: "abc@abc.bc"
+          reference: "if any"
   quote:
     price:
       currency:

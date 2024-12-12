@@ -28,6 +28,7 @@ value:
           tags:
           - descriptor:
               code: NP_FEES
+              name: "Np Fees"
             list:
               - code: ID
                 value: "1"
@@ -62,6 +63,7 @@ value:
                     value: item
               - descriptor:
                   code: NP_FEES
+                  name: "Np Fees"
                 list:
                   - code: ID
                     value: "1"

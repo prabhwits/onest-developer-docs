@@ -29,9 +29,10 @@ value:
           tags:
             - descriptor:
                 code: NP_FEES
-                list:
-                  - code: ID
-                    value: "1"
+                name: "Np Fees"
+              list:
+                - code: ID
+                  value: "1"
             - descriptor:
                 code: ACADEMIC_ELIGIBILITY
                 name: Academic Eligibility
@@ -203,6 +204,7 @@ value:
                     value: item
               - descriptor:
                   code: NP_FEES
+                  name: "Np Fees"
                 list:
                   - code: ID
                     value: "1"

@@ -27,6 +27,7 @@ value:
           tags:
           - descriptor:
               code: NP_FEES
+              name: "Np Fees"
             list:
               - code: ID
                 value: "1"
@@ -75,9 +76,9 @@ value:
                     - descriptor:
                         code: FILE_FORMAT
                       value: pdf
-          contact:
-            phone: "9999999999"
-            email: abc@abc.bc
+            contact:
+              phone: "9999999999"
+              email: abc@abc.bc
       quote:
         price:
           currency: INR
@@ -109,6 +110,7 @@ value:
                     value: item
               - descriptor:
                   code: NP_FEES
+                  name: "Np Fees"
                 list:
                   - code: ID
                     value: "1"

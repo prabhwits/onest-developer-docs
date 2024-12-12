@@ -181,14 +181,14 @@ message:
               required: mandatory
               usage: "english"
               reference: null
-          contact:
-              phone:
-                description: "The phone number of the customer."
-                required: mandatory
-                usage: "9999999999999"
-                reference: null
-              email:
-                description: "The email address of the customer."
-                required: mandatory
-                usage: "abc@abc.bc"
-                reference: null
+        contact:
+            phone:
+              description: "The phone number of the customer."
+              required: mandatory
+              usage: "9999999999999"
+              reference: null
+            email:
+              description: "The email address of the customer."
+              required: mandatory
+              usage: "abc@abc.bc"
+              reference: null

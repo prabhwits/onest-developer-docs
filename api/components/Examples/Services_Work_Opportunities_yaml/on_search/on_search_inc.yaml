@@ -64,6 +64,7 @@ value:
                 #       value: "1000000"
                 - descriptor:
                     code: NP_FEES
+                    name: "Np Fees"
                   list:
                     - code: ID
                       value: "1"

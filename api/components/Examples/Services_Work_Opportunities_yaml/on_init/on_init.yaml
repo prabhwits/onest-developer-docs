@@ -43,9 +43,10 @@ value:
           tags:
             - descriptor:
                 code: NP_FEES
-                list:
-                  - code: ID
-                    value: "1"
+                name: "Np Fees"
+              list:
+                - code: ID
+                  value: "1"
             - descriptor:
                 code: ACADEMIC_ELIGIBILITY
                 name: Academic eligibility
@@ -228,6 +229,7 @@ value:
                     value: item
               - descriptor:
                   code: NP_FEES
+                  name: "Np Fees"
                 list:
                   - code: ID
                     value: "1"
@@ -300,3 +302,6 @@ value:
                         code: FILE_FORMAT
                         name: File Format
                       value: pdf
+            contact:
+              phone: "9999999999"
+              email: abc@abc.bc
