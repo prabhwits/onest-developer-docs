@@ -2928,6 +2928,10 @@ x-flows:
             Gateway->>BPP: search
             BPP-->>BAP: on_search
 
+            BAP->>Gateway: search_inc
+            Gateway->>BPP: search_inc
+            BPP-->>BAP: on_search_inc
+
             BAP->>BPP: select
             BPP-->>BAP: on_select
 
@@ -3306,6 +3310,18 @@ x-flows:
                                   code: GENDER
                                   name: Gender
                                 value: Male
+                          - descriptor:
+                              code: SALARY_INFO
+                              name: Salary information
+                            list:
+                              - descriptor:
+                                  code: GROSS_MIN
+                                  name: Minimum gross pay
+                                value: '900000'
+                              - descriptor:
+                                  code: GROSS_MAX
+                                  name: Maximum gross pay
+                                value: '1200000'
                           - descriptor:
                               code: NP_FEES
                               name: Np Fees
@@ -3851,6 +3867,169 @@ x-flows:
                           value: '1000.00'
                           maximum_value: '1500.0'
       - summary: Description
+        api: search_inc
+        description: BAP will make search inc request with an intent
+        reference: if any
+        example:
+          value:
+            context:
+              domain: ONDC:ONEST10
+              action: search
+              version: 2.0.0
+              bap_id: worker-hub.bap.io
+              bap_uri: https://worker-hub.bap.io
+              transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+              message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
+              location:
+                city:
+                  code: '*'
+                country:
+                  code: IND
+              timestamp: '2023-02-22T11:20:10.122Z'
+              ttl: PT30S
+            message:
+              intent:
+                payment:
+                  descriptor:
+                    code: NP_FEES
+                    name: Np Fees
+                  list:
+                    - code: ID
+                      value: '1'
+                    - code: COMMERCIAL_TYPE
+                      value: percent
+                    - code: COMMERCIAL_VALUE
+                      value: '0.2'
+                    - code: COMMERCIAL_NAME
+                      value: qualified
+                    - code: COMMERCIAL_TRIGGERING_STATE
+                      value: OFFER_EXTENDED
+                tags:
+                  - descriptor:
+                      code: CATALOG_INC
+                    list:
+                      - descriptor:
+                          code: MODE
+                        value: start
+                  - descriptor:
+                      code: BAP_TERMS
+                    list:
+                      - descriptor:
+                          code: STATIC_TERMS
+                        value: static_terms_value
+                      - descriptor:
+                          code: STATIC_TERMS_NEW
+                        value: static_terms_new_value
+                      - descriptor:
+                          code: EFFECTIVE_DATE
+                        value: '2023-02-22T11:20:10.122Z'
+      - summary: Description
+        api: on_search_inc
+        description: >-
+          BPP will create a catalogue containing jobs with matching criteria and
+          sends it as on_search_inc request.
+        reference: if any
+        example:
+          value:
+            context:
+              domain: ONDC:ONEST10
+              action: on_search
+              version: 2.0.0
+              bap_id: worker-hub.bap.io
+              bap_uri: https://worker-hub.bap.io
+              transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+              message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
+              location:
+                city:
+                  code: '*'
+                country:
+                  code: IND
+              timestamp: '2023-02-22T11:45:10.171Z'
+              ttl: PT30S
+            message:
+              catalog:
+                descriptor:
+                  name: Affindi Jobs
+                providers:
+                  - id: '1'
+                    items:
+                      - id: A1B2C3D4E5F67890GHIJK1LMNOPQ2RS
+                        descriptor:
+                          name: Data Scientist
+                          long_desc: >-
+                            We are looking for a Data Scientist who has strong
+                            analytical skills, with experience in machine
+                            learning, statistical analysis, and data modeling.
+                            You should be comfortable working with large
+                            datasets, identifying trends, and creating
+                            predictive models. This role requires the ability to
+                            apply data-driven insights to business problems.
+                          media:
+                            - mimetype: audio/mp4
+                              url: http://url-to-audio-about-data-scientist-job
+                            - mimetype: video/mp4
+                              url: http://url-to-video-about-data-scientist-job
+                        quantity:
+                          available:
+                            count: 30
+                        application_validity_time:
+                          range:
+                            start: '2023-01-04T09:32:10.560Z'
+                            end: '2023-02-04T08:20:00.230Z'
+                        location_ids:
+                          - L3
+                        fulfillment_ids:
+                          - '4'
+                          - '5'
+                          - '6'
+                        tags:
+                          - descriptor:
+                              code: SALARY_INFO
+                              name: Salary information
+                            list:
+                              - descriptor:
+                                  code: GROSS_MIN
+                                  name: Minimum gross pay
+                                value: '800000'
+                              - descriptor:
+                                  code: GROSS_MAX
+                                  name: Maximum gross pay
+                                value: '1000000'
+                          - descriptor:
+                              code: NP_FEES
+                              name: Np Fees
+                            list:
+                              - code: ID
+                                value: '1'
+                              - code: COMMERCIAL_TYPE
+                                value: percentage
+                              - code: COMMERCIAL_VALUE
+                                value: '2'
+                              - code: COMMERCIAL_NAME
+                                value: recruitment
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER_ACCEPTED
+                          - descriptor:
+                              code: LISTING_DETAILS
+                              name: Listing details
+                            list:
+                              - descriptor:
+                                  code: INDUSTRY_TYPE
+                                  name: Industry type
+                                value: Data Science
+                              - descriptor:
+                                  code: DEPARTMENT
+                                  name: Department
+                                value: Data Science & Analytics
+                              - descriptor:
+                                  code: EMPLOYMENT_TYPE
+                                  name: Employment type
+                                value: full-time
+                              - descriptor:
+                                  code: JOB_ROLE
+                                  name: Job role
+                                value: Data Scientist
+      - summary: Description
         api: select
         description: >-
           BAP will receive the on_search request and displays the list of jobs
@@ -3891,6 +4070,12 @@ x-flows:
                         list:
                           - code: ID
                             value: '1'
+                      - descriptor:
+                          code: NP_FEES
+                          name: Np Fees
+                        list:
+                          - code: ID
+                            value: '2'
       - summary: Description
         api: on_select
         description: >-
@@ -3933,10 +4118,16 @@ x-flows:
                         list:
                           - code: ID
                             value: '1'
+                      - descriptor:
+                          code: NP_FEES
+                          name: Np Fees
+                        list:
+                          - code: ID
+                            value: '2'
                 quote:
                   price:
                     currency: INR
-                    value: '1400'
+                    value: '1700'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -3972,6 +4163,38 @@ x-flows:
                               value: percent
                             - code: COMMERCIAL_VALUE
                               value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: recruitment
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER_ACCEPTED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                    - title: NP Fees
+                      id: '2'
+                      price:
+                        currency: INR
+                        value: '300.00'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.2'
                             - code: COMMERCIAL_NAME
                               value: qualified
                             - code: COMMERCIAL_TRIGGERING_STATE
@@ -4023,6 +4246,12 @@ x-flows:
                         list:
                           - code: ID
                             value: '1'
+                      - descriptor:
+                          code: NP_FEES
+                          name: Np Fees
+                        list:
+                          - code: ID
+                            value: '2'
                 fulfillments:
                   - id: '1'
                     type: REMOTE
@@ -4074,7 +4303,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1400'
+                    value: '1700'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -4110,6 +4339,38 @@ x-flows:
                               value: percent
                             - code: COMMERCIAL_VALUE
                               value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: recruitment
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER_ACCEPTED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                    - title: NP Fees
+                      id: '2'
+                      price:
+                        currency: INR
+                        value: '300.00'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.2'
                             - code: COMMERCIAL_NAME
                               value: qualified
                             - code: COMMERCIAL_TRIGGERING_STATE
@@ -4177,6 +4438,12 @@ x-flows:
                         list:
                           - code: ID
                             value: '1'
+                      - descriptor:
+                          code: NP_FEES
+                          name: Np Fees
+                        list:
+                          - code: ID
+                            value: '2'
                       - descriptor:
                           code: ACADEMIC_ELIGIBILITY
                           name: Academic eligibility
@@ -4321,7 +4588,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1400'
+                    value: '1700'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -4357,6 +4624,38 @@ x-flows:
                               value: percent
                             - code: COMMERCIAL_VALUE
                               value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: recruitment
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER_ACCEPTED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                    - title: NP Fees
+                      id: '2'
+                      price:
+                        currency: INR
+                        value: '300.00'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.2'
                             - code: COMMERCIAL_NAME
                               value: qualified
                             - code: COMMERCIAL_TRIGGERING_STATE
@@ -4463,6 +4762,12 @@ x-flows:
                         list:
                           - code: ID
                             value: '1'
+                      - descriptor:
+                          code: NP_FEES
+                          name: Np Fees
+                        list:
+                          - code: ID
+                            value: '2'
                 fulfillments:
                   - id: '1'
                     type: REMOTE
@@ -4551,7 +4856,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1400'
+                    value: '1700'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -4587,6 +4892,38 @@ x-flows:
                               value: percent
                             - code: COMMERCIAL_VALUE
                               value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: recruitment
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER_ACCEPTED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                    - title: NP Fees
+                      id: '2'
+                      price:
+                        currency: INR
+                        value: '300.00'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.2'
                             - code: COMMERCIAL_NAME
                               value: qualified
                             - code: COMMERCIAL_TRIGGERING_STATE
@@ -4638,6 +4975,12 @@ x-flows:
                         list:
                           - code: ID
                             value: '1'
+                      - descriptor:
+                          code: NP_FEES
+                          name: Np Fees
+                        list:
+                          - code: ID
+                            value: '2'
                       - descriptor:
                           code: ACADEMIC_ELIGIBILITY
                           name: Academic Eligibility
@@ -4770,7 +5113,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1400'
+                    value: '1700'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -4806,6 +5149,38 @@ x-flows:
                               value: percent
                             - code: COMMERCIAL_VALUE
                               value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: recruitment
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER_ACCEPTED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                    - title: NP Fees
+                      id: '2'
+                      price:
+                        currency: INR
+                        value: '300.00'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.2'
                             - code: COMMERCIAL_NAME
                               value: qualified
                             - code: COMMERCIAL_TRIGGERING_STATE
@@ -4973,6 +5348,12 @@ x-flows:
                           - code: ID
                             value: '1'
                       - descriptor:
+                          code: NP_FEES
+                          name: Np Fees
+                        list:
+                          - code: ID
+                            value: '2'
+                      - descriptor:
                           code: ACADEMIC_ELIGIBILITY
                           name: Academic eligibility
                         list:
@@ -5124,7 +5505,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1400'
+                    value: '1700'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -5160,6 +5541,38 @@ x-flows:
                               value: percent
                             - code: COMMERCIAL_VALUE
                               value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: recruitment
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER_ACCEPTED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                    - title: NP Fees
+                      id: '2'
+                      price:
+                        currency: INR
+                        value: '300.00'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.2'
                             - code: COMMERCIAL_NAME
                               value: qualified
                             - code: COMMERCIAL_TRIGGERING_STATE
@@ -5298,6 +5711,12 @@ x-flows:
                           - code: ID
                             value: '1'
                       - descriptor:
+                          code: NP_FEES
+                          name: Np Fees
+                        list:
+                          - code: ID
+                            value: '2'
+                      - descriptor:
                           code: CANCEL_REQUEST
                           name: Cancel request
                         list:
@@ -5348,6 +5767,38 @@ x-flows:
                               value: percent
                             - code: COMMERCIAL_VALUE
                               value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: recruitment
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER_EXTENDED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                    - title: NP Fees
+                      id: '2'
+                      price:
+                        currency: INR
+                        value: '0'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: id
+                              value: '2'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.2'
                             - code: COMMERCIAL_NAME
                               value: qualified
                             - code: COMMERCIAL_TRIGGERING_STATE
@@ -5555,6 +6006,12 @@ x-flows:
                           - code: ID
                             value: '1'
                       - descriptor:
+                          code: NP_FEES
+                          name: Np Fees
+                        list:
+                          - code: ID
+                            value: '2'
+                      - descriptor:
                           code: ACADEMIC_ELIGIBILITY
                           name: Academic Eligibility
                         list:
@@ -5738,7 +6195,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1400'
+                    value: '1700'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -5774,6 +6231,38 @@ x-flows:
                               value: percent
                             - code: COMMERCIAL_VALUE
                               value: '0.5'
+                            - code: COMMERCIAL_NAME
+                              value: recruitment
+                            - code: COMMERCIAL_TRIGGERING_STATE
+                              value: OFFER_ACCEPTED
+                        - descriptor:
+                            code: TYPE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: misc
+                    - title: NP Fees
+                      id: '2'
+                      price:
+                        currency: INR
+                        value: '300.00'
+                      tags:
+                        - descriptor:
+                            code: QUOTE
+                          list:
+                            - descriptor:
+                                code: TYPE
+                              value: item
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
+                            - code: COMMERCIAL_TYPE
+                              value: percent
+                            - code: COMMERCIAL_VALUE
+                              value: '0.2'
                             - code: COMMERCIAL_NAME
                               value: qualified
                             - code: COMMERCIAL_TRIGGERING_STATE
@@ -5958,7 +6447,8 @@ x-examples:
     example_set: &ref_17
       search:
         examples:
-          - value:
+          search_by_job_name:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: search
@@ -6007,7 +6497,8 @@ x-examples:
                         - descriptor:
                             code: EFFECTIVE_DATE
                           value: '2023-02-22T11:20:10.122Z'
-          - value:
+          search_by_job_provider:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: search
@@ -6056,7 +6547,8 @@ x-examples:
                         - descriptor:
                             code: EFFECTIVE_DATE
                           value: '2023-02-22T11:20:10.122Z'
-          - value:
+          search_by_loaction_of_the_job:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: search
@@ -6113,7 +6605,8 @@ x-examples:
                         - descriptor:
                             code: EFFECTIVE_DATE
                           value: '2023-02-22T11:20:10.122Z'
-          - value:
+          search_by_user_details:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: search
@@ -6169,7 +6662,8 @@ x-examples:
                         - descriptor:
                             code: EFFECTIVE_DATE
                           value: '2023-02-22T11:20:10.122Z'
-          - value:
+          search_by_industry_type:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: search
@@ -6223,7 +6717,8 @@ x-examples:
                         - descriptor:
                             code: EFFECTIVE_DATE
                           value: '2023-02-22T11:20:10.122Z'
-          - value:
+          search_by_employment_type:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: search
@@ -6277,9 +6772,63 @@ x-examples:
                         - descriptor:
                             code: EFFECTIVE_DATE
                           value: '2023-02-22T11:20:10.122Z'
+          search_inc:
+            value:
+              context:
+                domain: ONDC:ONEST10
+                action: search
+                version: 2.0.0
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
+                location:
+                  city:
+                    code: '*'
+                  country:
+                    code: IND
+                timestamp: '2023-02-22T11:20:10.122Z'
+                ttl: PT30S
+              message:
+                intent:
+                  payment:
+                    descriptor:
+                      code: NP_FEES
+                      name: Np Fees
+                    list:
+                      - code: ID
+                        value: '1'
+                      - code: COMMERCIAL_TYPE
+                        value: percent
+                      - code: COMMERCIAL_VALUE
+                        value: '0.2'
+                      - code: COMMERCIAL_NAME
+                        value: qualified
+                      - code: COMMERCIAL_TRIGGERING_STATE
+                        value: OFFER_EXTENDED
+                  tags:
+                    - descriptor:
+                        code: CATALOG_INC
+                      list:
+                        - descriptor:
+                            code: MODE
+                          value: start
+                    - descriptor:
+                        code: BAP_TERMS
+                      list:
+                        - descriptor:
+                            code: STATIC_TERMS
+                          value: static_terms_value
+                        - descriptor:
+                            code: STATIC_TERMS_NEW
+                          value: static_terms_new_value
+                        - descriptor:
+                            code: EFFECTIVE_DATE
+                          value: '2023-02-22T11:20:10.122Z'
       select:
         examples:
-          - value:
+          select:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: select
@@ -6312,9 +6861,16 @@ x-examples:
                           list:
                             - code: ID
                               value: '1'
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
       init:
         examples:
-          - value:
+          init:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: init
@@ -6347,6 +6903,12 @@ x-examples:
                           list:
                             - code: ID
                               value: '1'
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
                   fulfillments:
                     - id: '1'
                       type: REMOTE
@@ -6398,7 +6960,7 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '1400'
+                      value: '1700'
                     breakup:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
                         price:
@@ -6435,6 +6997,38 @@ x-examples:
                               - code: COMMERCIAL_VALUE
                                 value: '0.5'
                               - code: COMMERCIAL_NAME
+                                value: recruitment
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER_ACCEPTED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                      - title: NP Fees
+                        id: '2'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: Np Fees
+                            list:
+                              - code: ID
+                                value: '2'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.2'
+                              - code: COMMERCIAL_NAME
                                 value: qualified
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: OFFER_EXTENDED
@@ -6447,7 +7041,8 @@ x-examples:
                     ttl: P1D
       confirm:
         examples:
-          - value:
+          confirm:
+            value:
               context:
                 domain: ONDC:ONEST10
                 version: 2.0.0
@@ -6481,6 +7076,12 @@ x-examples:
                           list:
                             - code: ID
                               value: '1'
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
                   fulfillments:
                     - id: '1'
                       type: REMOTE
@@ -6569,7 +7170,7 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '1400'
+                      value: '1700'
                     breakup:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
                         price:
@@ -6605,6 +7206,38 @@ x-examples:
                                 value: percent
                               - code: COMMERCIAL_VALUE
                                 value: '0.5'
+                              - code: COMMERCIAL_NAME
+                                value: recruitment
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER_ACCEPTED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                      - title: NP Fees
+                        id: '2'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: Np Fees
+                            list:
+                              - code: ID
+                                value: '2'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.2'
                               - code: COMMERCIAL_NAME
                                 value: qualified
                               - code: COMMERCIAL_TRIGGERING_STATE
@@ -6648,7 +7281,8 @@ x-examples:
                         email: abc@abc.bc
       status:
         examples:
-          - value:
+          status:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: status
@@ -6671,7 +7305,8 @@ x-examples:
                   id: '1677140405881'
       cancel:
         examples:
-          - value:
+          cancel:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: cancel
@@ -6694,7 +7329,8 @@ x-examples:
                 cancellation_reason_id: '001'
       on_search:
         examples:
-          - value:
+          on_search:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: on_search
@@ -6947,6 +7583,18 @@ x-examples:
                                     code: GENDER
                                     name: Gender
                                   value: Male
+                            - descriptor:
+                                code: SALARY_INFO
+                                name: Salary information
+                              list:
+                                - descriptor:
+                                    code: GROSS_MIN
+                                    name: Minimum gross pay
+                                  value: '900000'
+                                - descriptor:
+                                    code: GROSS_MAX
+                                    name: Maximum gross pay
+                                  value: '1200000'
                             - descriptor:
                                 code: NP_FEES
                                 name: Np Fees
@@ -7495,7 +8143,8 @@ x-examples:
                             maximum_value: '1500.0'
       on_select:
         examples:
-          - value:
+          on_select:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: on_select
@@ -7529,10 +8178,16 @@ x-examples:
                           list:
                             - code: ID
                               value: '1'
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
                   quote:
                     price:
                       currency: INR
-                      value: '1400'
+                      value: '1700'
                     breakup:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
                         price:
@@ -7569,6 +8224,38 @@ x-examples:
                               - code: COMMERCIAL_VALUE
                                 value: '0.5'
                               - code: COMMERCIAL_NAME
+                                value: recruitment
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER_ACCEPTED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                      - title: NP Fees
+                        id: '2'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: Np Fees
+                            list:
+                              - code: ID
+                                value: '2'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.2'
+                              - code: COMMERCIAL_NAME
                                 value: qualified
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: OFFER_EXTENDED
@@ -7581,7 +8268,8 @@ x-examples:
                     ttl: P1D
       on_init:
         examples:
-          - value:
+          on_init:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: on_init
@@ -7630,6 +8318,12 @@ x-examples:
                           list:
                             - code: ID
                               value: '1'
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
                         - descriptor:
                             code: ACADEMIC_ELIGIBILITY
                             name: Academic eligibility
@@ -7774,7 +8468,7 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '1400'
+                      value: '1700'
                     breakup:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
                         price:
@@ -7810,6 +8504,38 @@ x-examples:
                                 value: percent
                               - code: COMMERCIAL_VALUE
                                 value: '0.5'
+                              - code: COMMERCIAL_NAME
+                                value: recruitment
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER_ACCEPTED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                      - title: NP Fees
+                        id: '2'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: Np Fees
+                            list:
+                              - code: ID
+                                value: '2'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.2'
                               - code: COMMERCIAL_NAME
                                 value: qualified
                               - code: COMMERCIAL_TRIGGERING_STATE
@@ -7878,7 +8604,8 @@ x-examples:
                         contact:
                           phone: '9999999999'
                           email: abc@abc.bc
-          - value:
+          on_init_post_form_submission:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: on_init
@@ -7907,14 +8634,18 @@ x-examples:
                       tags:
                         - descriptor:
                             code: NP_FEES
-                            name: Np Fees
                           list:
                             - code: ID
                               value: '1'
+                        - descriptor:
+                            code: NP_FEES
+                          list:
+                            - code: ID
+                              value: '2'
                   quote:
                     price:
                       currency: INR
-                      value: '1400'
+                      value: '1700'
                     breakup:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
                         price:
@@ -7950,6 +8681,38 @@ x-examples:
                                 value: percent
                               - code: COMMERCIAL_VALUE
                                 value: '0.5'
+                              - code: COMMERCIAL_NAME
+                                value: recruitment
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER_ACCEPTED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                      - title: NP Fees
+                        id: '2'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: Np Fees
+                            list:
+                              - code: ID
+                                value: '2'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.2'
                               - code: COMMERCIAL_NAME
                                 value: qualified
                               - code: COMMERCIAL_TRIGGERING_STATE
@@ -8020,7 +8783,8 @@ x-examples:
                           email: abc@abc.bc
       on_confirm:
         examples:
-          - value:
+          on_confirm:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: on_confirm
@@ -8055,6 +8819,12 @@ x-examples:
                           list:
                             - code: ID
                               value: '1'
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
                         - descriptor:
                             code: ACADEMIC_ELIGIBILITY
                             name: Academic Eligibility
@@ -8187,7 +8957,7 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '1400'
+                      value: '1700'
                     breakup:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
                         price:
@@ -8223,6 +8993,38 @@ x-examples:
                                 value: percent
                               - code: COMMERCIAL_VALUE
                                 value: '0.5'
+                              - code: COMMERCIAL_NAME
+                                value: recruitment
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER_ACCEPTED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                      - title: NP Fees
+                        id: '2'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: Np Fees
+                            list:
+                              - code: ID
+                                value: '2'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.2'
                               - code: COMMERCIAL_NAME
                                 value: qualified
                               - code: COMMERCIAL_TRIGGERING_STATE
@@ -8324,7 +9126,8 @@ x-examples:
                               value: 'true'
       on_update:
         examples:
-          - value:
+          on_update:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: on_update
@@ -8362,6 +9165,12 @@ x-examples:
                           list:
                             - code: ID
                               value: '1'
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
                         - descriptor:
                             code: ACADEMIC_ELIGIBILITY
                             name: Academic Eligibility
@@ -8546,7 +9355,7 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '1400'
+                      value: '1700'
                     breakup:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
                         price:
@@ -8583,6 +9392,38 @@ x-examples:
                               - code: COMMERCIAL_VALUE
                                 value: '0.5'
                               - code: COMMERCIAL_NAME
+                                value: recruitment
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER_ACCEPTED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                      - title: NP Fees
+                        id: '2'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: Np Fees
+                            list:
+                              - code: ID
+                                value: '2'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.2'
+                              - code: COMMERCIAL_NAME
                                 value: qualified
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: OFFER_EXTENDED
@@ -8595,7 +9436,8 @@ x-examples:
                     ttl: P1D
       on_status:
         examples:
-          - value:
+          on_status:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: on_status
@@ -8631,6 +9473,12 @@ x-examples:
                           list:
                             - code: ID
                               value: '1'
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
                         - descriptor:
                             code: ACADEMIC_ELIGIBILITY
                             name: Academic eligibility
@@ -8783,7 +9631,7 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '1400'
+                      value: '1700'
                     breakup:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
                         price:
@@ -8819,6 +9667,38 @@ x-examples:
                                 value: percent
                               - code: COMMERCIAL_VALUE
                                 value: '0.5'
+                              - code: COMMERCIAL_NAME
+                                value: recruitment
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER_ACCEPTED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                      - title: NP Fees
+                        id: '2'
+                        price:
+                          currency: INR
+                          value: '300.00'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: Np Fees
+                            list:
+                              - code: ID
+                                value: '2'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.2'
                               - code: COMMERCIAL_NAME
                                 value: qualified
                               - code: COMMERCIAL_TRIGGERING_STATE
@@ -8887,7 +9767,8 @@ x-examples:
                           email: abc@abc.bc
       on_cancel:
         examples:
-          - value:
+          on_cancel:
+            value:
               context:
                 domain: ONDC:ONEST10
                 action: on_cancel
@@ -8927,6 +9808,12 @@ x-examples:
                           list:
                             - code: ID
                               value: '1'
+                        - descriptor:
+                            code: NP_FEES
+                            name: Np Fees
+                          list:
+                            - code: ID
+                              value: '2'
                         - descriptor:
                             code: CANCEL_REQUEST
                             name: Cancel request
@@ -8978,6 +9865,38 @@ x-examples:
                                 value: percent
                               - code: COMMERCIAL_VALUE
                                 value: '0.5'
+                              - code: COMMERCIAL_NAME
+                                value: recruitment
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER_EXTENDED
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: misc
+                      - title: NP Fees
+                        id: '2'
+                        price:
+                          currency: INR
+                          value: '0'
+                        tags:
+                          - descriptor:
+                              code: QUOTE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                          - descriptor:
+                              code: NP_FEES
+                              name: Np Fees
+                            list:
+                              - code: id
+                                value: '2'
+                              - code: COMMERCIAL_TYPE
+                                value: percent
+                              - code: COMMERCIAL_VALUE
+                                value: '0.2'
                               - code: COMMERCIAL_NAME
                                 value: qualified
                               - code: COMMERCIAL_TRIGGERING_STATE

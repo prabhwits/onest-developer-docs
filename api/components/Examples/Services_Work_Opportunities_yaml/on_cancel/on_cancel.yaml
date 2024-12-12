@@ -39,6 +39,12 @@ value:
                 - code: ID
                   value: "1"
             - descriptor:
+                code: NP_FEES
+                name: "Np Fees"
+              list:
+                - code: ID
+                  value: "2"
+            - descriptor:
                 code: CANCEL_REQUEST
                 name: Cancel request
               list:
@@ -89,6 +95,38 @@ value:
                     value: percent
                   - code: COMMERCIAL_VALUE
                     value: "0.5"
+                  - code: COMMERCIAL_NAME
+                    value: recruitment
+                  - code: COMMERCIAL_TRIGGERING_STATE
+                    value: OFFER_EXTENDED
+              - descriptor:
+                  code: TYPE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: misc
+          - title: NP Fees
+            id: "2"
+            price:
+              currency: INR
+              value: "0"
+            tags:
+              - descriptor:
+                  code: QUOTE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: item
+              - descriptor:
+                  code: NP_FEES
+                  name: "Np Fees"
+                list:
+                  - code: id
+                    value: "2"
+                  - code: COMMERCIAL_TYPE
+                    value: percent
+                  - code: COMMERCIAL_VALUE
+                    value: "0.2"
                   - code: COMMERCIAL_NAME
                     value: qualified
                   - code: COMMERCIAL_TRIGGERING_STATE
