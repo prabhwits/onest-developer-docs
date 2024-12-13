@@ -276,7 +276,7 @@ value:
                   - code: COMMERCIAL_VALUE
                     value: "0.2"
                   - code: COMMERCIAL_NAME
-                    value: qualified
+                    value: lead
                   - code: COMMERCIAL_TRIGGERING_STATE
                     value: OFFER-EXTENDED
               - descriptor:

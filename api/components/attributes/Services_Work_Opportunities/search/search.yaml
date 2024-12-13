@@ -96,7 +96,7 @@ message:
           COMMERCIAL_NAME:
             description: "Name of the commercial type"
             required: mandatory
-            usage: "qualified"
+            usage: "recruitment"
             reference: null
           COMMERCIAL_TRIGGERING_STATE:
             description: "Triggering state for the commercial fee"

@@ -188,7 +188,7 @@ NP_FEES:
     description: commercial value - [percentage, number]
     reference: <PR/Issue/Discussion Links md format text>
   - code: COMMERCIAL_NAME
-    description: commercial name - [verified, recruitment, qualified]
+    description: commercial name - [recruitment, lead]
     reference: <PR/Issue/Discussion Links md format text>
   - code: COMMERCIAL_TRIGGERING_STATE
     description: commercial triggering - [APPLICATION_SUBMITTED, OFFER_ACCEPTED, OFFER_EXTENDED]
