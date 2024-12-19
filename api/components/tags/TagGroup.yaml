@@ -126,13 +126,13 @@ order:
   #         reference: <PR/Issue/Discussion Links md format text>
   #         list:
   #           $ref: "./tag.yaml#/title"
-  # payments: &ref1
-  #   tags:
-  #     - code: Settlement_Details
-  #       description: Define Payment Settlement Details here (Required)
-  #       reference: <PR/Issue/Discussion Links md format text>
-  #       list:
-  #         $ref: "./tag.yaml#/Settlement_Details"
+  payments: &ref1
+    tags:
+      - code: Settlement_Details
+        description: Define Payment Settlement Details here (Required)
+        reference: <PR/Issue/Discussion Links md format text>
+        list:
+          $ref: "./tag.yaml#/Settlement_Details"
   #     - code: Payment_Details
   #       description: Define Payment Details here (Optional)
   #       reference: <PR/Issue/Discussion Links md format text>

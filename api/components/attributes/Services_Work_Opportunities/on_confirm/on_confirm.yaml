@@ -226,3 +226,41 @@ message:
         required: mandatory
         usage: "1400"
         reference: null
+    payments:
+      parent: true
+      url:
+        description: "The URL for payment processing."
+        required: mandatory
+        usage: "https://ondc.transaction.com/payment"
+        reference: null
+      params:
+        currency:
+          description: "The currency used for the transaction."
+          required: mandatory
+          usage: "INR"
+          reference: null
+        transaction_id:
+          description: "The ID of the transaction."
+          required: mandatory
+          usage: "3937"
+          reference: null
+        amount:
+          description: "The transaction amount."
+          required: mandatory
+          usage: "1400.00"
+          reference: null
+      status:
+        description: "The payment status."
+        required: mandatory
+        usage: "PAID"
+        reference: null
+      type:
+        description: "The type of payment."
+        required: mandatory
+        usage: "ON-ORDER"
+        reference: null
+      collected_by:
+        description: "Entity collecting the payment."
+        required: mandatory
+        usage: "BAP"
+        reference: null
