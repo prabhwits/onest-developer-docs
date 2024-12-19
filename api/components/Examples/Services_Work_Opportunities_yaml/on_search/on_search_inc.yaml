@@ -76,6 +76,14 @@ value:
                       value: recruitment
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: OFFER_ACCEPTED
+                    - code: COMMERCIAL_TRIGGERING_STATE
+                      value: OFFER_EXTENDED
+                    - code: COMPENSATION_TYPE
+                      value: CTC
+                    - code: COMPENSATION_TRANSFER_PERIOD
+                      value: "P1M,P3M,P10M"
+                    - code: COMPENSATION_PERCENTAGE_SPLIT
+                      value: "25,25,50"
                 - descriptor:
                     code: LISTING_DETAILS
                     name: Listing details

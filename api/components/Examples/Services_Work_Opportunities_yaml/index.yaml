@@ -5,7 +5,7 @@ search:
     search - by job provider:
       $ref: ./search/search_by_job_provider.yaml
     search - by loaction of the job:
-      $ref: ./search/search_by_loaction_of_the_job.yaml
+      $ref: ./search/search_by_location_of_the_job.yaml
     search - by user details: 
       $ref: ./search/search_by_user_details.yaml
     search - by industry type:

@@ -273,6 +273,12 @@ value:
                       value: recruitment
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: OFFER_ACCEPTED
+                    - code: COMPENSATION_TYPE
+                      value: LPA
+                    - code: COMPENSATION_TRANSFER_PERIOD
+                      value: "P1M,P2M,P3M"
+                    - code: COMPENSATION_PERCENTAGE_SPLIT
+                      value: "50,25,25"                    
                 - descriptor:
                     code: NP_FEES
                     name: "Np Fees"
@@ -287,6 +293,12 @@ value:
                       value: lead
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: OFFER_EXTENDED
+                    - code: COMPENSATION_TYPE
+                      value: CTC
+                    - code: COMPENSATION_TRANSFER_PERIOD
+                      value: "P1M,P3M,P10M"
+                    - code: COMPENSATION_PERCENTAGE_SPLIT
+                      value: "25,25,50"
                 - descriptor:
                     code: NP_FEES
                     name: "Np Fees"
@@ -301,6 +313,12 @@ value:
                       value: lead
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: APPLICATION_SUBMITTED
+                    - code: COMPENSATION_TYPE
+                      value: LPA
+                    - code: COMPENSATION_TRANSFER_PERIOD
+                      value: "P1M,P2M,P3M"
+                    - code: COMPENSATION_PERCENTAGE_SPLIT
+                      value: "50,25,25"
               price:
                 currency: INR
                 value: "1100.00"
@@ -523,6 +541,12 @@ value:
                       value: recruitment
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: OFFER_ACCEPTED
+                    - code: COMPENSATION_TYPE
+                      value: CTC
+                    - code: COMPENSATION_TRANSFER_PERIOD
+                      value: "P1M,P3M,P10M"
+                    - code: COMPENSATION_PERCENTAGE_SPLIT
+                      value: "25,25,50"
                 - descriptor:
                     code: NP_FEES
                     name: "Np Fees"
@@ -537,6 +561,12 @@ value:
                       value: lead
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: OFFER_EXTENDED
+                    - code: COMPENSATION_TYPE
+                      value: LPA
+                    - code: COMPENSATION_TRANSFER_PERIOD
+                      value: "P1M,P2M,P3M"
+                    - code: COMPENSATION_PERCENTAGE_SPLIT
+                      value: "50,25,25"
                 - descriptor:
                     code: NP_FEES
                     name: "Np Fees"
@@ -551,6 +581,12 @@ value:
                       value: lead
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: APPLICATION_SUBMITTED
+                    - code: COMPENSATION_TYPE
+                      value: CTC
+                    - code: COMPENSATION_TRANSFER_PERIOD
+                      value: "P1M,P3M,P10M"
+                    - code: COMPENSATION_PERCENTAGE_SPLIT
+                      value: "25,25,50"
               price:
                 currency: INR
                 value: "1000.00"
@@ -765,6 +801,12 @@ value:
                       value: recruitment
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: OFFER_ACCEPTED
+                    - code: COMPENSATION_TYPE
+                      value: CTC
+                    - code: COMPENSATION_TRANSFER_PERIOD
+                      value: "P1M,P3M,P10M"
+                    - code: COMPENSATION_PERCENTAGE_SPLIT
+                      value: "25,25,50"
                 - descriptor:
                     code: NP_FEES
                     name: "Np Fees"
@@ -779,6 +821,12 @@ value:
                       value: lead
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: OFFER_EXTENDED
+                    - code: COMPENSATION_TYPE
+                      value: LPA
+                    - code: COMPENSATION_TRANSFER_PERIOD
+                      value: "P1M,P2M,P3M"
+                    - code: COMPENSATION_PERCENTAGE_SPLIT
+                      value: "50,25,25"
                 - descriptor:
                     code: NP_FEES
                     name: "Np Fees"
@@ -793,6 +841,12 @@ value:
                       value: lead
                     - code: COMMERCIAL_TRIGGERING_STATE
                       value: APPLICATION_SUBMITTED
+                    - code: COMPENSATION_TYPE
+                      value: CTC
+                    - code: COMPENSATION_TRANSFER_PERIOD
+                      value: "P1M,P3M,P10M"
+                    - code: COMPENSATION_PERCENTAGE_SPLIT
+                      value: "25,25,50"
               price:
                 currency: INR
                 value: "1000.00"

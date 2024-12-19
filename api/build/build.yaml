@@ -2629,21 +2629,22 @@ x-enum:
 x-tags:
   search:
     message:
-      intent: &ref_4
-        tags:
-          - code: EMPLOYMENT_TYPE
-            description: Employment Type
-            reference: <PR/Issue/Discussion Links md format text>
-            list: &ref_2
-              - code: full-time
-                description: Type of EMPLOYMENT_TYPE
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: part-time
-                description: Type of EMPLOYMENT_TYPE
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: contractual
-                description: Type of EMPLOYMENT_TYPE
-                reference: <PR/Issue/Discussion Links md format text>
+      intent:
+        item: &ref_4
+          tags:
+            - code: EMPLOYMENT_TYPE
+              description: Employment Type
+              reference: <PR/Issue/Discussion Links md format text>
+              list: &ref_2
+                - code: full-time
+                  description: Type of EMPLOYMENT_TYPE
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: part-time
+                  description: Type of EMPLOYMENT_TYPE
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: contractual
+                  description: Type of EMPLOYMENT_TYPE
+                  reference: <PR/Issue/Discussion Links md format text>
   on_search:
     message:
       catalog:
@@ -2670,6 +2671,17 @@ x-tags:
                   description: >-
                     commercial triggering - [APPLICATION_SUBMITTED,
                     OFFER_ACCEPTED, OFFER_EXTENDED]
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: COMPENSATION_TYPE
+                  description: comepensation type - [CTC, LPA]
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: COMPENSATION_TRANSFER_PERIOD
+                  description: >-
+                    comepensation transfer period - ["P1M,P3M,P10M",
+                    "P1M,P3M,P10M"]
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: COMPENSATION_PERCENTAGE_SPLIT
+                  description: comepensation percentage split - ["50,25,25", "25,25,50"]
                   reference: <PR/Issue/Discussion Links md format text>
             - code: SALARY
               description: SALARY
@@ -2889,14 +2901,52 @@ x-tags:
                     reference: <PR/Issue/Discussion Links md format text>
   on_select:
     message:
-      order:
-        items: &ref_3
-          items:
-            tags:
-              - code: LISTING_DETAILS
-                description: LISTING_DETAILS
-                reference: <PR/Issue/Discussion Links md format text>
-                list: *ref_2
+      order: &ref_3
+        items:
+          tags:
+            - code: LISTING_DETAILS
+              description: LISTING_DETAILS
+              reference: <PR/Issue/Discussion Links md format text>
+              list: *ref_2
+        payments: &ref_5
+          tags:
+            - code: Settlement_Details
+              description: Define Payment Settlement Details here (Required)
+              reference: <PR/Issue/Discussion Links md format text>
+              list:
+                - code: SETTLEMENT_COUNTERPARTY
+                  description: >-
+                    Counterparty involved; Can be seller-app/buyer-app
+                    (Required)
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: SETTLEMENT_TYPE
+                  description: Mode of Payment. E.g. UPI, NEFT, RTGS (Required)
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: BENEFICIARY_NAME
+                  description: Description of the Tag (Required in case of neft and rtgs)
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: SETTLEMENT_BANK_ACCOUNT_NO
+                  description: >-
+                    Bank Account of the counterpart (Required in case of neft
+                    and rtgs)
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: SETTLEMENT_IFSC_CODE
+                  description: >-
+                    IFSC Code for the Bank Account of the Counter party
+                    (Required in case of neft and rtgs)
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: UPI_ADDRESS
+                  description: Description of the Tag (Required in case of UPI mode)
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: SETTLEMENT_PHASE
+                  description: Phase of the settlement process; e.g., sale-amount
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: BANK_NAME
+                  description: Name of the bank associated with the settlement
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: BRANCH_NAME
+                  description: Branch name of the bank for the settlement
+                  reference: <PR/Issue/Discussion Links md format text>
   on_init:
     message:
       order: *ref_3
@@ -2905,12 +2955,12 @@ x-tags:
       order: *ref_3
   on_status:
     message:
-      order:
-        items: *ref_3
+      order: *ref_3
   on_update:
     message:
       order:
         items: *ref_4
+        payments: *ref_5
 x-flows:
   - summary: ONDC:ONEST10 - Work Opportunities
     description: >-
@@ -3001,7 +3051,7 @@ x-flows:
           BAP will make search request with an intent, example :- job name, job
           provider, location etc.
         reference: if any
-        example: &ref_5
+        example: &ref_6
           value:
             context:
               domain: ONDC:ONEST10
@@ -3027,14 +3077,6 @@ x-flows:
                   list:
                     - code: ID
                       value: '1'
-                    - code: COMMERCIAL_TYPE
-                      value: percent
-                    - code: COMMERCIAL_VALUE
-                      value: '0.2'
-                    - code: COMMERCIAL_NAME
-                      value: lead
-                    - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER_EXTENDED
                 item:
                   descriptor:
                     name: Engineer
@@ -3057,7 +3099,7 @@ x-flows:
           BPP will create a catalogue containing jobs with matching criteria and
           sends it as on_search request.
         reference: if any
-        example: &ref_6
+        example: &ref_7
           value:
             context:
               domain: ONDC:ONEST10
@@ -3336,6 +3378,12 @@ x-flows:
                                 value: recruitment
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: OFFER_ACCEPTED
+                              - code: COMPENSATION_TYPE
+                                value: LPA
+                              - code: COMPENSATION_TRANSFER_PERIOD
+                                value: P1M,P2M,P3M
+                              - code: COMPENSATION_PERCENTAGE_SPLIT
+                                value: 50,25,25
                           - descriptor:
                               code: NP_FEES
                               name: Np Fees
@@ -3350,6 +3398,12 @@ x-flows:
                                 value: lead
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: OFFER_EXTENDED
+                              - code: COMPENSATION_TYPE
+                                value: CTC
+                              - code: COMPENSATION_TRANSFER_PERIOD
+                                value: P1M,P3M,P10M
+                              - code: COMPENSATION_PERCENTAGE_SPLIT
+                                value: 25,25,50
                           - descriptor:
                               code: NP_FEES
                               name: Np Fees
@@ -3364,6 +3418,12 @@ x-flows:
                                 value: lead
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: APPLICATION_SUBMITTED
+                              - code: COMPENSATION_TYPE
+                                value: LPA
+                              - code: COMPENSATION_TRANSFER_PERIOD
+                                value: P1M,P2M,P3M
+                              - code: COMPENSATION_PERCENTAGE_SPLIT
+                                value: 50,25,25
                         price:
                           currency: INR
                           value: '1100.00'
@@ -3589,6 +3649,12 @@ x-flows:
                                 value: recruitment
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: OFFER_ACCEPTED
+                              - code: COMPENSATION_TYPE
+                                value: CTC
+                              - code: COMPENSATION_TRANSFER_PERIOD
+                                value: P1M,P3M,P10M
+                              - code: COMPENSATION_PERCENTAGE_SPLIT
+                                value: 25,25,50
                           - descriptor:
                               code: NP_FEES
                               name: Np Fees
@@ -3603,6 +3669,12 @@ x-flows:
                                 value: lead
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: OFFER_EXTENDED
+                              - code: COMPENSATION_TYPE
+                                value: LPA
+                              - code: COMPENSATION_TRANSFER_PERIOD
+                                value: P1M,P2M,P3M
+                              - code: COMPENSATION_PERCENTAGE_SPLIT
+                                value: 50,25,25
                           - descriptor:
                               code: NP_FEES
                               name: Np Fees
@@ -3617,6 +3689,12 @@ x-flows:
                                 value: lead
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: APPLICATION_SUBMITTED
+                              - code: COMPENSATION_TYPE
+                                value: CTC
+                              - code: COMPENSATION_TRANSFER_PERIOD
+                                value: P1M,P3M,P10M
+                              - code: COMPENSATION_PERCENTAGE_SPLIT
+                                value: 25,25,50
                         price:
                           currency: INR
                           value: '1000.00'
@@ -3834,6 +3912,12 @@ x-flows:
                                 value: recruitment
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: OFFER_ACCEPTED
+                              - code: COMPENSATION_TYPE
+                                value: CTC
+                              - code: COMPENSATION_TRANSFER_PERIOD
+                                value: P1M,P3M,P10M
+                              - code: COMPENSATION_PERCENTAGE_SPLIT
+                                value: 25,25,50
                           - descriptor:
                               code: NP_FEES
                               name: Np Fees
@@ -3848,6 +3932,12 @@ x-flows:
                                 value: lead
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: OFFER_EXTENDED
+                              - code: COMPENSATION_TYPE
+                                value: LPA
+                              - code: COMPENSATION_TRANSFER_PERIOD
+                                value: P1M,P2M,P3M
+                              - code: COMPENSATION_PERCENTAGE_SPLIT
+                                value: 50,25,25
                           - descriptor:
                               code: NP_FEES
                               name: Np Fees
@@ -3862,6 +3952,12 @@ x-flows:
                                 value: lead
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: APPLICATION_SUBMITTED
+                              - code: COMPENSATION_TYPE
+                                value: CTC
+                              - code: COMPENSATION_TRANSFER_PERIOD
+                                value: P1M,P3M,P10M
+                              - code: COMPENSATION_PERCENTAGE_SPLIT
+                                value: 25,25,50
                         price:
                           currency: INR
                           value: '1000.00'
@@ -3870,7 +3966,7 @@ x-flows:
         api: search_inc
         description: BAP will make search inc request with an intent
         reference: if any
-        example: &ref_17
+        example: &ref_18
           value:
             context:
               domain: ONDC:ONEST10
@@ -3896,14 +3992,6 @@ x-flows:
                   list:
                     - code: ID
                       value: '1'
-                    - code: COMMERCIAL_TYPE
-                      value: percent
-                    - code: COMMERCIAL_VALUE
-                      value: '0.2'
-                    - code: COMMERCIAL_NAME
-                      value: lead
-                    - code: COMMERCIAL_TRIGGERING_STATE
-                      value: OFFER_EXTENDED
                 tags:
                   - descriptor:
                       code: CATALOG_INC
@@ -3929,7 +4017,7 @@ x-flows:
           BPP will create a catalogue containing jobs with matching criteria and
           sends it as on_search_inc request.
         reference: if any
-        example: &ref_19
+        example: &ref_20
           value:
             context:
               domain: ONDC:ONEST10
@@ -4009,6 +4097,14 @@ x-flows:
                                 value: recruitment
                               - code: COMMERCIAL_TRIGGERING_STATE
                                 value: OFFER_ACCEPTED
+                              - code: COMMERCIAL_TRIGGERING_STATE
+                                value: OFFER_EXTENDED
+                              - code: COMPENSATION_TYPE
+                                value: CTC
+                              - code: COMPENSATION_TRANSFER_PERIOD
+                                value: P1M,P3M,P10M
+                              - code: COMPENSATION_PERCENTAGE_SPLIT
+                                value: 25,25,50
                           - descriptor:
                               code: LISTING_DETAILS
                               name: Listing details
@@ -4036,7 +4132,7 @@ x-flows:
           to the user. Once the user chooses a job, BAP will make select API
           with item ID to get the complete details about the job.
         reference: if any
-        example: &ref_7
+        example: &ref_8
           value:
             context:
               domain: ONDC:ONEST10
@@ -4083,7 +4179,7 @@ x-flows:
           valid. If the listing is still valid, BPP will send the on_select call
           with complete details of the job listing.
         reference: if any
-        example: &ref_8
+        example: &ref_9
           value:
             context:
               domain: ONDC:ONEST10
@@ -4091,6 +4187,8 @@ x-flows:
               version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
+              bpp_id: job-hub.bpp.io
+              bpp_uri: https://job-hub.bpp.io
               transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
               message_id: c8e3968c-cd78-4e46-aa34-0d541e46bd73
               location:
@@ -4154,20 +4252,6 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '1'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.5'
-                            - code: COMMERCIAL_NAME
-                              value: recruitment
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_ACCEPTED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
@@ -4186,20 +4270,6 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '2'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.2'
-                            - code: COMMERCIAL_NAME
-                              value: lead
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_EXTENDED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
@@ -4212,7 +4282,7 @@ x-flows:
           BAP sends the customer details to the BPP in the init API. This is the
           initializing step of the job application process.
         reference: if any
-        example: &ref_9
+        example: &ref_10
           value:
             context:
               domain: ONDC:ONEST10
@@ -4279,23 +4349,27 @@ x-flows:
                             list:
                               - descriptor:
                                   code: EXPECTED_SALARY
+                                  name: Expected Salary
                                 value: '1000000'
                               - descriptor:
                                   code: TOTAL_EXPERIENCE
                                   name: Total Experience
                                 value: P4Y
                           - descriptor:
-                              code: documents
+                              code: DOCUMENTS
                               name: Documents
                             list:
                               - descriptor:
                                   code: DOC_TYPE
+                                  name: Document Type
                                 value: resume
                               - descriptor:
-                                  code: link
+                                  code: LINK
+                                  name: Document Link
                                 value: https://example.com/resume.pdf
                               - descriptor:
                                   code: FILE_FORMAT
+                                  name: File Format
                                 value: pdf
                       contact:
                         phone: '9999999999'
@@ -4330,20 +4404,6 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '1'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.5'
-                            - code: COMMERCIAL_NAME
-                              value: recruitment
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_ACCEPTED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
@@ -4362,20 +4422,6 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '2'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.2'
-                            - code: COMMERCIAL_NAME
-                              value: lead
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_EXTENDED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
@@ -4388,7 +4434,7 @@ x-flows:
           If BPP wants to collect additional details of the user, it will send
           an xinput form in the on_init request.
         reference: if any
-        example: &ref_10
+        example: &ref_11
           value:
             context:
               domain: ONDC:ONEST10
@@ -4444,147 +4490,6 @@ x-flows:
                         list:
                           - code: ID
                             value: '2'
-                      - descriptor:
-                          code: ACADEMIC_ELIGIBILITY
-                          name: Academic eligibility
-                        list:
-                          - descriptor:
-                              code: COURSE_NAME
-                              name: Name of the course
-                            value: Class-X
-                          - descriptor:
-                              code: MIN_PERCENTAGE
-                              name: >-
-                                Minimum percentage of marks to be obtained in
-                                the course for eligibility
-                            value: '60'
-                          - descriptor:
-                              code: MANDATORY_ELIGIBILITY
-                              name: Mandatory Eligibility
-                            value: 'true'
-                      - descriptor:
-                          code: ACADEMIC_ELIGIBILITY
-                          name: Academic eligibility
-                        list:
-                          - descriptor:
-                              code: COURSE_NAME
-                              name: Name of the course
-                            value: Class-XII
-                          - descriptor:
-                              code: MIN_PERCENTAGE
-                              name: >-
-                                Minimum percentage of marks to be obtained in
-                                the course for eligibility
-                            value: '60'
-                          - descriptor:
-                              code: MANDATORY_ELIGIBILITY
-                              name: Mandatory Eligibility
-                            value: 'true'
-                      - descriptor:
-                          code: ACADEMIC_ELIGIBILITY
-                          name: Academic eligibility
-                        list:
-                          - descriptor:
-                              code: COURSE_LEVEL
-                              name: Level of the course
-                            value: Under Graduate
-                          - descriptor:
-                              code: MIN_PERCENTAGE
-                              name: >-
-                                Minimum percentage of marks to be obtained in
-                                the course for eligibility
-                            value: '60'
-                          - descriptor:
-                              code: MANDATORY_ELIGIBILITY
-                              name: Mandatory Eligibility
-                            value: 'true'
-                      - descriptor:
-                          code: ACADEMIC_ELIGIBILITY
-                          name: Academic eligibility
-                        list:
-                          - descriptor:
-                              code: COURSE_LEVEL
-                              name: Level of the course
-                            value: Graduate
-                          - descriptor:
-                              code: MANDATORY_ELIGIBILITY
-                              name: Mandatory Eligibility
-                            value: 'false'
-                      - descriptor:
-                          code: JOB_REQUIREMENTS
-                          name: Job requirements
-                        list:
-                          - descriptor:
-                              code: REQ_EXPERIENCE
-                              name: Required work experience in years
-                            value: P2Y6M
-                          - descriptor:
-                              code: REQ_PROF_SKILL
-                              name: Skills required for the role
-                            value: android-development
-                          - descriptor:
-                              code: REQ_PROF_SKILL
-                              name: Skills required for the role
-                            value: dev-ops
-                          - descriptor:
-                              code: REQ_PROF_SKILL
-                              name: Additional skills required for the job
-                            value: >-
-                              You have 8+ years of engineering experience,
-                              predominantly in shipping user-facing production
-                              features
-                      - descriptor:
-                          code: JOB_RESPONSIBILITIES
-                          name: Job responsibilities
-                        list:
-                          - descriptor:
-                              code: RESPONSIBILITY
-                              name: Responsibility
-                            value: >-
-                              Build frontend experiences for our tools (Web, PWA
-                              and React Native)
-                          - descriptor:
-                              code: RESPONSIBILITY
-                              name: Responsibility
-                            value: >-
-                              Articulate a long term technical direction and
-                              vision for building, maintaining, and scaling our
-                              web and mobile platforms
-                          - descriptor:
-                              code: RESPONSIBILITY
-                              name: Responsibility
-                            value: >-
-                              Create trustworthy user experiences by building
-                              interfaces that are simple, easy to comprehend,
-                              performant and reliable using modern tools like
-                              React, React Native, Typescript, Node.js, Jest and
-                              Webpack.
-                          - descriptor:
-                              code: RESPONSIBILITY
-                              name: Responsibility
-                            value: >-
-                              Mentor and train other team members on design
-                              techniques and coding standards.
-                      - descriptor:
-                          code: LISTING_DETAILS
-                          name: Listing details
-                        list:
-                          - descriptor:
-                              code: INDUSTRY_TYPE
-                              name: Industry type
-                            value: IT Services & Consulting
-                          - descriptor:
-                              code: DEPARTMENT
-                              name: Department
-                            value: Engineering - Software & QA
-                          - descriptor:
-                              code: EMPLOYMENT_TYPE
-                              name: Employment type
-                            value: full-time
-                          - descriptor:
-                              code: JOB_ROLE
-                              name: Job role
-                            value: DevOps Engineer
                 quote:
                   price:
                     currency: INR
@@ -4615,20 +4520,6 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '1'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.5'
-                            - code: COMMERCIAL_NAME
-                              value: recruitment
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_ACCEPTED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
@@ -4646,20 +4537,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                        - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '2'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.2'
-                            - code: COMMERCIAL_NAME
-                              value: lead
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER-EXTENDED
                         - descriptor:
                             code: TYPE
                           list:
@@ -4724,10 +4601,46 @@ x-flows:
                       contact:
                         phone: '9999999999'
                         email: abc@abc.bc
+                payments:
+                  url: https://ondc.transaction.com/payment
+                  status: NOT-PAID
+                  type: ON-ORDER
+                  collected_by: BAP
+                  tags:
+                    descriptor:
+                      code: SETTLEMENT_DETAILS
+                    list:
+                      - descriptor:
+                          code: SETTLEMENT_COUNTERPARTY
+                        value: seller-app
+                      - descriptor:
+                          code: SETTLEMENT_PHASE
+                        value: sale-amount
+                      - descriptor:
+                          code: SETTLEMENT_TYPE
+                        value: upi
+                      - descriptor:
+                          code: UPI_ADDRESS
+                        value: gft@oksbi
+                      - descriptor:
+                          code: SETTLEMENT_BANK_ACCOUNT_NO
+                        value: XXXXXXXXXX
+                      - descriptor:
+                          code: SETTLEMENT_IFSC_CODE
+                        value: XXXXXXXXX
+                      - descriptor:
+                          code: BENEFICIARY_NAME
+                        value: xxxxx
+                      - descriptor:
+                          code: BANK_NAME
+                        value: xxxx
+                      - descriptor:
+                          code: BRANCH_NAME
+                        value: xxxx
       - summary: Description
         api: confirm
         description: BAP confirms user wants to submit the job application.
-        example: &ref_11
+        example: &ref_12
           value:
             context:
               domain: ONDC:ONEST10
@@ -4883,20 +4796,6 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '1'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.5'
-                            - code: COMMERCIAL_NAME
-                              value: recruitment
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_ACCEPTED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
@@ -4915,31 +4814,57 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '2'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.2'
-                            - code: COMMERCIAL_NAME
-                              value: lead
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_EXTENDED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
                                 code: TYPE
                               value: misc
                   ttl: P1D
+                payments:
+                  url: https://ondc.transaction.com/payment
+                  params:
+                    currency: INR
+                    transaction_id: '3937'
+                    amount: '1700.00'
+                  status: PAID
+                  type: ON-ORDER
+                  collected_by: BAP
+                  tags:
+                    descriptor:
+                      code: SETTLEMENT_DETAILS
+                    list:
+                      - descriptor:
+                          code: SETTLEMENT_COUNTERPARTY
+                        value: seller-app
+                      - descriptor:
+                          code: SETTLEMENT_PHASE
+                        value: sale-amount
+                      - descriptor:
+                          code: SETTLEMENT_TYPE
+                        value: upi
+                      - descriptor:
+                          code: UPI_ADDRESS
+                        value: gft@oksbi
+                      - descriptor:
+                          code: SETTLEMENT_BANK_ACCOUNT_NO
+                        value: XXXXXXXXXX
+                      - descriptor:
+                          code: SETTLEMENT_IFSC_CODE
+                        value: XXXXXXXXX
+                      - descriptor:
+                          code: BENEFICIARY_NAME
+                        value: xxxxx
+                      - descriptor:
+                          code: BANK_NAME
+                        value: xxxx
+                      - descriptor:
+                          code: BRANCH_NAME
+                        value: xxxx
       - summary: Description
         api: on_confirm
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example: &ref_12
+        example: &ref_13
           value:
             context:
               domain: ONDC:ONEST10
@@ -5140,20 +5065,6 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '1'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.5'
-                            - code: COMMERCIAL_NAME
-                              value: recruitment
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_ACCEPTED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
@@ -5171,20 +5082,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                        - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '2'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.2'
-                            - code: COMMERCIAL_NAME
-                              value: lead
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_EXTENDED
                         - descriptor:
                             code: TYPE
                           list:
@@ -5280,11 +5177,51 @@ x-flows:
                               code: AGENT_VERIFIED
                               name: Agent Verified
                             value: 'true'
+                payments:
+                  url: https://ondc.transaction.com/payment
+                  params:
+                    currency: INR
+                    transaction_id: '3937'
+                    amount: '1700.00'
+                  status: PAID
+                  type: ON-ORDER
+                  collected_by: BAP
+                  tags:
+                    descriptor:
+                      code: SETTLEMENT_DETAILS
+                    list:
+                      - descriptor:
+                          code: SETTLEMENT_COUNTERPARTY
+                        value: seller-app
+                      - descriptor:
+                          code: SETTLEMENT_PHASE
+                        value: sale-amount
+                      - descriptor:
+                          code: SETTLEMENT_TYPE
+                        value: upi
+                      - descriptor:
+                          code: UPI_ADDRESS
+                        value: gft@oksbi
+                      - descriptor:
+                          code: SETTLEMENT_BANK_ACCOUNT_NO
+                        value: XXXXXXXXXX
+                      - descriptor:
+                          code: SETTLEMENT_IFSC_CODE
+                        value: XXXXXXXXX
+                      - descriptor:
+                          code: BENEFICIARY_NAME
+                        value: xxxxx
+                      - descriptor:
+                          code: BANK_NAME
+                        value: xxxx
+                      - descriptor:
+                          code: BRANCH_NAME
+                        value: xxxx
       - summary: Description
         api: status
         description: BAP sends request for status of submission of job application.
         reference: if any
-        example: &ref_13
+        example: &ref_14
           value:
             context:
               domain: ONDC:ONEST10
@@ -5310,7 +5247,7 @@ x-flows:
         api: on_status
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example: &ref_14
+        example: &ref_15
           value:
             context:
               domain: ONDC:ONEST10
@@ -5532,20 +5469,6 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '1'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.5'
-                            - code: COMMERCIAL_NAME
-                              value: recruitment
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_ACCEPTED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
@@ -5563,20 +5486,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                        - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '2'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.2'
-                            - code: COMMERCIAL_NAME
-                              value: lead
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER-EXTENDED
                         - descriptor:
                             code: TYPE
                           list:
@@ -5639,11 +5548,51 @@ x-flows:
                       contact:
                         phone: '9999999999'
                         email: abc@abc.bc
+                payments:
+                  url: https://ondc.transaction.com/payment
+                  params:
+                    currency: INR
+                    transaction_id: '3937'
+                    amount: '1700.00'
+                  status: PAID
+                  type: ON-ORDER
+                  collected_by: BAP
+                  tags:
+                    descriptor:
+                      code: SETTLEMENT_DETAILS
+                    list:
+                      - descriptor:
+                          code: SETTLEMENT_COUNTERPARTY
+                        value: seller-app
+                      - descriptor:
+                          code: SETTLEMENT_PHASE
+                        value: sale-amount
+                      - descriptor:
+                          code: SETTLEMENT_TYPE
+                        value: upi
+                      - descriptor:
+                          code: UPI_ADDRESS
+                        value: gft@oksbi
+                      - descriptor:
+                          code: SETTLEMENT_BANK_ACCOUNT_NO
+                        value: XXXXXXXXXX
+                      - descriptor:
+                          code: SETTLEMENT_IFSC_CODE
+                        value: XXXXXXXXX
+                      - descriptor:
+                          code: BENEFICIARY_NAME
+                        value: xxxxx
+                      - descriptor:
+                          code: BANK_NAME
+                        value: xxxx
+                      - descriptor:
+                          code: BRANCH_NAME
+                        value: xxxx
       - summary: Description
         api: cancel
         description: BAP sends request for cancellation of job application.
         reference: if any
-        example: &ref_18
+        example: &ref_19
           value:
             context:
               domain: ONDC:ONEST10
@@ -5669,7 +5618,7 @@ x-flows:
         api: on_cancel
         description: BPP sends confirmation of cancellation of job application.
         reference: if any
-        example: &ref_20
+        example: &ref_21
           value:
             context:
               domain: ONDC:ONEST10
@@ -5758,20 +5707,6 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: id
-                              value: '1'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.5'
-                            - code: COMMERCIAL_NAME
-                              value: recruitment
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_EXTENDED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
@@ -5789,20 +5724,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                        - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: id
-                              value: '2'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.2'
-                            - code: COMMERCIAL_NAME
-                              value: lead
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_EXTENDED
                         - descriptor:
                             code: TYPE
                           list:
@@ -5930,10 +5851,50 @@ x-flows:
                           - descriptor:
                               code: VALUE
                             value: '-300.00'
+                payments:
+                  url: https://ondc.transaction.com/payment
+                  params:
+                    currency: INR
+                    transaction_id: '3937'
+                    amount: '1700.00'
+                  status: PAID
+                  type: ON-ORDER
+                  collected_by: BAP
+                  tags:
+                    descriptor:
+                      code: SETTLEMENT_DETAILS
+                    list:
+                      - descriptor:
+                          code: SETTLEMENT_COUNTERPARTY
+                        value: seller-app
+                      - descriptor:
+                          code: SETTLEMENT_PHASE
+                        value: sale-amount
+                      - descriptor:
+                          code: SETTLEMENT_TYPE
+                        value: upi
+                      - descriptor:
+                          code: UPI_ADDRESS
+                        value: gft@oksbi
+                      - descriptor:
+                          code: SETTLEMENT_BANK_ACCOUNT_NO
+                        value: XXXXXXXXXX
+                      - descriptor:
+                          code: SETTLEMENT_IFSC_CODE
+                        value: XXXXXXXXX
+                      - descriptor:
+                          code: BENEFICIARY_NAME
+                        value: xxxxx
+                      - descriptor:
+                          code: BANK_NAME
+                        value: xxxx
+                      - descriptor:
+                          code: BRANCH_NAME
+                        value: xxxx
       - summary: Description
         api: update
         description: BAP confirms user wants to submit the job application.
-        example: &ref_15
+        example: &ref_16
           value:
             context:
               domain: ONDC:ONEST10
@@ -5966,7 +5927,7 @@ x-flows:
         api: on_update
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example: &ref_16
+        example: &ref_17
           value:
             context:
               domain: ONDC:ONEST10
@@ -6222,20 +6183,6 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '1'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.5'
-                            - code: COMMERCIAL_NAME
-                              value: recruitment
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_ACCEPTED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
@@ -6254,26 +6201,52 @@ x-flows:
                                 code: TYPE
                               value: item
                         - descriptor:
-                            code: NP_FEES
-                            name: Np Fees
-                          list:
-                            - code: ID
-                              value: '2'
-                            - code: COMMERCIAL_TYPE
-                              value: percent
-                            - code: COMMERCIAL_VALUE
-                              value: '0.2'
-                            - code: COMMERCIAL_NAME
-                              value: lead
-                            - code: COMMERCIAL_TRIGGERING_STATE
-                              value: OFFER_EXTENDED
-                        - descriptor:
                             code: TYPE
                           list:
                             - descriptor:
                                 code: TYPE
                               value: misc
                   ttl: P1D
+                payments:
+                  url: https://ondc.transaction.com/payment
+                  params:
+                    currency: INR
+                    transaction_id: '3937'
+                    amount: '1700.00'
+                  status: PAID
+                  type: ON-ORDER
+                  collected_by: BAP
+                  tags:
+                    descriptor:
+                      code: SETTLEMENT_DETAILS
+                    list:
+                      - descriptor:
+                          code: SETTLEMENT_COUNTERPARTY
+                        value: seller-app
+                      - descriptor:
+                          code: SETTLEMENT_PHASE
+                        value: sale-amount
+                      - descriptor:
+                          code: SETTLEMENT_TYPE
+                        value: upi
+                      - descriptor:
+                          code: UPI_ADDRESS
+                        value: gft@oksbi
+                      - descriptor:
+                          code: SETTLEMENT_BANK_ACCOUNT_NO
+                        value: XXXXXXXXXX
+                      - descriptor:
+                          code: SETTLEMENT_IFSC_CODE
+                        value: XXXXXXXXX
+                      - descriptor:
+                          code: BENEFICIARY_NAME
+                        value: xxxxx
+                      - descriptor:
+                          code: BANK_NAME
+                        value: xxxx
+                      - descriptor:
+                          code: BRANCH_NAME
+                        value: xxxx
   - summary: ONDC:ONEST10 - Work Opportunities(Commercials)
     description: >-
       The following is an illustrative flow for a job application transaction,
@@ -6360,14 +6333,14 @@ x-flows:
           BAP will make search request with an intent, example :- job name, job
           provider, location etc.
         reference: if any
-        example: *ref_5
+        example: *ref_6
       - summary: Description
         api: on_search
         description: >-
           BPP will create a catalogue containing jobs with matching criteria and
           sends it as on_search request.
         reference: if any
-        example: *ref_6
+        example: *ref_7
       - summary: Description
         api: select
         description: >-
@@ -6375,7 +6348,7 @@ x-flows:
           to the user. Once the user chooses a job, BAP will make select API
           with item ID to get the complete details about the job.
         reference: if any
-        example: *ref_7
+        example: *ref_8
       - summary: Description
         api: on_select
         description: >-
@@ -6383,49 +6356,49 @@ x-flows:
           valid. If the listing is still valid, BPP will send the on_select call
           with complete details of the job listing.
         reference: if any
-        example: *ref_8
+        example: *ref_9
       - summary: Description
         api: init
         description: >-
           BAP sends the customer details to the BPP in the init API. This is the
           initializing step of the job application process.
         reference: if any
-        example: *ref_9
+        example: *ref_10
       - summary: Description
         api: on_init
         description: >-
           If BPP wants to collect additional details of the user, it will send
           an xinput form in the on_init request.
         reference: if any
-        example: *ref_10
+        example: *ref_11
       - summary: Description
         api: confirm
         description: BAP confirms user wants to submit the job application.
-        example: *ref_11
+        example: *ref_12
       - summary: Description
         api: on_confirm
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example: *ref_12
+        example: *ref_13
       - summary: Description
         api: status
         description: BAP sends request for status of submission of job application.
         reference: if any
-        example: *ref_13
+        example: *ref_14
       - summary: Description
         api: on_status
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example: *ref_14
+        example: *ref_15
       - summary: Description
         api: update
         description: BAP confirms user wants to submit the job application.
-        example: *ref_15
+        example: *ref_16
       - summary: Description
         api: on_update
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example: *ref_16
+        example: *ref_17
 x-examples:
   ONDC:ONEST10 - Work Opportunities:
     summary: ONDC:ONEST10 - Work Opportunities
@@ -6444,10 +6417,10 @@ x-examples:
       provided to ensure clarity and standardization across the platform
       (Product Taxonomy): <a
       href="https://docs.google.com/spreadsheets/d/1Go22ou013hE-fxpjMd_XuM111l8x8TuMsF_nsjvB3so">link</a>
-    example_set: &ref_21
+    example_set: &ref_22
       search:
         examples:
-          search - by job name: *ref_5
+          search - by job name: *ref_6
           search - by job provider:
             value:
               context:
@@ -6474,14 +6447,6 @@ x-examples:
                     list:
                       - code: ID
                         value: '1'
-                      - code: COMMERCIAL_TYPE
-                        value: percent
-                      - code: COMMERCIAL_VALUE
-                        value: '0.2'
-                      - code: COMMERCIAL_NAME
-                        value: lead
-                      - code: COMMERCIAL_TRIGGERING_STATE
-                        value: OFFER_EXTENDED
                   provider:
                     descriptor:
                       name: ABC Tech
@@ -6524,14 +6489,6 @@ x-examples:
                     list:
                       - code: ID
                         value: '1'
-                      - code: COMMERCIAL_TYPE
-                        value: percent
-                      - code: COMMERCIAL_VALUE
-                        value: '0.2'
-                      - code: COMMERCIAL_NAME
-                        value: lead
-                      - code: COMMERCIAL_TRIGGERING_STATE
-                        value: OFFER_EXTENDED
                   provider:
                     locations:
                       - city:
@@ -6582,14 +6539,6 @@ x-examples:
                     list:
                       - code: ID
                         value: '1'
-                      - code: COMMERCIAL_TYPE
-                        value: percent
-                      - code: COMMERCIAL_VALUE
-                        value: '0.2'
-                      - code: COMMERCIAL_NAME
-                        value: laed
-                      - code: COMMERCIAL_TRIGGERING_STATE
-                        value: OFFER_EXTENDED
                   fulfillment:
                     customer:
                       person:
@@ -6647,14 +6596,6 @@ x-examples:
                     list:
                       - code: ID
                         value: '1'
-                      - code: COMMERCIAL_TYPE
-                        value: percent
-                      - code: COMMERCIAL_VALUE
-                        value: '0.2'
-                      - code: COMMERCIAL_NAME
-                        value: lead
-                      - code: COMMERCIAL_TRIGGERING_STATE
-                        value: OFFER_EXTENDED
                   tags:
                     - descriptor:
                         code: BAP_TERMS
@@ -6694,14 +6635,6 @@ x-examples:
                     list:
                       - code: ID
                         value: '1'
-                      - code: COMMERCIAL_TYPE
-                        value: percent
-                      - code: COMMERCIAL_VALUE
-                        value: '0.2'
-                      - code: COMMERCIAL_NAME
-                        value: lead
-                      - code: COMMERCIAL_TRIGGERING_STATE
-                        value: OFFER_EXTENDED
                   item:
                     tags:
                       - descriptor:
@@ -6723,35 +6656,35 @@ x-examples:
                         - descriptor:
                             code: EFFECTIVE_DATE
                           value: '2023-02-22T11:20:10.122Z'
-          search - incremental: *ref_17
+          search - incremental: *ref_18
       select:
         examples:
-          select: *ref_7
+          select: *ref_8
       init:
         examples:
-          init: *ref_9
+          init: *ref_10
       confirm:
         examples:
-          confirm: *ref_11
+          confirm: *ref_12
       update:
         examples:
-          - *ref_15
+          - *ref_16
       status:
         examples:
-          status: *ref_13
+          status: *ref_14
       cancel:
         examples:
-          cancel: *ref_18
+          cancel: *ref_19
       on_search:
         examples:
-          on_search: *ref_6
-          on_search - incremental: *ref_19
+          on_search: *ref_7
+          on_search - incremental: *ref_20
       on_select:
         examples:
-          on_select: *ref_8
+          on_select: *ref_9
       on_init:
         examples:
-          on_init: *ref_10
+          on_init: *ref_11
           on_init_post_form_submission:
             value:
               context:
@@ -6820,20 +6753,6 @@ x-examples:
                                   code: TYPE
                                 value: item
                           - descriptor:
-                              code: NP_FEES
-                              name: Np Fees
-                            list:
-                              - code: ID
-                                value: '1'
-                              - code: COMMERCIAL_TYPE
-                                value: percent
-                              - code: COMMERCIAL_VALUE
-                                value: '0.5'
-                              - code: COMMERCIAL_NAME
-                                value: recruitment
-                              - code: COMMERCIAL_TRIGGERING_STATE
-                                value: OFFER_ACCEPTED
-                          - descriptor:
                               code: TYPE
                             list:
                               - descriptor:
@@ -6851,20 +6770,6 @@ x-examples:
                               - descriptor:
                                   code: TYPE
                                 value: item
-                          - descriptor:
-                              code: NP_FEES
-                              name: Np Fees
-                            list:
-                              - code: ID
-                                value: '2'
-                              - code: COMMERCIAL_TYPE
-                                value: percent
-                              - code: COMMERCIAL_VALUE
-                                value: '0.2'
-                              - code: COMMERCIAL_NAME
-                                value: lead
-                              - code: COMMERCIAL_TRIGGERING_STATE
-                                value: OFFER_EXTENDED
                           - descriptor:
                               code: TYPE
                             list:
@@ -6929,18 +6834,54 @@ x-examples:
                         contact:
                           phone: '9999999999'
                           email: abc@abc.bc
+                  payments:
+                    url: https://ondc.transaction.com/payment
+                    status: NOT-PAID
+                    type: ON-ORDER
+                    collected_by: BAP
+                    tags:
+                      descriptor:
+                        code: SETTLEMENT_DETAILS
+                      list:
+                        - descriptor:
+                            code: SETTLEMENT_COUNTERPARTY
+                          value: seller-app
+                        - descriptor:
+                            code: SETTLEMENT_PHASE
+                          value: sale-amount
+                        - descriptor:
+                            code: SETTLEMENT_TYPE
+                          value: upi
+                        - descriptor:
+                            code: UPI_ADDRESS
+                          value: gft@oksbi
+                        - descriptor:
+                            code: SETTLEMENT_BANK_ACCOUNT_NO
+                          value: XXXXXXXXXX
+                        - descriptor:
+                            code: SETTLEMENT_IFSC_CODE
+                          value: XXXXXXXXX
+                        - descriptor:
+                            code: BENEFICIARY_NAME
+                          value: xxxxx
+                        - descriptor:
+                            code: BANK_NAME
+                          value: xxxx
+                        - descriptor:
+                            code: BRANCH_NAME
+                          value: xxxx
       on_confirm:
         examples:
-          on_confirm: *ref_12
+          on_confirm: *ref_13
       on_update:
         examples:
-          on_update: *ref_16
+          on_update: *ref_17
       on_status:
         examples:
-          on_status: *ref_14
+          on_status: *ref_15
       on_cancel:
         examples:
-          on_cancel: *ref_20
+          on_cancel: *ref_21
   ONDC:ONEST10 - Work Opportunities(Commercials):
     summary: ONDC:ONEST10 - Work Opportunities(Commercials)
     description: >-
@@ -6958,7 +6899,7 @@ x-examples:
       provided to ensure clarity and standardization across the platform
       (Product Taxonomy): <a
       href="https://docs.google.com/spreadsheets/d/1Go22ou013hE-fxpjMd_XuM111l8x8TuMsF_nsjvB3so">link</a>
-    example_set: *ref_21
+    example_set: *ref_22
 x-attributes:
   ONDC:ONEST10 - Work Opportunities:
     attribute_set:
@@ -7048,26 +6989,6 @@ x-attributes:
                     description: Identifier for NP_FEES
                     required: mandatory
                     usage: '1'
-                    reference: null
-                  COMMERCIAL_TYPE:
-                    description: Type of commercial value
-                    required: mandatory
-                    usage: percent
-                    reference: null
-                  COMMERCIAL_VALUE:
-                    description: Value of the commercial percentage
-                    required: mandatory
-                    usage: '0.2'
-                    reference: null
-                  COMMERCIAL_NAME:
-                    description: Name of the commercial type
-                    required: mandatory
-                    usage: recruitment
-                    reference: null
-                  COMMERCIAL_TRIGGERING_STATE:
-                    description: Triggering state for the commercial fee
-                    required: mandatory
-                    usage: OFFER_EXTENDED
                     reference: null
             item:
               parent: true
@@ -8001,6 +7922,23 @@ x-attributes:
                     required: mandatory
                     usage: abc@abc.bc
                     reference: null
+            payments:
+              parent: true
+              url:
+                description: The URL for payment processing.
+                required: mandatory
+                usage: https://ondc.transaction.com/payment
+                reference: null
+              type:
+                description: The type of payment.
+                required: mandatory
+                usage: ON-ORDER
+                reference: null
+              collected_by:
+                description: Entity collecting the payment.
+                required: mandatory
+                usage: BAP
+                reference: null
       confirm:
         parent: true
         context:
@@ -8201,6 +8139,44 @@ x-attributes:
                   required: mandatory
                   usage: Fullstack Engineer
                   reference: null
+            payments:
+              parent: true
+              url:
+                description: The URL for payment processing.
+                required: mandatory
+                usage: https://ondc.transaction.com/payment
+                reference: null
+              params:
+                currency:
+                  description: The currency used for the transaction.
+                  required: mandatory
+                  usage: INR
+                  reference: null
+                transaction_id:
+                  description: The ID of the transaction.
+                  required: mandatory
+                  usage: '3937'
+                  reference: null
+                amount:
+                  description: The transaction amount.
+                  required: mandatory
+                  usage: '1400.00'
+                  reference: null
+              status:
+                description: The payment status.
+                required: mandatory
+                usage: PAID
+                reference: null
+              type:
+                description: The type of payment.
+                required: mandatory
+                usage: ON-ORDER
+                reference: null
+              collected_by:
+                description: Entity collecting the payment.
+                required: mandatory
+                usage: BAP
+                reference: null
       on_confirm:
         parent: true
         context:
@@ -8432,6 +8408,44 @@ x-attributes:
                 description: The amount to be paid.
                 required: mandatory
                 usage: '1400'
+                reference: null
+            payments:
+              parent: true
+              url:
+                description: The URL for payment processing.
+                required: mandatory
+                usage: https://ondc.transaction.com/payment
+                reference: null
+              params:
+                currency:
+                  description: The currency used for the transaction.
+                  required: mandatory
+                  usage: INR
+                  reference: null
+                transaction_id:
+                  description: The ID of the transaction.
+                  required: mandatory
+                  usage: '3937'
+                  reference: null
+                amount:
+                  description: The transaction amount.
+                  required: mandatory
+                  usage: '1400.00'
+                  reference: null
+              status:
+                description: The payment status.
+                required: mandatory
+                usage: PAID
+                reference: null
+              type:
+                description: The type of payment.
+                required: mandatory
+                usage: ON-ORDER
+                reference: null
+              collected_by:
+                description: Entity collecting the payment.
+                required: mandatory
+                usage: BAP
                 reference: null
       status:
         parent: true
@@ -8717,6 +8731,44 @@ x-attributes:
                     required: mandatory
                     usage: abc@abc.bc
                     reference: null
+            payments:
+              parent: true
+              url:
+                description: The URL for payment processing.
+                required: mandatory
+                usage: https://ondc.transaction.com/payment
+                reference: null
+              params:
+                currency:
+                  description: The currency used for the transaction.
+                  required: mandatory
+                  usage: INR
+                  reference: null
+                transaction_id:
+                  description: The ID of the transaction.
+                  required: mandatory
+                  usage: '3937'
+                  reference: null
+                amount:
+                  description: The transaction amount.
+                  required: mandatory
+                  usage: '1400.00'
+                  reference: null
+              status:
+                description: The payment status.
+                required: mandatory
+                usage: PAID
+                reference: null
+              type:
+                description: The type of payment.
+                required: mandatory
+                usage: ON-ORDER
+                reference: null
+              collected_by:
+                description: Entity collecting the payment.
+                required: mandatory
+                usage: BAP
+                reference: null
       cancel:
         parent: true
         context:
@@ -8994,6 +9046,43 @@ x-attributes:
                     required: mandatory
                     usage: abc@abc.bc
                     reference: null
+            payments:
+              url:
+                description: The URL for payment processing.
+                required: mandatory
+                usage: https://ondc.transaction.com/payment
+                reference: null
+              params:
+                currency:
+                  description: The currency used for the transaction.
+                  required: mandatory
+                  usage: INR
+                  reference: null
+                transaction_id:
+                  description: The ID of the transaction.
+                  required: mandatory
+                  usage: '3937'
+                  reference: null
+                amount:
+                  description: The transaction amount.
+                  required: mandatory
+                  usage: '1400.00'
+                  reference: null
+              status:
+                description: The payment status.
+                required: mandatory
+                usage: PAID
+                reference: null
+              type:
+                description: The type of payment.
+                required: mandatory
+                usage: ON-ORDER
+                reference: null
+              collected_by:
+                description: Entity collecting the payment.
+                required: mandatory
+                usage: BAP
+                reference: null
       update:
         parent: true
         context:
@@ -9188,131 +9277,170 @@ x-attributes:
               required: mandatory
               usage: '1677140405881'
               reference: if any
-          status:
-            description: The status of the order.
-            required: mandatory
-            usage: Active
-            reference: if any
-          provider:
-            id:
-              description: The unique identifier of the provider offering the service.
+            status:
+              description: The status of the order.
               required: mandatory
-              usage: '1'
+              usage: Active
               reference: if any
-          items:
-            id:
-              description: The unique identifier of the item being selected.
-              required: mandatory
-              usage: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
-              reference: if any
-            fulfillment_ids:
-              description: The fulfillment IDs associated with the item.
-              required: mandatory
-              usage: '1'
-              reference: if any
-            location_ids:
-              description: The location IDs associated with the item.
-              required: mandatory
-              usage: L1
-              reference: if any
-          fulfillments:
-            id:
-              description: The unique identifier of the fulfillment.
-              required: mandatory
-              usage: '1'
-              reference: if any
-            type:
-              description: The type of fulfillment.
-              required: mandatory
-              usage: REMOTE
-              reference: if any
-            customer:
-              person:
-                name:
-                  description: The name of the customer.
-                  required: mandatory
-                  usage: Sanjay
-                  reference: if any
-                gender:
-                  description: The gender of the customer.
-                  required: mandatory
-                  usage: Male
-                  reference: if any
-                age:
-                  description: The age of the customer.
-                  required: mandatory
-                  usage: '35'
-                  reference: if any
-                skills:
-                  code:
-                    description: The code of the skill.
-                    required: mandatory
-                    usage: Android
-                    reference: null
-                  name:
-                    description: The name of the skill.
-                    required: mandatory
-                    usage: Android
-                    reference: null
-                languages:
-                  code:
-                    description: The language code.
-                    required: mandatory
-                    usage: en
-                    reference: null
-                  name:
-                    description: The language name.
-                    required: mandatory
-                    usage: English
-                    reference: null
-              contact:
-                phone:
-                  description: The phone number of the customer.
-                  required: mandatory
-                  usage: '9999999999'
-                  reference: if any
-                email:
-                  description: The email address of the customer.
-                  required: mandatory
-                  usage: abc@abc.bc
-                  reference: if any
-          quote:
-            price:
-              currency:
-                description: The currency of the quoted price.
-                required: mandatory
-                usage: INR
-                reference: null
-              value:
-                description: The value of the quoted price.
-                required: mandatory
-                usage: '1400'
-                reference: null
-            breakup:
+            provider:
               id:
-                description: The unique identifier for the quote breakup item.
+                description: The unique identifier of the provider offering the service.
                 required: mandatory
-                usage: 0253719F295521CED39EC9C2F3C8DCDE
-                reference: null
+                usage: '1'
+                reference: if any
+            items:
+              id:
+                description: The unique identifier of the item being selected.
+                required: mandatory
+                usage: >-
+                  a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+                reference: if any
+              fulfillment_ids:
+                description: The fulfillment IDs associated with the item.
+                required: mandatory
+                usage: '1'
+                reference: if any
+              location_ids:
+                description: The location IDs associated with the item.
+                required: mandatory
+                usage: L1
+                reference: if any
+            fulfillments:
+              id:
+                description: The unique identifier of the fulfillment.
+                required: mandatory
+                usage: '1'
+                reference: if any
+              type:
+                description: The type of fulfillment.
+                required: mandatory
+                usage: REMOTE
+                reference: if any
+              customer:
+                person:
+                  name:
+                    description: The name of the customer.
+                    required: mandatory
+                    usage: Sanjay
+                    reference: if any
+                  gender:
+                    description: The gender of the customer.
+                    required: mandatory
+                    usage: Male
+                    reference: if any
+                  age:
+                    description: The age of the customer.
+                    required: mandatory
+                    usage: '35'
+                    reference: if any
+                  skills:
+                    code:
+                      description: The code of the skill.
+                      required: mandatory
+                      usage: Android
+                      reference: null
+                    name:
+                      description: The name of the skill.
+                      required: mandatory
+                      usage: Android
+                      reference: null
+                  languages:
+                    code:
+                      description: The language code.
+                      required: mandatory
+                      usage: en
+                      reference: null
+                    name:
+                      description: The language name.
+                      required: mandatory
+                      usage: English
+                      reference: null
+                contact:
+                  phone:
+                    description: The phone number of the customer.
+                    required: mandatory
+                    usage: '9999999999'
+                    reference: if any
+                  email:
+                    description: The email address of the customer.
+                    required: mandatory
+                    usage: abc@abc.bc
+                    reference: if any
+            quote:
               price:
                 currency:
-                  description: The currency of the breakup price.
+                  description: The currency of the quoted price.
                   required: mandatory
                   usage: INR
                   reference: null
                 value:
-                  description: The value of the breakup price.
+                  description: The value of the quoted price.
                   required: mandatory
-                  usage: '1100'
+                  usage: '1400'
                   reference: null
-              title:
-                description: The title of the breakup item.
+              breakup:
+                id:
+                  description: The unique identifier for the quote breakup item.
+                  required: mandatory
+                  usage: 0253719F295521CED39EC9C2F3C8DCDE
+                  reference: null
+                price:
+                  currency:
+                    description: The currency of the breakup price.
+                    required: mandatory
+                    usage: INR
+                    reference: null
+                  value:
+                    description: The value of the breakup price.
+                    required: mandatory
+                    usage: '1100'
+                    reference: null
+                title:
+                  description: The title of the breakup item.
+                  required: mandatory
+                  usage: Fullstack Engineer
+                  reference: null
+              ttl:
+                description: The Time-to-Live (TTL) for the quoted order.
                 required: mandatory
-                usage: Fullstack Engineer
+                usage: P1D
                 reference: null
-            ttl:
-              description: The Time-to-Live (TTL) for the quoted order.
-              required: mandatory
-              usage: P1D
-              reference: null
+            payments:
+              parent: true
+              url:
+                description: The URL for payment processing.
+                required: mandatory
+                usage: https://ondc.transaction.com/payment
+                reference: null
+              params:
+                currency:
+                  description: The currency used for the transaction.
+                  required: mandatory
+                  usage: INR
+                  reference: null
+                transaction_id:
+                  description: The ID of the transaction.
+                  required: mandatory
+                  usage: '3937'
+                  reference: null
+                amount:
+                  description: The transaction amount.
+                  required: mandatory
+                  usage: '1400.00'
+                  reference: null
+              status:
+                description: The payment status.
+                required: mandatory
+                usage: PAID
+                reference: null
+              type:
+                description: The type of payment.
+                required: mandatory
+                usage: ON-ORDER
+                reference: null
+              collected_by:
+                description: Entity collecting the payment.
+                required: mandatory
+                usage: BAP
+                reference: null
 x-errorcodes: null
