@@ -72,6 +72,11 @@ message:
   parent: true
   order:
     parent: true
+    id:
+      description: "The unique identifier of the order."
+      required: mandatory
+      usage: "1677140405881"
+      reference: null
     status:
       description: "The current status of the order."
       required: mandatory
@@ -105,6 +110,23 @@ message:
           required: mandatory
           usage: "REMOTE"
           reference: null
+        state:
+          descriptor:
+            code:
+              description: Fulfillment state code
+              required: mandatory
+              usage: APPLICATION_STARTED
+              reference: if any
+            name:
+              description: Fulfillment state name
+              required: mandatory
+              usage: Application started
+              reference: if any
+          updated_at:
+            description: Last state update timestamp
+            required: mandatory
+            usage: 2023-02-06T09:55:41.161Z
+            reference: if any
         customer:
           person:
             name:
@@ -195,7 +217,6 @@ message:
           usage: "Fullstack Engineer"
           reference: null
     payments:
-      parent: true
       url:
         description: "The URL for payment processing."
         required: mandatory

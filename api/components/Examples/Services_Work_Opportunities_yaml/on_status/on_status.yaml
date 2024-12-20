@@ -16,6 +16,7 @@ value:
     ttl: PT30S
   message:
     order:
+      id: "1677140405881"
       status: Active
       provider:
         id: "1"
@@ -247,6 +248,8 @@ value:
           state:
             descriptor:
               code: APPLICATION_IN_PROGRESS
+              name: Application In Progress
+            updated_at: "2023-02-22T11:50:46.742Z"
           customer:
             person:
               name: Sanjay

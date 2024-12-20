@@ -150,12 +150,22 @@ message:
         usage: "REMOTE"
         reference: null
       state:
-        descriptor:
-          code:
-            description: "The state code of the fulfillment."
+          descriptor:
+            code:
+              description: Fulfillment state code
+              required: mandatory
+              usage: APPLICATION_STARTED
+              reference: if any
+            name:
+              description: Fulfillment state name
+              required: mandatory
+              usage: Application started
+              reference: if any
+          updated_at:
+            description: Last state update timestamp
             required: mandatory
-            usage: "APPLICATION_STARTED"
-            reference: null
+            usage: 2023-02-23T08:20:016Z
+            reference: if any
       customer:
         contact:
           phone:
@@ -227,7 +237,6 @@ message:
         usage: "1400"
         reference: null
     payments:
-      parent: true
       url:
         description: "The URL for payment processing."
         required: mandatory

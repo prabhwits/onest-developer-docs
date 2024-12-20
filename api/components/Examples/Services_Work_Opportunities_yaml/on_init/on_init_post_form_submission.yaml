@@ -92,11 +92,6 @@ value:
       fulfillments:
         - id: "1"
           type: REMOTE
-          state:
-            descriptor:
-              code: APPLICATION_FILLED
-              name: Application Filled
-            updated_at: "2023-02-06T09:55:41.161Z"
           customer:
             person:
               name: Sanjay
