@@ -1,13 +1,11 @@
 search:
   examples:
-    search - by job name:
-      $ref: ./search/search_by_job_name.yaml
+    search - by job role:
+      $ref: ./search/search_by_job_role.yaml
     search - by job provider:
       $ref: ./search/search_by_job_provider.yaml
     search - by loaction of the job:
       $ref: ./search/search_by_location_of_the_job.yaml
-    search - by user details: 
-      $ref: ./search/search_by_user_details.yaml
     search - by industry type:
       $ref: ./search/search_by_industry_type.yaml
     search - by employment type:

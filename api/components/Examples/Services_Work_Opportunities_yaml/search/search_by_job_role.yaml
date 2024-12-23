@@ -23,16 +23,23 @@ value:
         list:
           - code: ID
             value: "1"
-      fulfillment:
-        customer:
-          person:
-            age: "25"
-            gender: male
-            skills:
-              - code: ASSEMBLY-OPERATOR
-                name: Assembly Operator
-              - code: ELECTRICIAN
-                name: Electrician
+          - code: COMMERCIAL_TYPE
+            value: percent
+          - code: COMMERCIAL_VALUE
+            value: "0.5"
+          - code: COMMERCIAL_NAME
+            value: recruitment
+          - code: COMMERCIAL_TRIGGERING_STATE
+            value: OFFER_ACCEPTED
+          - code: COMPENSATION_TYPE
+            value: LPA
+          - code: COMPENSATION_TRANSFER_PERIOD
+            value: "P1M,P2M,P3M"
+          - code: COMPENSATION_PERCENTAGE_SPLIT
+            value: "50,25,25"  
+      item:
+        descriptor:
+          name: Engineer
       tags:
         - descriptor:
             code: BAP_TERMS

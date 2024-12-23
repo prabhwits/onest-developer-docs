@@ -3096,9 +3096,7 @@ x-flows:
     steps:
       - summary: Description
         api: search
-        description: >-
-          BAP will make search request with an intent, example :- job name, job
-          provider, location etc.
+        description: BAP will make a search by city request with an intent
         reference: if any
         example: &ref_7
           value:
@@ -3126,9 +3124,20 @@ x-flows:
                   list:
                     - code: ID
                       value: '1'
-                item:
-                  descriptor:
-                    name: Engineer
+                    - code: COMMERCIAL_TYPE
+                      value: percent
+                    - code: COMMERCIAL_VALUE
+                      value: '0.5'
+                    - code: COMMERCIAL_NAME
+                      value: recruitment
+                    - code: COMMERCIAL_TRIGGERING_STATE
+                      value: OFFER_ACCEPTED
+                    - code: COMPENSATION_TYPE
+                      value: LPA
+                    - code: COMPENSATION_TRANSFER_PERIOD
+                      value: P1M,P2M,P3M
+                    - code: COMPENSATION_PERCENTAGE_SPLIT
+                      value: 50,25,25
                 tags:
                   - descriptor:
                       code: BAP_TERMS
@@ -3156,6 +3165,8 @@ x-flows:
               version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
+              bpp_id: job-hub.bpp.io
+              bpp_uri: https://job-hub.bpp.io
               transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
               message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
               location:
@@ -3207,7 +3218,8 @@ x-flows:
                           code: UP
                     items:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
-                        category_id: Software development
+                        category_ids:
+                          - Software development
                         descriptor:
                           name: Fullstack Engineer
                           long_desc: >-
@@ -3227,6 +3239,14 @@ x-flows:
                             others to achieve results all the time Problem
                             Solving — You can easily identify and solve complex
                             problems in a methodological manner
+                          short_desc: >-
+                            We are seeking a Staff Mobile Developer with strong
+                            critical thinking, data-driven decision-making,
+                            adaptability, goal-orientation, and problem-solving
+                            skills.
+                          images:
+                            - images url1
+                            - images url2
                           media:
                             - mimetype: audio/mp4
                               url: http://url-to-audio-about-job
@@ -3478,7 +3498,8 @@ x-flows:
                           value: '1100.00'
                           maximum_value: '1200.0'
                       - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
-                        category_id: DevOps
+                        category_ids:
+                          - DevOps
                         descriptor:
                           name: Sr. Devops Engineer
                           long_desc: >-
@@ -3498,6 +3519,14 @@ x-flows:
                             others to achieve results all the time Problem
                             Solving — You can easily identify and solve complex
                             problems in a methodological manner
+                          short_desc: >-
+                            We are seeking a Staff Mobile Developer with strong
+                            critical thinking, data-driven decision-making,
+                            adaptability, goal-orientation, and problem-solving
+                            skills.
+                          images:
+                            - images url1
+                            - images url2
                           media:
                             - mimetype: audio/mp4
                               url: http://url-to-audio-about-job
@@ -3749,7 +3778,8 @@ x-flows:
                           value: '1000.00'
                           maximum_value: '1500.0'
                       - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
-                        category_id: DevOps
+                        category_ids:
+                          - DevOps
                         descriptor:
                           name: Jr. Devops Engineer
                           long_desc: >-
@@ -3769,6 +3799,14 @@ x-flows:
                             others to achieve results all the time Problem
                             Solving — You can easily identify and solve complex
                             problems in a methodological manner
+                          short_desc: >-
+                            We are seeking a Staff Mobile Developer with strong
+                            critical thinking, data-driven decision-making,
+                            adaptability, goal-orientation, and problem-solving
+                            skills.
+                          images:
+                            - images url1
+                            - images url2
                           media:
                             - mimetype: audio/mp4
                               url: http://url-to-audio-about-job
@@ -4074,6 +4112,8 @@ x-flows:
               version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
+              bpp_id: job-hub.bpp.io
+              bpp_uri: https://job-hub.bpp.io
               transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
               message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
               location:
@@ -4101,6 +4141,14 @@ x-flows:
                             datasets, identifying trends, and creating
                             predictive models. This role requires the ability to
                             apply data-driven insights to business problems.
+                          short_desc: >-
+                            We are seeking a Staff Mobile Developer with strong
+                            critical thinking, data-driven decision-making,
+                            adaptability, goal-orientation, and problem-solving
+                            skills.
+                          images:
+                            - images url1
+                            - images url2
                           media:
                             - mimetype: audio/mp4
                               url: http://url-to-audio-about-data-scientist-job
@@ -5307,6 +5355,8 @@ x-flows:
               version: 2.0.0
               bap_id: worker-hub.bap.io
               bap_uri: https://worker-hub.bap.io
+              bpp_id: job-hub.bpp.io
+              bpp_uri: https://job-hub.bpp.io
               transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
               message_id: c8e3968c-cd78-4e46-aa34-0d541e46bd73
               location:
@@ -6384,9 +6434,7 @@ x-flows:
     steps:
       - summary: Description
         api: search
-        description: >-
-          BAP will make search request with an intent, example :- job name, job
-          provider, location etc.
+        description: BAP will make a search by city request with an intent
         reference: if any
         example: *ref_7
       - summary: Description
@@ -6475,7 +6523,62 @@ x-examples:
     example_set: &ref_23
       search:
         examples:
-          search - by job name: *ref_7
+          search - by job role:
+            value:
+              context:
+                domain: ONDC:ONEST10
+                action: search
+                version: 2.0.0
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io/
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: $89bdae17-9942-40c8-869a-5bd413356407
+                location:
+                  city:
+                    code: std:080
+                  country:
+                    code: IND
+                timestamp: '2022-10-11T09:55:41.161Z'
+                ttl: PT30S
+              message:
+                intent:
+                  payment:
+                    descriptor:
+                      code: NP_FEES
+                      name: Np Fees
+                    list:
+                      - code: ID
+                        value: '1'
+                      - code: COMMERCIAL_TYPE
+                        value: percent
+                      - code: COMMERCIAL_VALUE
+                        value: '0.5'
+                      - code: COMMERCIAL_NAME
+                        value: recruitment
+                      - code: COMMERCIAL_TRIGGERING_STATE
+                        value: OFFER_ACCEPTED
+                      - code: COMPENSATION_TYPE
+                        value: LPA
+                      - code: COMPENSATION_TRANSFER_PERIOD
+                        value: P1M,P2M,P3M
+                      - code: COMPENSATION_PERCENTAGE_SPLIT
+                        value: 50,25,25
+                  item:
+                    descriptor:
+                      name: Engineer
+                  tags:
+                    - descriptor:
+                        code: BAP_TERMS
+                      list:
+                        - descriptor:
+                            code: STATIC_TERMS
+                          value: static_terms_value
+                        - descriptor:
+                            code: STATIC_TERMS_NEW
+                          value: static_terms_new_value
+                        - descriptor:
+                            code: EFFECTIVE_DATE
+                          value: '2023-02-22T11:20:10.122Z'
           search - by job provider:
             value:
               context:
@@ -6555,55 +6658,6 @@ x-examples:
                         country:
                           name: India
                           code: IN
-                  tags:
-                    - descriptor:
-                        code: BAP_TERMS
-                      list:
-                        - descriptor:
-                            code: STATIC_TERMS
-                          value: static_terms_value
-                        - descriptor:
-                            code: STATIC_TERMS_NEW
-                          value: static_terms_new_value
-                        - descriptor:
-                            code: EFFECTIVE_DATE
-                          value: '2023-02-22T11:20:10.122Z'
-          search - by user details:
-            value:
-              context:
-                domain: ONDC:ONEST10
-                action: search
-                version: 2.0.0
-                bap_id: worker-hub.bap.io
-                bap_uri: https://worker-hub.bap.io/
-                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
-                message_id: $89bdae17-9942-40c8-869a-5bd413356407
-                location:
-                  city:
-                    code: std:080
-                  country:
-                    code: IND
-                timestamp: '2022-10-11T09:55:41.161Z'
-                ttl: PT30S
-              message:
-                intent:
-                  payment:
-                    descriptor:
-                      code: NP_FEES
-                      name: Np Fees
-                    list:
-                      - code: ID
-                        value: '1'
-                  fulfillment:
-                    customer:
-                      person:
-                        age: '25'
-                        gender: male
-                        skills:
-                          - code: ASSEMBLY-OPERATOR
-                            name: Assembly Operator
-                          - code: ELECTRICIAN
-                            name: Electrician
                   tags:
                     - descriptor:
                         code: BAP_TERMS
@@ -7078,6 +7132,16 @@ x-attributes:
             required: mandatory
             usage: https://worker-hub.bap.io
             reference: null
+          bpp_id:
+            description: bpp_id
+            required: mandatory
+            usage: worker-hub.bpp.io
+            reference: null
+          bpp_uri:
+            description: bpp_uri
+            required: mandatory
+            usage: https://worker-hub.bpp.io
+            reference: null
           transaction_id:
             description: transaction_id
             required: mandatory
@@ -7152,7 +7216,6 @@ x-attributes:
                   usage: REMOTE
                   reference: null
               locations:
-                parent: true
                 id:
                   description: location id
                   required: mandatory
@@ -7181,13 +7244,12 @@ x-attributes:
                     usage: MH
                     reference: null
               items:
-                parent: true
                 id:
                   description: item id
                   required: mandatory
                   usage: 0253719F295521CED39EC9C2F3C8DCDE
                   reference: null
-                category_id:
+                category_ids:
                   description: category id
                   required: mandatory
                   usage: Software development
@@ -7202,6 +7264,16 @@ x-attributes:
                     description: item description
                     required: mandatory
                     usage: long_desc
+                    reference: null
+                  short_desc:
+                    description: item description
+                    required: mandatory
+                    usage: short_desc
+                    reference: null
+                  images:
+                    description: item description
+                    required: mandatory
+                    usage: images url
                     reference: null
                 media:
                   mimetype:

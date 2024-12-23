@@ -5,6 +5,8 @@ value:
     version: 2.0.0
     bap_id: worker-hub.bap.io
     bap_uri: https://worker-hub.bap.io
+    bpp_id: job-hub.bpp.io
+    bpp_uri: https://job-hub.bpp.io
     transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
     message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
     location:
@@ -56,7 +58,8 @@ value:
                 code: UP
           items:
             - id: 0253719F295521CED39EC9C2F3C8DCDE
-              category_id: Software development
+              category_ids:
+                - Software development
               descriptor:
                 name: Fullstack Engineer
                 long_desc: >-
@@ -74,6 +77,12 @@ value:
                   steadfastly push yourself and others to achieve results all
                   the time Problem Solving — You can easily identify and solve
                   complex problems in a methodological manner
+                short_desc: >-
+                  We are seeking a Staff Mobile Developer with strong critical thinking, data-driven decision-making,
+                  adaptability, goal-orientation, and problem-solving skills.
+                images:
+                  - "images url1"
+                  - "images url2"
                 media:
                   - mimetype: audio/mp4
                     url: http://url-to-audio-about-job
@@ -278,7 +287,7 @@ value:
                     - code: COMPENSATION_TRANSFER_PERIOD
                       value: "P1M,P2M,P3M"
                     - code: COMPENSATION_PERCENTAGE_SPLIT
-                      value: "50,25,25"                    
+                      value: "50,25,25"
                 - descriptor:
                     code: NP_FEES
                     name: "Np Fees"
@@ -324,7 +333,8 @@ value:
                 value: "1100.00"
                 maximum_value: "1200.0"
             - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
-              category_id: DevOps
+              category_ids:
+                - DevOps
               descriptor:
                 name: Sr. Devops Engineer
                 long_desc: >-
@@ -342,6 +352,12 @@ value:
                   steadfastly push yourself and others to achieve results all
                   the time Problem Solving — You can easily identify and solve
                   complex problems in a methodological manner
+                short_desc: >-
+                  We are seeking a Staff Mobile Developer with strong critical thinking, data-driven decision-making,
+                  adaptability, goal-orientation, and problem-solving skills.
+                images:
+                  - "images url1"
+                  - "images url2"
                 media:
                   - mimetype: audio/mp4
                     url: http://url-to-audio-about-job
@@ -592,7 +608,8 @@ value:
                 value: "1000.00"
                 maximum_value: "1500.0"
             - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
-              category_id: DevOps
+              category_ids:
+                - DevOps
               descriptor:
                 name: Jr. Devops Engineer
                 long_desc: >-
@@ -610,6 +627,12 @@ value:
                   steadfastly push yourself and others to achieve results all
                   the time Problem Solving — You can easily identify and solve
                   complex problems in a methodological manner
+                short_desc: >-
+                  We are seeking a Staff Mobile Developer with strong critical thinking, data-driven decision-making,
+                  adaptability, goal-orientation, and problem-solving skills.
+                images:
+                  - "images url1"
+                  - "images url2"
                 media:
                   - mimetype: audio/mp4
                     url: http://url-to-audio-about-job
