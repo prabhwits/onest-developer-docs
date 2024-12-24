@@ -93,7 +93,7 @@ value:
                     - code: COMPENSATION_PERCENTAGE_SPLIT
                       value: "25,25,50"
                 - descriptor:
-                    code: LISTING_DETAILS
+                    code: JOB_DETAILS
                     name: Listing details
                   list:
                     - descriptor:

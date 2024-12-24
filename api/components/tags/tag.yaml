@@ -225,7 +225,7 @@ SALARY:
     description: Average gross pay
     reference: <PR/Issue/Discussion Links md format text>  
   
-LISTING_DETAILS:
+JOB_DETAILS:
   - code: INDUSTRY_TYPE
     description: Industry Type - ["Information Technology", "Healthcare", "Education", "Finance", "Manufacturing", "Retail", "Hospitality", "Transportation", "Real Estate", "Media & Entertainment"]
     reference: <PR/Issue/Discussion Links md format text>

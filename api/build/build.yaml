@@ -2745,8 +2745,8 @@ x-tags:
                 description: Employment Type
                 reference: <PR/Issue/Discussion Links md format text>
                 list: *ref_3
-              - code: LISTING_DETAILS
-                description: LISTING_DETAILS
+              - code: JOB_DETAILS
+                description: JOB_DETAILS
                 reference: <PR/Issue/Discussion Links md format text>
                 list:
                   - code: INDUSTRY_TYPE
@@ -2947,8 +2947,8 @@ x-tags:
       order: &ref_4
         items:
           tags:
-            - code: LISTING_DETAILS
-              description: LISTING_DETAILS
+            - code: JOB_DETAILS
+              description: JOB_DETAILS
               reference: <PR/Issue/Discussion Links md format text>
               list: *ref_3
         payments: &ref_6
@@ -3335,15 +3335,15 @@ x-flows:
                                   name: Required work experience in years
                                 value: P2Y6M
                               - descriptor:
-                                  code: REQ_PROF_SKILL
+                                  code: ADD_PROF_SKILL
                                   name: Skills required for the role
                                 value: android-development
                               - descriptor:
-                                  code: REQ_PROF_SKILL
+                                  code: ADD_PROF_SKILL
                                   name: Skills required for the role
                                 value: dev-ops
                               - descriptor:
-                                  code: REQ_PROF_SKILL
+                                  code: ADD_PROF_SKILL
                                   name: Additional skills required for the job
                                 value: >-
                                   You have 8+ years of engineering experience,
@@ -3382,7 +3382,7 @@ x-flows:
                                   Mentor and train other team members on design
                                   techniques and coding standards.
                           - descriptor:
-                              code: LISTING_DETAILS
+                              code: JOB_DETAILS
                               name: Listing details
                             list:
                               - descriptor:
@@ -3615,15 +3615,15 @@ x-flows:
                                   name: Required work experience in years
                                 value: P2Y6M
                               - descriptor:
-                                  code: REQ_PROF_SKILL
+                                  code: ADD_PROF_SKILL
                                   name: Skills required for the role
                                 value: pipeline-development
                               - descriptor:
-                                  code: REQ_PROF_SKILL
+                                  code: ADD_PROF_SKILL
                                   name: Skills required for the role
                                 value: dev-ops
                               - descriptor:
-                                  code: REQ_PROF_SKILL
+                                  code: ADD_PROF_SKILL
                                   name: Additional skills required for the job
                                 value: >-
                                   You have 8+ years of engineering experience,
@@ -3662,7 +3662,7 @@ x-flows:
                                   Mentor and train other team members on design
                                   techniques and coding standards.
                           - descriptor:
-                              code: LISTING_DETAILS
+                              code: JOB_DETAILS
                               name: Listing details
                             list:
                               - descriptor:
@@ -3895,15 +3895,15 @@ x-flows:
                                   name: Required work experience in years
                                 value: P6M
                               - descriptor:
-                                  code: REQ_PROF_SKILL
+                                  code: ADD_PROF_SKILL
                                   name: Skills required for the role
                                 value: pipeline-development
                               - descriptor:
-                                  code: REQ_PROF_SKILL
+                                  code: ADD_PROF_SKILL
                                   name: Skills required for the role
                                 value: dev-ops
                               - descriptor:
-                                  code: REQ_PROF_SKILL
+                                  code: ADD_PROF_SKILL
                                   name: Additional skills required for the job
                                 value: >-
                                   You have 8+ years of engineering experience,
@@ -3942,7 +3942,7 @@ x-flows:
                                   Mentor and train other team members on design
                                   techniques and coding standards.
                           - descriptor:
-                              code: LISTING_DETAILS
+                              code: JOB_DETAILS
                               name: Listing details
                             list:
                               - descriptor:
@@ -4198,7 +4198,7 @@ x-flows:
                               - code: COMPENSATION_PERCENTAGE_SPLIT
                                 value: 25,25,50
                           - descriptor:
-                              code: LISTING_DETAILS
+                              code: JOB_DETAILS
                               name: Listing details
                             list:
                               - descriptor:
@@ -5068,11 +5068,11 @@ x-flows:
                               name: Required Work Experience in Years
                             value: P2Y6M
                           - descriptor:
-                              code: REQ_PROF_SKILL
+                              code: ADD_PROF_SKILL
                               name: Skills Required for the Role
                             value: android-development
                           - descriptor:
-                              code: REQ_PROF_SKILL
+                              code: ADD_PROF_SKILL
                               name: Skills Required for the Role
                             value: dev-ops
                           - descriptor:
@@ -5109,7 +5109,7 @@ x-flows:
                               Mentor team members on design techniques and
                               coding standards.
                       - descriptor:
-                          code: LISTING_DETAILS
+                          code: JOB_DETAILS
                           name: Listing Details
                         list:
                           - descriptor:
@@ -5463,15 +5463,15 @@ x-flows:
                               name: Required work experience in years
                             value: P2Y6M
                           - descriptor:
-                              code: REQ_PROF_SKILL
+                              code: ADD_PROF_SKILL
                               name: Skills required for the role
                             value: android-development
                           - descriptor:
-                              code: REQ_PROF_SKILL
+                              code: ADD_PROF_SKILL
                               name: Skills required for the role
                             value: dev-ops
                           - descriptor:
-                              code: REQ_PROF_SKILL
+                              code: ADD_PROF_SKILL
                               name: Additional skills required for the job
                             value: >-
                               You have 8+ years of engineering experience,
@@ -5510,7 +5510,7 @@ x-flows:
                               Mentor and train other team members on design
                               techniques and coding standards.
                       - descriptor:
-                          code: LISTING_DETAILS
+                          code: JOB_DETAILS
                           name: Listing details
                         list:
                           - descriptor:
@@ -6141,11 +6141,11 @@ x-flows:
                               name: Required Work Experience in Years
                             value: P2Y6M
                           - descriptor:
-                              code: REQ_PROF_SKILL
+                              code: ADD_PROF_SKILL
                               name: Skills Required for the Role
                             value: android-development
                           - descriptor:
-                              code: REQ_PROF_SKILL
+                              code: ADD_PROF_SKILL
                               name: Skills Required for the Role
                             value: dev-ops
                           - descriptor:
@@ -6182,7 +6182,7 @@ x-flows:
                               Mentor team members on design techniques and
                               coding standards.
                       - descriptor:
-                          code: LISTING_DETAILS
+                          code: JOB_DETAILS
                           name: Listing Details
                         list:
                           - descriptor:
@@ -6538,7 +6538,7 @@ x-examples:
                   item:
                     tags:
                       - descriptor:
-                          code: LISTING_DETAILS
+                          code: JOB_DETAILS
                         list:
                           - descriptor:
                               code: INDUSTRY_TYPE
@@ -6592,7 +6592,7 @@ x-examples:
                   item:
                     tags:
                       - descriptor:
-                          code: LISTING_DETAILS
+                          code: JOB_DETAILS
                         list:
                           - descriptor:
                               code: EMPLOYMENT_TYPE
