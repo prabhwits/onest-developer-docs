@@ -239,7 +239,7 @@ value:
                         name: Employment type
                       value: part-time
                     - descriptor:
-                        code: WORKING-HOURS
+                        code: WORKING_HOURS
                         name: working hours
                       value: 1300-1700
                     - descriptor:

@@ -2447,9 +2447,6 @@ x-enum:
                 - code: Female
                   description: Gender of the job applicant
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: Transgender
-                  description: Gender of the job applicant
-                  reference: <PR/Issue/Discussion Links md format text>
                 - code: Other
                   description: Gender of the job applicant
                   reference: <PR/Issue/Discussion Links md format text>
@@ -2903,7 +2900,7 @@ x-tags:
                       and Compliance Consulting", "Organizational Consulting"]
                     reference: <PR/Issue/Discussion Links md format text>
                   - code: GENDER
-                    description: Gender - ["Male", "Female", "Transgender", "Others"]
+                    description: Gender - ["Male", "Female", "Other"]
                     reference: <PR/Issue/Discussion Links md format text>
               - code: ACADEMIC_ELIGIBILITY
                 description: ACADEMIC_ELIGIBILITY
@@ -3401,7 +3398,7 @@ x-flows:
                                   name: Employment type
                                 value: part-time
                               - descriptor:
-                                  code: WORKING-HOURS
+                                  code: WORKING_HOURS
                                   name: working hours
                                 value: 1300-1700
                               - descriptor:
@@ -4046,7 +4043,10 @@ x-flows:
                           maximum_value: '1500.0'
       - summary: Description
         api: search_inc
-        description: BAP will make search inc request with an intent
+        description: >-
+          BAP will make a search inc request to combine multiple search
+          parameters, such as city, employment type, industry type, job
+          provider, job role, or location for refined results.
         reference: if any
         example: &ref_7
           value:

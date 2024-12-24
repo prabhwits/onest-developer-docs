@@ -67,9 +67,6 @@ fulfillments:
         - code: Female
           description: Gender of the job applicant
           reference: <PR/Issue/Discussion Links md format text>
-        - code: Transgender
-          description: Gender of the job applicant
-          reference: <PR/Issue/Discussion Links md format text>
         - code: Other
           description: Gender of the job applicant
           reference: <PR/Issue/Discussion Links md format text>
