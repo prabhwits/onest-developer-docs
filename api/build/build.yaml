@@ -3098,7 +3098,7 @@ x-flows:
         api: search
         description: BAP will make a search by city request with an intent
         reference: if any
-        example: &ref_7
+        example:
           value:
             context:
               domain: ONDC:ONEST10
@@ -3157,7 +3157,7 @@ x-flows:
           BPP will create a catalogue containing jobs with matching criteria and
           sends it as on_search request.
         reference: if any
-        example: &ref_8
+        example: &ref_14
           value:
             context:
               domain: ONDC:ONEST10
@@ -4053,7 +4053,7 @@ x-flows:
         api: search_inc
         description: BAP will make search inc request with an intent
         reference: if any
-        example: &ref_19
+        example: &ref_7
           value:
             context:
               domain: ONDC:ONEST10
@@ -4104,7 +4104,7 @@ x-flows:
           BPP will create a catalogue containing jobs with matching criteria and
           sends it as on_search_inc request.
         reference: if any
-        example: &ref_21
+        example: &ref_15
           value:
             context:
               domain: ONDC:ONEST10
@@ -4229,7 +4229,7 @@ x-flows:
           to the user. Once the user chooses a job, BAP will make select API
           with item ID to get the complete details about the job.
         reference: if any
-        example: &ref_9
+        example: &ref_8
           value:
             context:
               domain: ONDC:ONEST10
@@ -4276,7 +4276,7 @@ x-flows:
           valid. If the listing is still valid, BPP will send the on_select call
           with complete details of the job listing.
         reference: if any
-        example: &ref_10
+        example: &ref_16
           value:
             context:
               domain: ONDC:ONEST10
@@ -4379,7 +4379,7 @@ x-flows:
           BAP sends the customer details to the BPP in the init API. This is the
           initializing step of the job application process.
         reference: if any
-        example: &ref_11
+        example: &ref_9
           value:
             context:
               domain: ONDC:ONEST10
@@ -4531,7 +4531,7 @@ x-flows:
           If BPP wants to collect additional details of the user, it will send
           an xinput form in the on_init request.
         reference: if any
-        example: &ref_12
+        example: &ref_17
           value:
             context:
               domain: ONDC:ONEST10
@@ -4732,7 +4732,7 @@ x-flows:
       - summary: Description
         api: confirm
         description: BAP confirms user wants to submit the job application.
-        example: &ref_13
+        example: &ref_10
           value:
             context:
               domain: ONDC:ONEST10
@@ -4962,7 +4962,7 @@ x-flows:
         api: on_confirm
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example: &ref_14
+        example: &ref_18
           value:
             context:
               domain: ONDC:ONEST10
@@ -5321,7 +5321,7 @@ x-flows:
         api: status
         description: BAP sends request for status of submission of job application.
         reference: if any
-        example: &ref_15
+        example: &ref_12
           value:
             context:
               domain: ONDC:ONEST10
@@ -5347,7 +5347,7 @@ x-flows:
         api: on_status
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example: &ref_16
+        example: &ref_20
           value:
             context:
               domain: ONDC:ONEST10
@@ -5697,7 +5697,7 @@ x-flows:
         api: cancel
         description: BAP sends request for cancellation of job application.
         reference: if any
-        example: &ref_20
+        example: &ref_13
           value:
             context:
               domain: ONDC:ONEST10
@@ -5723,7 +5723,7 @@ x-flows:
         api: on_cancel
         description: BPP sends confirmation of cancellation of job application.
         reference: if any
-        example: &ref_22
+        example: &ref_21
           value:
             context:
               domain: ONDC:ONEST10
@@ -5999,7 +5999,7 @@ x-flows:
       - summary: Description
         api: update
         description: BAP confirms user wants to submit the job application.
-        example: &ref_17
+        example: &ref_11
           value:
             context:
               domain: ONDC:ONEST10
@@ -6032,7 +6032,7 @@ x-flows:
         api: on_update
         description: BPP sends confirmation of submission of job application.
         reference: if any
-        example: &ref_18
+        example: &ref_19
           value:
             context:
               domain: ONDC:ONEST10
@@ -6352,156 +6352,6 @@ x-flows:
                       - descriptor:
                           code: BRANCH_NAME
                         value: xxxx
-  - summary: ONDC:ONEST10 - Work Opportunities(Commercials)
-    description: >-
-      The following is an illustrative flow for a job application transaction,
-      where a candidate intends to apply for a specific job role.
-    details:
-      - description: Sequence Diagram for Services Work Opportunities(Commercials)
-        mermaidGraph: |-
-          sequenceDiagram
-            participant BAP
-            participant BPP
-            participant Gateway
-
-            BAP->>Gateway: search
-            Gateway->>BPP: search
-            BPP-->>BAP: on_search
-
-            BAP->>BPP: select
-            BPP-->>BAP: on_select
-
-            BAP->>BPP: init
-            BPP-->>BAP: on_init
-
-            BAP->>BPP: confirm
-            BPP-->>BAP: on_confirm
-
-            BAP->>BPP: status
-            BPP-->>BAP: on_status
-
-            BAP->>BPP: update
-            BPP-->>BAP: on_update
-
-            BAP->>BPP: cancel
-            BPP-->>BAP: on_cancel
-      - description: Ordering
-        mermaidGraph: |-
-          sequenceDiagram
-            participant B as Buyer
-            participant BA as BuyerApp
-            participant G as 
-            participant SA as SellerApp
-            Note Over B,SA: **SELECT FLOW**
-            B ->> BA: Selects one of the <br>providers for job
-            BA ->> SA: **/select** - A job is selected with a <br>TTL for receiving response
-            SA ->> BA: **/on_select** - Responds to the selection with <br>breakup, quote including logistics charges
-            BA ->> B: Shows response with price details
-      - description: Initializing the order
-        mermaidGraph: |-
-          sequenceDiagram
-            participant B as Buyer
-            participant BA as BuyerApp
-            participant SA as SellerApp
-            Note Over B,SA: **INITIALIZATION FLOW**
-            B ->> BA: Proceeds with the Order
-            BA ->> SA: **/init** - Initializes the order and <br>sends billing details
-            SA ->> BA: **/on_init** - Order initialization with <br>fulfillment & settlement information <br>including UPI or NEFT/IMPS/Bank Transfer
-            BA ->> B: Confirms initialization
-      - description: Order Confirmation
-        mermaidGraph: |-
-          sequenceDiagram
-            participant B as Buyer
-            participant BA as BuyerApp
-            participant SA as SellerApp
-            Note Over B,SA: **CONFIRMATION FLOW**
-            B ->> BA: Confirms the Order
-            BA ->> SA: **/confirm** - Creates order to create final digital contract
-            SA ->> BA: **/on_confirm** - Accepts the order 
-            BA ->> B: Confirms order and delivery 
-      - description: Fulfillment
-        mermaidGraph: |-
-          sequenceDiagram
-            participant B as Buyer
-            participant BA as BuyerApp
-            participant SA as SellerApp 
-            Note Over B,SA: **ORDER STATUS FLOW**
-            B ->> BA: Checks the order status
-            BA ->> SA: **/status** - Enquire order status <br>or tracking information
-            SA ->> BA: **/on_status** - Latest order and fulfillment status is sent
-            BA ->> B: Updates the latest order <br>and fulfillment information
-    reference: if any
-    steps:
-      - summary: Description
-        api: search
-        description: BAP will make a search by city request with an intent
-        reference: if any
-        example: *ref_7
-      - summary: Description
-        api: on_search
-        description: >-
-          BPP will create a catalogue containing jobs with matching criteria and
-          sends it as on_search request.
-        reference: if any
-        example: *ref_8
-      - summary: Description
-        api: select
-        description: >-
-          BAP will receive the on_search request and displays the list of jobs
-          to the user. Once the user chooses a job, BAP will make select API
-          with item ID to get the complete details about the job.
-        reference: if any
-        example: *ref_9
-      - summary: Description
-        api: on_select
-        description: >-
-          BPP will receive the select request and check if the listing is still
-          valid. If the listing is still valid, BPP will send the on_select call
-          with complete details of the job listing.
-        reference: if any
-        example: *ref_10
-      - summary: Description
-        api: init
-        description: >-
-          BAP sends the customer details to the BPP in the init API. This is the
-          initializing step of the job application process.
-        reference: if any
-        example: *ref_11
-      - summary: Description
-        api: on_init
-        description: >-
-          If BPP wants to collect additional details of the user, it will send
-          an xinput form in the on_init request.
-        reference: if any
-        example: *ref_12
-      - summary: Description
-        api: confirm
-        description: BAP confirms user wants to submit the job application.
-        example: *ref_13
-      - summary: Description
-        api: on_confirm
-        description: BPP sends confirmation of submission of job application.
-        reference: if any
-        example: *ref_14
-      - summary: Description
-        api: status
-        description: BAP sends request for status of submission of job application.
-        reference: if any
-        example: *ref_15
-      - summary: Description
-        api: on_status
-        description: BPP sends confirmation of submission of job application.
-        reference: if any
-        example: *ref_16
-      - summary: Description
-        api: update
-        description: BAP confirms user wants to submit the job application.
-        example: *ref_17
-      - summary: Description
-        api: on_update
-        description: BPP sends confirmation of submission of job application.
-        reference: if any
-        example: *ref_18
 x-examples:
   ONDC:ONEST10 - Work Opportunities:
     summary: ONDC:ONEST10 - Work Opportunities
@@ -6520,7 +6370,7 @@ x-examples:
       provided to ensure clarity and standardization across the platform
       (Product Taxonomy): <a
       href="https://docs.google.com/spreadsheets/d/1Go22ou013hE-fxpjMd_XuM111l8x8TuMsF_nsjvB3so">link</a>
-    example_set: &ref_23
+    example_set:
       search:
         examples:
           search - by job role:
@@ -6765,35 +6615,35 @@ x-examples:
                         - descriptor:
                             code: EFFECTIVE_DATE
                           value: '2023-02-22T11:20:10.122Z'
-          search - incremental: *ref_19
+          search - incremental: *ref_7
       select:
         examples:
-          select: *ref_9
+          select: *ref_8
       init:
         examples:
-          init: *ref_11
+          init: *ref_9
       confirm:
         examples:
-          confirm: *ref_13
+          confirm: *ref_10
       update:
         examples:
-          - *ref_17
+          - *ref_11
       status:
         examples:
-          status: *ref_15
+          status: *ref_12
       cancel:
         examples:
-          cancel: *ref_20
+          cancel: *ref_13
       on_search:
         examples:
-          on_search: *ref_8
-          on_search - incremental: *ref_21
+          on_search: *ref_14
+          on_search - incremental: *ref_15
       on_select:
         examples:
-          on_select: *ref_10
+          on_select: *ref_16
       on_init:
         examples:
-          on_init: *ref_12
+          on_init: *ref_17
           on_init_post_form_submission:
             value:
               context:
@@ -6976,34 +6826,16 @@ x-examples:
                           value: xxxx
       on_confirm:
         examples:
-          on_confirm: *ref_14
+          on_confirm: *ref_18
       on_update:
         examples:
-          on_update: *ref_18
+          on_update: *ref_19
       on_status:
         examples:
-          on_status: *ref_16
+          on_status: *ref_20
       on_cancel:
         examples:
-          on_cancel: *ref_22
-  ONDC:ONEST10 - Work Opportunities(Commercials):
-    summary: ONDC:ONEST10 - Work Opportunities(Commercials)
-    description: >-
-      Job Hub is acting as provider platform (BPP) which hosts the jobs and
-      Worker Hub is acting as seeker platform (BAP) which helps the workers to
-      find jobs. <br/><br/>
-          This document contains detailed specifications and requirements for the job platform, helping stakeholders understand the product in depth
-      (PRD): <a
-      href="https://docs.google.com/document/d/1VydDAqtzjj1jDrJzX4hwZSlYyJsA_bSOJIKYTWxNSpQ">link</a>
-      <br/><br/> his document provides an overview of the business requirements,
-      with clear explanations about platform functionalities and workflows
-      (Explainer & BRD is documented): <a
-      href="https://docs.google.com/document/d/1cuvt_w9qSv7XpLXpY4KCq5gmrsQSqF8e3VLxOhpfO0g">link</a>
-      <br/><br/> A detailed taxonomy of product categories and attributes is
-      provided to ensure clarity and standardization across the platform
-      (Product Taxonomy): <a
-      href="https://docs.google.com/spreadsheets/d/1Go22ou013hE-fxpjMd_XuM111l8x8TuMsF_nsjvB3so">link</a>
-    example_set: *ref_23
+          on_cancel: *ref_21
 x-attributes:
   ONDC:ONEST10 - Work Opportunities:
     attribute_set:
