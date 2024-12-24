@@ -106,7 +106,7 @@ message:
           type:
             description: "fulfillment type"
             required: mandatory
-            usage: "REMOTE"
+            usage: "lead"
             reference: null
         locations:
           id:

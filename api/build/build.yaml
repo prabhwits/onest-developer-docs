@@ -2373,13 +2373,10 @@ x-enum:
       intent:
         fulfillments:
           type: &ref_1
-            - code: REMOTE
+            - code: lead
               description: How the job will be fullfilled
               reference: <PR/Issue/Discussion Links md format text>
-            - code: HYBRID
-              description: How the job will be fullfilled
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: ONSITE
+            - code: recruitment
               description: How the job will be fullfilled
               reference: <PR/Issue/Discussion Links md format text>
   on_search:
@@ -3189,11 +3186,9 @@ x-flows:
                         - url: url of the image of the provider
                     fulfillments:
                       - id: '1'
-                        type: REMOTE
+                        type: lead
                       - id: '2'
-                        type: HYBRID
-                      - id: '3'
-                        type: ONSITE
+                        type: recruitment
                     locations:
                       - id: L1
                         city:
@@ -4253,7 +4248,7 @@ x-flows:
                 provider:
                   id: '1'
                 fulfillments:
-                  type: REMOTE
+                  type: lead
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
                     tags:
@@ -4301,7 +4296,7 @@ x-flows:
                   id: '1'
                 fulfillments:
                   id: '1'
-                  type: REMOTE
+                  type: lead
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
                     fulfillment_ids:
@@ -4421,7 +4416,7 @@ x-flows:
                             value: '2'
                 fulfillments:
                   - id: '1'
-                    type: REMOTE
+                    type: lead
                     customer:
                       person:
                         name: Sanjay
@@ -4643,7 +4638,7 @@ x-flows:
                   ttl: P1D
                 fulfillments:
                   - id: '1'
-                    type: REMOTE
+                    type: lead
                     customer:
                       person:
                         name: Sanjay
@@ -4776,7 +4771,7 @@ x-flows:
                             value: '2'
                 fulfillments:
                   - id: '1'
-                    type: REMOTE
+                    type: lead
                     state:
                       descriptor:
                         code: APPLICATION_STARTED
@@ -5189,7 +5184,7 @@ x-flows:
                   ttl: P1D
                 fulfillments:
                   - id: '1'
-                    type: REMOTE
+                    type: lead
                     state:
                       descriptor:
                         code: APPLICATION_STARTED
@@ -5598,7 +5593,7 @@ x-flows:
                   ttl: P1D
                 fulfillments:
                   - id: '1'
-                    type: REMOTE
+                    type: lead
                     state:
                       descriptor:
                         code: APPLICATION_IN_PROGRESS
@@ -5838,7 +5833,7 @@ x-flows:
                   ttl: P1D
                 fulfillments:
                   - id: '1'
-                    type: REMOTE
+                    type: lead
                     state:
                       descriptor:
                         code: CANCELLED
@@ -6208,7 +6203,7 @@ x-flows:
                             value: DevOps Engineer
                 fulfillments:
                   - id: '1'
-                    type: REMOTE
+                    type: lead
                     customer:
                       person:
                         name: Sanjay
@@ -6738,7 +6733,7 @@ x-examples:
                     ttl: P1D
                   fulfillments:
                     - id: '1'
-                      type: REMOTE
+                      type: lead
                       customer:
                         person:
                           name: Sanjay
@@ -7045,7 +7040,7 @@ x-attributes:
                 type:
                   description: fulfillment type
                   required: mandatory
-                  usage: REMOTE
+                  usage: lead
                   reference: null
               locations:
                 id:
@@ -7262,7 +7257,7 @@ x-attributes:
               type:
                 description: Type of fulfillment
                 required: mandatory
-                usage: REMOTE
+                usage: lead
                 reference: null
       on_select:
         parent: true
@@ -7349,7 +7344,7 @@ x-attributes:
               type:
                 description: The type of fulfillment.
                 required: mandatory
-                usage: REMOTE
+                usage: lead
                 reference: null
             items:
               parent: true
@@ -7505,7 +7500,7 @@ x-attributes:
               type:
                 description: Type of fulfillment
                 required: mandatory
-                usage: REMOTE
+                usage: lead
                 reference: null
                 customer:
                   person:
@@ -7807,7 +7802,7 @@ x-attributes:
               type:
                 description: Fulfillment type
                 required: mandatory
-                usage: REMOTE
+                usage: lead
                 reference: if any
               customer:
                 person:
@@ -7990,7 +7985,7 @@ x-attributes:
               type:
                 description: Type of fulfillment
                 required: mandatory
-                usage: REMOTE
+                usage: lead
                 reference: null
               state:
                 descriptor:
@@ -8288,7 +8283,7 @@ x-attributes:
               type:
                 description: The type of fulfillment.
                 required: mandatory
-                usage: REMOTE
+                usage: lead
                 reference: null
               state:
                 descriptor:
@@ -8644,7 +8639,7 @@ x-attributes:
               type:
                 description: The type of fulfillment.
                 required: mandatory
-                usage: REMOTE
+                usage: lead
                 reference: null
               state:
                 descriptor:
@@ -8968,7 +8963,7 @@ x-attributes:
               type:
                 description: Type of fulfillment
                 required: mandatory
-                usage: REMOTE
+                usage: lead
                 reference: if any
               state:
                 descriptor:
@@ -9295,7 +9290,7 @@ x-attributes:
               type:
                 description: The type of fulfillment.
                 required: mandatory
-                usage: REMOTE
+                usage: lead
                 reference: if any
               customer:
                 person:

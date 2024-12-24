@@ -29,11 +29,9 @@ value:
               - url: url of the image of the provider
           fulfillments:
             - id: "1"
-              type: REMOTE
+              type: lead
             - id: "2"
-              type: HYBRID
-            - id: "3"
-              type: ONSITE
+              type: recruitment
           locations:
             - id: L1
               city:

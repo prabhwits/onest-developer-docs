@@ -91,7 +91,7 @@ value:
         ttl: P1D
       fulfillments:
         - id: "1"
-          type: REMOTE
+          type: lead
           customer:
             person:
               name: Sanjay

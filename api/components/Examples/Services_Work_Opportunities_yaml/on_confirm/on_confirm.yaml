@@ -235,7 +235,7 @@ value:
         ttl: P1D
       fulfillments:
         - id: "1"
-          type: REMOTE
+          type: lead
           state:
             descriptor:
               code: APPLICATION_STARTED

@@ -41,7 +41,7 @@ value:
                 value: "2"
       fulfillments:
         - id: "1"
-          type: REMOTE
+          type: lead
           state:
             descriptor:
               code: APPLICATION_STARTED

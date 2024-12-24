@@ -183,7 +183,7 @@ value:
             #       value: "1200000"
       fulfillments:
         - id: "1"
-          type: REMOTE
+          type: lead
           customer:
             person:
               name: Sanjay

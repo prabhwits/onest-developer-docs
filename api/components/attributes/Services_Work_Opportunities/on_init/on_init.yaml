@@ -203,7 +203,7 @@ message:
       type:
         description: Fulfillment type
         required: mandatory
-        usage: REMOTE
+        usage: lead
         reference: if any
       customer:
         person:

@@ -1,12 +1,9 @@
 fulfillments:
   type:
-    - code: REMOTE
+    - code: lead
       description: How the job will be fullfilled	
       reference: <PR/Issue/Discussion Links md format text>
-    - code: HYBRID
-      description: How the job will be fullfilled	
-      reference: <PR/Issue/Discussion Links md format text>
-    - code: ONSITE
+    - code: recruitment
       description: How the job will be fullfilled	
       reference: <PR/Issue/Discussion Links md format text>
   state:
