@@ -55,6 +55,11 @@ catalog:
           reference: <PR/Issue/Discussion Links md format text>
           list:
             $ref: "./tag.yaml#/ACADEMIC_ELIGIBILITY"
+        - code: DOCUMENTS_REQUIRED
+          description: DOCUMENTS_REQUIRED
+          reference: <PR/Issue/Discussion Links md format text>
+          list:
+            $ref: "./tag.yaml#/DOCUMENTS_REQUIRED"
         
         # - code: SERVICE_INFORMATION
         #   description: Information of the service (Required)

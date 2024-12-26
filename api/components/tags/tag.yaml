@@ -252,6 +252,16 @@ ACADEMIC_ELIGIBILITY:
   - code: MIN_CGPA
     description: Minimum CGPA of marks to be obtained in the course for eligibility
     reference: <PR/Issue/Discussion Links md format text>
+
+DOCUMENTS_REQUIRED:
+  - code: DOCUMENT_NAME
+    description: Document name - ["AADHAAR_CARD", "PAN_CARD"]
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: MANDATORY_DOCUMENT
+    description: Indicates if the document is mandatory for eligibility - ["true", "false"]
+    reference: <PR/Issue/Discussion Links md format text>
+
+
 EQUIPMENT_ATTRIBUTES:
   - code: ALIAS
     description: Item alias name or alternate name (Optional)

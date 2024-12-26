@@ -79,8 +79,8 @@ value:
                   We are seeking a Staff Mobile Developer with strong critical thinking, data-driven decision-making,
                   adaptability, goal-orientation, and problem-solving skills.
                 images:
-                  - "images url1"
-                  - "images url2"
+                  - url: "images url1"
+                  - url: "images url2"
                 media:
                   - mimetype: audio/mp4
                     url: http://url-to-audio-about-job
@@ -89,7 +89,7 @@ value:
               quantity:
                 available:
                   count: 50
-              application_validity_time:
+              time:
                 range:
                   start: "2023-01-03T13:23:10.171Z"
                   end: "2023-02-03T13:23:10.171Z"
@@ -99,6 +99,27 @@ value:
                 - "1"
                 - "2"
                 - "3"
+              creator:
+                descriptor:
+                  name: "Marketplace Connector"
+                  code: "MPC_45"
+                  short_desc: "Connecting Digital Marketplaces"
+                  long_desc: "This platform bridges various digital marketplaces, fostering seamless trade and enhancing accessibility for businesses and consumers alike."
+                  media:
+                    - mimetype: "image/jpeg"
+                      url: "https://marketplace.com/logo.jpg"
+                  images:
+                    - url: "https://marketplace.com/banner.jpg"
+                address: "Level 5, Trade Tower, Mumbai, Maharashtra, India"
+                state:
+                  name: "Maharashtra"
+                  code: "MH"
+                city:
+                  name: "Mumbai"
+                  code: "MUM"
+                contact:
+                  phone: "+91-1234567890"
+                  email: "support@marketplace.com"
               tags:
                 - descriptor:
                     code: ACADEMIC_ELIGIBILITY
@@ -117,7 +138,7 @@ value:
                     - descriptor:
                         code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
-                      value: "true"
+                      value: "false"
                 - descriptor:
                     code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
@@ -149,7 +170,7 @@ value:
                     - descriptor:
                         code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
-                      value: "true"
+                      value: "false"
                 - descriptor:
                     code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
@@ -167,6 +188,18 @@ value:
                     - descriptor:
                         code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
+                      value: "false"
+                - descriptor:
+                    code: DOCUMENTS_REQUIRED
+                    name: Documents Required
+                  list:
+                    - descriptor:
+                        code: DOCUMENT_NAME
+                        name: Name of the document
+                      value: PAN_CARD
+                    - descriptor:
+                        code: MANDATORY_DOCUMENT
+                        name: Mandatory DOCUMENT
                       value: "true"
                 - descriptor:
                     code: JOB_REQUIREMENTS
@@ -354,8 +387,8 @@ value:
                   We are seeking a Staff Mobile Developer with strong critical thinking, data-driven decision-making,
                   adaptability, goal-orientation, and problem-solving skills.
                 images:
-                  - "images url1"
-                  - "images url2"
+                  - url: "images url1"
+                  - url: "images url2"
                 media:
                   - mimetype: audio/mp4
                     url: http://url-to-audio-about-job
@@ -370,7 +403,28 @@ value:
                 - "1"
                 - "2"
                 - "3"
-              application_validity_time:
+              creator:
+                descriptor:
+                  name: "Global Trade Hub"
+                  code: "GTH_99"
+                  short_desc: "Facilitating Global Commerce"
+                  long_desc: "Global Trade Hub is a platform designed to enable international trade by connecting buyers and sellers across borders with innovative solutions."
+                  media:
+                    - mimetype: "image/svg+xml"
+                      url: "https://globaltradehub.com/logo.svg"
+                  images:
+                    - url: "https://globaltradehub.com/header-image.jpg"
+                address: "Suite 302, International Business Park, New Delhi, India"
+                state:
+                  name: "Delhi"
+                  code: "DL"
+                city:
+                  name: "New Delhi"
+                  code: "NDL"
+                contact:
+                  phone: "+91-9988776655"
+                  email: "info@globaltradehub.com"
+              time:
                 range:
                   start: "2023-01-03T13:23:10.171Z"
                   end: "2023-02-03T13:23:10.171Z"
@@ -443,6 +497,18 @@ value:
                         code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
                       value: "true"
+                - descriptor:
+                    code: DOCUMENTS_REQUIRED
+                    name: Documents Required
+                  list:
+                    - descriptor:
+                        code: DOCUMENT_NAME
+                        name: Name of the document
+                      value: AADHAAR_CARD
+                    - descriptor:
+                        code: MANDATORY_DOCUMENT
+                        name: Mandatory DOCUMENT
+                      value: "false"
                 - descriptor:
                     code: JOB_REQUIREMENTS
                     name: Job requirements
@@ -629,8 +695,8 @@ value:
                   We are seeking a Staff Mobile Developer with strong critical thinking, data-driven decision-making,
                   adaptability, goal-orientation, and problem-solving skills.
                 images:
-                  - "images url1"
-                  - "images url2"
+                  - url: "images url1"
+                  - url: "images url2"
                 media:
                   - mimetype: audio/mp4
                     url: http://url-to-audio-about-job
@@ -645,7 +711,28 @@ value:
                 - "1"
                 - "2"
                 - "3"
-              application_validity_time:
+              creator:
+                descriptor:
+                  name: "Marketplace Connector"
+                  code: "MPC_45"
+                  short_desc: "Connecting Digital Marketplaces"
+                  long_desc: "This platform bridges various digital marketplaces, fostering seamless trade and enhancing accessibility for businesses and consumers alike."
+                  media:
+                    - mimetype: "image/jpeg"
+                      url: "https://marketplace.com/logo.jpg"
+                  images:
+                    - url: "https://marketplace.com/banner.jpg"
+                address: "Level 5, Trade Tower, Mumbai, Maharashtra, India"
+                state:
+                  name: "Maharashtra"
+                  code: "MH"
+                city:
+                  name: "Mumbai"
+                  code: "MUM"
+                contact:
+                  phone: "+91-1234567890"
+                  email: "support@marketplace.com"
+              time:
                 range:
                   start: "2023-01-03T13:23:10.171Z"
                   end: "2023-02-03T13:23:10.171Z"
@@ -718,6 +805,30 @@ value:
                         code: MANDATORY_ELIGIBILITY
                         name: Mandatory Eligibility
                       value: "true"
+                - descriptor:
+                    code: DOCUMENTS_REQUIRED
+                    name: Documents Required
+                  list:
+                    - descriptor:
+                        code: DOCUMENT_NAME
+                        name: Name of the document
+                      value: AADHAAR_CARD
+                    - descriptor:
+                        code: MANDATORY_DOCUMENT
+                        name: Mandatory DOCUMENT
+                      value: "true"
+                - descriptor:
+                    code: DOCUMENTS_REQUIRED
+                    name: Documents Required
+                  list:
+                    - descriptor:
+                        code: DOCUMENT_NAME
+                        name: Name of the document
+                      value: PAN_CARD
+                    - descriptor:
+                        code: MANDATORY_DOCUMENT
+                        name: Mandatory DOCUMENT
+                      value: "false"
                 - descriptor:
                     code: JOB_REQUIREMENTS
                     name: Job requirements

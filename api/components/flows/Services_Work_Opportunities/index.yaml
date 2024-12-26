@@ -45,7 +45,7 @@ details:
         Note Over B,SA: **SELECT FLOW**
         B ->> BA: Selects one of the <br>providers for job
         BA ->> SA: **/select** - A job is selected with a <br>TTL for receiving response
-        SA ->> BA: **/on_select** - Responds to the selection with <br>breakup, quote including logistics charges
+        SA ->> BA: **/on_select** - Responds to the selection with <br>breakup, quote 
         BA ->> B: Shows response with price details
 
 

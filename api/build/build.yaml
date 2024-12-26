@@ -2942,6 +2942,18 @@ x-tags:
                       Minimum CGPA of marks to be obtained in the course for
                       eligibility
                     reference: <PR/Issue/Discussion Links md format text>
+              - code: DOCUMENTS_REQUIRED
+                description: DOCUMENTS_REQUIRED
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: DOCUMENT_NAME
+                    description: Document name - ["AADHAAR_CARD", "PAN_CARD"]
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: MANDATORY_DOCUMENT
+                    description: >-
+                      Indicates if the document is mandatory for eligibility -
+                      ["true", "false"]
+                    reference: <PR/Issue/Discussion Links md format text>
   on_select:
     message:
       order: &ref_4
@@ -3051,7 +3063,7 @@ x-flows:
             Note Over B,SA: **SELECT FLOW**
             B ->> BA: Selects one of the <br>providers for job
             BA ->> SA: **/select** - A job is selected with a <br>TTL for receiving response
-            SA ->> BA: **/on_select** - Responds to the selection with <br>breakup, quote including logistics charges
+            SA ->> BA: **/on_select** - Responds to the selection with <br>breakup, quote 
             BA ->> B: Shows response with price details
       - description: Initializing the order
         mermaidGraph: |-
@@ -3237,8 +3249,8 @@ x-flows:
                             adaptability, goal-orientation, and problem-solving
                             skills.
                           images:
-                            - images url1
-                            - images url2
+                            - url: images url1
+                            - url: images url2
                           media:
                             - mimetype: audio/mp4
                               url: http://url-to-audio-about-job
@@ -3247,7 +3259,7 @@ x-flows:
                         quantity:
                           available:
                             count: 50
-                        application_validity_time:
+                        time:
                           range:
                             start: '2023-01-03T13:23:10.171Z'
                             end: '2023-02-03T13:23:10.171Z'
@@ -3257,6 +3269,31 @@ x-flows:
                           - '1'
                           - '2'
                           - '3'
+                        creator:
+                          descriptor:
+                            name: Marketplace Connector
+                            code: MPC_45
+                            short_desc: Connecting Digital Marketplaces
+                            long_desc: >-
+                              This platform bridges various digital
+                              marketplaces, fostering seamless trade and
+                              enhancing accessibility for businesses and
+                              consumers alike.
+                            media:
+                              - mimetype: image/jpeg
+                                url: https://marketplace.com/logo.jpg
+                            images:
+                              - url: https://marketplace.com/banner.jpg
+                          address: Level 5, Trade Tower, Mumbai, Maharashtra, India
+                          state:
+                            name: Maharashtra
+                            code: MH
+                          city:
+                            name: Mumbai
+                            code: MUM
+                          contact:
+                            phone: +91-1234567890
+                            email: support@marketplace.com
                         tags:
                           - descriptor:
                               code: ACADEMIC_ELIGIBILITY
@@ -3275,7 +3312,7 @@ x-flows:
                               - descriptor:
                                   code: MANDATORY_ELIGIBILITY
                                   name: Mandatory Eligibility
-                                value: 'true'
+                                value: 'false'
                           - descriptor:
                               code: ACADEMIC_ELIGIBILITY
                               name: Academic eligibility
@@ -3307,7 +3344,7 @@ x-flows:
                               - descriptor:
                                   code: MANDATORY_ELIGIBILITY
                                   name: Mandatory Eligibility
-                                value: 'true'
+                                value: 'false'
                           - descriptor:
                               code: ACADEMIC_ELIGIBILITY
                               name: Academic eligibility
@@ -3325,6 +3362,18 @@ x-flows:
                               - descriptor:
                                   code: MANDATORY_ELIGIBILITY
                                   name: Mandatory Eligibility
+                                value: 'false'
+                          - descriptor:
+                              code: DOCUMENTS_REQUIRED
+                              name: Documents Required
+                            list:
+                              - descriptor:
+                                  code: DOCUMENT_NAME
+                                  name: Name of the document
+                                value: PAN_CARD
+                              - descriptor:
+                                  code: MANDATORY_DOCUMENT
+                                  name: Mandatory DOCUMENT
                                 value: 'true'
                           - descriptor:
                               code: JOB_REQUIREMENTS
@@ -3517,8 +3566,8 @@ x-flows:
                             adaptability, goal-orientation, and problem-solving
                             skills.
                           images:
-                            - images url1
-                            - images url2
+                            - url: images url1
+                            - url: images url2
                           media:
                             - mimetype: audio/mp4
                               url: http://url-to-audio-about-job
@@ -3533,7 +3582,33 @@ x-flows:
                           - '1'
                           - '2'
                           - '3'
-                        application_validity_time:
+                        creator:
+                          descriptor:
+                            name: Global Trade Hub
+                            code: GTH_99
+                            short_desc: Facilitating Global Commerce
+                            long_desc: >-
+                              Global Trade Hub is a platform designed to enable
+                              international trade by connecting buyers and
+                              sellers across borders with innovative solutions.
+                            media:
+                              - mimetype: image/svg+xml
+                                url: https://globaltradehub.com/logo.svg
+                            images:
+                              - url: https://globaltradehub.com/header-image.jpg
+                          address: >-
+                            Suite 302, International Business Park, New Delhi,
+                            India
+                          state:
+                            name: Delhi
+                            code: DL
+                          city:
+                            name: New Delhi
+                            code: NDL
+                          contact:
+                            phone: +91-9988776655
+                            email: info@globaltradehub.com
+                        time:
                           range:
                             start: '2023-01-03T13:23:10.171Z'
                             end: '2023-02-03T13:23:10.171Z'
@@ -3606,6 +3681,18 @@ x-flows:
                                   code: MANDATORY_ELIGIBILITY
                                   name: Mandatory Eligibility
                                 value: 'true'
+                          - descriptor:
+                              code: DOCUMENTS_REQUIRED
+                              name: Documents Required
+                            list:
+                              - descriptor:
+                                  code: DOCUMENT_NAME
+                                  name: Name of the document
+                                value: AADHAAR_CARD
+                              - descriptor:
+                                  code: MANDATORY_DOCUMENT
+                                  name: Mandatory DOCUMENT
+                                value: 'false'
                           - descriptor:
                               code: JOB_REQUIREMENTS
                               name: Job requirements
@@ -3797,8 +3884,8 @@ x-flows:
                             adaptability, goal-orientation, and problem-solving
                             skills.
                           images:
-                            - images url1
-                            - images url2
+                            - url: images url1
+                            - url: images url2
                           media:
                             - mimetype: audio/mp4
                               url: http://url-to-audio-about-job
@@ -3813,7 +3900,32 @@ x-flows:
                           - '1'
                           - '2'
                           - '3'
-                        application_validity_time:
+                        creator:
+                          descriptor:
+                            name: Marketplace Connector
+                            code: MPC_45
+                            short_desc: Connecting Digital Marketplaces
+                            long_desc: >-
+                              This platform bridges various digital
+                              marketplaces, fostering seamless trade and
+                              enhancing accessibility for businesses and
+                              consumers alike.
+                            media:
+                              - mimetype: image/jpeg
+                                url: https://marketplace.com/logo.jpg
+                            images:
+                              - url: https://marketplace.com/banner.jpg
+                          address: Level 5, Trade Tower, Mumbai, Maharashtra, India
+                          state:
+                            name: Maharashtra
+                            code: MH
+                          city:
+                            name: Mumbai
+                            code: MUM
+                          contact:
+                            phone: +91-1234567890
+                            email: support@marketplace.com
+                        time:
                           range:
                             start: '2023-01-03T13:23:10.171Z'
                             end: '2023-02-03T13:23:10.171Z'
@@ -3886,6 +3998,30 @@ x-flows:
                                   code: MANDATORY_ELIGIBILITY
                                   name: Mandatory Eligibility
                                 value: 'true'
+                          - descriptor:
+                              code: DOCUMENTS_REQUIRED
+                              name: Documents Required
+                            list:
+                              - descriptor:
+                                  code: DOCUMENT_NAME
+                                  name: Name of the document
+                                value: AADHAAR_CARD
+                              - descriptor:
+                                  code: MANDATORY_DOCUMENT
+                                  name: Mandatory DOCUMENT
+                                value: 'true'
+                          - descriptor:
+                              code: DOCUMENTS_REQUIRED
+                              name: Documents Required
+                            list:
+                              - descriptor:
+                                  code: DOCUMENT_NAME
+                                  name: Name of the document
+                                value: PAN_CARD
+                              - descriptor:
+                                  code: MANDATORY_DOCUMENT
+                                  name: Mandatory DOCUMENT
+                                value: 'false'
                           - descriptor:
                               code: JOB_REQUIREMENTS
                               name: Job requirements
@@ -4142,8 +4278,8 @@ x-flows:
                             adaptability, goal-orientation, and problem-solving
                             skills.
                           images:
-                            - images url1
-                            - images url2
+                            - url: images url1
+                            - url: images url2
                           media:
                             - mimetype: audio/mp4
                               url: http://url-to-audio-about-data-scientist-job
@@ -4152,7 +4288,7 @@ x-flows:
                         quantity:
                           available:
                             count: 30
-                        application_validity_time:
+                        time:
                           range:
                             start: '2023-01-04T09:32:10.560Z'
                             end: '2023-02-04T08:20:00.230Z'
@@ -6354,16 +6490,10 @@ x-examples:
       Job Hub is acting as provider platform (BPP) which hosts the jobs and
       Worker Hub is acting as seeker platform (BAP) which helps the workers to
       find jobs. <br/><br/>
-          This document contains detailed specifications and requirements for the job platform, helping stakeholders understand the product in depth
-      (PRD): <a
-      href="https://docs.google.com/document/d/1VydDAqtzjj1jDrJzX4hwZSlYyJsA_bSOJIKYTWxNSpQ">link</a>
-      <br/><br/> his document provides an overview of the business requirements,
-      with clear explanations about platform functionalities and workflows
-      (Explainer & BRD is documented): <a
+          PRD: ONEST - Work Opportunity : <a href="https://docs.google.com/document/d/1VydDAqtzjj1jDrJzX4hwZSlYyJsA_bSOJIKYTWxNSpQ">link</a>
+      <br/><br/> BRD: ONEST - Work Opportunities : <a
       href="https://docs.google.com/document/d/1cuvt_w9qSv7XpLXpY4KCq5gmrsQSqF8e3VLxOhpfO0g">link</a>
-      <br/><br/> A detailed taxonomy of product categories and attributes is
-      provided to ensure clarity and standardization across the platform
-      (Product Taxonomy): <a
+      <br/><br/> Taxonomy: ONEST - Work Opportunities : <a
       href="https://docs.google.com/spreadsheets/d/1Go22ou013hE-fxpjMd_XuM111l8x8TuMsF_nsjvB3so">link</a>
     example_set:
       search:
