@@ -32,6 +32,8 @@ value:
               type: lead
             - id: "2"
               type: recruitment
+            - id: "3"
+              type: lead & recruitment
           locations:
             - id: L1
               city:
@@ -90,6 +92,8 @@ value:
                 available:
                   count: 50
               time:
+                label: enable
+                timestamp: "2023-02-22T11:45:10.171Z"
                 range:
                   start: "2023-01-03T13:23:10.171Z"
                   end: "2023-02-03T13:23:10.171Z"
@@ -121,6 +125,62 @@ value:
                   phone: "+91-1234567890"
                   email: "support@marketplace.com"
               tags:
+                - descriptor:
+                    code: "JOB_PROVIDER_LOCATION"
+                    name: "Job Provider Location"
+                  list:
+                    - descriptor:
+                        code: "ADDRESS"
+                        name: "Address"
+                      value: "Level 5, Trade Tower, Mumbai, Maharashtra, India"
+                    - descriptor:
+                        code: "STATE"
+                        name: "State"
+                      value: "Mumbai"
+                    - descriptor:
+                        code: "CITY"
+                        name: "City"
+                      value: "Maharashtra"
+                - descriptor:
+                    code: "TIMING"
+                    name: "Timing"
+                  list:
+                    - descriptor:
+                        code: "DAY_FROM"
+                        name: "Day from"
+                      value: "1"
+                    - descriptor:
+                        code: "DAY_TO"
+                        name: "Day to"
+                      value: "6"
+                    - descriptor:
+                        code: "TIME_FROM"
+                        name: "Time from"
+                      value: "0900"
+                    - descriptor:
+                        code: "TIME_TO"
+                        name: "Time to"
+                      value: "1800"
+                - descriptor:
+                    code: "TIMING"
+                    name: "Timing"
+                  list:
+                    - descriptor:
+                        code: "DAY_FROM"
+                        name: "Day from"
+                      value: "6"
+                    - descriptor:
+                        code: "DAY_TO"
+                        name: "Day to"
+                      value: "6"
+                    - descriptor:
+                        code: "TIME_FROM"
+                        name: "Time from"
+                      value: "0900"
+                    - descriptor:
+                        code: "TIME_TO"
+                        name: "Time to"
+                      value: "1400"
                 - descriptor:
                     code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
@@ -425,10 +485,68 @@ value:
                   phone: "+91-9988776655"
                   email: "info@globaltradehub.com"
               time:
+                label: enable
+                timestamp: "2023-02-22T11:45:10.171Z"
                 range:
                   start: "2023-01-03T13:23:10.171Z"
                   end: "2023-02-03T13:23:10.171Z"
               tags:
+                - descriptor:
+                    code: "JOB_PROVIDER_LOCATION"
+                    name: "Job Provider Location"
+                  list:
+                    - descriptor:
+                        code: "ADDRESS"
+                        name: "Address"
+                      value: "Suite 302, International Business Park, New Delhi, India"
+                    - descriptor:
+                      code: "STATE"
+                      name: "State"
+                      value: "Delhi"
+                    - descriptor:
+                        code: "CITY"
+                        name: "City"
+                      value: "New Delhi"
+                - descriptor:
+                    code: "TIMING"
+                    name: "Timing"
+                  list:
+                    - descriptor:
+                        code: "DAY_FROM"
+                        name: "Day from"
+                      value: "1"
+                    - descriptor:
+                        code: "DAY_TO"
+                        name: "Day to"
+                      value: "6"
+                    - descriptor:
+                        code: "TIME_FROM"
+                        name: "Time from"
+                      value: "0900"
+                    - descriptor:
+                        code: "TIME_TO"
+                        name: "Time to"
+                      value: "1800"
+                - descriptor:
+                    code: "TIMING"
+                    name: "Timing"
+                  list:
+                    - descriptor:
+                        code: "DAY_FROM"
+                        name: "Day from"
+                      value: "6"
+                    - descriptor:
+                        code: "DAY_TO"
+                        name: "Day to"
+                      value: "6"
+                    - descriptor:
+                        code: "TIME_FROM"
+                        name: "Time from"
+                      value: "0900"
+                    - descriptor:
+                        code: "TIME_TO"
+                        name: "Time to"
+                      value: "1400"
                 - descriptor:
                     code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility
@@ -733,10 +851,68 @@ value:
                   phone: "+91-1234567890"
                   email: "support@marketplace.com"
               time:
+                label: enable
+                timestamp: "2023-02-22T11:45:10.171Z"
                 range:
                   start: "2023-01-03T13:23:10.171Z"
                   end: "2023-02-03T13:23:10.171Z"
               tags:
+                - descriptor:
+                    code: "JOB_PROVIDER_LOCATION"
+                    name: "Job Provider Location"
+                  list:
+                    - descriptor:
+                        code: "ADDRESS"
+                        name: "Address"
+                      value: "Level 5, Trade Tower, Mumbai, Maharashtra, India"
+                    - descriptor:
+                        code: "STATE"
+                        name: "State"
+                      value: "Mumbai"
+                    - descriptor:
+                        code: "CITY"
+                        name: "City"
+                      value: "Maharashtra"
+                - descriptor:
+                    code: "TIMING"
+                    name: "Timing"
+                  list:
+                    - descriptor:
+                        code: "DAY_FROM"
+                        name: "Day from"
+                      value: "1"
+                    - descriptor:
+                        code: "DAY_TO"
+                        name: "Day to"
+                      value: "6"
+                    - descriptor:
+                        code: "TIME_FROM"
+                        name: "Time from"
+                      value: "0900"
+                    - descriptor:
+                        code: "TIME_TO"
+                        name: "Time to"
+                      value: "1800"
+                - descriptor:
+                    code: "TIMING"
+                    name: "Timing"
+                  list:
+                    - descriptor:
+                        code: "DAY_FROM"
+                        name: "Day from"
+                      value: "6"
+                    - descriptor:
+                        code: "DAY_TO"
+                        name: "Day to"
+                      value: "6"
+                    - descriptor:
+                        code: "TIME_FROM"
+                        name: "Time from"
+                      value: "0900"
+                    - descriptor:
+                        code: "TIME_TO"
+                        name: "Time to"
+                      value: "1400"
                 - descriptor:
                     code: ACADEMIC_ELIGIBILITY
                     name: Academic eligibility

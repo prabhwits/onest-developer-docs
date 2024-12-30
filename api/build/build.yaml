@@ -2379,6 +2379,9 @@ x-enum:
             - code: recruitment
               description: How the job will be fullfilled
               reference: <PR/Issue/Discussion Links md format text>
+            - code: lead & recruitment
+              description: How the job will be fullfilled
+              reference: <PR/Issue/Discussion Links md format text>
   on_search:
     context:
       domain: *ref_0
@@ -3198,6 +3201,8 @@ x-flows:
                         type: lead
                       - id: '2'
                         type: recruitment
+                      - id: '3'
+                        type: lead & recruitment
                     locations:
                       - id: L1
                         city:
@@ -3260,6 +3265,8 @@ x-flows:
                           available:
                             count: 50
                         time:
+                          label: enable
+                          timestamp: '2023-02-22T11:45:10.171Z'
                           range:
                             start: '2023-01-03T13:23:10.171Z'
                             end: '2023-02-03T13:23:10.171Z'
@@ -3295,6 +3302,64 @@ x-flows:
                             phone: +91-1234567890
                             email: support@marketplace.com
                         tags:
+                          - descriptor:
+                              code: JOB_PROVIDER_LOCATION
+                              name: Job Provider Location
+                            list:
+                              - descriptor:
+                                  code: ADDRESS
+                                  name: Address
+                                value: >-
+                                  Level 5, Trade Tower, Mumbai, Maharashtra,
+                                  India
+                              - descriptor:
+                                  code: STATE
+                                  name: State
+                                value: Mumbai
+                              - descriptor:
+                                  code: CITY
+                                  name: City
+                                value: Maharashtra
+                          - descriptor:
+                              code: TIMING
+                              name: Timing
+                            list:
+                              - descriptor:
+                                  code: DAY_FROM
+                                  name: Day from
+                                value: '1'
+                              - descriptor:
+                                  code: DAY_TO
+                                  name: Day to
+                                value: '6'
+                              - descriptor:
+                                  code: TIME_FROM
+                                  name: Time from
+                                value: '0900'
+                              - descriptor:
+                                  code: TIME_TO
+                                  name: Time to
+                                value: '1800'
+                          - descriptor:
+                              code: TIMING
+                              name: Timing
+                            list:
+                              - descriptor:
+                                  code: DAY_FROM
+                                  name: Day from
+                                value: '6'
+                              - descriptor:
+                                  code: DAY_TO
+                                  name: Day to
+                                value: '6'
+                              - descriptor:
+                                  code: TIME_FROM
+                                  name: Time from
+                                value: '0900'
+                              - descriptor:
+                                  code: TIME_TO
+                                  name: Time to
+                                value: '1400'
                           - descriptor:
                               code: ACADEMIC_ELIGIBILITY
                               name: Academic eligibility
@@ -3609,10 +3674,70 @@ x-flows:
                             phone: +91-9988776655
                             email: info@globaltradehub.com
                         time:
+                          label: enable
+                          timestamp: '2023-02-22T11:45:10.171Z'
                           range:
                             start: '2023-01-03T13:23:10.171Z'
                             end: '2023-02-03T13:23:10.171Z'
                         tags:
+                          - descriptor:
+                              code: JOB_PROVIDER_LOCATION
+                              name: Job Provider Location
+                            list:
+                              - descriptor:
+                                  code: ADDRESS
+                                  name: Address
+                                value: >-
+                                  Suite 302, International Business Park, New
+                                  Delhi, India
+                              - descriptor: null
+                                code: STATE
+                                name: State
+                                value: Delhi
+                              - descriptor:
+                                  code: CITY
+                                  name: City
+                                value: New Delhi
+                          - descriptor:
+                              code: TIMING
+                              name: Timing
+                            list:
+                              - descriptor:
+                                  code: DAY_FROM
+                                  name: Day from
+                                value: '1'
+                              - descriptor:
+                                  code: DAY_TO
+                                  name: Day to
+                                value: '6'
+                              - descriptor:
+                                  code: TIME_FROM
+                                  name: Time from
+                                value: '0900'
+                              - descriptor:
+                                  code: TIME_TO
+                                  name: Time to
+                                value: '1800'
+                          - descriptor:
+                              code: TIMING
+                              name: Timing
+                            list:
+                              - descriptor:
+                                  code: DAY_FROM
+                                  name: Day from
+                                value: '6'
+                              - descriptor:
+                                  code: DAY_TO
+                                  name: Day to
+                                value: '6'
+                              - descriptor:
+                                  code: TIME_FROM
+                                  name: Time from
+                                value: '0900'
+                              - descriptor:
+                                  code: TIME_TO
+                                  name: Time to
+                                value: '1400'
                           - descriptor:
                               code: ACADEMIC_ELIGIBILITY
                               name: Academic eligibility
@@ -3926,10 +4051,70 @@ x-flows:
                             phone: +91-1234567890
                             email: support@marketplace.com
                         time:
+                          label: enable
+                          timestamp: '2023-02-22T11:45:10.171Z'
                           range:
                             start: '2023-01-03T13:23:10.171Z'
                             end: '2023-02-03T13:23:10.171Z'
                         tags:
+                          - descriptor:
+                              code: JOB_PROVIDER_LOCATION
+                              name: Job Provider Location
+                            list:
+                              - descriptor:
+                                  code: ADDRESS
+                                  name: Address
+                                value: >-
+                                  Level 5, Trade Tower, Mumbai, Maharashtra,
+                                  India
+                              - descriptor:
+                                  code: STATE
+                                  name: State
+                                value: Mumbai
+                              - descriptor:
+                                  code: CITY
+                                  name: City
+                                value: Maharashtra
+                          - descriptor:
+                              code: TIMING
+                              name: Timing
+                            list:
+                              - descriptor:
+                                  code: DAY_FROM
+                                  name: Day from
+                                value: '1'
+                              - descriptor:
+                                  code: DAY_TO
+                                  name: Day to
+                                value: '6'
+                              - descriptor:
+                                  code: TIME_FROM
+                                  name: Time from
+                                value: '0900'
+                              - descriptor:
+                                  code: TIME_TO
+                                  name: Time to
+                                value: '1800'
+                          - descriptor:
+                              code: TIMING
+                              name: Timing
+                            list:
+                              - descriptor:
+                                  code: DAY_FROM
+                                  name: Day from
+                                value: '6'
+                              - descriptor:
+                                  code: DAY_TO
+                                  name: Day to
+                                value: '6'
+                              - descriptor:
+                                  code: TIME_FROM
+                                  name: Time from
+                                value: '0900'
+                              - descriptor:
+                                  code: TIME_TO
+                                  name: Time to
+                                value: '1400'
                           - descriptor:
                               code: ACADEMIC_ELIGIBILITY
                               name: Academic eligibility
@@ -4217,18 +4402,6 @@ x-flows:
                       - descriptor:
                           code: MODE
                         value: start
-                  - descriptor:
-                      code: BAP_TERMS
-                    list:
-                      - descriptor:
-                          code: STATIC_TERMS
-                        value: static_terms_value
-                      - descriptor:
-                          code: STATIC_TERMS_NEW
-                        value: static_terms_new_value
-                      - descriptor:
-                          code: EFFECTIVE_DATE
-                        value: '2023-02-22T11:20:10.122Z'
       - summary: Description
         api: on_search_inc
         description: >-
@@ -4252,12 +4425,10 @@ x-flows:
                   code: '*'
                 country:
                   code: IND
-              timestamp: '2023-02-22T11:45:10.171Z'
+              timestamp: '2023-02-22T11:50:02.789Z'
               ttl: PT30S
             message:
               catalog:
-                descriptor:
-                  name: Affindi Jobs
                 providers:
                   - id: '1'
                     items:
@@ -4287,8 +4458,10 @@ x-flows:
                               url: http://url-to-video-about-data-scientist-job
                         quantity:
                           available:
-                            count: 30
+                            count: 0
                         time:
+                          label: disable
+                          timestamp: '2023-02-22T11:50:02.789Z'
                           range:
                             start: '2023-01-04T09:32:10.560Z'
                             end: '2023-02-04T08:20:00.230Z'
@@ -4384,6 +4557,7 @@ x-flows:
                 provider:
                   id: '1'
                 fulfillments:
+                  id: '1'
                   type: lead
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
@@ -4453,7 +4627,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1700'
+                    value: '1100'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -4467,42 +4641,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                    - title: NP Fees
-                      id: '1'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
-                    - title: NP Fees
-                      id: '2'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
                   ttl: P1D
       - summary: Description
         api: init
@@ -4605,7 +4743,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1700'
+                    value: '1100'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -4619,42 +4757,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                    - title: NP Fees
-                      id: '1'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
-                    - title: NP Fees
-                      id: '2'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
                   ttl: P1D
       - summary: Description
         api: on_init
@@ -4721,7 +4823,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1700'
+                    value: '1100'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -4735,42 +4837,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                    - title: NP Fees
-                      id: '1'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
-                    - title: NP Fees
-                      id: '2'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
                   ttl: P1D
                 fulfillments:
                   - id: '1'
@@ -4998,7 +5064,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1700'
+                    value: '1100'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -5012,42 +5078,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                    - title: NP Fees
-                      id: '1'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
-                    - title: NP Fees
-                      id: '2'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
                   ttl: P1D
                 payments:
                   url: https://ondc.transaction.com/payment
@@ -5281,42 +5311,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                    - title: NP Fees
-                      id: '1'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
-                    - title: NP Fees
-                      id: '2'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
                   ttl: P1D
                 fulfillments:
                   - id: '1'
@@ -5676,7 +5670,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1700'
+                    value: '1100'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -5690,42 +5684,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                    - title: NP Fees
-                      id: '1'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
-                    - title: NP Fees
-                      id: '2'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
                   ttl: P1D
                 fulfillments:
                   - id: '1'
@@ -5930,42 +5888,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                    - title: NP Fees
-                      id: '1'
-                      price:
-                        currency: INR
-                        value: '0'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
-                    - title: NP Fees
-                      id: '2'
-                      price:
-                        currency: INR
-                        value: '0'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
                   ttl: P1D
                 fulfillments:
                   - id: '1'
@@ -6072,21 +5994,6 @@ x-flows:
                           - descriptor:
                               code: VALUE
                             value: '-1100.00'
-                      - descriptor:
-                          code: QUOTE_TRAIL
-                        list:
-                          - descriptor:
-                              code: CURRENCY
-                            value: INR
-                          - descriptor:
-                              code: ID
-                            value: '1'
-                          - descriptor:
-                              code: TYPE
-                            value: misc
-                          - descriptor:
-                              code: VALUE
-                            value: '-300.00'
                 payments:
                   url: https://ondc.transaction.com/payment
                   params:
@@ -6392,7 +6299,7 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1700'
+                    value: '1100'
                   breakup:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       price:
@@ -6406,42 +6313,6 @@ x-flows:
                             - descriptor:
                                 code: TYPE
                               value: item
-                    - title: NP Fees
-                      id: '1'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
-                    - title: NP Fees
-                      id: '2'
-                      price:
-                        currency: INR
-                        value: '300.00'
-                      tags:
-                        - descriptor:
-                            code: QUOTE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: misc
                   ttl: P1D
                 payments:
                   url: https://ondc.transaction.com/payment
@@ -6740,7 +6611,40 @@ x-examples:
                         - descriptor:
                             code: EFFECTIVE_DATE
                           value: '2023-02-22T11:20:10.122Z'
-          search - incremental: *ref_7
+          search - incremental start: *ref_7
+          search - incremental stop:
+            value:
+              context:
+                domain: ONDC:ONEST10
+                action: search
+                version: 2.0.0
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: 672f774c-4281-44dd-b1c2-84222a3d771e
+                location:
+                  city:
+                    code: '*'
+                  country:
+                    code: IND
+                timestamp: '2023-02-22T12:10:11.008Z'
+                ttl: PT30S
+              message:
+                intent:
+                  payment:
+                    descriptor:
+                      code: NP_FEES
+                      name: Np Fees
+                    list:
+                      - code: ID
+                        value: '1'
+                  tags:
+                    - descriptor:
+                        code: CATALOG_INC
+                      list:
+                        - descriptor:
+                            code: MODE
+                          value: stop
       select:
         examples:
           select: *ref_8
@@ -6769,7 +6673,7 @@ x-examples:
       on_init:
         examples:
           on_init: *ref_17
-          on_init_post_form_submission:
+          on_init - unsolicited:
             value:
               context:
                 domain: ONDC:ONEST10
@@ -6780,13 +6684,13 @@ x-examples:
                 bpp_id: job-hub.bpp.io
                 bpp_uri: https://job-hub.bpp.io
                 transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
-                message_id: af58aa7b-6745-47d0-9b0d-62dcb262ee87
+                message_id: 9f06d8ef-ac19-40a9-9d7b-37f2f1fdb836
                 location:
                   city:
                     code: std:080
                   country:
                     code: IND
-                timestamp: 2023-02-23T10:14:051Z
+                timestamp: 2023-02-23T10:16:123Z
                 ttl: PT30S
               message:
                 order:
@@ -6796,21 +6700,39 @@ x-examples:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       fulfillment_ids:
                         - '1'
+                      xinput:
+                        required: true
+                        head:
+                          descriptor:
+                            name: Application Form
+                          index:
+                            min: 1
+                            cur: 2
+                            max: 2
+                          headings:
+                            - Candidate Details
+                        form:
+                          mime_type: text/html
+                          url: >-
+                            https://6vs8xnx5i7.jobhub.co.in/loans-kyc/xinput/formid/updatedformid123
+                          resubmit: false
                       tags:
                         - descriptor:
                             code: NP_FEES
+                            name: Np Fees
                           list:
                             - code: ID
                               value: '1'
                         - descriptor:
                             code: NP_FEES
+                            name: Np Fees
                           list:
                             - code: ID
                               value: '2'
                   quote:
                     price:
                       currency: INR
-                      value: '1700'
+                      value: '1100'
                     breakup:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
                         price:
@@ -6824,42 +6746,6 @@ x-examples:
                               - descriptor:
                                   code: TYPE
                                 value: item
-                      - title: NP Fees
-                        id: '1'
-                        price:
-                          currency: INR
-                          value: '300.00'
-                        tags:
-                          - descriptor:
-                              code: QUOTE
-                            list:
-                              - descriptor:
-                                  code: TYPE
-                                value: item
-                          - descriptor:
-                              code: TYPE
-                            list:
-                              - descriptor:
-                                  code: TYPE
-                                value: misc
-                      - title: NP Fees
-                        id: '2'
-                        price:
-                          currency: INR
-                          value: '300.00'
-                        tags:
-                          - descriptor:
-                              code: QUOTE
-                            list:
-                              - descriptor:
-                                  code: TYPE
-                                value: item
-                          - descriptor:
-                              code: TYPE
-                            list:
-                              - descriptor:
-                                  code: TYPE
-                                value: misc
                     ttl: P1D
                   fulfillments:
                     - id: '1'
@@ -7466,8 +7352,13 @@ x-attributes:
                 reference: null
             fulfillments:
               parent: true
+              id:
+                description: The unique identifier of the fulfillment option.
+                required: mandatory
+                usage: '1'
+                reference: null
               type:
-                description: Type of fulfillment
+                description: The type of fulfillment.
                 required: mandatory
                 usage: lead
                 reference: null
