@@ -500,8 +500,8 @@ value:
                         name: "Address"
                       value: "Suite 302, International Business Park, New Delhi, India"
                     - descriptor:
-                      code: "STATE"
-                      name: "State"
+                        code: "STATE"
+                        name: "State"
                       value: "Delhi"
                     - descriptor:
                         code: "CITY"

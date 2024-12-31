@@ -3690,9 +3690,9 @@ x-flows:
                                 value: >-
                                   Suite 302, International Business Park, New
                                   Delhi, India
-                              - descriptor: null
-                                code: STATE
-                                name: State
+                              - descriptor:
+                                  code: STATE
+                                  name: State
                                 value: Delhi
                               - descriptor:
                                   code: CITY
