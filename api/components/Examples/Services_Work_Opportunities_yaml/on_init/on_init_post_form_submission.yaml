@@ -53,58 +53,6 @@ value:
                       code: TYPE
                     value: item
         ttl: P1D
-      fulfillments:
-        - id: "1"
-          type: lead
-          customer:
-            person:
-              name: Sanjay
-              gender: Male
-              age: "35"
-              skills:
-                - code: Android
-                  name: Android
-                - code: AWS
-                  name: AWS
-              languages:
-                - code: en
-                  name: english
-                - code: ml
-                  name: Malayalam
-                - code: hi
-                  name: Hindi
-              tags:
-                - descriptor:
-                    code: EMP_DETAILS
-                    name: Employee Details
-                  list:
-                    - descriptor:
-                        code: EXPECTED_SALARY
-                        name: Expected Salary
-                      value: "1000000"
-                    - descriptor:
-                        code: TOTAL_EXPERIENCE
-                        name: Total Experience
-                      value: "P4Y"
-                - descriptor:
-                    code: DOCUMENTS
-                    name: Documents
-                  list:
-                    - descriptor:
-                        code: DOC_TYPE
-                        name: Document Type
-                      value: resume
-                    - descriptor:
-                        code: LINK
-                        name: Document Link
-                      value: https://example.com/resume.pdf
-                    - descriptor:
-                        code: FILE_FORMAT
-                        name: File Format
-                      value: pdf
-            contact:
-              phone: "9999999999"
-              email: abc@abc.bc
       payments:
         url: "https://ondc.transaction.com/payment"
         status: "NOT-PAID"

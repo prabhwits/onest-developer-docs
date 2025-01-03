@@ -130,56 +130,6 @@ message:
             required: mandatory
             usage: "CANCELLED"
             reference: if any
-      customer:
-        person:
-          name:
-            description: "Name of the customer"
-            required: mandatory
-            usage: "Sanjay"
-            reference: if any
-          gender:
-            description: "Gender of the customer"
-            required: mandatory
-            usage: "Male"
-            reference: if any
-          age:
-            description: "Age of the customer"
-            required: mandatory
-            usage: "35"
-            reference: if any
-          skills:
-              code:
-                description: "Skill code of the customer"
-                required: mandatory
-                usage: "Android"
-                reference: if any
-              name:
-                description: "Skill name of the customer"
-                required: mandatory
-                usage: "Android"
-                reference: if any
-          languages:
-              code:
-                description: "Language code of the customer"
-                required: mandatory
-                usage: "en"
-                reference: if any
-              name:
-                description: "Language name of the customer"
-                required: mandatory
-                usage: "english"
-                reference: if any
-        contact:
-          phone:
-            description: "The phone number of the customer."
-            required: mandatory
-            usage: "9999999999"
-            reference: null
-          email:
-            description: "The email of the customer."
-            required: mandatory
-            usage: "abc@abc.bc"
-            reference: null
     payments:
       url:
         description: "The URL for payment processing."

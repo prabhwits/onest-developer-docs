@@ -89,21 +89,21 @@ value:
             contact:
               phone: "9999999999"
               email: abc@abc.bc
-      quote:
-        price:
-          currency: INR
-          value: "1100"
-        breakup:
-          - id: 0253719F295521CED39EC9C2F3C8DCDE
-            price:
-              currency: INR
-              value: "1100"
-            title: Fullstack Engineer
-            tags:
-              - descriptor:
-                  code: TYPE
-                list:
-                  - descriptor:
-                      code: TYPE
-                    value: item
-        ttl: P1D
+      # quote:
+      #   price:
+      #     currency: INR
+      #     value: "1100"
+      #   breakup:
+      #     - id: 0253719F295521CED39EC9C2F3C8DCDE
+      #       price:
+      #         currency: INR
+      #         value: "1100"
+      #       title: Fullstack Engineer
+      #       tags:
+      #         - descriptor:
+      #             code: TYPE
+      #           list:
+      #             - descriptor:
+      #                 code: TYPE
+      #               value: item
+      #   ttl: P1D

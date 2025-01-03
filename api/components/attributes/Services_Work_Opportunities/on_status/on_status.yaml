@@ -157,56 +157,6 @@ message:
           required: mandatory
           usage: 2023-02-22T11:50:46.742Z
           reference: if any
-      customer:
-        person:
-          name:
-            description: "The name of the customer."
-            required: mandatory
-            usage: "Sanjay"
-            reference: null
-          gender:
-            description: "The gender of the customer."
-            required: mandatory
-            usage: "Male"
-            reference: null
-          age:
-            description: "The age of the customer."
-            required: mandatory
-            usage: "35"
-            reference: null
-          skills:
-            code:
-              description: "The code representing the skill."
-              required: mandatory
-              usage: "Android"
-              reference: null
-            name:
-              description: "The name of the skill."
-              required: mandatory
-              usage: "Android"
-              reference: null
-          languages:
-            code:
-              description: "The code of the language."
-              required: mandatory
-              usage: "en"
-              reference: null
-            name:
-              description: "The name of the language."
-              required: mandatory
-              usage: "english"
-              reference: null
-        contact:
-            phone:
-              description: "The phone number of the customer."
-              required: mandatory
-              usage: "9999999999999"
-              reference: null
-            email:
-              description: "The email address of the customer."
-              required: mandatory
-              usage: "abc@abc.bc"
-              reference: null
     payments:
       url:
         description: "The URL for payment processing."
