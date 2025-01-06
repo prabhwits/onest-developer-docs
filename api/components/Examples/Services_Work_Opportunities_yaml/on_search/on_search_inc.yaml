@@ -60,19 +60,15 @@ value:
               tags:
                 - descriptor:
                     code: SALARY_INFO
-                    name: Salary information
                   list:
                     - descriptor:
                         code: GROSS_MIN
-                        name: Minimum gross pay
                       value: "800000"
                     - descriptor:
                         code: GROSS_MAX
-                        name: Maximum gross pay
                       value: "1000000"
                 - descriptor:
                     code: NP_FEES
-                    name: "Np Fees"
                   list:
                     - code: ID
                       value: "1"
@@ -94,21 +90,16 @@ value:
                       value: "25,25,50"
                 - descriptor:
                     code: JOB_DETAILS
-                    name: Listing details
                   list:
                     - descriptor:
                         code: INDUSTRY_TYPE
-                        name: Industry type
                       value: Data Science
                     - descriptor:
                         code: DEPARTMENT
-                        name: Department
                       value: Data Science & Analytics
                     - descriptor:
                         code: EMPLOYMENT_TYPE
-                        name: Employment type
                       value: full-time
                     - descriptor:
                         code: JOB_ROLE
-                        name: Job role
                       value: Data Scientist

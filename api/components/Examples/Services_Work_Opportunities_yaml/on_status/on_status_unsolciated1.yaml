@@ -1,31 +1,35 @@
 value:
   context:
     domain: ONDC:ONEST10
-    action: on_confirm
+    action: on_status
     version: 2.0.0
     bap_id: worker-hub.bap.io
     bap_uri: https://worker-hub.bap.io
     bpp_id: job-hub.bpp.io
     bpp_uri: https://job-hub.bpp.io
     transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
-    message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
+    message_id: c8e3968c-cd78-4e46-aa34-0d541e46bd73
     location:
       city:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-23T08:20:06Z"
+    timestamp: "2023-02-22T11:51:45.143Z"
     ttl: PT30S
   message:
     order:
       id: "1677140405881"
-      status: Created
+      status: Active
       provider:
         id: "1"
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
-            - "1"    
+            - "1"
+          time:
+            range:
+              start: "2023-01-03T13:23:01+00:00"
+              end: "2023-02-03T13:23:01+00:00"
           tags:
             - descriptor:
                 code: NP_FEES
@@ -95,31 +99,28 @@ value:
                     code: ADD_PROF_SKILL
                   value: dev-ops
                 - descriptor:
-                    code: REQ_ADDL_SKILL
+                    code: ADD_PROF_SKILL
                   value: >-
-                    8+ years of engineering experience in shipping user-facing
-                    production features
+                    You have 8+ years of engineering experience, predominantly in shipping user-facing production features
             - descriptor:
                 code: JOB_RESPONSIBILITIES
               list:
                 - descriptor:
                     code: RESPONSIBILITY
                   value: >-
-                    Build frontend experiences for tools (Web, PWA, React
-                    Native)
-                - descriptor:
-                    code: RESPONSIBILITY
-                  value: Define long-term technical direction and vision
+                    Build frontend experiences for our tools (Web, PWA and React Native)
                 - descriptor:
                     code: RESPONSIBILITY
                   value: >-
-                    Create reliable interfaces using modern tools like React,
-                    React Native, Typescript, Node.js, Jest, and Webpack.
+                    Articulate a long term technical direction and vision for building, maintaining, and scaling our web and mobile platforms
                 - descriptor:
                     code: RESPONSIBILITY
                   value: >-
-                    Mentor team members on design techniques and coding
-                    standards.
+                    Create trustworthy user experiences by building interfaces that are simple, easy to comprehend, performant and reliable using modern tools like React, React Native, Typescript, Node.js, Jest and Webpack.
+                - descriptor:
+                    code: RESPONSIBILITY
+                  value: >-
+                    Mentor and train other team members on design techniques and coding standards.
             - descriptor:
                 code: JOB_DETAILS
               list:
@@ -130,15 +131,21 @@ value:
                     code: DEPARTMENT
                   value: Engineering - Software & QA
                 - descriptor:
-                    code: EMPLOYMENT_TYPE
-                  value: Full-Time
+                    code: CTC
+                  value: 20,00,000
                 - descriptor:
-                    code: JOB_ROLE
-                  value: DevOps Engineer
+                    code: POST_START_LOCATION
+                  value: Pune
+                - descriptor:
+                    code: WORKING_LOCATION
+                  value: Hybrid
+                - descriptor:
+                    code: WORKING_TIME
+                  value: Full-Time
       quote:
         price:
           currency: INR
-          value: "1700"
+          value: "1100"
         breakup:
           - id: 0253719F295521CED39EC9C2F3C8DCDE
             price:
@@ -158,82 +165,42 @@ value:
           type: lead
           state:
             descriptor:
-              code: APPLICATION-STARTED
-            updated_at: "2023-02-23T08:20:06Z"
-          customer:
-            person:
-              name: Sanjay
-              gender: Male
-              age: "35"
-              skills:
-                - code: Android
-                - code: AWS
-              languages:
-                - code: en
-                - code: ml
-                - code: hi
-              tags:
-                - descriptor:
-                    code: CURRENT_EXPERIENCE
-                  list:
-                    - descriptor:
-                        code: EXP_YEARS
-                      value: P4Y2M
-                    - descriptor:
-                        code: CURRENT_COMPANY
-                      value: ABC tech
-                - descriptor:
-                    code: SALARY_DETAILS
-                  list:
-                    - descriptor:
-                        code: EXPECTED_SALARY
-                      value: "80000"
-                    - descriptor:
-                        code: CURRENT_SALARY
-                      value: "50000"
-                - descriptor:
-                    code: DOCUMENTS
-                  list:
-                    - descriptor:
-                        code: RESUME
-                      value: https://link-to-the-document.com
-            contact:
-              phone: "9999999999"
-              email: abc@abc.bc
+              code: APPLICATIO-SUBMITTED
+            updated_at: "2023-02-22T11:51:45.143Z"
       payments:
-          url: "https://ondc.transaction.com/payment"
-          params:
-            currency: "INR"
-            transaction_id: "3937"
-            amount: "1700.00"
-          status: "PAID"
-          type: "ON-ORDER"
-          collected_by: "BAP"
-          tags:
-              descriptor:
-                code: "SETTLEMENT_DETAILS"
-              list:
-                - descriptor:
-                    code: "SETTLEMENT_COUNTERPARTY"
-                  value: "seller-app"
-                - descriptor:
-                    code: "SETTLEMENT_PHASE"
-                  value: "sale-amount"
-                - descriptor:
-                    code: "SETTLEMENT_TYPE"
-                  value: "neft"
-                - descriptor:
-                    code: "SETTLEMENT_BANK_ACCOUNT_NO"
-                  value: "XXXXXXXXXX"
-                - descriptor:
-                    code: "SETTLEMENT_IFSC_CODE"
-                  value: "XXXXXXXXX"
-                - descriptor:
-                    code: "BENEFICIARY_NAME"
-                  value: "xxxxx"
-                - descriptor:
-                    code: "BANK_NAME"
-                  value: "xxxx"
-                - descriptor:
-                    code: "BRANCH_NAME"
-                  value: "xxxx"
+        url: "https://ondc.transaction.com/payment"
+        params:
+          currency: "INR"
+          transaction_id: "3937"
+          amount: "1700.00"
+        status: "PAID"
+        type: "ON-ORDER"
+        collected_by: "BAP"
+        tags:
+          descriptor:
+            code: "SETTLEMENT_DETAILS"
+          list:
+            - descriptor:
+                code: "SETTLEMENT_COUNTERPARTY"
+              value: "seller-app"
+            - descriptor:
+                code: "SETTLEMENT_PHASE"
+              value: "sale-amount"
+            - descriptor:
+                code: "SETTLEMENT_TYPE"
+              value: "neft"
+            - descriptor:
+                code: "SETTLEMENT_BANK_ACCOUNT_NO"
+              value: "XXXXXXXXXX"
+            - descriptor:
+                code: "SETTLEMENT_IFSC_CODE"
+              value: "XXXXXXXXX"
+            - descriptor:
+                code: "BENEFICIARY_NAME"
+              value: "xxxxx"
+            - descriptor:
+                code: "BANK_NAME"
+              value: "xxxx"
+            - descriptor:
+                code: "BRANCH_NAME"
+              value: "xxxx"

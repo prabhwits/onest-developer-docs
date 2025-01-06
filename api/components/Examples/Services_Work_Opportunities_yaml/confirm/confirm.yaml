@@ -29,13 +29,11 @@ value:
           tags:
           - descriptor:
               code: NP_FEES
-              name: "Np Fees"
             list:
               - code: ID
                 value: "1"
           - descriptor:
               code: NP_FEES
-              name: "Np Fees"
             list:
               - code: ID
                 value: "2"
@@ -44,8 +42,7 @@ value:
           type: lead
           state:
             descriptor:
-              code: APPLICATION_STARTED
-              name: Application Started
+              code: APPLICATION-STARTED
             updated_at: "2023-02-23T08:09:021Z"
           customer:
             person:
@@ -54,48 +51,35 @@ value:
               age: "35"
               skills:
                 - code: Android
-                  name: Android
                 - code: AWS
-                  name: AWS
               languages:
                 - code: en
-                  name: english
                 - code: ml
-                  name: Malayalam
                 - code: hi
-                  name: Hindi
               tags:
                 - descriptor:
                     code: CURRENT_EXPERIENCE
-                    name: Current Experience
                   list:
                     - descriptor:
                         code: EXP_YEARS
-                        name: Experience
                       value: P4Y2M
                     - descriptor:
                         code: CURRENT_COMPANY
-                        name: Current Company
                       value: ABC tech
                 - descriptor:
                     code: SALARY_DETAILS
-                    name: Salary Details
                   list:
                     - descriptor:
                         code: EXPECTED_SALARY
-                        name: Expected Salary
                       value: "80000"
                     - descriptor:
                         code: CURRENT_SALARY
-                        name: Current Salary
                       value: "50000"
                 - descriptor:
                     code: DOCUMENTS
-                    name: Documents
                   list:
                     - descriptor:
                         code: RESUME
-                        name: Resume
                       value: https://link-to-the-document.com
             contact:
               phone: "9999999999"
@@ -139,10 +123,7 @@ value:
                   value: "sale-amount"
                 - descriptor:
                     code: "SETTLEMENT_TYPE"
-                  value: "upi"
-                - descriptor:
-                    code: "UPI_ADDRESS"
-                  value: "gft@oksbi"
+                  value: "neft"
                 - descriptor:
                     code: "SETTLEMENT_BANK_ACCOUNT_NO"
                   value: "XXXXXXXXXX"

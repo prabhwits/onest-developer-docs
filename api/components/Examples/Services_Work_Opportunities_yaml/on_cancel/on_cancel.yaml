@@ -34,27 +34,22 @@ value:
           tags:
             - descriptor:
                 code: NP_FEES
-                name: "Np Fees"
               list:
                 - code: ID
                   value: "1"
             - descriptor:
                 code: NP_FEES
-                name: "Np Fees"
               list:
                 - code: ID
                   value: "2"
             - descriptor:
                 code: CANCEL_REQUEST
-                name: Cancel request
               list:
                 - descriptor:
                     code: REASON_ID
-                    name: Reason id
                   value: "001"
                 - descriptor:
                     code: INITIATED_BY
-                    name: Initiated by
                   value: Subscriber ID
       quote:
         price:
@@ -118,10 +113,7 @@ value:
                   value: "sale-amount"
                 - descriptor:
                     code: "SETTLEMENT_TYPE"
-                  value: "upi"
-                - descriptor:
-                    code: "UPI_ADDRESS"
-                  value: "gft@oksbi"
+                  value: "neft"
                 - descriptor:
                     code: "SETTLEMENT_BANK_ACCOUNT_NO"
                   value: "XXXXXXXXXX"

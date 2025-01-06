@@ -71,8 +71,12 @@ on_update:
       $ref: ./on_update/on_update.yaml
 on_status:
   examples:
-    on_status:
+    on_status - APPLICATION_IN_PROGRESS:
       $ref: ./on_status/on_status.yaml
+    on_status - APPLICATION_SUBMITTED:
+      $ref: ./on_status/on_status_unsolciated1.yaml
+    on_status - OFFER_EXTENDED:
+      $ref: ./on_status/on_status_unsolciated2.yaml
 on_cancel:
   examples:
     on_cancel:

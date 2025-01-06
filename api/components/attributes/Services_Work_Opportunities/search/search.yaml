@@ -72,11 +72,6 @@ message:
           required: mandatory
           usage: "NP_FEES"
           reference: null
-        name:
-          description: "NP_FEES name"
-          required: optional
-          usage: "Np Fees"
-          reference: null
         list:
           ID:
             description: "Identifier for NP_FEES"

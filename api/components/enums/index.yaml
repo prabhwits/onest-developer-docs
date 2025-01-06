@@ -91,10 +91,6 @@ confirm:
               - code: APPLICATION_STARTED
                 name: Name of the fulfillment status	
                 reference: <PR/Issue/Discussion Links md format text>
-            name:
-              - code: Application Started
-                description: Name of the fulfillment status		
-                reference: <PR/Issue/Discussion Links md format text>
 #       quote:
 #         breakup:
 #           $ref: "./title_type.yaml#/breakup"
@@ -118,10 +114,6 @@ on_confirm:
             code:
               - code: APPLICATION_STARTED
                 name: Name of the fulfillment status	
-                reference: <PR/Issue/Discussion Links md format text>
-            name:
-              - code: Application Started
-                description: Name of the fulfillment status		
                 reference: <PR/Issue/Discussion Links md format text>
   #     quote:
   #       breakup:

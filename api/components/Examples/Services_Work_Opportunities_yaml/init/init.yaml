@@ -27,13 +27,11 @@ value:
           tags:
           - descriptor:
               code: NP_FEES
-              name: "Np Fees"
             list:
               - code: ID
                 value: "1"
           - descriptor:
               code: NP_FEES
-              name: "Np Fees"
             list:
               - code: ID
                 value: "2"
@@ -47,63 +45,33 @@ value:
               age: "35"
               skills:
                 - code: Android
-                  name: Android
                 - code: AWS
-                  name: AWS
               languages:
                 - code: en
-                  name: english
                 - code: ml
-                  name: Malayalam
                 - code: hi
-                  name: Hindi
               tags:
                 - descriptor:
                     code: EMP_DETAILS
-                    name: Employee Details
                   list:
                     - descriptor:
                         code: EXPECTED_SALARY
-                        name: Expected Salary
                       value: "1000000"
                     - descriptor:
                         code: TOTAL_EXPERIENCE
-                        name: Total Experience
                       value: "P4Y"
                 - descriptor:
                     code: DOCUMENTS
-                    name: Documents
                   list:
                     - descriptor:
                         code: DOC_TYPE
-                        name: Document Type
                       value: resume
                     - descriptor:
                         code: LINK
-                        name: Document Link
                       value: https://example.com/resume.pdf
                     - descriptor:
                         code: FILE_FORMAT
-                        name: File Format
                       value: pdf
             contact:
               phone: "9999999999"
               email: abc@abc.bc
-      # quote:
-      #   price:
-      #     currency: INR
-      #     value: "1100"
-      #   breakup:
-      #     - id: 0253719F295521CED39EC9C2F3C8DCDE
-      #       price:
-      #         currency: INR
-      #         value: "1100"
-      #       title: Fullstack Engineer
-      #       tags:
-      #         - descriptor:
-      #             code: TYPE
-      #           list:
-      #             - descriptor:
-      #                 code: TYPE
-      #               value: item
-      #   ttl: P1D

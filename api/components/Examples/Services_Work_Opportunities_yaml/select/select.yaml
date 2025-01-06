@@ -28,13 +28,11 @@ value:
           tags:
             - descriptor:
                 code: NP_FEES
-                name: "Np Fees"
               list:
                 - code: ID
                   value: "1"
             - descriptor:
                 code: NP_FEES
-                name: "Np Fees"
               list:
                 - code: ID
                   value: "2"

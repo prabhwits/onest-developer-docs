@@ -70,10 +70,7 @@ value:
                 value: "sale-amount"
               - descriptor:
                   code: "SETTLEMENT_TYPE"
-                value: "upi"
-              - descriptor:
-                  code: "UPI_ADDRESS"
-                value: "gft@oksbi"
+                value: "neft"
               - descriptor:
                   code: "SETTLEMENT_BANK_ACCOUNT_NO"
                 value: "XXXXXXXXXX"

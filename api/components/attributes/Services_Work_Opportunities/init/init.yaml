@@ -127,22 +127,12 @@ message:
                 required: mandatory
                 usage: "Android"
                 reference: null
-              name:
-                description: "The name of the skill."
-                required: mandatory
-                usage: "Android"
-                reference: null
             languages:
               parent: true
               code:
                 description: "The language code."
                 required: mandatory
                 usage: "en"
-                reference: null
-              name:
-                description: "The language name."
-                required: mandatory
-                usage: "English"
                 reference: null
           contact:
             phone:

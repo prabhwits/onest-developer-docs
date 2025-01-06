@@ -147,11 +147,6 @@ message:
             required: mandatory
             usage: "APPLICATION_IN_PROGRESS"
             reference: null
-          name:
-            description: Fulfillment state name
-            required: mandatory
-            usage: Application In Progress
-            reference: if any
         updated_at:
           description: Last state update timestamp
           required: mandatory

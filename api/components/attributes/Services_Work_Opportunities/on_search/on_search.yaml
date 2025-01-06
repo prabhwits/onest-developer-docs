@@ -115,22 +115,12 @@ message:
             usage: "L1"
             reference: null
           city:
-            name:
-              description: "city name"
-              required: mandatory
-              usage: "Pune"
-              reference: null
             code:
               description: "city code"
               required: mandatory
               usage: "std:020"
               reference: null
           state:
-            name:
-              description: "state name"
-              required: mandatory
-              usage: "Maharastra"
-              reference: null
             code:
               description: "state code"
               required: mandatory
@@ -231,22 +221,12 @@ message:
               usage: "Suite 302, International Business Park, New Delhi, India"
               reference: null
             state:
-              name:
-                description: "state name"
-                required: mandatory
-                usage: "Maharastra"
-                reference: null
               code:
                 description: "state code"
                 required: mandatory
                 usage: "MH"
                 reference: null
             city:
-              name:
-                description: "city name"
-                required: mandatory
-                usage: "Pune"
-                reference: null
               code:
                 description: "city code"
                 required: mandatory
