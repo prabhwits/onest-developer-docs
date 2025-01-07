@@ -101,7 +101,7 @@ message:
       fulfillment_ids:
         description: "The fulfillment IDs associated with the item."
         required: mandatory
-        usage: "1"
+        usage: "F1"
         reference: "if any"
       location_ids:
         description: "The location IDs associated with the item."
@@ -112,7 +112,7 @@ message:
       id:
         description: "The unique identifier of the fulfillment."
         required: mandatory
-        usage: "1"
+        usage: "F1"
         reference: "if any"
       type:
         description: "The type of fulfillment."

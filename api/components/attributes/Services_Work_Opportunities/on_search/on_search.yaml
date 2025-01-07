@@ -101,7 +101,7 @@ message:
           id:
             description: "fulfillment id"
             required: mandatory
-            usage: "1"
+            usage: "F1"
             reference: null
           type:
             description: "fulfillment type"
@@ -263,7 +263,7 @@ message:
           fulfillment_ids:
             - description: "fulfillment id"
               required: mandatory
-              usage: "1"
+              usage: "F1"
               reference: null
           price:
             currency:

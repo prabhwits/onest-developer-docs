@@ -23,7 +23,7 @@ value:
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
-            - "1"
+            - "F1"
           tags:
           - descriptor:
               code: NP_FEES
@@ -36,7 +36,7 @@ value:
               - code: ID
                 value: "2"
       fulfillments:
-        - id: "1"
+        - id: "F1"
           type: lead
           customer:
             person:
@@ -73,5 +73,5 @@ value:
                         code: FILE_FORMAT
                       value: pdf
             contact:
-              phone: "9999999999"
+              phone: "+91-1234567890"
               email: abc@abc.bc

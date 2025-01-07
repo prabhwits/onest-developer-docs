@@ -89,7 +89,7 @@ message:
       fulfillment_ids:
         description: Fulfillment ID associated with the item
         required: mandatory
-        usage: 1
+        usage: F1
         reference: if any
       xinput: 
         "'required'":

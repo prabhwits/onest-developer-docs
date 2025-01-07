@@ -28,11 +28,11 @@ value:
             images:
               - url: url of the image of the provider
           fulfillments:
-            - id: "1"
+            - id: "F1"
               type: lead
-            - id: "2"
+            - id: "F2"
               type: recruitment
-            - id: "3"
+            - id: "F3"
               type: lead & recruitment
           locations:
             - id: L1
@@ -85,9 +85,9 @@ value:
               location_ids:
                 - L2
               fulfillment_ids:
-                - "1"
-                - "2"
-                - "3"
+                - "F1"
+                - "F2"
+                - "F3"
               creator:
                 descriptor:
                   name: Marketplace Connector
@@ -112,18 +112,6 @@ value:
                   email: support@marketplace.com
                 tags:
                   - descriptor:
-                      code: JOB_PROVIDER_LOCATION
-                    list:
-                      - descriptor:
-                          code: ADDRESS
-                        value: Level 5, Trade Tower, Mumbai, Maharashtra, India
-                      - descriptor:
-                          code: STATE
-                        value: Mumbai
-                      - descriptor:
-                          code: CITY
-                        value: Maharashtra
-                  - descriptor:
                       code: TIMING
                     list:
                       - descriptor:
@@ -138,6 +126,9 @@ value:
                       - descriptor:
                           code: TIME_TO
                         value: "1800"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: TIMING
                     list:
@@ -153,8 +144,11 @@ value:
                       - descriptor:
                           code: TIME_TO
                         value: "1400"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_NAME
@@ -166,7 +160,7 @@ value:
                           code: MANDATORY_ELIGIBILITY
                         value: "false"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_NAME
@@ -174,8 +168,11 @@ value:
                       - descriptor:
                           code: MIN_PERCENTAGE
                         value: "60"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_LEVEL
@@ -187,7 +184,7 @@ value:
                           code: MANDATORY_ELIGIBILITY
                         value: "false"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_LEVEL
@@ -198,15 +195,6 @@ value:
                       - descriptor:
                           code: MANDATORY_ELIGIBILITY
                         value: "false"
-                  - descriptor:
-                      code: DOCUMENTS_REQUIRED
-                    list:
-                      - descriptor:
-                          code: DOCUMENT_NAME
-                        value: PAN_CARD
-                      - descriptor:
-                          code: MANDATORY_DOCUMENT
-                        value: "true"
                   - descriptor:
                       code: JOB_REQUIREMENTS
                     list:
@@ -220,10 +208,17 @@ value:
                           code: ADD_PROF_SKILL
                         value: dev-ops
                       - descriptor:
-                          code: ADD_PROF_SKILL
-                        value: >-
-                          You have 8+ years of engineering experience, predominantly in shipping
-                          user-facing production features
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
+                  - descriptor:
+                      code: DOC_REQUIREMENTS
+                    list:
+                      - descriptor:
+                          code: DOCUMENT_NAME
+                        value: PAN_CARD
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: JOB_RESPONSIBILITIES
                     list:
@@ -248,6 +243,9 @@ value:
                         value: >-
                           Mentor and train other team members on design techniques and coding
                           standards.
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: JOB_DETAILS
                     list:
@@ -261,9 +259,6 @@ value:
                           code: EMPLOYMENT_TYPE
                         value: full-time
                       - descriptor:
-                          code: WORKING_HOURS
-                        value: 1300-1700
-                      - descriptor:
                           code: JOB_ROLE
                         value: Fullstack Engineer
                       - descriptor:
@@ -272,6 +267,9 @@ value:
                       - descriptor:
                           code: GENDER
                         value: Male
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: SALARY_INFO
                     list:
@@ -281,6 +279,9 @@ value:
                       - descriptor:
                           code: GROSS_MAX
                         value: "1200000"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -300,11 +301,12 @@ value:
                         value: P1M,P2M,P3M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 50,25,25
+                      - code: MANDATORY_ELIGIBILITY
+                        value: "true"
                 price:
                   currency: INR
                   value: "1100.00"
                   maximum_value: "1200.0"
-
             - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
               category_ids:
                 - DevOps
@@ -343,9 +345,9 @@ value:
               location_ids:
                 - L1
               fulfillment_ids:
-                - "1"
-                - "2"
-                - "3"
+                - "F1"
+                - "F2"
+                - "F3"
               creator:
                 descriptor:
                   name: Global Trade Hub
@@ -366,7 +368,7 @@ value:
                 city:
                   code: NDL
                 contact:
-                  phone: +91-9988776655
+                  phone: +91-1234567890
                   email: info@globaltradehub.com
                 time:
                   label: enable
@@ -375,19 +377,6 @@ value:
                     start: "2023-01-03T13:23:10.171Z"
                     end: "2023-02-03T13:23:10.171Z"
                 tags:
-                  - descriptor:
-                      code: JOB_PROVIDER_LOCATION
-                    list:
-                      - descriptor:
-                          code: ADDRESS
-                        value: >-
-                          Suite 302, International Business Park, New Delhi, India
-                      - descriptor:
-                          code: STATE
-                        value: Delhi
-                      - descriptor:
-                          code: CITY
-                        value: New Delhi
                   - descriptor:
                       code: TIMING
                     list:
@@ -403,6 +392,9 @@ value:
                       - descriptor:
                           code: TIME_TO
                         value: "1800"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: TIMING
                     list:
@@ -418,8 +410,11 @@ value:
                       - descriptor:
                           code: TIME_TO
                         value: "1400"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_NAME
@@ -431,7 +426,7 @@ value:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_NAME
@@ -440,7 +435,7 @@ value:
                           code: MIN_PERCENTAGE
                         value: "60"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_LEVEL
@@ -452,7 +447,7 @@ value:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_LEVEL
@@ -464,21 +459,23 @@ value:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
                   - descriptor:
-                      code: DOCUMENTS_REQUIRED
-                    list:
-                      - descriptor:
-                          code: DOCUMENT_NAME
-                        value: AADHAAR_CARD
-                      - descriptor:
-                          code: MANDATORY_DOCUMENT
-                        value: "false"
-                  - descriptor:
                       code: JOB_REQUIREMENTS
                     list:
                       - descriptor:
                           code: REQ_EXPERIENCE
                         value: P2Y6M
-
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
+                  - descriptor:
+                      code: DOC_REQUIREMENTS
+                    list:
+                      - descriptor:
+                          code: DOCUMENT_NAME
+                        value: AADHAAR_CARD
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "false"
             - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
               category_ids:
                 - DevOps
@@ -517,9 +514,9 @@ value:
               location_ids:
                 - L1
               fulfillment_ids:
-                - "1"
-                - "2"
-                - "3"
+                - "F1"
+                - "F2"
+                - "F3"
               creator:
                 descriptor:
                   name: Marketplace Connector
@@ -550,18 +547,6 @@ value:
                     end: "2023-02-03T13:23:10.171Z"
                 tags:
                   - descriptor:
-                      code: JOB_PROVIDER_LOCATION
-                    list:
-                      - descriptor:
-                          code: ADDRESS
-                        value: Level 5, Trade Tower, Mumbai, Maharashtra, India
-                      - descriptor:
-                          code: STATE
-                        value: Mumbai
-                      - descriptor:
-                          code: CITY
-                        value: Maharashtra
-                  - descriptor:
                       code: TIMING
                     list:
                       - descriptor:
@@ -576,6 +561,9 @@ value:
                       - descriptor:
                           code: TIME_TO
                         value: "1800"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: TIMING
                     list:
@@ -591,8 +579,11 @@ value:
                       - descriptor:
                           code: TIME_TO
                         value: "1400"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_NAME
@@ -604,7 +595,7 @@ value:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_NAME
@@ -612,8 +603,11 @@ value:
                       - descriptor:
                           code: MIN_PERCENTAGE
                         value: "60"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_LEVEL
@@ -625,7 +619,7 @@ value:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
                   - descriptor:
-                      code: ACADEMIC_ELIGIBILITY
+                      code: ACADEMIC_QUALIFICATIONS
                     list:
                       - descriptor:
                           code: COURSE_LEVEL
@@ -636,24 +630,6 @@ value:
                       - descriptor:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
-                  - descriptor:
-                      code: DOCUMENTS_REQUIRED
-                    list:
-                      - descriptor:
-                          code: DOCUMENT_NAME
-                        value: AADHAAR_CARD
-                      - descriptor:
-                          code: MANDATORY_DOCUMENT
-                        value: "true"
-                  - descriptor:
-                      code: DOCUMENTS_REQUIRED
-                    list:
-                      - descriptor:
-                          code: DOCUMENT_NAME
-                        value: PAN_CARD
-                      - descriptor:
-                          code: MANDATORY_DOCUMENT
-                        value: "false"
                   - descriptor:
                       code: JOB_REQUIREMENTS
                     list:
@@ -667,10 +643,26 @@ value:
                           code: ADD_PROF_SKILL
                         value: dev-ops
                       - descriptor:
-                          code: ADD_PROF_SKILL
-                        value: >-
-                          You have 8+ years of engineering experience, predominantly in shipping
-                          user-facing production features
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
+                  - descriptor:
+                      code: DOC_REQUIREMENTS
+                    list:
+                      - descriptor:
+                          code: DOCUMENT_NAME
+                        value: AADHAAR_CARD
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
+                  - descriptor:
+                      code: DOC_REQUIREMENTS
+                    list:
+                      - descriptor:
+                          code: DOCUMENT_NAME
+                        value: PAN_CARD
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "false"
                   - descriptor:
                       code: JOB_RESPONSIBILITIES
                     list:
@@ -694,6 +686,9 @@ value:
                         value: >-
                           Mentor and train other team members on design techniques and coding
                           standards.
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: JOB_DETAILS
                     list:
@@ -715,6 +710,9 @@ value:
                       - descriptor:
                           code: GENDER
                         value: Male
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: SALARY_INFO
                     list:
@@ -740,6 +738,8 @@ value:
                         value: P1M,P3M,P10M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 25,25,50
+                      - code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -759,6 +759,8 @@ value:
                         value: P1M,P2M,P3M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 50,25,25
+                      - code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -778,7 +780,19 @@ value:
                         value: P1M,P3M,P10M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 25,25,50
+                      - code: MANDATORY_ELIGIBILITY
+                        value: "true"
                 price:
                   currency: INR
                   value: "1000.00"
                   maximum_value: "1500.0"
+          tags:
+            - descriptor:
+                code: PROVIDER_LOCATION
+              list:
+                - descriptor:
+                    code: ADDRESS
+                  value: Level 5, Trade Tower, Mumbai, Maharashtra, India
+                - descriptor:
+                    code: MANDATORY_ELIGIBILITY
+                  value: "true"

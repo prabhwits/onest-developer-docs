@@ -50,16 +50,16 @@ catalog:
           reference: <PR/Issue/Discussion Links md format text>
           list:
             $ref: "./tag.yaml#/JOB_DETAILS"
-        - code: ACADEMIC_ELIGIBILITY
-          description: ACADEMIC_ELIGIBILITY
+        - code: ACADEMIC_QUALIFICATIONS
+          description: ACADEMIC_QUALIFICATIONS
           reference: <PR/Issue/Discussion Links md format text>
           list:
-            $ref: "./tag.yaml#/ACADEMIC_ELIGIBILITY"
-        - code: DOCUMENTS_REQUIRED
-          description: DOCUMENTS_REQUIRED
+            $ref: "./tag.yaml#/ACADEMIC_QUALIFICATIONS"
+        - code: DOC_REQUIREMENTS
+          description: DOC_REQUIREMENTS
           reference: <PR/Issue/Discussion Links md format text>
           list:
-            $ref: "./tag.yaml#/DOCUMENTS_REQUIRED"
+            $ref: "./tag.yaml#/DOC_REQUIREMENTS"
         
         # - code: SERVICE_INFORMATION
         #   description: Information of the service (Required)

@@ -116,7 +116,7 @@ message:
       id:
         description: "Unique identifier for the fulfillment"
         required: mandatory
-        usage: "1"
+        usage: "F1"
         reference: if any
       type:
         description: "Type of fulfillment"
