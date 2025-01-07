@@ -190,13 +190,13 @@ message:
             usage: "35"
             reference: null
           skills:
-            code:
+            name:
               description: "The code of the skill."
               required: mandatory
               usage: "Android"
               reference: null
           languages:
-            code:
+            name:
               description: "The language code."
               required: mandatory
               usage: "en"

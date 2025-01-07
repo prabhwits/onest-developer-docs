@@ -28,7 +28,7 @@ value:
               code: JOB_DETAILS
             list:
               - descriptor:
-                  code: EMPLOYMENT_TYPE
+                  code: JOB_TYPE
                 value: full-time
       tags:
         - descriptor:

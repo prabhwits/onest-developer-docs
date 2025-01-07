@@ -1,25 +1,23 @@
 value:
   context:
     domain: ONDC:ONEST10
+    action: on_init
     version: 2.0.0
-    action: confirm
     bap_id: worker-hub.bap.io
     bap_uri: https://worker-hub.bap.io
     bpp_id: job-hub.bpp.io
     bpp_uri: https://job-hub.bpp.io
     transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
-    message_id: 481a01fc-4b45-4d49-9558-c6a7dfad8b75
+    message_id: 9f06d8ef-ac19-40a9-9d7b-37f2f1fdb836
     location:
       city:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-23T08:09:021Z"
+    timestamp: "2023-02-23T10:18:456Z"
     ttl: PT30S
   message:
     order:
-      id: "1677140405881"
-      status: Created
       provider:
         id: "1"
       items:
@@ -27,38 +25,16 @@ value:
           fulfillment_ids:
             - "F3"
           tags:
-          - descriptor:
-              code: NP_FEES
-            list:
-              - code: ID
-                value: "1"
-          - descriptor:
-              code: NP_FEES
-            list:
-              - code: ID
-                value: "2"
-      fulfillments:
-        - id: "F3"
-          type: "lead & recruitment"
-          state:
-            descriptor:
-              code: APPLICATION-STARTED
-            updated_at: "2023-02-23T08:09:021Z"
-          customer:
-            person:
-              name: Sanjay
-              gender: Male
-              age: "35"
-              skills:
-                - name: Android
-                - name: AWS
-              languages:
-                - name: en
-                - name: ml
-                - name: hi
-            contact:
-              phone: "+91-1234567890"
-              email: abc@abc.bc
+            - descriptor:
+                code: NP_FEES
+              list:
+                - code: ID
+                  value: "1"
+            - descriptor:
+                code: NP_FEES
+              list:
+                - code: ID
+                  value: "2"
       quote:
         price:
           currency: INR
@@ -77,12 +53,29 @@ value:
                       code: TYPE
                     value: item
         ttl: P1D
+      fulfillments:
+        - id: "F3"
+          type: "lead & recruitment"
+          state:
+            descriptor:
+              code: APPLICATION-STARTED
+          customer:
+            person:
+              name: Sanjay
+              gender: Male
+              age: "35"
+              skills:
+                - name: Android
+                - name: AWS
+              languages:
+                - name: en
+                - name: ml
+                - name: hi
+            contact:
+              phone: "+91-1234567890"
+              email: abc@abc.bc
       payments:
-        - params:
-            currency: "INR"
-            transaction_id: "3937"
-            amount: "1700.00"
-          status: "PAID"
+        - status: "NOT-PAID"
           type: "ON-ORDER"
           collected_by: "BAP"
           tags:
@@ -92,18 +85,6 @@ value:
                 - descriptor:
                     code: "SETTLEMENT_COUNTERPARTY"
                   value: "seller-app"
-                - descriptor:
-                    code: "SETTLEMENT_PHASE"
-                  value: "sale-amount"
-                - descriptor:
-                    code: "SETTLEMENT_TYPE"
-                  value: "neft"
-                - descriptor:
-                    code: "SETTLEMENT_BASIS"
-                  value: "lead & recruitment"
-                - descriptor:
-                    code: "SETTLEMENT_WINDOW"
-                  value: "P3M"
                 - descriptor:
                     code: "SETTLEMENT_BANK_ACCOUNT_NO"
                   value: "XXXXXXXXXX"

@@ -1,10 +1,10 @@
 intent:
   tags:
-    - code: EMPLOYMENT_TYPE
+    - code: JOB_TYPE
       description: Employment Type
       reference: <PR/Issue/Discussion Links md format text>
       list:
-        $ref: "./tag.yaml#/EMPLOYMENT_TYPE"
+        $ref: "./tag.yaml#/JOB_TYPE"
     # - code: CATALOG_FULL
     #   description: The format in which the buyer Np wants the catalog
     #   reference: <PR/Issue/Discussion Links md format text>
@@ -18,11 +18,11 @@ intent:
 catalog:
   providers:
     tags:
-      - code: EMPLOYMENT_TYPE
+      - code: JOB_TYPE
         description: Employment Type
         reference: <PR/Issue/Discussion Links md format text>
         list:
-          $ref: "./tag.yaml#/EMPLOYMENT_TYPE"
+          $ref: "./tag.yaml#/JOB_TYPE"
       - code: NP_FEES
         description: NP_FEES
         reference: <PR/Issue/Discussion Links md format text>
@@ -40,11 +40,11 @@ catalog:
       #     $ref: "./tag.yaml#/serviceability"
     items:
       tags:
-        - code: EMPLOYMENT_TYPE
+        - code: JOB_TYPE
           description: Employment Type
           reference: <PR/Issue/Discussion Links md format text>
           list:
-            $ref: "./tag.yaml#/EMPLOYMENT_TYPE"
+            $ref: "./tag.yaml#/JOB_TYPE"
         - code: JOB_DETAILS
           description: JOB_DETAILS
           reference: <PR/Issue/Discussion Links md format text>
@@ -122,7 +122,7 @@ order:
         description: JOB_DETAILS
         reference: <PR/Issue/Discussion Links md format text>
         list:
-          $ref: "./tag.yaml#/EMPLOYMENT_TYPE"
+          $ref: "./tag.yaml#/JOB_TYPE"
   # quote:
   #   breakup:
   #     tags: &ref2

@@ -25,7 +25,7 @@ value:
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
-            - "F1"
+            - "F3"
             - C1
           time:
             range:
@@ -70,8 +70,8 @@ value:
                     value: item
         ttl: P1D
       fulfillments:
-        - id: "F1"
-          type: lead
+        - id: "F3"
+          type: "lead & recruitment"
           state:
             descriptor:
               code: CANCELLED
@@ -93,39 +93,44 @@ value:
                     code: VALUE
                   value: "-1100.00"
       payments:
-          url: "https://ondc.transaction.com/payment"
-          params:
-            currency: "INR"
-            transaction_id: "3937"
-            amount: "1700.00"
-          status: "PAID"
-          type: "ON-ORDER"
-          collected_by: "BAP"
-          tags:
-              descriptor:
-                code: "SETTLEMENT_DETAILS"
-              list:
-                - descriptor:
-                    code: "SETTLEMENT_COUNTERPARTY"
-                  value: "seller-app"
-                - descriptor:
-                    code: "SETTLEMENT_PHASE"
-                  value: "sale-amount"
-                - descriptor:
-                    code: "SETTLEMENT_TYPE"
-                  value: "neft"
-                - descriptor:
-                    code: "SETTLEMENT_BANK_ACCOUNT_NO"
-                  value: "XXXXXXXXXX"
-                - descriptor:
-                    code: "SETTLEMENT_IFSC_CODE"
-                  value: "XXXXXXXXX"
-                - descriptor:
-                    code: "BENEFICIARY_NAME"
-                  value: "xxxxx"
-                - descriptor:
-                    code: "BANK_NAME"
-                  value: "xxxx"
-                - descriptor:
-                    code: "BRANCH_NAME"
-                  value: "xxxx"
+         -  params:
+              currency: "INR"
+              transaction_id: "3937"
+              amount: "1700.00"
+            status: "PAID"
+            type: "ON-ORDER"
+            collected_by: "BAP"
+            tags:
+                descriptor:
+                  code: "SETTLEMENT_DETAILS"
+                list:
+                  - descriptor:
+                      code: "SETTLEMENT_COUNTERPARTY"
+                    value: "seller-app"
+                  - descriptor:
+                      code: "SETTLEMENT_PHASE"
+                    value: "sale-amount"
+                  - descriptor:
+                      code: "SETTLEMENT_TYPE"
+                    value: "neft"
+                  - descriptor:
+                      code: "SETTLEMENT_BASIS"
+                    value: "lead & recruitment"
+                  - descriptor:
+                      code: "SETTLEMENT_WINDOW"
+                    value: "P3M"
+                  - descriptor:
+                      code: "SETTLEMENT_BANK_ACCOUNT_NO"
+                    value: "XXXXXXXXXX"
+                  - descriptor:
+                      code: "SETTLEMENT_IFSC_CODE"
+                    value: "XXXXXXXXX"
+                  - descriptor:
+                      code: "BENEFICIARY_NAME"
+                    value: "xxxxx"
+                  - descriptor:
+                      code: "BANK_NAME"
+                    value: "xxxx"
+                  - descriptor:
+                      code: "BRANCH_NAME"
+                    value: "xxxx"

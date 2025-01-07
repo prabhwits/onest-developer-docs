@@ -25,7 +25,7 @@ value:
       items:
         - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
           fulfillment_ids:
-            - "F1"
+            - "F3"
           location_ids:
             - L1
           tags:
@@ -125,20 +125,14 @@ value:
                 code: JOB_DETAILS
               list:
                 - descriptor:
-                    code: INDUSTRY_TYPE
-                  value: IT Services & Consulting
-                - descriptor:
-                    code: DEPARTMENT
-                  value: Engineering - Software & QA
-                - descriptor:
-                    code: EMPLOYMENT_TYPE
+                    code: JOB_TYPE
                   value: Full-Time
                 - descriptor:
                     code: JOB_ROLE
                   value: DevOps Engineer
       fulfillments:
-        - id: "F1"
-          type: lead
+        - id: "F3"
+          type: "lead & recruitment"
       quote:
         price:
           currency: INR
@@ -158,8 +152,7 @@ value:
                     value: item
         ttl: P1D
       payments:
-          url: "https://ondc.transaction.com/payment"
-          params:
+        - params:
             currency: "INR"
             transaction_id: "3937"
             amount: "1700.00"
@@ -179,6 +172,12 @@ value:
                 - descriptor:
                     code: "SETTLEMENT_TYPE"
                   value: "neft"
+                - descriptor:
+                    code: "SETTLEMENT_BASIS"
+                  value: "lead & recruitment"
+                - descriptor:
+                    code: "SETTLEMENT_WINDOW"
+                  value: "P3M"
                 - descriptor:
                     code: "SETTLEMENT_BANK_ACCOUNT_NO"
                   value: "XXXXXXXXXX"

@@ -1,95 +1,86 @@
-### [Draft]Test Scenarios WO - 2.0
+### Updated Specifications  
 
-Logs to be submitted for applicable flows below by creating PR.
-
----
-
-#### Provider Setup
-
-- Provider NP Setup  
-  Define the catalog with 2 separate providers (2 locations per provider) and the following, as applicable:
-
-  - Supported fulfillment options: [TBD]
-  - Credentials
-
-- Category-Specific Catalog Setup  
-  Define a category-specific catalog with the same configuration as the general provider setup, but including the following:
-  - Category-specific variations:
-    - Jobs customizations: Base applications, variants, application availability, custom menu. Consider the following scenarios:
-      1. Lead application (price X)
-      2. Verified lead (price > 0)
-      3. Recruitment fees & Verified lead > 0
-    - Variants (along with base applications)
+| Version                         | ONEST10-2.0.1 |  
+| :------------------------------ | :----------------- |  
+| Updates in API Specs on dev doc | 7th January 2025 |  
 
 ---
 
-### Flow Details
-
-- **Flow 1: Catalog Pull & Refresh**
-
-  1. Seeker NP initiates full catalog pull
-  2. Provider responds with full catalog
-  3. Seeker NP initiates catalog incremental refresh request
-  4. Provider NP responds with incremental catalog refresh response
-
-- **Flow 2: Application Selection & Fulfillment**
-
-  1. Seeker selects multiple applications (> 1 qty for each application) for applying
-  2. Seeker selects one application for applying
-  3. Provider NP provides all fulfillment slots (different fulfillment types)
-  4. Seeker selects different fulfillment type
-  5. Provider NP accepts and proceeds to submit
-  6. Application is confirmed
-  7. Seeker NP tracks live status of application
-  8. Unsolicited status updates for application until fulfilled
-
-- **Flow 3: Application Checkout & Status Tracking**
-
-  1. Seeker selects multiple applications (> 1 qty for each application) for checkout
-  2. Provider NP provides all fulfillment slots (different fulfillment types), some with tracking enabled
-  3. Provider NP provides details of application that is out of stock or for which the quantity requested isn't available
-  4. Seeker selects different fulfillment type
-  5. Seeker NP accepts and proceeds to checkout
-  6. Application is confirmed
-  7. Seeker NP tracks live status of application
-  8. Unsolicited status updates for application until fulfilled
-
-- **Flow 4: Application Cancellation (Seeker)**
-
-  1. Seeker NP cancels application before processing
-
-- **Flow 5: Application Cancellation (Provider)**
-
-  1. Provider NP cancels application due to seeker unavailability
-
-- **Flow 6: Application Cancellation & Return (Provider)**
-  1. Provider cancels one of the applications before processing
-  2. Seeker returns an application, which provider NP accepts with liquidation
-  3. Seeker cancels another application, which provider NP accepts with return of application
+#### Change Logs  
+##### BECKN:  
+- Added Creator object as per BECKN specifications.  
+- **Locations**: Job location will be defined, and Creator will represent the creator’s headquarter.  
+- **Creator Tags**: Added locations of the creator in the tags of the items.  
 
 ---
 
-### Catalog Rejection Flows (Optional)
+#### Updates  
 
-- **Flow 7: Catalog Rejection - Full Catalog**
-
-  1. Seeker app sends a search by city (full catalog) request
-  2. Provider app responds with catalog having errors at application/provider/BPP level
-  3. Seeker app responds with an ACK with minimum catalog processing time
-  4. Seeker app sends catalog rejection report
-
-- **Flow 8: Catalog Rejection - Rectification**
-
-  1. Provider app rectifies the issues as per the catalog rejection report and responds with a corrected catalog in the next pull
-  2. Seeker app responds with a successfully processed status
-
-- **Flow 9: Catalog Rejection - Incremental Search**
-  1. Seeker app sends an incremental search request
-  2. Provider app responds with incremental catalog having errors at application/provider/BPP level
-  3. Seeker app responds with an ACK with minimum catalog processing time
-  4. Seeker app sends catalog rejection report
+- **`on_search` IDs and Fulfillments**:  
+   - IDs align with fulfillments.
+- **Phone Number Formatting**:  
+   - All phone numbers should strictly be in a 10-digit format (e.g., `1234567890`). Remove country code `+91` in output.
+- **`JOB_PROVIDER_LOCATION` Adjustment**:  
+   - Moved to provider-level tags as `PROVIDER_LOCATION`. Only `address` will remain in this tag.  
+- **`MANDATORY_ELIGIBILITY`**:  
+   - Added `MANDATORY_ELIGIBILITY` as a required field in every tag, either `true` or `false`.  
+- **Renamed Tags**:  
+   - `DOCUMENTS_REQUIRED` is now `DOC_REQUIREMENTS`.
+- **Removed `WORKING_HOURS`**:  
+   - This field has been removed since it is already managed under `timing` tags.  
+- **Renamed `ACADEMIC_ELIGIBILITY`**:  
+   - This tag is now called `ACADEMIC_QUALIFICATIONS`.  
+- **Gender Preference**:  
+   - Added a `gender_preference` instead of `gender` field in `on_search`.  
+- **Locations in `on_search`**:  
+   - Locations now include an `area_code` field.
+- **Removed `INDUSTRY_TYPE` and `DEPARTMENT`**:  
+    - These fields have been removed from the catalog.
+- **EMPLOYMENT_TYPE Renamed to JOB_TYPE**:  
+    - `EMPLOYMENT_TYPE` will now be referred to as `JOB_TYPE`.
+- **SALARY_INFO Renamed to COMPENSATION**:  
+    - The `SALARY_INFO` field has been renamed to `COMPENSATION`, which will have `TYPE` (e.g., ctc/lpa), `MIN`, and `MAX` (range of salary).
+- **COMMERCIAL_NAME Values**:  
+    - `COMMERCIAL_NAME` will now have values derived from Fulfillments, such as `lead & recruitment`.
+- **Skills and Language by Name**:  
+    - Skills and languages will now be identified by their names instead of codes.
+- **Remove Expected Salary**:  
+    - The `expected salary` field will be removed.
+- **Customer Person Tags After `/init`**:  
+    - Customer Person tags should not be sent after `/init`.
+- **Quote Handling**:  
+    - The `quote` field will be removed from `/init` but will remain in every other call.
+- **Remove URL as Collected_by**:  
+    - The `url` will be removed as `collected_by` is already specified as BAP.
+- **Payments in Array Format**:  
+    - The `payments` field will now be an array instead of an object.
+- **Remove SETTLEMENT_PHASE and SETTLEMENT_TYPE from `/init`**:  
+    - These fields will no longer be part of the `on_init` action.
+- **Add SETTLEMENT_BASIS & SETTLEMENT_WINDOW in Confirm**:  
+    - These fields will be added in the `confirm` action.
+- **Unsolicited `on_init` with `fulfillment.state` (APPLICATION_FILLED)**:  
+    - Will be sent without any xinput forms.
 
 ---
 
-For detailed flow steps and further assistance, please refer to the [official documentation](https://docs.google.com/spreadsheets/d/118ShHWOE5Lx3Wh_35VLadqltMjp_AkCIZW0prP9xbNY/edit?gid=0#gid=0).
+#### UI:  
+- Simplified Swagger UI texts (e.g., brd, prd).  
+- Added change log and log submission UI.  
 
+---
+
+#### Functional Changes:  
+- **Mandatory Eligibility**:  
+  - Ensured `MANDATORY_ELIGIBILITY` is included in all cases, even when `false`.  
+- **Timings**:  
+  - `application_validity_time` replaced by `provider/items/time/range` and removed.  
+  - `day_from`, `day_to`, `time_from`, and `time_to` tags added at the item level for detailed split timing representations.  
+- **Fulfillment Logic**:  
+  - Included `F3` as a fulfillment type for lead and recruitment purposes.  
+- **Item Status**:  
+  - `item/time/enable_disabled` reflects the current item status.  
+  - `range` shows application visibility, as per existing specifications.  
+- **Provider Tags**:  
+  - Moved `JOB_PROVIDER_LOCATION` to `PROVIDER_LOCATION` and retained only `address`.  
+- **Document Tags**:  
+  - Renamed `DOCUMENTS_REQUIRED` to `DOC_REQUIREMENTS` and relocated it below `JOB_REQUIREMENTS`.  

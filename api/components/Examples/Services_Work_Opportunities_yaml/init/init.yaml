@@ -23,7 +23,7 @@ value:
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
-            - "F1"
+            - "F3"
           tags:
           - descriptor:
               code: NP_FEES
@@ -36,27 +36,24 @@ value:
               - code: ID
                 value: "2"
       fulfillments:
-        - id: "F1"
-          type: lead
+        - id: "F3"
+          type: "lead & recruitment"
           customer:
             person:
               name: Sanjay
               gender: Male
               age: "35"
               skills:
-                - code: Android
-                - code: AWS
+                - name: Android
+                - name: AWS
               languages:
-                - code: en
-                - code: ml
-                - code: hi
+                - name: en
+                - name: ml
+                - name: hi
               tags:
                 - descriptor:
                     code: EMP_DETAILS
                   list:
-                    - descriptor:
-                        code: EXPECTED_SALARY
-                      value: "1000000"
                     - descriptor:
                         code: TOTAL_EXPERIENCE
                       value: "P4Y"

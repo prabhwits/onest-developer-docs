@@ -40,16 +40,22 @@ value:
                 code: std:020
               state:
                 code: MH
+              area_code:
+                code: 411002
             - id: L2
               city:
                 code: std:022
               state:
                 code: MH
+              area_code:
+                code: 400001
             - id: L3
               city:
                 code: std:0522
               state:
                 code: UP
+              area_code:
+                code: 226001
           items:
             - id: 0253719F295521CED39EC9C2F3C8DCDE
               category_ids:
@@ -259,13 +265,7 @@ value:
                       code: JOB_DETAILS
                     list:
                       - descriptor:
-                          code: INDUSTRY_TYPE
-                        value: IT Services & Consulting
-                      - descriptor:
-                          code: DEPARTMENT
-                        value: Engineering - Software & QA
-                      - descriptor:
-                          code: EMPLOYMENT_TYPE
+                          code: JOB_TYPE
                         value: full-time
                       - descriptor:
                           code: JOB_ROLE
@@ -274,20 +274,23 @@ value:
                           code: JOB_LEVEL
                         value: Mid-level
                       - descriptor:
-                          code: GENDER
+                          code: GENDER_PREFERENCE
                         value: Male
                       - descriptor:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
                   - descriptor:
-                      code: SALARY_INFO
+                      code: COMPENSATION
                     list:
                       - descriptor:
-                          code: GROSS_MIN
-                        value: "900000"
+                          code: "TYPE"
+                        value: "lpa"
                       - descriptor:
-                          code: GROSS_MAX
-                        value: "1200000"
+                          code: MIN
+                        value: "25"
+                      - descriptor:
+                          code: MAX
+                        value: "30"
                       - descriptor:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
@@ -559,13 +562,7 @@ value:
                       code: JOB_DETAILS
                     list:
                       - descriptor:
-                          code: INDUSTRY_TYPE
-                        value: IT Services & Consulting
-                      - descriptor:
-                          code: DEPARTMENT
-                        value: Engineering - Software & QA
-                      - descriptor:
-                          code: EMPLOYMENT_TYPE
+                          code: JOB_TYPE
                         value: full-time
                       - descriptor:
                           code: WORK_DURATION
@@ -577,20 +574,23 @@ value:
                           code: JOB_LEVEL
                         value: Mid-level
                       - descriptor:
-                          code: GENDER
+                          code: GENDER_PREFERENCE
                         value: Male
                       - descriptor:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
                   - descriptor:
-                      code: SALARY_INFO
+                      code: COMPENSATION
                     list:
                       - descriptor:
-                          code: GROSS_MIN
-                        value: "900000"
+                          code: "TYPE"
+                        value: "ctc"
                       - descriptor:
-                          code: GROSS_MAX
+                          code: MIN
                         value: "1200000"
+                      - descriptor:
+                          code: MAX
+                        value: "2000000"
                       - descriptor:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
@@ -881,13 +881,7 @@ value:
                       code: JOB_DETAILS
                     list:
                       - descriptor:
-                          code: INDUSTRY_TYPE
-                        value: IT Services & Consulting
-                      - descriptor:
-                          code: DEPARTMENT
-                        value: Engineering - Software & QA
-                      - descriptor:
-                          code: EMPLOYMENT_TYPE
+                          code: JOB_TYPE
                         value: full-time
                       - descriptor:
                           code: JOB_ROLE
@@ -896,17 +890,26 @@ value:
                           code: JOB_LEVEL
                         value: Entry-level
                       - descriptor:
-                          code: GENDER
+                          code: GENDER_PREFERENCE
                         value: Male
                       - descriptor:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
                   - descriptor:
-                      code: SALARY_INFO
+                      code: COMPENSATION
                     list:
                       - descriptor:
-                          code: AVERAGE
-                        value: "900000"
+                          code: "TYPE"
+                        value: "lpa"
+                      - descriptor:
+                          code: MIN
+                        value: "12"
+                      - descriptor:
+                          code: MAX
+                        value: "16"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -1003,16 +1006,22 @@ value:
                 code: std:020
               state:
                 code: MH
+              area_code:
+                code: 411002
             - id: L2
               city:
                 code: std:022
               state:
                 code: MH
+              area_code:
+                code: 400001
             - id: L3
               city:
                 code: std:0522
               state:
                 code: UP
+              area_code:
+                code: 226001
           items:
             - id: 0253719F295521CED39EC9C2F3C8DCDE
               category_ids:
@@ -1222,13 +1231,7 @@ value:
                       code: JOB_DETAILS
                     list:
                       - descriptor:
-                          code: INDUSTRY_TYPE
-                        value: IT Services & Consulting
-                      - descriptor:
-                          code: DEPARTMENT
-                        value: Engineering - Software & QA
-                      - descriptor:
-                          code: EMPLOYMENT_TYPE
+                          code: JOB_TYPE
                         value: full-time
                       - descriptor:
                           code: JOB_ROLE
@@ -1237,20 +1240,26 @@ value:
                           code: JOB_LEVEL
                         value: Mid-level
                       - descriptor:
-                          code: GENDER
+                          code: GENDER_PREFERENCE
                         value: Male
                       - descriptor:
                           code: MANDATORY_ELIGIBILITY
                         value: "true"
                   - descriptor:
-                      code: SALARY_INFO
+                      code: COMPENSATION
                     list:
                       - descriptor:
-                          code: GROSS_MIN
-                        value: "900000"
+                          code: "TYPE"
+                        value: "ctc"
                       - descriptor:
-                          code: GROSS_MAX
+                          code: MIN
                         value: "1200000"
+                      - descriptor:
+                          code: MAX
+                        value: "2000000"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -1514,13 +1523,7 @@ value:
                       code: JOB_DETAILS
                     list:
                       - descriptor:
-                          code: INDUSTRY_TYPE
-                        value: IT Services & Consulting
-                      - descriptor:
-                          code: DEPARTMENT
-                        value: Engineering - Software & QA
-                      - descriptor:
-                          code: EMPLOYMENT_TYPE
+                          code: JOB_TYPE
                         value: full-time
                       - descriptor:
                           code: WORK_DURATION
@@ -1532,17 +1535,23 @@ value:
                           code: JOB_LEVEL
                         value: Mid-level
                       - descriptor:
-                          code: GENDER
+                          code: GENDER_PREFERENCE
                         value: Male
                   - descriptor:
-                      code: SALARY_INFO
+                      code: COMPENSATION
                     list:
                       - descriptor:
-                          code: GROSS_MIN
-                        value: "900000"
+                          code: "TYPE"
+                        value: "lpa"
                       - descriptor:
-                          code: GROSS_MAX
-                        value: "1200000"
+                          code: MIN
+                        value: "19"
+                      - descriptor:
+                          code: MAX
+                        value: "20"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -1809,13 +1818,7 @@ value:
                       code: JOB_DETAILS
                     list:
                       - descriptor:
-                          code: INDUSTRY_TYPE
-                        value: IT Services & Consulting
-                      - descriptor:
-                          code: DEPARTMENT
-                        value: Engineering - Software & QA
-                      - descriptor:
-                          code: EMPLOYMENT_TYPE
+                          code: JOB_TYPE
                         value: full-time
                       - descriptor:
                           code: JOB_ROLE
@@ -1824,14 +1827,23 @@ value:
                           code: JOB_LEVEL
                         value: Entry-level
                       - descriptor:
-                          code: GENDER
+                          code: GENDER_PREFERENCE
                         value: Male
                   - descriptor:
-                      code: SALARY_INFO
+                      code: COMPENSATION
                     list:
                       - descriptor:
-                          code: AVERAGE
-                        value: "900000"
+                          code: "TYPE"
+                        value: "ctc"
+                      - descriptor:
+                          code: MIN
+                        value: "1800000"
+                      - descriptor:
+                          code: MAX
+                        value: "2000000"
+                      - descriptor:
+                          code: MANDATORY_ELIGIBILITY
+                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:

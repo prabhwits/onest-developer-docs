@@ -59,14 +59,17 @@ value:
                 - "F3"
               tags:
                 - descriptor:
-                    code: SALARY_INFO
+                      code: COMPENSATION
                   list:
                     - descriptor:
-                        code: GROSS_MIN
-                      value: "800000"
+                        code: "TYPE"
+                      value: "ctc"
                     - descriptor:
-                        code: GROSS_MAX
-                      value: "1000000"
+                        code: MIN
+                      value: "300000"
+                    - descriptor:
+                        code: MAX
+                      value: "600000"
                     - descriptor:
                         code: MANDATORY_ELIGIBILITY
                       value: "true"
@@ -97,13 +100,7 @@ value:
                     code: JOB_DETAILS
                   list:
                     - descriptor:
-                        code: INDUSTRY_TYPE
-                      value: Data Science
-                    - descriptor:
-                        code: DEPARTMENT
-                      value: Data Science & Analytics
-                    - descriptor:
-                        code: EMPLOYMENT_TYPE
+                        code: JOB_TYPE
                       value: full-time
                     - descriptor:
                         code: JOB_ROLE

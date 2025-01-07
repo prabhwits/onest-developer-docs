@@ -21,8 +21,8 @@ value:
       provider:
         id: "1"
       fulfillments:
-        - id: "F1"
-          type: "lead"
+        - id: "F3"
+          type: "lead & recruitment"
       items:
         - id: 0253719F295521CED39EC9C2F3C8DCDE
           tags:

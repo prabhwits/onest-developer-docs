@@ -2669,25 +2669,25 @@ x-tags:
       intent:
         item: &ref_5
           tags:
-            - code: EMPLOYMENT_TYPE
+            - code: JOB_TYPE
               description: Employment Type
               reference: <PR/Issue/Discussion Links md format text>
               list: &ref_3
                 - code: full-time
-                  description: Type of EMPLOYMENT_TYPE
+                  description: Type of JOB_TYPE
                   reference: <PR/Issue/Discussion Links md format text>
                 - code: part-time
-                  description: Type of EMPLOYMENT_TYPE
+                  description: Type of JOB_TYPE
                   reference: <PR/Issue/Discussion Links md format text>
                 - code: contractual
-                  description: Type of EMPLOYMENT_TYPE
+                  description: Type of JOB_TYPE
                   reference: <PR/Issue/Discussion Links md format text>
   on_search:
     message:
       catalog:
         providers:
           tags:
-            - code: EMPLOYMENT_TYPE
+            - code: JOB_TYPE
               description: Employment Type
               reference: <PR/Issue/Discussion Links md format text>
               list: *ref_3
@@ -2724,10 +2724,10 @@ x-tags:
               description: SALARY
               reference: <PR/Issue/Discussion Links md format text>
               list:
-                - code: GROSS_MIN
+                - code: MIN
                   description: Minimum gross pay
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: GROSS_MAX
+                - code: MAX
                   description: Maximum gross pay
                   reference: <PR/Issue/Discussion Links md format text>
                 - code: AVERAGE
@@ -2735,7 +2735,7 @@ x-tags:
                   reference: <PR/Issue/Discussion Links md format text>
           items:
             tags:
-              - code: EMPLOYMENT_TYPE
+              - code: JOB_TYPE
                 description: Employment Type
                 reference: <PR/Issue/Discussion Links md format text>
                 list: *ref_3
@@ -2743,20 +2743,6 @@ x-tags:
                 description: JOB_DETAILS
                 reference: <PR/Issue/Discussion Links md format text>
                 list:
-                  - code: INDUSTRY_TYPE
-                    description: >-
-                      Industry Type - ["Information Technology", "Healthcare",
-                      "Education", "Finance", "Manufacturing", "Retail",
-                      "Hospitality", "Transportation", "Real Estate", "Media &
-                      Entertainment"]
-                    reference: <PR/Issue/Discussion Links md format text>
-                  - code: DEPARTMENT
-                    description: >-
-                      Department - ["Engineering", "Sales", "Marketing", "Human
-                      Resources", "Operations", "Finance", "Legal", "Customer
-                      Support", "IT Support", "Research & Development",
-                      "Logistics", "Design"]
-                    reference: <PR/Issue/Discussion Links md format text>
                   - code: JOB_LEVEL
                     description: >-
                       Job Level - ["Administration", "Facility Management",
@@ -2893,7 +2879,7 @@ x-tags:
                       Consulting", "Public Sector Consulting", "Risk Management
                       and Compliance Consulting", "Organizational Consulting"]
                     reference: <PR/Issue/Discussion Links md format text>
-                  - code: GENDER
+                  - code: GENDER_PREFERENCE
                     description: Gender - ["Male", "Female", "Other"]
                     reference: <PR/Issue/Discussion Links md format text>
               - code: ACADEMIC_QUALIFICATIONS
@@ -2992,6 +2978,14 @@ x-tags:
                   reference: <PR/Issue/Discussion Links md format text>
                 - code: BRANCH_NAME
                   description: Branch name of the bank for the settlement
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: SETTLEMENT_BASIS
+                  description: >-
+                    Basis of the settlement, specifying the type of work (lead &
+                    recruitment)
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: SETTLEMENT_WINDOW
+                  description: Duration or time frame for the settlement window (e.g., P3M)
                   reference: <PR/Issue/Discussion Links md format text>
   on_init:
     message:
@@ -3196,16 +3190,22 @@ x-flows:
                           code: std:020
                         state:
                           code: MH
+                        area_code:
+                          code: 411002
                       - id: L2
                         city:
                           code: std:022
                         state:
                           code: MH
+                        area_code:
+                          code: 400001
                       - id: L3
                         city:
                           code: std:0522
                         state:
                           code: UP
+                        area_code:
+                          code: 226001
                     items:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
                         category_ids:
@@ -3417,13 +3417,7 @@ x-flows:
                                 code: JOB_DETAILS
                               list:
                                 - descriptor:
-                                    code: INDUSTRY_TYPE
-                                  value: IT Services & Consulting
-                                - descriptor:
-                                    code: DEPARTMENT
-                                  value: Engineering - Software & QA
-                                - descriptor:
-                                    code: EMPLOYMENT_TYPE
+                                    code: JOB_TYPE
                                   value: part-time
                                 - descriptor:
                                     code: JOB_ROLE
@@ -3432,23 +3426,26 @@ x-flows:
                                     code: JOB_LEVEL
                                   value: Mid-level
                                 - descriptor:
-                                    code: GENDER
+                                    code: GENDER_PREFERENCE
                                   value: Male
                                 - descriptor:
                                     code: MANDATORY_ELIGIBILITY
                                   value: 'true'
                             - descriptor:
-                                code: SALARY_INFO
-                              list:
-                                - descriptor:
-                                    code: GROSS_MIN
-                                  value: '900000'
-                                - descriptor:
-                                    code: GROSS_MAX
-                                  value: '1200000'
-                                - descriptor:
-                                    code: MANDATORY_ELIGIBILITY
-                                  value: 'true'
+                                code: COMPENSATION
+                                list:
+                                  - descriptor:
+                                      code: TYPE
+                                    value: ctc
+                                  - descriptor:
+                                      code: MIN
+                                    value: '900000'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '1200000'
+                                  - descriptor:
+                                      code: MANDATORY_ELIGIBILITY
+                                    value: 'true'
                             - descriptor:
                                 code: NP_FEES
                               list:
@@ -3730,13 +3727,7 @@ x-flows:
                                 code: JOB_DETAILS
                               list:
                                 - descriptor:
-                                    code: INDUSTRY_TYPE
-                                  value: IT Services & Consulting
-                                - descriptor:
-                                    code: DEPARTMENT
-                                  value: Engineering - Software & QA
-                                - descriptor:
-                                    code: EMPLOYMENT_TYPE
+                                    code: JOB_TYPE
                                   value: contractual
                                 - descriptor:
                                     code: WORK_DURATION
@@ -3748,20 +3739,23 @@ x-flows:
                                     code: JOB_LEVEL
                                   value: Mid-level
                                 - descriptor:
-                                    code: GENDER
+                                    code: GENDER_PREFERENCE
                                   value: Male
                                 - descriptor:
                                     code: MANDATORY_ELIGIBILITY
                                   value: 'true'
                             - descriptor:
-                                code: SALARY_INFO
+                                code: COMPENSATION
                               list:
                                 - descriptor:
-                                    code: GROSS_MIN
-                                  value: '900000'
+                                    code: TYPE
+                                  value: lpa
                                 - descriptor:
-                                    code: GROSS_MAX
-                                  value: '1200000'
+                                    code: MIN
+                                  value: '5'
+                                - descriptor:
+                                    code: MAX
+                                  value: '7'
                                 - descriptor:
                                     code: MANDATORY_ELIGIBILITY
                                   value: 'true'
@@ -4054,13 +4048,7 @@ x-flows:
                                 code: JOB_DETAILS
                               list:
                                 - descriptor:
-                                    code: INDUSTRY_TYPE
-                                  value: IT Services & Consulting
-                                - descriptor:
-                                    code: DEPARTMENT
-                                  value: Engineering - Software & QA
-                                - descriptor:
-                                    code: EMPLOYMENT_TYPE
+                                    code: JOB_TYPE
                                   value: full-time
                                 - descriptor:
                                     code: JOB_ROLE
@@ -4069,17 +4057,23 @@ x-flows:
                                     code: JOB_LEVEL
                                   value: Entry-level
                                 - descriptor:
-                                    code: GENDER
+                                    code: GENDER_PREFERENCE
                                   value: Male
                                 - descriptor:
                                     code: MANDATORY_ELIGIBILITY
                                   value: 'true'
                             - descriptor:
-                                code: SALARY_INFO
+                                code: COMPENSATION
                               list:
                                 - descriptor:
-                                    code: AVERAGE
-                                  value: '900000'
+                                    code: TYPE
+                                  value: ctc
+                                - descriptor:
+                                    code: MIN
+                                  value: '1200000'
+                                - descriptor:
+                                    code: MAX
+                                  value: '1500000'
                                 - descriptor:
                                     code: MANDATORY_ELIGIBILITY
                                   value: 'true'
@@ -4270,14 +4264,17 @@ x-flows:
                           - F3
                         tags:
                           - descriptor:
-                              code: SALARY_INFO
+                              code: COMPENSATION
                             list:
                               - descriptor:
-                                  code: GROSS_MIN
-                                value: '800000'
+                                  code: TYPE
+                                value: ctc
                               - descriptor:
-                                  code: GROSS_MAX
-                                value: '1000000'
+                                  code: MIN
+                                value: '300000'
+                              - descriptor:
+                                  code: MAX
+                                value: '600000'
                               - descriptor:
                                   code: MANDATORY_ELIGIBILITY
                                 value: 'true'
@@ -4308,13 +4305,7 @@ x-flows:
                               code: JOB_DETAILS
                             list:
                               - descriptor:
-                                  code: INDUSTRY_TYPE
-                                value: Data Science
-                              - descriptor:
-                                  code: DEPARTMENT
-                                value: Data Science & Analytics
-                              - descriptor:
-                                  code: EMPLOYMENT_TYPE
+                                  code: JOB_TYPE
                                 value: full-time
                               - descriptor:
                                   code: JOB_ROLE
@@ -4353,8 +4344,8 @@ x-flows:
                 provider:
                   id: '1'
                 fulfillments:
-                  - id: F1
-                    type: lead
+                  - id: F3
+                    type: lead & recruitment
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
                     tags:
@@ -4399,12 +4390,12 @@ x-flows:
                 provider:
                   id: '1'
                 fulfillments:
-                  - id: F1
-                    type: lead
+                  - id: F3
+                    type: lead & recruitment
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
                     fulfillment_ids:
-                      - F1
+                      - F3
                     tags:
                       - descriptor:
                           code: NP_FEES
@@ -4466,7 +4457,7 @@ x-flows:
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
                     fulfillment_ids:
-                      - F1
+                      - F3
                     tags:
                       - descriptor:
                           code: NP_FEES
@@ -4479,27 +4470,24 @@ x-flows:
                           - code: ID
                             value: '2'
                 fulfillments:
-                  - id: F1
-                    type: lead
+                  - id: F3
+                    type: lead & recruitment
                     customer:
                       person:
                         name: Sanjay
                         gender: Male
                         age: '35'
                         skills:
-                          - code: Android
-                          - code: AWS
+                          - name: Android
+                          - name: AWS
                         languages:
-                          - code: en
-                          - code: ml
-                          - code: hi
+                          - name: en
+                          - name: ml
+                          - name: hi
                         tags:
                           - descriptor:
                               code: EMP_DETAILS
                             list:
-                              - descriptor:
-                                  code: EXPECTED_SALARY
-                                value: '1000000'
                               - descriptor:
                                   code: TOTAL_EXPERIENCE
                                 value: P4Y
@@ -4550,7 +4538,7 @@ x-flows:
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
                     fulfillment_ids:
-                      - F1
+                      - F3
                     xinput:
                       required: true
                       head:
@@ -4596,39 +4584,50 @@ x-flows:
                                 code: TYPE
                               value: item
                   ttl: P1D
+                fulfillments:
+                  - id: F3
+                    type: lead & recruitment
+                    customer:
+                      person:
+                        name: Sanjay
+                        gender: Male
+                        age: '35'
+                        skills:
+                          - name: Android
+                          - name: AWS
+                        languages:
+                          - name: en
+                          - name: ml
+                          - name: hi
+                      contact:
+                        phone: +91-1234567890
+                        email: abc@abc.bc
                 payments:
-                  url: https://ondc.transaction.com/payment
-                  status: NOT-PAID
-                  type: ON-ORDER
-                  collected_by: BAP
-                  tags:
-                    descriptor:
-                      code: SETTLEMENT_DETAILS
-                    list:
-                      - descriptor:
-                          code: SETTLEMENT_COUNTERPARTY
-                        value: seller-app
-                      - descriptor:
-                          code: SETTLEMENT_PHASE
-                        value: sale-amount
-                      - descriptor:
-                          code: SETTLEMENT_TYPE
-                        value: neft
-                      - descriptor:
-                          code: SETTLEMENT_BANK_ACCOUNT_NO
-                        value: XXXXXXXXXX
-                      - descriptor:
-                          code: SETTLEMENT_IFSC_CODE
-                        value: XXXXXXXXX
-                      - descriptor:
-                          code: BENEFICIARY_NAME
-                        value: xxxxx
-                      - descriptor:
-                          code: BANK_NAME
-                        value: xxxx
-                      - descriptor:
-                          code: BRANCH_NAME
-                        value: xxxx
+                  - status: NOT-PAID
+                    type: ON-ORDER
+                    collected_by: BAP
+                    tags:
+                      descriptor:
+                        code: SETTLEMENT_DETAILS
+                      list:
+                        - descriptor:
+                            code: SETTLEMENT_COUNTERPARTY
+                          value: seller-app
+                        - descriptor:
+                            code: SETTLEMENT_BANK_ACCOUNT_NO
+                          value: XXXXXXXXXX
+                        - descriptor:
+                            code: SETTLEMENT_IFSC_CODE
+                          value: XXXXXXXXX
+                        - descriptor:
+                            code: BENEFICIARY_NAME
+                          value: xxxxx
+                        - descriptor:
+                            code: BANK_NAME
+                          value: xxxx
+                        - descriptor:
+                            code: BRANCH_NAME
+                          value: xxxx
       - summary: Description
         api: confirm
         description: BAP confirms user wants to submit the job application.
@@ -4660,7 +4659,7 @@ x-flows:
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
                     fulfillment_ids:
-                      - F1
+                      - F3
                     tags:
                       - descriptor:
                           code: NP_FEES
@@ -4673,8 +4672,8 @@ x-flows:
                           - code: ID
                             value: '2'
                 fulfillments:
-                  - id: F1
-                    type: lead
+                  - id: F3
+                    type: lead & recruitment
                     state:
                       descriptor:
                         code: APPLICATION-STARTED
@@ -4685,37 +4684,12 @@ x-flows:
                         gender: Male
                         age: '35'
                         skills:
-                          - code: Android
-                          - code: AWS
+                          - name: Android
+                          - name: AWS
                         languages:
-                          - code: en
-                          - code: ml
-                          - code: hi
-                        tags:
-                          - descriptor:
-                              code: CURRENT_EXPERIENCE
-                            list:
-                              - descriptor:
-                                  code: EXP_YEARS
-                                value: P4Y2M
-                              - descriptor:
-                                  code: CURRENT_COMPANY
-                                value: ABC tech
-                          - descriptor:
-                              code: SALARY_DETAILS
-                            list:
-                              - descriptor:
-                                  code: EXPECTED_SALARY
-                                value: '80000'
-                              - descriptor:
-                                  code: CURRENT_SALARY
-                                value: '50000'
-                          - descriptor:
-                              code: DOCUMENTS
-                            list:
-                              - descriptor:
-                                  code: RESUME
-                                value: https://link-to-the-document.com
+                          - name: en
+                          - name: ml
+                          - name: hi
                       contact:
                         phone: +91-1234567890
                         email: abc@abc.bc
@@ -4738,42 +4712,47 @@ x-flows:
                               value: item
                   ttl: P1D
                 payments:
-                  url: https://ondc.transaction.com/payment
-                  params:
-                    currency: INR
-                    transaction_id: '3937'
-                    amount: '1700.00'
-                  status: PAID
-                  type: ON-ORDER
-                  collected_by: BAP
-                  tags:
-                    descriptor:
-                      code: SETTLEMENT_DETAILS
-                    list:
-                      - descriptor:
-                          code: SETTLEMENT_COUNTERPARTY
-                        value: seller-app
-                      - descriptor:
-                          code: SETTLEMENT_PHASE
-                        value: sale-amount
-                      - descriptor:
-                          code: SETTLEMENT_TYPE
-                        value: neft
-                      - descriptor:
-                          code: SETTLEMENT_BANK_ACCOUNT_NO
-                        value: XXXXXXXXXX
-                      - descriptor:
-                          code: SETTLEMENT_IFSC_CODE
-                        value: XXXXXXXXX
-                      - descriptor:
-                          code: BENEFICIARY_NAME
-                        value: xxxxx
-                      - descriptor:
-                          code: BANK_NAME
-                        value: xxxx
-                      - descriptor:
-                          code: BRANCH_NAME
-                        value: xxxx
+                  - params:
+                      currency: INR
+                      transaction_id: '3937'
+                      amount: '1700.00'
+                    status: PAID
+                    type: ON-ORDER
+                    collected_by: BAP
+                    tags:
+                      descriptor:
+                        code: SETTLEMENT_DETAILS
+                      list:
+                        - descriptor:
+                            code: SETTLEMENT_COUNTERPARTY
+                          value: seller-app
+                        - descriptor:
+                            code: SETTLEMENT_PHASE
+                          value: sale-amount
+                        - descriptor:
+                            code: SETTLEMENT_TYPE
+                          value: neft
+                        - descriptor:
+                            code: SETTLEMENT_BASIS
+                          value: lead & recruitment
+                        - descriptor:
+                            code: SETTLEMENT_WINDOW
+                          value: P3M
+                        - descriptor:
+                            code: SETTLEMENT_BANK_ACCOUNT_NO
+                          value: XXXXXXXXXX
+                        - descriptor:
+                            code: SETTLEMENT_IFSC_CODE
+                          value: XXXXXXXXX
+                        - descriptor:
+                            code: BENEFICIARY_NAME
+                          value: xxxxx
+                        - descriptor:
+                            code: BANK_NAME
+                          value: xxxx
+                        - descriptor:
+                            code: BRANCH_NAME
+                          value: xxxx
       - summary: Description
         api: on_confirm
         description: BPP sends confirmation of submission of job application.
@@ -4806,7 +4785,7 @@ x-flows:
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
                     fulfillment_ids:
-                      - F1
+                      - F3
                     tags:
                       - descriptor:
                           code: NP_FEES
@@ -4901,13 +4880,7 @@ x-flows:
                           code: JOB_DETAILS
                         list:
                           - descriptor:
-                              code: INDUSTRY_TYPE
-                            value: IT Services & Consulting
-                          - descriptor:
-                              code: DEPARTMENT
-                            value: Engineering - Software & QA
-                          - descriptor:
-                              code: EMPLOYMENT_TYPE
+                              code: JOB_TYPE
                             value: Full-Time
                           - descriptor:
                               code: JOB_ROLE
@@ -4931,11 +4904,11 @@ x-flows:
                               value: item
                   ttl: P1D
                 fulfillments:
-                  - id: F1
-                    type: lead
+                  - id: F3
+                    type: lead & recruitment
                     state:
                       descriptor:
-                        code: APPLICATION-STARTED
+                        code: APPLICATION-FILLED
                       updated_at: '2023-02-23T08:20:06Z'
                     customer:
                       person:
@@ -4943,77 +4916,57 @@ x-flows:
                         gender: Male
                         age: '35'
                         skills:
-                          - code: Android
-                          - code: AWS
+                          - name: Android
+                          - name: AWS
                         languages:
-                          - code: en
-                          - code: ml
-                          - code: hi
-                        tags:
-                          - descriptor:
-                              code: CURRENT_EXPERIENCE
-                            list:
-                              - descriptor:
-                                  code: EXP_YEARS
-                                value: P4Y2M
-                              - descriptor:
-                                  code: CURRENT_COMPANY
-                                value: ABC tech
-                          - descriptor:
-                              code: SALARY_DETAILS
-                            list:
-                              - descriptor:
-                                  code: EXPECTED_SALARY
-                                value: '80000'
-                              - descriptor:
-                                  code: CURRENT_SALARY
-                                value: '50000'
-                          - descriptor:
-                              code: DOCUMENTS
-                            list:
-                              - descriptor:
-                                  code: RESUME
-                                value: https://link-to-the-document.com
+                          - name: en
+                          - name: ml
+                          - name: hi
                       contact:
                         phone: +91-1234567890
                         email: abc@abc.bc
                 payments:
-                  url: https://ondc.transaction.com/payment
-                  params:
-                    currency: INR
-                    transaction_id: '3937'
-                    amount: '1700.00'
-                  status: PAID
-                  type: ON-ORDER
-                  collected_by: BAP
-                  tags:
-                    descriptor:
-                      code: SETTLEMENT_DETAILS
-                    list:
-                      - descriptor:
-                          code: SETTLEMENT_COUNTERPARTY
-                        value: seller-app
-                      - descriptor:
-                          code: SETTLEMENT_PHASE
-                        value: sale-amount
-                      - descriptor:
-                          code: SETTLEMENT_TYPE
-                        value: neft
-                      - descriptor:
-                          code: SETTLEMENT_BANK_ACCOUNT_NO
-                        value: XXXXXXXXXX
-                      - descriptor:
-                          code: SETTLEMENT_IFSC_CODE
-                        value: XXXXXXXXX
-                      - descriptor:
-                          code: BENEFICIARY_NAME
-                        value: xxxxx
-                      - descriptor:
-                          code: BANK_NAME
-                        value: xxxx
-                      - descriptor:
-                          code: BRANCH_NAME
-                        value: xxxx
+                  - params:
+                      currency: INR
+                      transaction_id: '3937'
+                      amount: '1700.00'
+                    status: PAID
+                    type: ON-ORDER
+                    collected_by: BAP
+                    tags:
+                      descriptor:
+                        code: SETTLEMENT_DETAILS
+                      list:
+                        - descriptor:
+                            code: SETTLEMENT_COUNTERPARTY
+                          value: seller-app
+                        - descriptor:
+                            code: SETTLEMENT_PHASE
+                          value: sale-amount
+                        - descriptor:
+                            code: SETTLEMENT_TYPE
+                          value: neft
+                        - descriptor:
+                            code: SETTLEMENT_BASIS
+                          value: lead & recruitment
+                        - descriptor:
+                            code: SETTLEMENT_WINDOW
+                          value: P3M
+                        - descriptor:
+                            code: SETTLEMENT_BANK_ACCOUNT_NO
+                          value: XXXXXXXXXX
+                        - descriptor:
+                            code: SETTLEMENT_IFSC_CODE
+                          value: XXXXXXXXX
+                        - descriptor:
+                            code: BENEFICIARY_NAME
+                          value: xxxxx
+                        - descriptor:
+                            code: BANK_NAME
+                          value: xxxx
+                        - descriptor:
+                            code: BRANCH_NAME
+                          value: xxxx
       - summary: Description
         api: status
         description: BAP sends request for status of submission of job application.
@@ -5072,7 +5025,7 @@ x-flows:
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
                     fulfillment_ids:
-                      - F1
+                      - F3
                     time:
                       range:
                         start: '2023-01-03T13:23:01+00:00'
@@ -5176,12 +5129,6 @@ x-flows:
                           code: JOB_DETAILS
                         list:
                           - descriptor:
-                              code: INDUSTRY_TYPE
-                            value: IT Services & Consulting
-                          - descriptor:
-                              code: DEPARTMENT
-                            value: Engineering - Software & QA
-                          - descriptor:
                               code: CTC
                             value: 20,00,000
                           - descriptor:
@@ -5212,49 +5159,54 @@ x-flows:
                               value: item
                   ttl: P1D
                 fulfillments:
-                  - id: F1
-                    type: lead
+                  - id: F3
+                    type: lead & recruitment
                     state:
                       descriptor:
                         code: APPLICATION-IN-PROGRESS
                       updated_at: '2023-02-22T11:50:46.742Z'
                 payments:
-                  url: https://ondc.transaction.com/payment
-                  params:
-                    currency: INR
-                    transaction_id: '3937'
-                    amount: '1700.00'
-                  status: PAID
-                  type: ON-ORDER
-                  collected_by: BAP
-                  tags:
-                    descriptor:
-                      code: SETTLEMENT_DETAILS
-                    list:
-                      - descriptor:
-                          code: SETTLEMENT_COUNTERPARTY
-                        value: seller-app
-                      - descriptor:
-                          code: SETTLEMENT_PHASE
-                        value: sale-amount
-                      - descriptor:
-                          code: SETTLEMENT_TYPE
-                        value: neft
-                      - descriptor:
-                          code: SETTLEMENT_BANK_ACCOUNT_NO
-                        value: XXXXXXXXXX
-                      - descriptor:
-                          code: SETTLEMENT_IFSC_CODE
-                        value: XXXXXXXXX
-                      - descriptor:
-                          code: BENEFICIARY_NAME
-                        value: xxxxx
-                      - descriptor:
-                          code: BANK_NAME
-                        value: xxxx
-                      - descriptor:
-                          code: BRANCH_NAME
-                        value: xxxx
+                  - params:
+                      currency: INR
+                      transaction_id: '3937'
+                      amount: '1700.00'
+                    status: PAID
+                    type: ON-ORDER
+                    collected_by: BAP
+                    tags:
+                      descriptor:
+                        code: SETTLEMENT_DETAILS
+                      list:
+                        - descriptor:
+                            code: SETTLEMENT_COUNTERPARTY
+                          value: seller-app
+                        - descriptor:
+                            code: SETTLEMENT_PHASE
+                          value: sale-amount
+                        - descriptor:
+                            code: SETTLEMENT_TYPE
+                          value: neft
+                        - descriptor:
+                            code: SETTLEMENT_BASIS
+                          value: lead & recruitment
+                        - descriptor:
+                            code: SETTLEMENT_WINDOW
+                          value: P3M
+                        - descriptor:
+                            code: SETTLEMENT_BANK_ACCOUNT_NO
+                          value: XXXXXXXXXX
+                        - descriptor:
+                            code: SETTLEMENT_IFSC_CODE
+                          value: XXXXXXXXX
+                        - descriptor:
+                            code: BENEFICIARY_NAME
+                          value: xxxxx
+                        - descriptor:
+                            code: BANK_NAME
+                          value: xxxx
+                        - descriptor:
+                            code: BRANCH_NAME
+                          value: xxxx
       - summary: Description
         api: cancel
         description: BAP sends request for cancellation of job application.
@@ -5313,7 +5265,7 @@ x-flows:
                 items:
                   - id: 0253719F295521CED39EC9C2F3C8DCDE
                     fulfillment_ids:
-                      - F1
+                      - F3
                       - C1
                     time:
                       range:
@@ -5358,8 +5310,8 @@ x-flows:
                               value: item
                   ttl: P1D
                 fulfillments:
-                  - id: F1
-                    type: lead
+                  - id: F3
+                    type: lead & recruitment
                     state:
                       descriptor:
                         code: CANCELLED
@@ -5381,42 +5333,47 @@ x-flows:
                               code: VALUE
                             value: '-1100.00'
                 payments:
-                  url: https://ondc.transaction.com/payment
-                  params:
-                    currency: INR
-                    transaction_id: '3937'
-                    amount: '1700.00'
-                  status: PAID
-                  type: ON-ORDER
-                  collected_by: BAP
-                  tags:
-                    descriptor:
-                      code: SETTLEMENT_DETAILS
-                    list:
-                      - descriptor:
-                          code: SETTLEMENT_COUNTERPARTY
-                        value: seller-app
-                      - descriptor:
-                          code: SETTLEMENT_PHASE
-                        value: sale-amount
-                      - descriptor:
-                          code: SETTLEMENT_TYPE
-                        value: neft
-                      - descriptor:
-                          code: SETTLEMENT_BANK_ACCOUNT_NO
-                        value: XXXXXXXXXX
-                      - descriptor:
-                          code: SETTLEMENT_IFSC_CODE
-                        value: XXXXXXXXX
-                      - descriptor:
-                          code: BENEFICIARY_NAME
-                        value: xxxxx
-                      - descriptor:
-                          code: BANK_NAME
-                        value: xxxx
-                      - descriptor:
-                          code: BRANCH_NAME
-                        value: xxxx
+                  - params:
+                      currency: INR
+                      transaction_id: '3937'
+                      amount: '1700.00'
+                    status: PAID
+                    type: ON-ORDER
+                    collected_by: BAP
+                    tags:
+                      descriptor:
+                        code: SETTLEMENT_DETAILS
+                      list:
+                        - descriptor:
+                            code: SETTLEMENT_COUNTERPARTY
+                          value: seller-app
+                        - descriptor:
+                            code: SETTLEMENT_PHASE
+                          value: sale-amount
+                        - descriptor:
+                            code: SETTLEMENT_TYPE
+                          value: neft
+                        - descriptor:
+                            code: SETTLEMENT_BASIS
+                          value: lead & recruitment
+                        - descriptor:
+                            code: SETTLEMENT_WINDOW
+                          value: P3M
+                        - descriptor:
+                            code: SETTLEMENT_BANK_ACCOUNT_NO
+                          value: XXXXXXXXXX
+                        - descriptor:
+                            code: SETTLEMENT_IFSC_CODE
+                          value: XXXXXXXXX
+                        - descriptor:
+                            code: BENEFICIARY_NAME
+                          value: xxxxx
+                        - descriptor:
+                            code: BANK_NAME
+                          value: xxxx
+                        - descriptor:
+                            code: BRANCH_NAME
+                          value: xxxx
       - summary: Description
         api: update
         description: BAP confirms user wants to submit the job application.
@@ -5444,7 +5401,7 @@ x-flows:
               order:
                 id: '1677140405881'
                 fulfillments:
-                  - id: F1
+                  - id: F3
                     type: OFFER-ACCEPTED
                     contact:
                       phone: +91-1234567890
@@ -5482,7 +5439,7 @@ x-flows:
                   - id: >-
                       a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
                     fulfillment_ids:
-                      - F1
+                      - F3
                     location_ids:
                       - L1
                     tags:
@@ -5583,20 +5540,14 @@ x-flows:
                           code: JOB_DETAILS
                         list:
                           - descriptor:
-                              code: INDUSTRY_TYPE
-                            value: IT Services & Consulting
-                          - descriptor:
-                              code: DEPARTMENT
-                            value: Engineering - Software & QA
-                          - descriptor:
-                              code: EMPLOYMENT_TYPE
+                              code: JOB_TYPE
                             value: Full-Time
                           - descriptor:
                               code: JOB_ROLE
                             value: DevOps Engineer
                 fulfillments:
-                  - id: F1
-                    type: lead
+                  - id: F3
+                    type: lead & recruitment
                 quote:
                   price:
                     currency: INR
@@ -5616,42 +5567,47 @@ x-flows:
                               value: item
                   ttl: P1D
                 payments:
-                  url: https://ondc.transaction.com/payment
-                  params:
-                    currency: INR
-                    transaction_id: '3937'
-                    amount: '1700.00'
-                  status: PAID
-                  type: ON-ORDER
-                  collected_by: BAP
-                  tags:
-                    descriptor:
-                      code: SETTLEMENT_DETAILS
-                    list:
-                      - descriptor:
-                          code: SETTLEMENT_COUNTERPARTY
-                        value: seller-app
-                      - descriptor:
-                          code: SETTLEMENT_PHASE
-                        value: sale-amount
-                      - descriptor:
-                          code: SETTLEMENT_TYPE
-                        value: neft
-                      - descriptor:
-                          code: SETTLEMENT_BANK_ACCOUNT_NO
-                        value: XXXXXXXXXX
-                      - descriptor:
-                          code: SETTLEMENT_IFSC_CODE
-                        value: XXXXXXXXX
-                      - descriptor:
-                          code: BENEFICIARY_NAME
-                        value: xxxxx
-                      - descriptor:
-                          code: BANK_NAME
-                        value: xxxx
-                      - descriptor:
-                          code: BRANCH_NAME
-                        value: xxxx
+                  - params:
+                      currency: INR
+                      transaction_id: '3937'
+                      amount: '1700.00'
+                    status: PAID
+                    type: ON-ORDER
+                    collected_by: BAP
+                    tags:
+                      descriptor:
+                        code: SETTLEMENT_DETAILS
+                      list:
+                        - descriptor:
+                            code: SETTLEMENT_COUNTERPARTY
+                          value: seller-app
+                        - descriptor:
+                            code: SETTLEMENT_PHASE
+                          value: sale-amount
+                        - descriptor:
+                            code: SETTLEMENT_TYPE
+                          value: neft
+                        - descriptor:
+                            code: SETTLEMENT_BASIS
+                          value: lead & recruitment
+                        - descriptor:
+                            code: SETTLEMENT_WINDOW
+                          value: P3M
+                        - descriptor:
+                            code: SETTLEMENT_BANK_ACCOUNT_NO
+                          value: XXXXXXXXXX
+                        - descriptor:
+                            code: SETTLEMENT_IFSC_CODE
+                          value: XXXXXXXXX
+                        - descriptor:
+                            code: BENEFICIARY_NAME
+                          value: xxxxx
+                        - descriptor:
+                            code: BANK_NAME
+                          value: xxxx
+                        - descriptor:
+                            code: BRANCH_NAME
+                          value: xxxx
 x-examples:
   ONDC:ONEST10 - Work Opportunities:
     summary: ONDC:ONEST10 - Work Opportunities
@@ -5809,7 +5765,7 @@ x-examples:
                         - descriptor:
                             code: EFFECTIVE_DATE
                           value: '2023-02-22T11:20:10.122Z'
-          search - by industry type:
+          search - by category:
             value:
               context:
                 domain: ONDC:ONEST10
@@ -5886,7 +5842,7 @@ x-examples:
                           code: JOB_DETAILS
                         list:
                           - descriptor:
-                              code: EMPLOYMENT_TYPE
+                              code: JOB_TYPE
                             value: full-time
                   tags:
                     - descriptor:
@@ -5997,16 +5953,22 @@ x-examples:
                             code: std:020
                           state:
                             code: MH
+                          area_code:
+                            code: 411002
                         - id: L2
                           city:
                             code: std:022
                           state:
                             code: MH
+                          area_code:
+                            code: 400001
                         - id: L3
                           city:
                             code: std:0522
                           state:
                             code: UP
+                          area_code:
+                            code: 226001
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
@@ -6214,13 +6176,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - DevOps
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: part-time
                                   - descriptor:
                                       code: JOB_ROLE
@@ -6229,17 +6185,23 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Mid-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: GROSS_MIN
-                                    value: '15000'
+                                      code: TYPE
+                                    value: ctc
                                   - descriptor:
-                                      code: GROSS_MAX
-                                    value: '18000'
+                                      code: MIN
+                                    value: '1200000'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '2000000'
+                                  - descriptor:
+                                      code: MANDATORY_ELIGIBILITY
+                                    value: 'true'
                               - descriptor:
                                   code: NP_FEES
                                 list:
@@ -6506,13 +6468,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - DevOps
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: contractual
                                   - descriptor:
                                       code: WORK_DURATION
@@ -6524,17 +6480,23 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Mid-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: GROSS_MIN
-                                    value: '900000'
+                                      code: TYPE
+                                    value: lpa
                                   - descriptor:
-                                      code: GROSS_MAX
-                                    value: '1200000'
+                                      code: MIN
+                                    value: '1'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '20'
+                                  - descriptor:
+                                      code: MANDATORY_ELIGIBILITY
+                                    value: 'true'
                               - descriptor:
                                   code: NP_FEES
                                 list:
@@ -6823,13 +6785,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - DevOps
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: JOB_ROLE
@@ -6838,17 +6794,23 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Entry-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: AVERAGE
-                                    value: '900000'
+                                      code: TYPE
+                                    value: lpa
+                                  - descriptor:
+                                      code: MIN
+                                    value: '15'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '18'
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
@@ -6974,16 +6936,22 @@ x-examples:
                             code: std:020
                           state:
                             code: MH
+                          area_code:
+                            code: 411002
                         - id: L2
                           city:
                             code: std:022
                           state:
                             code: MH
+                          area_code:
+                            code: 400001
                         - id: L3
                           city:
                             code: std:0522
                           state:
                             code: UP
+                          area_code:
+                            code: 226001
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
@@ -7200,13 +7168,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - Software & QA
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: JOB_ROLE
@@ -7215,20 +7177,23 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Mid-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: GROSS_MIN
-                                    value: '900000'
+                                      code: TYPE
+                                    value: lpa
                                   - descriptor:
-                                      code: GROSS_MAX
-                                    value: '1200000'
+                                      code: MIN
+                                    value: '25'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '30'
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
@@ -7516,13 +7481,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - Software & QA
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: WORK_DURATION
@@ -7534,20 +7493,23 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Mid-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: GROSS_MIN
-                                    value: '900000'
+                                      code: TYPE
+                                    value: ctc
                                   - descriptor:
-                                      code: GROSS_MAX
+                                      code: MIN
                                     value: '1200000'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '2000000'
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
@@ -7845,13 +7807,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - Software & QA
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: JOB_ROLE
@@ -7860,17 +7816,26 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Entry-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: AVERAGE
-                                    value: '900000'
+                                      code: TYPE
+                                    value: lpa
+                                  - descriptor:
+                                      code: MIN
+                                    value: '12'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '16'
+                                  - descriptor:
+                                      code: MANDATORY_ELIGIBILITY
+                                    value: 'true'
                               - descriptor:
                                   code: NP_FEES
                                 list:
@@ -7967,16 +7932,22 @@ x-examples:
                             code: std:020
                           state:
                             code: MH
+                          area_code:
+                            code: 411002
                         - id: L2
                           city:
                             code: std:022
                           state:
                             code: MH
+                          area_code:
+                            code: 400001
                         - id: L3
                           city:
                             code: std:0522
                           state:
                             code: UP
+                          area_code:
+                            code: 226001
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
@@ -8193,13 +8164,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - Software & QA
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: JOB_ROLE
@@ -8208,20 +8173,26 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Mid-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: GROSS_MIN
-                                    value: '900000'
+                                      code: TYPE
+                                    value: ctc
                                   - descriptor:
-                                      code: GROSS_MAX
+                                      code: MIN
                                     value: '1200000'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '2000000'
+                                  - descriptor:
+                                      code: MANDATORY_ELIGIBILITY
+                                    value: 'true'
                               - descriptor:
                                   code: NP_FEES
                                 list:
@@ -8494,13 +8465,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - Software & QA
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: WORK_DURATION
@@ -8512,17 +8477,23 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Mid-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: GROSS_MIN
-                                    value: '900000'
+                                      code: TYPE
+                                    value: lpa
                                   - descriptor:
-                                      code: GROSS_MAX
-                                    value: '1200000'
+                                      code: MIN
+                                    value: '19'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '20'
+                                  - descriptor:
+                                      code: MANDATORY_ELIGIBILITY
+                                    value: 'true'
                               - descriptor:
                                   code: NP_FEES
                                 list:
@@ -8796,13 +8767,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - Software & QA
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: JOB_ROLE
@@ -8811,14 +8776,23 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Entry-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: AVERAGE
-                                    value: '900000'
+                                      code: TYPE
+                                    value: ctc
+                                  - descriptor:
+                                      code: MIN
+                                    value: '1800000'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '2000000'
+                                  - descriptor:
+                                      code: MANDATORY_ELIGIBILITY
+                                    value: 'true'
                               - descriptor:
                                   code: NP_FEES
                                 list:
@@ -8932,9 +8906,11 @@ x-examples:
                       locations:
                         - id: L1
                           city:
-                            code: std:020
+                            code: std:022
                           state:
                             code: MH
+                          area_code:
+                            code: 400001
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
@@ -9154,13 +9130,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - Software & QA
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: JOB_ROLE
@@ -9169,20 +9139,23 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Mid-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: GROSS_MIN
-                                    value: '900000'
+                                      code: TYPE
+                                    value: lpa
                                   - descriptor:
-                                      code: GROSS_MAX
-                                    value: '1200000'
+                                      code: MIN
+                                    value: '25'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '30'
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
@@ -9614,13 +9587,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - Software & QA
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: JOB_ROLE
@@ -9629,17 +9596,26 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Entry-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: AVERAGE
-                                    value: '900000'
+                                      code: TYPE
+                                    value: ctc
+                                  - descriptor:
+                                      code: MIN
+                                    value: '2500000'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '3000000'
+                                  - descriptor:
+                                      code: MANDATORY_ELIGIBILITY
+                                    value: 'true'
                               - descriptor:
                                   code: NP_FEES
                                 list:
@@ -9717,7 +9693,7 @@ x-examples:
                             - descriptor:
                                 code: MANDATORY_ELIGIBILITY
                               value: 'true'
-          on_search - by industry type:
+          on_search - by category:
             value:
               context:
                 domain: ONDC:ONEST10
@@ -9760,16 +9736,22 @@ x-examples:
                             code: std:020
                           state:
                             code: MH
+                          area_code:
+                            code: 411002
                         - id: L2
                           city:
                             code: std:022
                           state:
                             code: MH
+                          area_code:
+                            code: 400001
                         - id: L3
                           city:
                             code: std:0522
                           state:
                             code: UP
+                          area_code:
+                            code: 226001
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
@@ -9987,13 +9969,7 @@ x-examples:
                                 code: JOB_DETAILS
                               list:
                                 - descriptor:
-                                    code: INDUSTRY_TYPE
-                                  value: IT Services & Consulting
-                                - descriptor:
-                                    code: DEPARTMENT
-                                  value: Engineering - Software & QA
-                                - descriptor:
-                                    code: EMPLOYMENT_TYPE
+                                    code: JOB_TYPE
                                   value: full-time
                                 - descriptor:
                                     code: JOB_ROLE
@@ -10002,23 +9978,26 @@ x-examples:
                                     code: JOB_LEVEL
                                   value: Mid-level
                                 - descriptor:
-                                    code: GENDER
+                                    code: GENDER_PREFERENCE
                                   value: Male
                                 - descriptor:
                                     code: MANDATORY_ELIGIBILITY
                                   value: 'false'
                             - descriptor:
-                                code: SALARY_INFO
+                                code: COMPENSATION
                               list:
                                 - descriptor:
-                                    code: GROSS_MIN
-                                  value: '900000'
+                                    code: TYPE
+                                  value: lpa
                                 - descriptor:
-                                    code: GROSS_MAX
-                                  value: '1200000'
+                                    code: MIN
+                                  value: '25'
+                                - descriptor:
+                                    code: MAX
+                                  value: '30'
                                 - descriptor:
                                     code: MANDATORY_ELIGIBILITY
-                                  value: 'false'
+                                  value: 'true'
                             - descriptor:
                                 code: NP_FEES
                               list:
@@ -10306,13 +10285,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - Software & QA
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: WORK_DURATION
@@ -10324,20 +10297,26 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Mid-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: GROSS_MIN
-                                    value: '900000'
+                                      code: TYPE
+                                    value: ctc
                                   - descriptor:
-                                      code: GROSS_MAX
-                                    value: '1200000'
+                                      code: MIN
+                                    value: '2500000'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '3000000'
+                                  - descriptor:
+                                      code: MANDATORY_ELIGIBILITY
+                                    value: 'true'
                               - descriptor:
                                   code: NP_FEES
                                 list:
@@ -10632,13 +10611,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - Software & QA
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: JOB_ROLE
@@ -10647,17 +10620,26 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Entry-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: AVERAGE
-                                    value: '900000'
+                                      code: TYPE
+                                    value: lpa
+                                  - descriptor:
+                                      code: MIN
+                                    value: '25'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '30'
+                                  - descriptor:
+                                      code: MANDATORY_ELIGIBILITY
+                                    value: 'true'
                               - descriptor:
                                   code: NP_FEES
                                 list:
@@ -10778,16 +10760,22 @@ x-examples:
                             code: std:020
                           state:
                             code: MH
+                          area_code:
+                            code: 411002
                         - id: L2
                           city:
                             code: std:022
                           state:
                             code: MH
+                          area_code:
+                            code: 400001
                         - id: L3
                           city:
                             code: std:0522
                           state:
                             code: UP
+                          area_code:
+                            code: 226001
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
@@ -11006,13 +10994,7 @@ x-examples:
                                 code: JOB_DETAILS
                               list:
                                 - descriptor:
-                                    code: INDUSTRY_TYPE
-                                  value: IT Services & Consulting
-                                - descriptor:
-                                    code: DEPARTMENT
-                                  value: Engineering - Software & QA
-                                - descriptor:
-                                    code: EMPLOYMENT_TYPE
+                                    code: JOB_TYPE
                                   value: full-time
                                 - descriptor:
                                     code: JOB_ROLE
@@ -11021,20 +11003,23 @@ x-examples:
                                     code: JOB_LEVEL
                                   value: Mid-level
                                 - descriptor:
-                                    code: GENDER
+                                    code: GENDER_PREFERENCE
                                   value: Male
                                 - descriptor:
                                     code: MANDATORY_ELIGIBILITY
                                   value: 'true'
                             - descriptor:
-                                code: SALARY_INFO
+                                code: COMPENSATION
                               list:
                                 - descriptor:
-                                    code: GROSS_MIN
-                                  value: '900000'
+                                    code: TYPE
+                                  value: lpa
                                 - descriptor:
-                                    code: GROSS_MAX
-                                  value: '1200000'
+                                    code: MIN
+                                  value: '25'
+                                - descriptor:
+                                    code: MAX
+                                  value: '30'
                                 - descriptor:
                                     code: MANDATORY_ELIGIBILITY
                                   value: 'true'
@@ -11321,13 +11306,7 @@ x-examples:
                                 code: JOB_DETAILS
                               list:
                                 - descriptor:
-                                    code: INDUSTRY_TYPE
-                                  value: IT Services & Consulting
-                                - descriptor:
-                                    code: DEPARTMENT
-                                  value: Engineering - Software & QA
-                                - descriptor:
-                                    code: EMPLOYMENT_TYPE
+                                    code: JOB_TYPE
                                   value: full-time
                                 - descriptor:
                                     code: WORK_DURATION
@@ -11339,20 +11318,23 @@ x-examples:
                                     code: JOB_LEVEL
                                   value: Mid-level
                                 - descriptor:
-                                    code: GENDER
+                                    code: GENDER_PREFERENCE
                                   value: Male
                                 - descriptor:
                                     code: MANDATORY_ELIGIBILITY
                                   value: 'true'
                             - descriptor:
-                                code: SALARY_INFO
+                                code: COMPENSATION
                               list:
                                 - descriptor:
-                                    code: GROSS_MIN
-                                  value: '900000'
+                                    code: TYPE
+                                  value: ctc
                                 - descriptor:
-                                    code: GROSS_MAX
-                                  value: '1200000'
+                                    code: MIN
+                                  value: '2500000'
+                                - descriptor:
+                                    code: MAX
+                                  value: '3000000'
                                 - descriptor:
                                     code: MANDATORY_ELIGIBILITY
                                   value: 'true'
@@ -11650,13 +11632,7 @@ x-examples:
                                   code: JOB_DETAILS
                                 list:
                                   - descriptor:
-                                      code: INDUSTRY_TYPE
-                                    value: IT Services & Consulting
-                                  - descriptor:
-                                      code: DEPARTMENT
-                                    value: Engineering - Software & QA
-                                  - descriptor:
-                                      code: EMPLOYMENT_TYPE
+                                      code: JOB_TYPE
                                     value: full-time
                                   - descriptor:
                                       code: JOB_ROLE
@@ -11665,17 +11641,23 @@ x-examples:
                                       code: JOB_LEVEL
                                     value: Entry-level
                                   - descriptor:
-                                      code: GENDER
+                                      code: GENDER_PREFERENCE
                                     value: Male
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
                               - descriptor:
-                                  code: SALARY_INFO
+                                  code: COMPENSATION
                                 list:
                                   - descriptor:
-                                      code: AVERAGE
-                                    value: '900000'
+                                      code: TYPE
+                                    value: ctc
+                                  - descriptor:
+                                      code: MIN
+                                    value: '2500000'
+                                  - descriptor:
+                                      code: MAX
+                                    value: '3000000'
                                   - descriptor:
                                       code: MANDATORY_ELIGIBILITY
                                     value: 'true'
@@ -11789,7 +11771,7 @@ x-examples:
                   items:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       fulfillment_ids:
-                        - F1
+                        - F3
                       xinput:
                         required: true
                         head:
@@ -11835,39 +11817,153 @@ x-examples:
                                   code: TYPE
                                 value: item
                     ttl: P1D
+                  fulfillments:
+                    - id: F3
+                      type: lead & recruitment
+                      customer:
+                        person:
+                          name: Sanjay
+                          gender: Male
+                          age: '35'
+                          skills:
+                            - name: Android
+                            - name: AWS
+                          languages:
+                            - name: en
+                            - name: ml
+                            - name: hi
+                        contact:
+                          phone: +91-1234567890
+                          email: abc@abc.bc
                   payments:
-                    url: https://ondc.transaction.com/payment
-                    status: NOT-PAID
-                    type: ON-ORDER
-                    collected_by: BAP
-                    tags:
-                      descriptor:
-                        code: SETTLEMENT_DETAILS
-                      list:
+                    - status: NOT-PAID
+                      type: ON-ORDER
+                      collected_by: BAP
+                      tags:
+                        descriptor:
+                          code: SETTLEMENT_DETAILS
+                        list:
+                          - descriptor:
+                              code: SETTLEMENT_COUNTERPARTY
+                            value: seller-app
+                          - descriptor:
+                              code: SETTLEMENT_BANK_ACCOUNT_NO
+                            value: XXXXXXXXXX
+                          - descriptor:
+                              code: SETTLEMENT_IFSC_CODE
+                            value: XXXXXXXXX
+                          - descriptor:
+                              code: BENEFICIARY_NAME
+                            value: xxxxx
+                          - descriptor:
+                              code: BANK_NAME
+                            value: xxxx
+                          - descriptor:
+                              code: BRANCH_NAME
+                            value: xxxx
+          on_init - unsolicited2:
+            value:
+              context:
+                domain: ONDC:ONEST10
+                action: on_init
+                version: 2.0.0
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io
+                bpp_id: job-hub.bpp.io
+                bpp_uri: https://job-hub.bpp.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: 9f06d8ef-ac19-40a9-9d7b-37f2f1fdb836
+                location:
+                  city:
+                    code: std:080
+                  country:
+                    code: IND
+                timestamp: 2023-02-23T10:18:456Z
+                ttl: PT30S
+              message:
+                order:
+                  provider:
+                    id: '1'
+                  items:
+                    - id: 0253719F295521CED39EC9C2F3C8DCDE
+                      fulfillment_ids:
+                        - F3
+                      tags:
                         - descriptor:
-                            code: SETTLEMENT_COUNTERPARTY
-                          value: seller-app
+                            code: NP_FEES
+                          list:
+                            - code: ID
+                              value: '1'
                         - descriptor:
-                            code: SETTLEMENT_PHASE
-                          value: sale-amount
-                        - descriptor:
-                            code: SETTLEMENT_TYPE
-                          value: neft
-                        - descriptor:
-                            code: SETTLEMENT_BANK_ACCOUNT_NO
-                          value: XXXXXXXXXX
-                        - descriptor:
-                            code: SETTLEMENT_IFSC_CODE
-                          value: XXXXXXXXX
-                        - descriptor:
-                            code: BENEFICIARY_NAME
-                          value: xxxxx
-                        - descriptor:
-                            code: BANK_NAME
-                          value: xxxx
-                        - descriptor:
-                            code: BRANCH_NAME
-                          value: xxxx
+                            code: NP_FEES
+                          list:
+                            - code: ID
+                              value: '2'
+                  quote:
+                    price:
+                      currency: INR
+                      value: '1100'
+                    breakup:
+                      - id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '1100'
+                        title: Fullstack Engineer
+                        tags:
+                          - descriptor:
+                              code: TYPE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: item
+                    ttl: P1D
+                  fulfillments:
+                    - id: F3
+                      type: lead & recruitment
+                      state:
+                        descriptor:
+                          code: APPLICATION-STARTED
+                      customer:
+                        person:
+                          name: Sanjay
+                          gender: Male
+                          age: '35'
+                          skills:
+                            - name: Android
+                            - name: AWS
+                          languages:
+                            - name: en
+                            - name: ml
+                            - name: hi
+                        contact:
+                          phone: +91-1234567890
+                          email: abc@abc.bc
+                  payments:
+                    - status: NOT-PAID
+                      type: ON-ORDER
+                      collected_by: BAP
+                      tags:
+                        descriptor:
+                          code: SETTLEMENT_DETAILS
+                        list:
+                          - descriptor:
+                              code: SETTLEMENT_COUNTERPARTY
+                            value: seller-app
+                          - descriptor:
+                              code: SETTLEMENT_BANK_ACCOUNT_NO
+                            value: XXXXXXXXXX
+                          - descriptor:
+                              code: SETTLEMENT_IFSC_CODE
+                            value: XXXXXXXXX
+                          - descriptor:
+                              code: BENEFICIARY_NAME
+                            value: xxxxx
+                          - descriptor:
+                              code: BANK_NAME
+                            value: xxxx
+                          - descriptor:
+                              code: BRANCH_NAME
+                            value: xxxx
       on_confirm:
         examples:
           on_confirm: *ref_17
@@ -11876,8 +11972,8 @@ x-examples:
           on_update: *ref_18
       on_status:
         examples:
-          on_status - APPLICATION_IN_PROGRESS: *ref_19
-          on_status - APPLICATION_SUBMITTED:
+          on_status - APPLICATION-IN-PROGRESS: *ref_19
+          on_status - APPLICATION-SUBMITTED:
             value:
               context:
                 domain: ONDC:ONEST10
@@ -11905,7 +12001,7 @@ x-examples:
                   items:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       fulfillment_ids:
-                        - F1
+                        - F3
                       time:
                         range:
                           start: '2023-01-03T13:23:01+00:00'
@@ -12009,12 +12105,6 @@ x-examples:
                             code: JOB_DETAILS
                           list:
                             - descriptor:
-                                code: INDUSTRY_TYPE
-                              value: IT Services & Consulting
-                            - descriptor:
-                                code: DEPARTMENT
-                              value: Engineering - Software & QA
-                            - descriptor:
                                 code: CTC
                               value: 20,00,000
                             - descriptor:
@@ -12045,50 +12135,55 @@ x-examples:
                                 value: item
                     ttl: P1D
                   fulfillments:
-                    - id: F1
-                      type: lead
+                    - id: F3
+                      type: lead & recruitment
                       state:
                         descriptor:
                           code: APPLICATIO-SUBMITTED
                         updated_at: '2023-02-22T11:51:45.143Z'
                   payments:
-                    url: https://ondc.transaction.com/payment
-                    params:
-                      currency: INR
-                      transaction_id: '3937'
-                      amount: '1700.00'
-                    status: PAID
-                    type: ON-ORDER
-                    collected_by: BAP
-                    tags:
-                      descriptor:
-                        code: SETTLEMENT_DETAILS
-                      list:
-                        - descriptor:
-                            code: SETTLEMENT_COUNTERPARTY
-                          value: seller-app
-                        - descriptor:
-                            code: SETTLEMENT_PHASE
-                          value: sale-amount
-                        - descriptor:
-                            code: SETTLEMENT_TYPE
-                          value: neft
-                        - descriptor:
-                            code: SETTLEMENT_BANK_ACCOUNT_NO
-                          value: XXXXXXXXXX
-                        - descriptor:
-                            code: SETTLEMENT_IFSC_CODE
-                          value: XXXXXXXXX
-                        - descriptor:
-                            code: BENEFICIARY_NAME
-                          value: xxxxx
-                        - descriptor:
-                            code: BANK_NAME
-                          value: xxxx
-                        - descriptor:
-                            code: BRANCH_NAME
-                          value: xxxx
-          on_status - OFFER_EXTENDED:
+                    - params:
+                        currency: INR
+                        transaction_id: '3937'
+                        amount: '1700.00'
+                      status: PAID
+                      type: ON-ORDER
+                      collected_by: BAP
+                      tags:
+                        descriptor:
+                          code: SETTLEMENT_DETAILS
+                        list:
+                          - descriptor:
+                              code: SETTLEMENT_COUNTERPARTY
+                            value: seller-app
+                          - descriptor:
+                              code: SETTLEMENT_PHASE
+                            value: sale-amount
+                          - descriptor:
+                              code: SETTLEMENT_TYPE
+                            value: neft
+                          - descriptor:
+                              code: SETTLEMENT_BASIS
+                            value: lead & recruitment
+                          - descriptor:
+                              code: SETTLEMENT_WINDOW
+                            value: P3M
+                          - descriptor:
+                              code: SETTLEMENT_BANK_ACCOUNT_NO
+                            value: XXXXXXXXXX
+                          - descriptor:
+                              code: SETTLEMENT_IFSC_CODE
+                            value: XXXXXXXXX
+                          - descriptor:
+                              code: BENEFICIARY_NAME
+                            value: xxxxx
+                          - descriptor:
+                              code: BANK_NAME
+                            value: xxxx
+                          - descriptor:
+                              code: BRANCH_NAME
+                            value: xxxx
+          on_status - OFFER-EXTENDED:
             value:
               context:
                 domain: ONDC:ONEST10
@@ -12116,7 +12211,7 @@ x-examples:
                   items:
                     - id: 0253719F295521CED39EC9C2F3C8DCDE
                       fulfillment_ids:
-                        - F1
+                        - F3
                       time:
                         range:
                           start: '2023-01-03T13:23:01+00:00'
@@ -12220,12 +12315,6 @@ x-examples:
                             code: JOB_DETAILS
                           list:
                             - descriptor:
-                                code: INDUSTRY_TYPE
-                              value: IT Services & Consulting
-                            - descriptor:
-                                code: DEPARTMENT
-                              value: Engineering - Software & QA
-                            - descriptor:
                                 code: CTC
                               value: 20,00,000
                             - descriptor:
@@ -12256,49 +12345,54 @@ x-examples:
                                 value: item
                     ttl: P1D
                   fulfillments:
-                    - id: F1
-                      type: lead
+                    - id: F3
+                      type: lead & recruitment
                       state:
                         descriptor:
                           code: OFFER-EXTENDED
                         updated_at: '2023-02-22T11:52:00.243Z'
                   payments:
-                    url: https://ondc.transaction.com/payment
-                    params:
-                      currency: INR
-                      transaction_id: '3937'
-                      amount: '1700.00'
-                    status: PAID
-                    type: ON-ORDER
-                    collected_by: BAP
-                    tags:
-                      descriptor:
-                        code: SETTLEMENT_DETAILS
-                      list:
-                        - descriptor:
-                            code: SETTLEMENT_COUNTERPARTY
-                          value: seller-app
-                        - descriptor:
-                            code: SETTLEMENT_PHASE
-                          value: sale-amount
-                        - descriptor:
-                            code: SETTLEMENT_TYPE
-                          value: neft
-                        - descriptor:
-                            code: SETTLEMENT_BANK_ACCOUNT_NO
-                          value: XXXXXXXXXX
-                        - descriptor:
-                            code: SETTLEMENT_IFSC_CODE
-                          value: XXXXXXXXX
-                        - descriptor:
-                            code: BENEFICIARY_NAME
-                          value: xxxxx
-                        - descriptor:
-                            code: BANK_NAME
-                          value: xxxx
-                        - descriptor:
-                            code: BRANCH_NAME
-                          value: xxxx
+                    - params:
+                        currency: INR
+                        transaction_id: '3937'
+                        amount: '1700.00'
+                      status: PAID
+                      type: ON-ORDER
+                      collected_by: BAP
+                      tags:
+                        descriptor:
+                          code: SETTLEMENT_DETAILS
+                        list:
+                          - descriptor:
+                              code: SETTLEMENT_COUNTERPARTY
+                            value: seller-app
+                          - descriptor:
+                              code: SETTLEMENT_PHASE
+                            value: sale-amount
+                          - descriptor:
+                              code: SETTLEMENT_TYPE
+                            value: neft
+                          - descriptor:
+                              code: SETTLEMENT_BASIS
+                            value: lead & recruitment
+                          - descriptor:
+                              code: SETTLEMENT_WINDOW
+                            value: P3M
+                          - descriptor:
+                              code: SETTLEMENT_BANK_ACCOUNT_NO
+                            value: XXXXXXXXXX
+                          - descriptor:
+                              code: SETTLEMENT_IFSC_CODE
+                            value: XXXXXXXXX
+                          - descriptor:
+                              code: BENEFICIARY_NAME
+                            value: xxxxx
+                          - descriptor:
+                              code: BANK_NAME
+                            value: xxxx
+                          - descriptor:
+                              code: BRANCH_NAME
+                            value: xxxx
       on_cancel:
         examples:
           on_cancel: *ref_20
@@ -13054,14 +13148,14 @@ x-attributes:
                       reference: null
                     skills:
                       parent: true
-                      code:
+                      name:
                         description: The code of the skill.
                         required: mandatory
                         usage: Android
                         reference: null
                     languages:
                       parent: true
-                      code:
+                      name:
                         description: The language code.
                         required: mandatory
                         usage: en
@@ -13438,13 +13532,13 @@ x-attributes:
                     usage: '35'
                     reference: null
                   skills:
-                    code:
+                    name:
                       description: The code of the skill.
                       required: mandatory
                       usage: Android
                       reference: null
                   languages:
-                    code:
+                    name:
                       description: The language code.
                       required: mandatory
                       usage: en
@@ -13732,13 +13826,13 @@ x-attributes:
                     usage: '35'
                     reference: null
                   skills:
-                    code:
+                    name:
                       description: The code of the skill.
                       required: mandatory
                       usage: Android
                       reference: null
                   languages:
-                    code:
+                    name:
                       description: The language code.
                       required: mandatory
                       usage: en
