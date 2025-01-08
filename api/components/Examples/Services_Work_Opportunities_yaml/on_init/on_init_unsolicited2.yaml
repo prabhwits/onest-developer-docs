@@ -58,7 +58,7 @@ value:
           type: "lead & recruitment"
           state:
             descriptor:
-              code: APPLICATION-STARTED
+              code: APPLICATION-FILLED
           customer:
             person:
               name: Sanjay
