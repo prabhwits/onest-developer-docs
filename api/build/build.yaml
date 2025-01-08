@@ -3192,21 +3192,21 @@ x-flows:
                         state:
                           code: MH
                         area_code:
-                          code: 411002
+                          code: '411002'
                       - id: L2
                         city:
                           code: std:022
                         state:
                           code: MH
                         area_code:
-                          code: 400001
+                          code: '400001'
                       - id: L3
                         city:
                           code: std:0522
                         state:
                           code: UP
                         area_code:
-                          code: 226001
+                          code: '226001'
                     items:
                       - id: 0253719F295521CED39EC9C2F3C8DCDE
                         category_ids:
@@ -7078,21 +7078,21 @@ x-examples:
                           state:
                             code: MH
                           area_code:
-                            code: 411002
+                            code: '411002'
                         - id: L2
                           city:
                             code: std:022
                           state:
                             code: MH
                           area_code:
-                            code: 400001
+                            code: '400001'
                         - id: L3
                           city:
                             code: std:0522
                           state:
                             code: UP
                           area_code:
-                            code: 226001
+                            code: '226001'
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
@@ -8061,21 +8061,21 @@ x-examples:
                           state:
                             code: MH
                           area_code:
-                            code: 411002
+                            code: '411002'
                         - id: L2
                           city:
                             code: std:022
                           state:
                             code: MH
                           area_code:
-                            code: 400001
+                            code: '400001'
                         - id: L3
                           city:
                             code: std:0522
                           state:
                             code: UP
                           area_code:
-                            code: 226001
+                            code: '226001'
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
@@ -9057,21 +9057,21 @@ x-examples:
                           state:
                             code: MH
                           area_code:
-                            code: 411002
+                            code: '411002'
                         - id: L2
                           city:
                             code: std:022
                           state:
                             code: MH
                           area_code:
-                            code: 400001
+                            code: '400001'
                         - id: L3
                           city:
                             code: std:0522
                           state:
                             code: UP
                           area_code:
-                            code: 226001
+                            code: '226001'
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
@@ -10034,7 +10034,7 @@ x-examples:
                           state:
                             code: MH
                           area_code:
-                            code: 400001
+                            code: '400001'
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
@@ -10861,21 +10861,21 @@ x-examples:
                           state:
                             code: MH
                           area_code:
-                            code: 411002
+                            code: '411002'
                         - id: L2
                           city:
                             code: std:022
                           state:
                             code: MH
                           area_code:
-                            code: 400001
+                            code: '400001'
                         - id: L3
                           city:
                             code: std:0522
                           state:
                             code: UP
                           area_code:
-                            code: 226001
+                            code: '226001'
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
@@ -11885,21 +11885,21 @@ x-examples:
                           state:
                             code: MH
                           area_code:
-                            code: 411002
+                            code: '411002'
                         - id: L2
                           city:
                             code: std:022
                           state:
                             code: MH
                           area_code:
-                            code: 400001
+                            code: '400001'
                         - id: L3
                           city:
                             code: std:0522
                           state:
                             code: UP
                           area_code:
-                            code: 226001
+                            code: '226001'
                       items:
                         - id: 0253719F295521CED39EC9C2F3C8DCDE
                           category_ids:
