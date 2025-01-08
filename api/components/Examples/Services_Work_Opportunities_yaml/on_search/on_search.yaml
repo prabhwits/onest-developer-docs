@@ -405,14 +405,13 @@ value:
                         value: "1"
                       - descriptor:
                           code: "DAY_TO"
-                        value: "6"
+                        value: "5"
                       - descriptor:
                           code: "TIME_FROM"
                         value: "0900"
                       - descriptor:
                           code: "TIME_TO"
                         value: "1800"
-
                   - descriptor:
                       code: "TIMING"
                     list:
@@ -428,7 +427,6 @@ value:
                       - descriptor:
                           code: "TIME_TO"
                         value: "1400"
-
                   - descriptor:
                       code: "ACADEMIC_QUALIFICATIONS"
                     list:
@@ -677,14 +675,13 @@ value:
                         value: "1"
                       - descriptor:
                           code: "DAY_TO"
-                        value: "6"
+                        value: "5"
                       - descriptor:
                           code: "TIME_FROM"
                         value: "0900"
                       - descriptor:
                           code: "TIME_TO"
                         value: "1800"
-
                   - descriptor:
                       code: "TIMING"
                     list:
@@ -700,7 +697,6 @@ value:
                       - descriptor:
                           code: "TIME_TO"
                         value: "1400"
-
                   - descriptor:
                       code: ACADEMIC_QUALIFICATIONS
                     list:

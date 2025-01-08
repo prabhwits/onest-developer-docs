@@ -101,8 +101,6 @@ value:
               location_ids:
                 - L2
               fulfillment_ids:
-                - "F1"
-                - "F2"
                 - "F3"
               creator:
                 descriptor:
@@ -134,16 +132,13 @@ value:
                       value: "1"
                     - descriptor:
                         code: DAY_TO
-                      value: "6"
+                      value: "5"
                     - descriptor:
                         code: TIME_FROM
                       value: "0900"
                     - descriptor:
                         code: TIME_TO
                       value: "1800"
-                    - descriptor:
-                        code: MANDATORY_ELIGIBILITY
-                      value: "false"
                 - descriptor:
                     code: TIMING
                   list:
@@ -159,9 +154,6 @@ value:
                     - descriptor:
                         code: TIME_TO
                       value: "1400"
-                    - descriptor:
-                        code: MANDATORY_ELIGIBILITY
-                      value: "false"
                 - descriptor:
                     code: ACADEMIC_QUALIFICATIONS
                   list:
@@ -222,18 +214,12 @@ value:
                     - descriptor:
                         code: ADD_PROF_SKILL
                       value: dev-ops
-                    - descriptor:
-                        code: MANDATORY_ELIGIBILITY
-                      value: "false"
                 - descriptor:
                     code: DOC_REQUIREMENTS
                   list:
                     - descriptor:
                         code: DOCUMENT_NAME
                       value: PAN_CARD
-                    - descriptor:
-                        code: MANDATORY_ELIGIBILITY
-                      value: "true"
                 - descriptor:
                     code: JOB_RESPONSIBILITIES
                   list:
@@ -257,9 +243,6 @@ value:
                       value: >-
                         Mentor and train other team members on design techniques and coding
                         standards.
-                    - descriptor:
-                        code: MANDATORY_ELIGIBILITY
-                      value: "false"
                 - descriptor:
                     code: JOB_DETAILS
                   list:
@@ -276,9 +259,6 @@ value:
                     - descriptor:
                         code: GENDER_PREFERENCE
                       value: Male
-                    - descriptor:
-                        code: MANDATORY_ELIGIBILITY
-                      value: "false"
                 - descriptor:
                     code: COMPENSATION
                   list:
@@ -291,9 +271,6 @@ value:
                     - descriptor:
                         code: MAX
                       value: "30"
-                    - descriptor:
-                        code: MANDATORY_ELIGIBILITY
-                      value: "true"
                 - descriptor:
                     code: NP_FEES
                   list:
@@ -313,8 +290,7 @@ value:
                       value: P1M,P2M,P3M
                     - code: COMPENSATION_PERCENTAGE_SPLIT
                       value: 50,25,25
-                    - code: MANDATORY_ELIGIBILITY
-                      value: "false"
+                    
                 - descriptor:
                     code: NP_FEES
                   list:
@@ -334,8 +310,7 @@ value:
                       value: P1M,P3M,P10M
                     - code: COMPENSATION_PERCENTAGE_SPLIT
                       value: 25,25,50
-                    - code: MANDATORY_ELIGIBILITY
-                      value: "false"
+                    
                 - descriptor:
                     code: NP_FEES
                   list:
@@ -355,8 +330,6 @@ value:
                       value: P1M,P2M,P3M
                     - code: COMPENSATION_PERCENTAGE_SPLIT
                       value: 50,25,25
-                    - code: MANDATORY_ELIGIBILITY
-                      value: "false"
               price:
                 currency: INR
                 value: "1100.00"
@@ -401,7 +374,6 @@ value:
               fulfillment_ids:
                 - "F1"
                 - "F2"
-                - "F3"
               creator:
                 descriptor:
                   name: Global Trade Hub
@@ -439,16 +411,13 @@ value:
                         value: "1"
                       - descriptor:
                           code: DAY_TO
-                        value: "6"
+                        value: "5"
                       - descriptor:
                           code: TIME_FROM
                         value: "0900"
                       - descriptor:
                           code: TIME_TO
                         value: "1800"
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: TIMING
                     list:
@@ -464,9 +433,6 @@ value:
                       - descriptor:
                           code: TIME_TO
                         value: "1400"
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: ACADEMIC_QUALIFICATIONS
                     list:
@@ -527,18 +493,12 @@ value:
                       - descriptor:
                           code: ADD_PROF_SKILL
                         value: dev-ops
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: DOC_REQUIREMENTS
                     list:
                       - descriptor:
                           code: DOCUMENT_NAME
                         value: AADHAAR_CARD
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "false"
                   - descriptor:
                       code: JOB_RESPONSIBILITIES
                     list:
@@ -562,9 +522,6 @@ value:
                         value: >-
                           Mentor and train other team members on design techniques and coding
                           standards.
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: JOB_DETAILS
                     list:
@@ -583,9 +540,6 @@ value:
                       - descriptor:
                           code: GENDER_PREFERENCE
                         value: Male
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: COMPENSATION
                     list:
@@ -598,9 +552,6 @@ value:
                       - descriptor:
                           code: MAX
                         value: "3000000"
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -620,8 +571,6 @@ value:
                         value: P1M,P3M,P10M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 25,25,50
-                      - code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -641,8 +590,6 @@ value:
                         value: P1M,P2M,P3M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 50,25,25
-                      - code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -662,8 +609,6 @@ value:
                         value: P1M,P3M,P10M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 25,25,50
-                      - code: MANDATORY_ELIGIBILITY
-                        value: "true"
               price:
                 currency: INR
                 value: "1000.00"
@@ -708,7 +653,6 @@ value:
               fulfillment_ids:
                 - "F1"
                 - "F2"
-                - "F3"
               creator:
                 descriptor:
                   name: Marketplace Connector
@@ -746,16 +690,13 @@ value:
                         value: "1"
                       - descriptor:
                           code: DAY_TO
-                        value: "6"
+                        value: "5"
                       - descriptor:
                           code: TIME_FROM
                         value: "0900"
                       - descriptor:
                           code: TIME_TO
                         value: "1800"
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: TIMING
                     list:
@@ -771,9 +712,6 @@ value:
                       - descriptor:
                           code: TIME_TO
                         value: "1400"
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: ACADEMIC_QUALIFICATIONS
                     list:
@@ -834,27 +772,18 @@ value:
                       - descriptor:
                           code: ADD_PROF_SKILL
                         value: dev-ops
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: DOC_REQUIREMENTS
                     list:
                       - descriptor:
                           code: DOCUMENT_NAME
                         value: AADHAAR_CARD
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: DOC_REQUIREMENTS
                     list:
                       - descriptor:
                           code: DOCUMENT_NAME
                         value: PAN_CARD
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "false"
                   - descriptor:
                       code: JOB_RESPONSIBILITIES
                     list:
@@ -881,9 +810,6 @@ value:
                         value: >-
                           Mentor and train other team members on design
                           techniques and coding standards.
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: JOB_DETAILS
                     list:
@@ -899,9 +825,6 @@ value:
                       - descriptor:
                           code: GENDER_PREFERENCE
                         value: Male
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: COMPENSATION
                     list:
@@ -914,9 +837,6 @@ value:
                       - descriptor:
                           code: MAX
                         value: "30"
-                      - descriptor:
-                          code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -936,8 +856,6 @@ value:
                         value: P1M,P3M,P10M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 25,25,50
-                      - code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -957,8 +875,6 @@ value:
                         value: P1M,P2M,P3M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 50,25,25
-                      - code: MANDATORY_ELIGIBILITY
-                        value: "true"
                   - descriptor:
                       code: NP_FEES
                     list:
@@ -978,19 +894,14 @@ value:
                         value: P1M,P3M,P10M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 25,25,50
-                      - code: MANDATORY_ELIGIBILITY
-                        value: "true"
                 price:
                   currency: INR
                   value: "1000.00"
                   maximum_value: "1500.0"
           tags:
             - descriptor:
-                code: PROVIDER_LOCATION
+                code: LOCATION
               list:
                 - descriptor:
                     code: ADDRESS
                   value: Level 5, Trade Tower, Mumbai, Maharashtra, India
-                - descriptor:
-                    code: MANDATORY_ELIGIBILITY
-                  value: "true"
