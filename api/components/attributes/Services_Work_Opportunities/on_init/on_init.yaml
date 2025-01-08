@@ -162,37 +162,26 @@ message:
       breakup:
         item:
           id:
-            description: Breakup item ID
+            description: "The unique identifier for the quote breakup item."
             required: mandatory
-            usage: 0253719F295521CED39EC9C2F3C8DCDE
-            reference: if any
+            usage: "0253719F295521CED39EC9C2F3C8DCDE"
+            reference: null
           price:
             currency:
-              description: Currency of the item price
+              description: "The currency of the breakup price."
               required: mandatory
-              usage: INR
-              reference: if any
+              usage: "INR"
+              reference: null
             value:
-              description: Value of the item price
+              description: "The value of the breakup price."
               required: mandatory
-              usage: 1100
-              reference: if any
-        price:
-          currency:
-            description: Currency of the breakup price
+              usage: "1150"
+              reference: null
+          title:
+            description: "The title of the breakup item."
             required: mandatory
-            usage: INR
-            reference: if any
-          value:
-            description: Value of the breakup price
-            required: mandatory
-            usage: 1100
-            reference: if any
-        title:
-          description: Breakup title
-          required: mandatory
-          usage: Fullstack Engineer
-          reference: if any
+            usage: "item"
+            reference: null
     payments:
       parent: true
       url:

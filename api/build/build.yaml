@@ -4410,20 +4410,20 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1100'
+                    value: '1150'
                   breakup:
-                    - id: 0253719F295521CED39EC9C2F3C8DCDE
-                      price:
-                        currency: INR
-                        value: '1100'
-                      title: Fullstack Engineer
-                      tags:
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
+                    - item:
+                        id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '1100'
+                        title: item
+                    - item:
+                        id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                        price:
+                          currency: INR
+                          value: '50'
+                        title: tax
                   ttl: P1D
       - summary: Description
         api: init
@@ -4569,20 +4569,20 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1100'
+                    value: '1150'
                   breakup:
-                    - id: 0253719F295521CED39EC9C2F3C8DCDE
-                      price:
-                        currency: INR
-                        value: '1100'
-                      title: Fullstack Engineer
-                      tags:
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
+                    - item:
+                        id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '1100'
+                        title: item
+                    - item:
+                        id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                        price:
+                          currency: INR
+                          value: '50'
+                        title: tax
                   ttl: P1D
                 fulfillments:
                   - id: F3
@@ -4696,26 +4696,26 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1100'
+                    value: '1150'
                   breakup:
-                    - id: 0253719F295521CED39EC9C2F3C8DCDE
-                      price:
-                        currency: INR
-                        value: '1100'
-                      title: Fullstack Engineer
-                      tags:
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
+                    - item:
+                        id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '1100'
+                        title: item
+                    - item:
+                        id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                        price:
+                          currency: INR
+                          value: '50'
+                        title: tax
                   ttl: P1D
                 payments:
                   - params:
                       currency: INR
                       transaction_id: '3937'
-                      amount: '1700.00'
+                      amount: '1150.00'
                     status: PAID
                     type: ON-ORDER
                     collected_by: BAP
@@ -4888,20 +4888,20 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1700'
+                    value: '1150'
                   breakup:
-                    - id: 0253719F295521CED39EC9C2F3C8DCDE
-                      price:
-                        currency: INR
-                        value: '1100'
-                      title: Fullstack Engineer
-                      tags:
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
+                    - item:
+                        id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '1100'
+                        title: item
+                    - item:
+                        id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                        price:
+                          currency: INR
+                          value: '50'
+                        title: tax
                   ttl: P1D
                 fulfillments:
                   - id: F3
@@ -4929,7 +4929,7 @@ x-flows:
                   - params:
                       currency: INR
                       transaction_id: '3937'
-                      amount: '1700.00'
+                      amount: '1150.00'
                     status: PAID
                     type: ON-ORDER
                     collected_by: BAP
@@ -5143,20 +5143,20 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1100'
+                    value: '1150'
                   breakup:
-                    - id: 0253719F295521CED39EC9C2F3C8DCDE
-                      price:
-                        currency: INR
-                        value: '1100'
-                      title: Fullstack Engineer
-                      tags:
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
+                    - item:
+                        id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '1100'
+                        title: item
+                    - item:
+                        id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                        price:
+                          currency: INR
+                          value: '50'
+                        title: tax
                   ttl: P1D
                 fulfillments:
                   - id: F3
@@ -5169,7 +5169,7 @@ x-flows:
                   - params:
                       currency: INR
                       transaction_id: '3937'
-                      amount: '1700.00'
+                      amount: '1150.00'
                     status: PAID
                     type: ON-ORDER
                     collected_by: BAP
@@ -5296,18 +5296,18 @@ x-flows:
                     currency: INR
                     value: '0'
                   breakup:
-                    - id: 0253719F295521CED39EC9C2F3C8DCDE
-                      price:
-                        currency: INR
-                        value: '0'
-                      title: Fullstack Engineer
-                      tags:
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
+                    - item:
+                        id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '0'
+                        title: item
+                    - item:
+                        id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                        price:
+                          currency: INR
+                          value: '0'
+                        title: tax
                   ttl: P1D
                 fulfillments:
                   - id: F3
@@ -5332,11 +5332,26 @@ x-flows:
                           - descriptor:
                               code: VALUE
                             value: '-1100.00'
+                      - descriptor:
+                          code: QUOTE_TRAIL
+                        list:
+                          - descriptor:
+                              code: CURRENCY
+                            value: INR
+                          - descriptor:
+                              code: ID
+                            value: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                          - descriptor:
+                              code: TYPE
+                            value: TAX
+                          - descriptor:
+                              code: VALUE
+                            value: '-50.00'
                 payments:
                   - params:
                       currency: INR
                       transaction_id: '3937'
-                      amount: '1700.00'
+                      amount: '1150.00'
                     status: PAID
                     type: ON-ORDER
                     collected_by: BAP
@@ -5551,26 +5566,26 @@ x-flows:
                 quote:
                   price:
                     currency: INR
-                    value: '1100'
+                    value: '1150'
                   breakup:
-                    - id: 0253719F295521CED39EC9C2F3C8DCDE
-                      price:
-                        currency: INR
-                        value: '1100'
-                      title: Fullstack Engineer
-                      tags:
-                        - descriptor:
-                            code: TYPE
-                          list:
-                            - descriptor:
-                                code: TYPE
-                              value: item
+                    - item:
+                        id: 0253719F295521CED39EC9C2F3C8DCDE
+                        price:
+                          currency: INR
+                          value: '1100'
+                        title: item
+                    - item:
+                        id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                        price:
+                          currency: INR
+                          value: '50'
+                        title: tax
                   ttl: P1D
                 payments:
                   - params:
                       currency: INR
                       transaction_id: '3937'
-                      amount: '1700.00'
+                      amount: '1150.00'
                     status: PAID
                     type: ON-ORDER
                     collected_by: BAP
@@ -11802,20 +11817,20 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '1100'
+                      value: '1150'
                     breakup:
-                      - id: 0253719F295521CED39EC9C2F3C8DCDE
-                        price:
-                          currency: INR
-                          value: '1100'
-                        title: Fullstack Engineer
-                        tags:
-                          - descriptor:
-                              code: TYPE
-                            list:
-                              - descriptor:
-                                  code: TYPE
-                                value: item
+                      - item:
+                          id: 0253719F295521CED39EC9C2F3C8DCDE
+                          price:
+                            currency: INR
+                            value: '1100'
+                          title: item
+                      - item:
+                          id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                          price:
+                            currency: INR
+                            value: '50'
+                          title: tax
                     ttl: P1D
                   fulfillments:
                     - id: F3
@@ -11902,20 +11917,20 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '1100'
+                      value: '1150'
                     breakup:
-                      - id: 0253719F295521CED39EC9C2F3C8DCDE
-                        price:
-                          currency: INR
-                          value: '1100'
-                        title: Fullstack Engineer
-                        tags:
-                          - descriptor:
-                              code: TYPE
-                            list:
-                              - descriptor:
-                                  code: TYPE
-                                value: item
+                      - item:
+                          id: 0253719F295521CED39EC9C2F3C8DCDE
+                          price:
+                            currency: INR
+                            value: '1100'
+                          title: item
+                      - item:
+                          id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                          price:
+                            currency: INR
+                            value: '50'
+                          title: tax
                     ttl: P1D
                   fulfillments:
                     - id: F3
@@ -12119,20 +12134,20 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '1100'
+                      value: '1150'
                     breakup:
-                      - id: 0253719F295521CED39EC9C2F3C8DCDE
-                        price:
-                          currency: INR
-                          value: '1100'
-                        title: Fullstack Engineer
-                        tags:
-                          - descriptor:
-                              code: TYPE
-                            list:
-                              - descriptor:
-                                  code: TYPE
-                                value: item
+                      - item:
+                          id: 0253719F295521CED39EC9C2F3C8DCDE
+                          price:
+                            currency: INR
+                            value: '1100'
+                          title: item
+                      - item:
+                          id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                          price:
+                            currency: INR
+                            value: '50'
+                          title: tax
                     ttl: P1D
                   fulfillments:
                     - id: F3
@@ -12145,7 +12160,7 @@ x-examples:
                     - params:
                         currency: INR
                         transaction_id: '3937'
-                        amount: '1700.00'
+                        amount: '1150.00'
                       status: PAID
                       type: ON-ORDER
                       collected_by: BAP
@@ -12329,20 +12344,20 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '1100'
+                      value: '1150'
                     breakup:
-                      - id: 0253719F295521CED39EC9C2F3C8DCDE
-                        price:
-                          currency: INR
-                          value: '1100'
-                        title: Fullstack Engineer
-                        tags:
-                          - descriptor:
-                              code: TYPE
-                            list:
-                              - descriptor:
-                                  code: TYPE
-                                value: item
+                      - item:
+                          id: 0253719F295521CED39EC9C2F3C8DCDE
+                          price:
+                            currency: INR
+                            value: '1100'
+                          title: item
+                      - item:
+                          id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                          price:
+                            currency: INR
+                            value: '50'
+                          title: tax
                     ttl: P1D
                   fulfillments:
                     - id: F3
@@ -12355,7 +12370,7 @@ x-examples:
                     - params:
                         currency: INR
                         transaction_id: '3937'
-                        amount: '1700.00'
+                        amount: '1150.00'
                       status: PAID
                       type: ON-ORDER
                       collected_by: BAP
@@ -12996,30 +13011,31 @@ x-attributes:
                 value:
                   description: The value of the quoted price.
                   required: mandatory
-                  usage: '1400'
+                  usage: '1150'
                   reference: null
               breakup:
-                id:
-                  description: The unique identifier for the quote breakup item.
-                  required: mandatory
-                  usage: 0253719F295521CED39EC9C2F3C8DCDE
-                  reference: null
-                price:
-                  currency:
-                    description: The currency of the breakup price.
+                item:
+                  id:
+                    description: The unique identifier for the quote breakup item.
                     required: mandatory
-                    usage: INR
+                    usage: 0253719F295521CED39EC9C2F3C8DCDE
                     reference: null
-                  value:
-                    description: The value of the breakup price.
+                  price:
+                    currency:
+                      description: The currency of the breakup price.
+                      required: mandatory
+                      usage: INR
+                      reference: null
+                    value:
+                      description: The value of the breakup price.
+                      required: mandatory
+                      usage: '1150'
+                      reference: null
+                  title:
+                    description: The title of the breakup item.
                     required: mandatory
-                    usage: '1100'
+                    usage: item
                     reference: null
-                title:
-                  description: The title of the breakup item.
-                  required: mandatory
-                  usage: Fullstack Engineer
-                  reference: null
       init:
         parent: true
         context:
@@ -13338,37 +13354,26 @@ x-attributes:
               breakup:
                 item:
                   id:
-                    description: Breakup item ID
+                    description: The unique identifier for the quote breakup item.
                     required: mandatory
                     usage: 0253719F295521CED39EC9C2F3C8DCDE
-                    reference: if any
+                    reference: null
                   price:
                     currency:
-                      description: Currency of the item price
+                      description: The currency of the breakup price.
                       required: mandatory
                       usage: INR
-                      reference: if any
+                      reference: null
                     value:
-                      description: Value of the item price
+                      description: The value of the breakup price.
                       required: mandatory
-                      usage: 1100
-                      reference: if any
-                price:
-                  currency:
-                    description: Currency of the breakup price
+                      usage: '1150'
+                      reference: null
+                  title:
+                    description: The title of the breakup item.
                     required: mandatory
-                    usage: INR
-                    reference: if any
-                  value:
-                    description: Value of the breakup price
-                    required: mandatory
-                    usage: 1100
-                    reference: if any
-                title:
-                  description: Breakup title
-                  required: mandatory
-                  usage: Fullstack Engineer
-                  reference: if any
+                    usage: item
+                    reference: null
             payments:
               parent: true
               url:
@@ -13569,30 +13574,31 @@ x-attributes:
                 value:
                   description: The value of the quoted price.
                   required: mandatory
-                  usage: '1400'
+                  usage: '1150'
                   reference: null
               breakup:
-                id:
-                  description: The unique identifier for the quote breakup item.
-                  required: mandatory
-                  usage: 0253719F295521CED39EC9C2F3C8DCDE
-                  reference: null
-                price:
-                  currency:
-                    description: The currency of the breakup price.
+                item:
+                  id:
+                    description: The unique identifier for the quote breakup item.
                     required: mandatory
-                    usage: INR
+                    usage: 0253719F295521CED39EC9C2F3C8DCDE
                     reference: null
-                  value:
-                    description: The value of the breakup price.
+                  price:
+                    currency:
+                      description: The currency of the breakup price.
+                      required: mandatory
+                      usage: INR
+                      reference: null
+                    value:
+                      description: The value of the breakup price.
+                      required: mandatory
+                      usage: '1150'
+                      reference: null
+                  title:
+                    description: The title of the breakup item.
                     required: mandatory
-                    usage: '1100'
+                    usage: item
                     reference: null
-                title:
-                  description: The title of the breakup item.
-                  required: mandatory
-                  usage: Fullstack Engineer
-                  reference: null
             payments:
               url:
                 description: The URL for payment processing.
@@ -13613,7 +13619,7 @@ x-attributes:
                 amount:
                   description: The transaction amount.
                   required: mandatory
-                  usage: '1400.00'
+                  usage: '1150.00'
                   reference: null
               status:
                 description: The payment status.
@@ -13745,30 +13751,31 @@ x-attributes:
                 value:
                   description: The value of the quoted price.
                   required: mandatory
-                  usage: '1400'
+                  usage: '1150'
                   reference: null
               breakup:
-                id:
-                  description: The unique identifier for the quote breakup item.
-                  required: mandatory
-                  usage: 0253719F295521CED39EC9C2F3C8DCDE
-                  reference: null
-                price:
-                  currency:
-                    description: The currency of the breakup price.
+                item:
+                  id:
+                    description: The unique identifier for the quote breakup item.
                     required: mandatory
-                    usage: INR
+                    usage: 0253719F295521CED39EC9C2F3C8DCDE
                     reference: null
-                  value:
-                    description: The value of the breakup price.
+                  price:
+                    currency:
+                      description: The currency of the breakup price.
+                      required: mandatory
+                      usage: INR
+                      reference: null
+                    value:
+                      description: The value of the breakup price.
+                      required: mandatory
+                      usage: '1150'
+                      reference: null
+                  title:
+                    description: The title of the breakup item.
                     required: mandatory
-                    usage: '1100'
+                    usage: item
                     reference: null
-                title:
-                  description: The title of the breakup item.
-                  required: mandatory
-                  usage: Fullstack Engineer
-                  reference: null
               ttl:
                 description: The Time-to-Live (TTL) for the quoted order.
                 required: mandatory
@@ -13855,7 +13862,7 @@ x-attributes:
               amount:
                 description: The amount to be paid.
                 required: mandatory
-                usage: '1400'
+                usage: '1150'
                 reference: null
             payments:
               url:
@@ -13877,7 +13884,7 @@ x-attributes:
                 amount:
                   description: The transaction amount.
                   required: mandatory
-                  usage: '1400.00'
+                  usage: '1150.00'
                   reference: null
               status:
                 description: The payment status.
@@ -14089,28 +14096,28 @@ x-attributes:
               breakup:
                 item:
                   id:
-                    description: The unique identifier of the item in the quote breakup.
+                    description: The unique identifier for the quote breakup item.
                     required: mandatory
                     usage: 0253719F295521CED39EC9C2F3C8DCDE
                     reference: null
                   price:
                     currency:
-                      description: The currency of the item's price.
+                      description: The currency of the breakup price.
                       required: mandatory
                       usage: INR
                       reference: null
                     value:
-                      description: The value of the item's price.
+                      description: The value of the breakup price.
                       required: mandatory
-                      usage: '1100'
+                      usage: '1150'
                       reference: null
                   title:
-                    description: The title associated with the quote breakup.
+                    description: The title of the breakup item.
                     required: mandatory
-                    usage: Fullstack Engineer
+                    usage: item
                     reference: null
               ttl:
-                description: The time-to-live for the quoted price in ISO 8601 format.
+                description: The Time-to-Live (TTL) for the quoted order.
                 required: mandatory
                 usage: P1D
                 reference: null
@@ -14157,7 +14164,7 @@ x-attributes:
                 amount:
                   description: The transaction amount.
                   required: mandatory
-                  usage: '1400.00'
+                  usage: '1150.00'
                   reference: null
               status:
                 description: The payment status.
@@ -14362,27 +14369,33 @@ x-attributes:
                   usage: '0'
                   reference: if any
               breakup:
-                id:
-                  description: Unique identifier for the quote breakup
-                  required: mandatory
-                  usage: 0253719F295521CED39EC9C2F3C8DCDE
-                  reference: if any
-                price:
-                  currency:
-                    description: Currency for the quote breakup
+                item:
+                  id:
+                    description: The unique identifier for the quote breakup item.
                     required: mandatory
-                    usage: INR
-                    reference: if any
-                  value:
-                    description: Price value for the quote breakup
+                    usage: 0253719F295521CED39EC9C2F3C8DCDE
+                    reference: null
+                  price:
+                    currency:
+                      description: The currency of the breakup price.
+                      required: mandatory
+                      usage: INR
+                      reference: null
+                    value:
+                      description: The value of the breakup price.
+                      required: mandatory
+                      usage: '0'
+                      reference: null
+                  title:
+                    description: The title of the breakup item.
                     required: mandatory
-                    usage: '0'
-                    reference: if any
-                title:
-                  description: Title for the quote breakup
-                  required: mandatory
-                  usage: Fullstack Engineer
-                  reference: if any
+                    usage: item
+                    reference: null
+              ttl:
+                description: The Time-to-Live (TTL) for the quoted order.
+                required: mandatory
+                usage: P1D
+                reference: null
             fulfillments:
               id:
                 description: Unique identifier for the fulfillment
@@ -14421,7 +14434,7 @@ x-attributes:
                 amount:
                   description: The transaction amount.
                   required: mandatory
-                  usage: '1400.00'
+                  usage: '1150.00'
                   reference: null
               status:
                 description: The payment status.
@@ -14681,30 +14694,31 @@ x-attributes:
                 value:
                   description: The value of the quoted price.
                   required: mandatory
-                  usage: '1400'
+                  usage: '1150'
                   reference: null
               breakup:
-                id:
-                  description: The unique identifier for the quote breakup item.
-                  required: mandatory
-                  usage: 0253719F295521CED39EC9C2F3C8DCDE
-                  reference: null
-                price:
-                  currency:
-                    description: The currency of the breakup price.
+                item:
+                  id:
+                    description: The unique identifier for the quote breakup item.
                     required: mandatory
-                    usage: INR
+                    usage: 0253719F295521CED39EC9C2F3C8DCDE
                     reference: null
-                  value:
-                    description: The value of the breakup price.
+                  price:
+                    currency:
+                      description: The currency of the breakup price.
+                      required: mandatory
+                      usage: INR
+                      reference: null
+                    value:
+                      description: The value of the breakup price.
+                      required: mandatory
+                      usage: '1150'
+                      reference: null
+                  title:
+                    description: The title of the breakup item.
                     required: mandatory
-                    usage: '1100'
+                    usage: item
                     reference: null
-                title:
-                  description: The title of the breakup item.
-                  required: mandatory
-                  usage: Fullstack Engineer
-                  reference: null
               ttl:
                 description: The Time-to-Live (TTL) for the quoted order.
                 required: mandatory
@@ -14731,7 +14745,7 @@ x-attributes:
                 amount:
                   description: The transaction amount.
                   required: mandatory
-                  usage: '1400.00'
+                  usage: '1150.00'
                   reference: null
               status:
                 description: The payment status.

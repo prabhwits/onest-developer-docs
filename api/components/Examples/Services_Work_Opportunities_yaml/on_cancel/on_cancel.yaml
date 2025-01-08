@@ -56,19 +56,19 @@ value:
           currency: INR
           value: "0"
         breakup:
-          - id: 0253719F295521CED39EC9C2F3C8DCDE
-            price:
-              currency: INR
-              value: "0"
-            title: Fullstack Engineer
-            tags:
-              - descriptor:
-                  code: TYPE
-                list:
-                  - descriptor:
-                      code: TYPE
-                    value: item
-        ttl: P1D
+          - item:
+              id: "0253719F295521CED39EC9C2F3C8DCDE"
+              price:
+                  currency: INR
+                  value: "0"
+              title: "item"
+          - item:
+              id: "a3a7fe79-f26e-4698-ad0f-874e6b5db085"
+              price:
+                  currency: INR
+                  value: "0"
+              title: "tax"
+        ttl: "P1D"
       fulfillments:
         - id: "F3"
           type: "lead & recruitment"
@@ -92,11 +92,26 @@ value:
                 - descriptor:
                     code: VALUE
                   value: "-1100.00"
+            - descriptor:
+                code: QUOTE_TRAIL
+              list:
+                - descriptor:
+                    code: CURRENCY
+                  value: INR
+                - descriptor:
+                    code: ID
+                  value: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                - descriptor:
+                    code: TYPE
+                  value: TAX
+                - descriptor:
+                    code: VALUE
+                  value: "-50.00"
       payments:
          -  params:
               currency: "INR"
               transaction_id: "3937"
-              amount: "1700.00"
+              amount: "1150.00"
             status: "PAID"
             type: "ON-ORDER"
             collected_by: "BAP"
