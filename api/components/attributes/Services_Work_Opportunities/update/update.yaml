@@ -96,7 +96,7 @@ message:
       phone:
         description: "phone"
         required: mandatory
-        usage: "9999999999"
+        usage: "+91-1234567890"
         reference: "if any"
       email:
         description: "email"

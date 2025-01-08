@@ -4484,6 +4484,55 @@ x-flows:
                           - name: en
                           - name: ml
                           - name: hi
+                        creds:
+                          - id: D1
+                            descriptor:
+                              name: PAN_CARD
+                              short_desc: PAN Card information
+                              long_desc: Permanent Account Number
+                            url: https://example.com/pan_card.jpeg
+                            type: jpeg
+                          - id: D2
+                            descriptor:
+                              name: AADHAAR_CARD
+                              short_desc: Aadhaar Card information
+                              long_desc: Unique Identification Number
+                            url: https://example.com/aadhaar_card.jpeg
+                            type: pdf
+                          - id: D3
+                            descriptor:
+                              name: VOTER_ID
+                              short_desc: Voter ID information
+                              long_desc: Election Commission ID
+                            url: https://example.com/voter_id.jpeg
+                            type: jpeg
+                          - id: D4
+                            descriptor:
+                              name: PASSPORT
+                              short_desc: Passport information
+                              long_desc: International Travel Document
+                            url: https://example.com/passport.jpeg
+                            type: jpeg
+                          - id: D5
+                            descriptor:
+                              name: DRIVING_LICENSE
+                              short_desc: Driving License information
+                              long_desc: License to Drive
+                            url: https://example.com/driving_license.jpeg
+                            type: jpeg
+                          - id: D6
+                            descriptor:
+                              name: RESUME
+                              short_desc: >-
+                                Summary of qualifications, work experience, and
+                                education.
+                              long_desc: >-
+                                A comprehensive document showcasing an
+                                individual's career achievements, skills, work
+                                history, education, certifications, and
+                                professional experience.
+                            url: https://example.com/resume.pdf
+                            type: pdf
                         tags:
                           - descriptor:
                               code: EMP_DETAILS
@@ -4492,17 +4541,59 @@ x-flows:
                                   code: TOTAL_EXPERIENCE
                                 value: P4Y
                           - descriptor:
-                              code: DOCUMENTS
+                              code: DISABILITIES_AND_ACCOMMODATIONS
                             list:
                               - descriptor:
-                                  code: DOC_TYPE
-                                value: resume
+                                  code: KNOWN_DISABILITIES
+                                value: Visual Impairment
+                          - descriptor:
+                              code: ACADEMIC_QUALIFICATIONS
+                            list:
                               - descriptor:
-                                  code: LINK
-                                value: https://example.com/resume.pdf
+                                  code: COURSE_NAME
+                                value: Bachelor of Science in Computer Science
                               - descriptor:
-                                  code: FILE_FORMAT
-                                value: pdf
+                                  code: COLLEGE_NAME
+                                value: University of Technology
+                              - descriptor:
+                                  code: YEAR_OF_COMPLETION
+                                value: '2020'
+                          - descriptor:
+                              code: ONLINE_LEARNING_AND_SPECIALIZATIONS
+                            list:
+                              - descriptor:
+                                  code: CERTIFICATIONS
+                                value: Certified Cloud Practitioner
+                          - descriptor:
+                              code: WORK_EXPERIENCE
+                            list:
+                              - descriptor:
+                                  code: TOTAL_EXPERIENCE
+                                value: P3Y
+                          - descriptor:
+                              code: TECHNICAL_SKILLS
+                            list:
+                              - descriptor:
+                                  code: JOB_SPECIFIC_SKILLS
+                                value: Full Stack Development
+                          - descriptor:
+                              code: SKILLS
+                            list:
+                              - descriptor:
+                                  code: COMMUNICATION
+                                value: Excellent Verbal and Written Skills
+                              - descriptor:
+                                  code: LEADERSHIP
+                                value: Team Management and Decision Making
+                          - descriptor:
+                              code: DIGITAL_FOOTPRINT
+                            list:
+                              - descriptor:
+                                  code: LINKEDIN_PROFILE
+                                value: https://linkedin.com/in/example-profile
+                              - descriptor:
+                                  code: GITHUB_REPOSITORIES
+                                value: https://github.com/example-profile
                       contact:
                         phone: +91-1234567890
                         email: abc@abc.bc
@@ -4599,6 +4690,55 @@ x-flows:
                           - name: en
                           - name: ml
                           - name: hi
+                        creds:
+                          - id: D1
+                            descriptor:
+                              name: PAN_CARD
+                              short_desc: PAN Card information
+                              long_desc: Permanent Account Number
+                            url: https://example.com/pan_card.jpeg
+                            type: jpeg
+                          - id: D2
+                            descriptor:
+                              name: AADHAAR_CARD
+                              short_desc: Aadhaar Card information
+                              long_desc: Unique Identification Number
+                            url: https://example.com/aadhaar_card.jpeg
+                            type: pdf
+                          - id: D3
+                            descriptor:
+                              name: VOTER_ID
+                              short_desc: Voter ID information
+                              long_desc: Election Commission ID
+                            url: https://example.com/voter_id.jpeg
+                            type: jpeg
+                          - id: D4
+                            descriptor:
+                              name: PASSPORT
+                              short_desc: Passport information
+                              long_desc: International Travel Document
+                            url: https://example.com/passport.jpeg
+                            type: jpeg
+                          - id: D5
+                            descriptor:
+                              name: DRIVING_LICENSE
+                              short_desc: Driving License information
+                              long_desc: License to Drive
+                            url: https://example.com/driving_license.jpeg
+                            type: jpeg
+                          - id: D6
+                            descriptor:
+                              name: RESUME
+                              short_desc: >-
+                                Summary of qualifications, work experience, and
+                                education.
+                              long_desc: >-
+                                A comprehensive document showcasing an
+                                individual's career achievements, skills, work
+                                history, education, certifications, and
+                                professional experience.
+                            url: https://example.com/resume.pdf
+                            type: pdf
                       contact:
                         phone: +91-1234567890
                         email: abc@abc.bc
@@ -4690,6 +4830,55 @@ x-flows:
                           - name: en
                           - name: ml
                           - name: hi
+                        creds:
+                          - id: D1
+                            descriptor:
+                              name: PAN_CARD
+                              short_desc: PAN Card information
+                              long_desc: Permanent Account Number
+                            url: https://example.com/pan_card.jpeg
+                            type: jpeg
+                          - id: D2
+                            descriptor:
+                              name: AADHAAR_CARD
+                              short_desc: Aadhaar Card information
+                              long_desc: Unique Identification Number
+                            url: https://example.com/aadhaar_card.jpeg
+                            type: pdf
+                          - id: D3
+                            descriptor:
+                              name: VOTER_ID
+                              short_desc: Voter ID information
+                              long_desc: Election Commission ID
+                            url: https://example.com/voter_id.jpeg
+                            type: jpeg
+                          - id: D4
+                            descriptor:
+                              name: PASSPORT
+                              short_desc: Passport information
+                              long_desc: International Travel Document
+                            url: https://example.com/passport.jpeg
+                            type: jpeg
+                          - id: D5
+                            descriptor:
+                              name: DRIVING_LICENSE
+                              short_desc: Driving License information
+                              long_desc: License to Drive
+                            url: https://example.com/driving_license.jpeg
+                            type: jpeg
+                          - id: D6
+                            descriptor:
+                              name: RESUME
+                              short_desc: >-
+                                Summary of qualifications, work experience, and
+                                education.
+                              long_desc: >-
+                                A comprehensive document showcasing an
+                                individual's career achievements, skills, work
+                                history, education, certifications, and
+                                professional experience.
+                            url: https://example.com/resume.pdf
+                            type: pdf
                       contact:
                         phone: +91-1234567890
                         email: abc@abc.bc
@@ -4922,6 +5111,55 @@ x-flows:
                           - name: en
                           - name: ml
                           - name: hi
+                        creds:
+                          - id: D1
+                            descriptor:
+                              name: PAN_CARD
+                              short_desc: PAN Card information
+                              long_desc: Permanent Account Number
+                            url: https://example.com/pan_card.jpeg
+                            type: jpeg
+                          - id: D2
+                            descriptor:
+                              name: AADHAAR_CARD
+                              short_desc: Aadhaar Card information
+                              long_desc: Unique Identification Number
+                            url: https://example.com/aadhaar_card.jpeg
+                            type: pdf
+                          - id: D3
+                            descriptor:
+                              name: VOTER_ID
+                              short_desc: Voter ID information
+                              long_desc: Election Commission ID
+                            url: https://example.com/voter_id.jpeg
+                            type: jpeg
+                          - id: D4
+                            descriptor:
+                              name: PASSPORT
+                              short_desc: Passport information
+                              long_desc: International Travel Document
+                            url: https://example.com/passport.jpeg
+                            type: jpeg
+                          - id: D5
+                            descriptor:
+                              name: DRIVING_LICENSE
+                              short_desc: Driving License information
+                              long_desc: License to Drive
+                            url: https://example.com/driving_license.jpeg
+                            type: jpeg
+                          - id: D6
+                            descriptor:
+                              name: RESUME
+                              short_desc: >-
+                                Summary of qualifications, work experience, and
+                                education.
+                              long_desc: >-
+                                A comprehensive document showcasing an
+                                individual's career achievements, skills, work
+                                history, education, certifications, and
+                                professional experience.
+                            url: https://example.com/resume.pdf
+                            type: pdf
                       contact:
                         phone: +91-1234567890
                         email: abc@abc.bc
@@ -11847,6 +12085,55 @@ x-examples:
                             - name: en
                             - name: ml
                             - name: hi
+                          creds:
+                            - id: D1
+                              descriptor:
+                                name: PAN_CARD
+                                short_desc: PAN Card information
+                                long_desc: Permanent Account Number
+                              url: https://example.com/pan_card.jpeg
+                              type: jpeg
+                            - id: D2
+                              descriptor:
+                                name: AADHAAR_CARD
+                                short_desc: Aadhaar Card information
+                                long_desc: Unique Identification Number
+                              url: https://example.com/aadhaar_card.jpeg
+                              type: pdf
+                            - id: D3
+                              descriptor:
+                                name: VOTER_ID
+                                short_desc: Voter ID information
+                                long_desc: Election Commission ID
+                              url: https://example.com/voter_id.jpeg
+                              type: jpeg
+                            - id: D4
+                              descriptor:
+                                name: PASSPORT
+                                short_desc: Passport information
+                                long_desc: International Travel Document
+                              url: https://example.com/passport.jpeg
+                              type: jpeg
+                            - id: D5
+                              descriptor:
+                                name: DRIVING_LICENSE
+                                short_desc: Driving License information
+                                long_desc: License to Drive
+                              url: https://example.com/driving_license.jpeg
+                              type: jpeg
+                            - id: D6
+                              descriptor:
+                                name: RESUME
+                                short_desc: >-
+                                  Summary of qualifications, work experience,
+                                  and education.
+                                long_desc: >-
+                                  A comprehensive document showcasing an
+                                  individual's career achievements, skills, work
+                                  history, education, certifications, and
+                                  professional experience.
+                              url: https://example.com/resume.pdf
+                              type: pdf
                         contact:
                           phone: +91-1234567890
                           email: abc@abc.bc
@@ -11950,6 +12237,55 @@ x-examples:
                             - name: en
                             - name: ml
                             - name: hi
+                          creds:
+                            - id: D1
+                              descriptor:
+                                name: PAN_CARD
+                                short_desc: PAN Card information
+                                long_desc: Permanent Account Number
+                              url: https://example.com/pan_card.jpeg
+                              type: jpeg
+                            - id: D2
+                              descriptor:
+                                name: AADHAAR_CARD
+                                short_desc: Aadhaar Card information
+                                long_desc: Unique Identification Number
+                              url: https://example.com/aadhaar_card.jpeg
+                              type: pdf
+                            - id: D3
+                              descriptor:
+                                name: VOTER_ID
+                                short_desc: Voter ID information
+                                long_desc: Election Commission ID
+                              url: https://example.com/voter_id.jpeg
+                              type: jpeg
+                            - id: D4
+                              descriptor:
+                                name: PASSPORT
+                                short_desc: Passport information
+                                long_desc: International Travel Document
+                              url: https://example.com/passport.jpeg
+                              type: jpeg
+                            - id: D5
+                              descriptor:
+                                name: DRIVING_LICENSE
+                                short_desc: Driving License information
+                                long_desc: License to Drive
+                              url: https://example.com/driving_license.jpeg
+                              type: jpeg
+                            - id: D6
+                              descriptor:
+                                name: RESUME
+                                short_desc: >-
+                                  Summary of qualifications, work experience,
+                                  and education.
+                                long_desc: >-
+                                  A comprehensive document showcasing an
+                                  individual's career achievements, skills, work
+                                  history, education, certifications, and
+                                  professional experience.
+                              url: https://example.com/resume.pdf
+                              type: pdf
                         contact:
                           phone: +91-1234567890
                           email: abc@abc.bc
@@ -12750,7 +13086,7 @@ x-attributes:
                     phone:
                       description: The phone number of the customer.
                       required: mandatory
-                      usage: '9999999999'
+                      usage: +91-1234567890
                       reference: null
                     email:
                       description: The email of the customer.
@@ -13145,48 +13481,84 @@ x-attributes:
                 required: mandatory
                 usage: lead
                 reference: null
-                customer:
-                  person:
+              customer:
+                person:
+                  name:
+                    description: The name of the customer.
+                    required: mandatory
+                    usage: Sanjay
+                    reference: null
+                  gender:
+                    description: The gender of the customer.
+                    required: mandatory
+                    usage: Male
+                    reference: null
+                  age:
+                    description: The age of the customer.
+                    required: mandatory
+                    usage: '35'
+                    reference: null
+                  skills:
                     name:
-                      description: The name of the customer.
+                      description: The code of the skill.
                       required: mandatory
-                      usage: Sanjay
+                      usage: Android
                       reference: null
-                    gender:
-                      description: The gender of the customer.
+                  languages:
+                    name:
+                      description: The language code.
                       required: mandatory
-                      usage: Male
+                      usage: en
                       reference: null
-                    age:
-                      description: The age of the customer.
+                  creds:
+                    id:
+                      description: The unique identifier for the credential.
                       required: mandatory
-                      usage: '35'
+                      usage: D1
                       reference: null
-                    skills:
-                      parent: true
+                    descriptor:
                       name:
-                        description: The code of the skill.
+                        description: The name of the credential (e.g., PAN_CARD).
                         required: mandatory
-                        usage: Android
+                        usage: PAN_CARD
                         reference: null
-                    languages:
-                      parent: true
-                      name:
-                        description: The language code.
+                      short_desc:
+                        description: >-
+                          A brief description of the credential (e.g., PAN Card
+                          information).
                         required: mandatory
-                        usage: en
+                        usage: PAN Card information
                         reference: null
-                  contact:
-                    phone:
-                      description: The phone number of the customer.
+                      long_desc:
+                        description: >-
+                          A detailed explanation of the credential (e.g.,
+                          Permanent Account Number).
+                        required: mandatory
+                        usage: Permanent Account Number
+                        reference: null
+                    url:
+                      description: The URL where the credential image or file is hosted.
                       required: mandatory
-                      usage: '9999999999'
+                      usage: https://example.com/pan_card.jpeg
                       reference: null
-                    email:
-                      description: The email of the customer.
+                    type:
+                      description: >-
+                        The type of the credential file (e.g., file format such
+                        as jpeg, pdf).
                       required: mandatory
-                      usage: abc@abc.bc
+                      usage: jpeg
                       reference: null
+                contact:
+                  phone:
+                    description: The phone number of the customer.
+                    required: mandatory
+                    usage: +91-1234567890
+                    reference: null
+                  email:
+                    description: The email of the customer.
+                    required: mandatory
+                    usage: abc@abc.bc
+                    reference: null
       on_init:
         parent: true
         context:
@@ -13548,11 +13920,49 @@ x-attributes:
                       required: mandatory
                       usage: en
                       reference: null
+                  creds:
+                    id:
+                      description: The unique identifier for the credential.
+                      required: mandatory
+                      usage: D1
+                      reference: null
+                    descriptor:
+                      name:
+                        description: The name of the credential (e.g., PAN_CARD).
+                        required: mandatory
+                        usage: PAN_CARD
+                        reference: null
+                      short_desc:
+                        description: >-
+                          A brief description of the credential (e.g., PAN Card
+                          information).
+                        required: mandatory
+                        usage: PAN Card information
+                        reference: null
+                      long_desc:
+                        description: >-
+                          A detailed explanation of the credential (e.g.,
+                          Permanent Account Number).
+                        required: mandatory
+                        usage: Permanent Account Number
+                        reference: null
+                    url:
+                      description: The URL where the credential image or file is hosted.
+                      required: mandatory
+                      usage: https://example.com/pan_card.jpeg
+                      reference: null
+                    type:
+                      description: >-
+                        The type of the credential file (e.g., file format such
+                        as jpeg, pdf).
+                      required: mandatory
+                      usage: jpeg
+                      reference: null
                 contact:
                   phone:
                     description: The phone number of the customer.
                     required: mandatory
-                    usage: '9999999999'
+                    usage: +91-1234567890
                     reference: null
                   email:
                     description: The email of the customer.
@@ -13809,7 +14219,7 @@ x-attributes:
                   phone:
                     description: The phone number of the customer.
                     required: mandatory
-                    usage: '9999999999'
+                    usage: +91-1234567890
                     reference: null
                   email:
                     description: The email of the customer.
@@ -13843,6 +14253,44 @@ x-attributes:
                       description: The language code.
                       required: mandatory
                       usage: en
+                      reference: null
+                  creds:
+                    id:
+                      description: The unique identifier for the credential.
+                      required: mandatory
+                      usage: D1
+                      reference: null
+                    descriptor:
+                      name:
+                        description: The name of the credential (e.g., PAN_CARD).
+                        required: mandatory
+                        usage: PAN_CARD
+                        reference: null
+                      short_desc:
+                        description: >-
+                          A brief description of the credential (e.g., PAN Card
+                          information).
+                        required: mandatory
+                        usage: PAN Card information
+                        reference: null
+                      long_desc:
+                        description: >-
+                          A detailed explanation of the credential (e.g.,
+                          Permanent Account Number).
+                        required: mandatory
+                        usage: Permanent Account Number
+                        reference: null
+                    url:
+                      description: The URL where the credential image or file is hosted.
+                      required: mandatory
+                      usage: https://example.com/pan_card.jpeg
+                      reference: null
+                    type:
+                      description: >-
+                        The type of the credential file (e.g., file format such
+                        as jpeg, pdf).
+                      required: mandatory
+                      usage: jpeg
                       reference: null
               status:
                 description: The current payment status.
@@ -14551,7 +14999,7 @@ x-attributes:
               phone:
                 description: phone
                 required: mandatory
-                usage: '9999999999'
+                usage: +91-1234567890
                 reference: if any
               email:
                 description: email

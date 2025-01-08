@@ -236,7 +236,7 @@ message:
               phone:
                 description: "The phone number of the customer."
                 required: mandatory
-                usage: "9999999999"
+                usage: "+91-1234567890"
                 reference: null
               email:
                 description: "The email of the customer."
