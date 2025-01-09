@@ -615,10 +615,10 @@ value:
                         value: P1M,P3M,P10M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 25,25,50
-                price:
-                  currency: INR
-                  value: "1000.00"
-                  maximum_value: "1500.0"
+              price:
+                currency: INR
+                value: "1000.00"
+                maximum_value: "1500.0"
             - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
               category_ids:
                 - DevOps
@@ -900,10 +900,10 @@ value:
                         value: P1M,P3M,P10M
                       - code: COMPENSATION_PERCENTAGE_SPLIT
                         value: 25,25,50
-                price:
-                  currency: INR
-                  value: "1000.00"
-                  maximum_value: "1500.0"
+              price:
+                currency: INR
+                value: "1000.00"
+                maximum_value: "1500.0"
           tags:
             - descriptor:
                 code: "LOCATION"

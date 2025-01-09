@@ -246,7 +246,6 @@ value:
                 - descriptor:
                     code: JOB_DETAILS
                   list:
-                    
                     - descriptor:
                         code: JOB_TYPE
                       value: full-time

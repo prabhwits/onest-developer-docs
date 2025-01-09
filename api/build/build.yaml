@@ -2667,34 +2667,51 @@ x-tags:
   search:
     message:
       intent:
-        item: &ref_5
+        item:
           tags:
-            - code: JOB_TYPE
+            - code: JOB_DETAILS
               description: Employment Type
               reference: <PR/Issue/Discussion Links md format text>
               list: &ref_3
-                - code: full-time
-                  description: Type of JOB_TYPE
+                - code: JOB_TYPE
+                  description: Types - ["part-time", "full-time", "contractual"]
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: part-time
-                  description: Type of JOB_TYPE
+                - code: INDUSTRY_TYPE
+                  description: Types - ["part-time", "full-time", "contractual"]
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: contractual
-                  description: Type of JOB_TYPE
-                  reference: <PR/Issue/Discussion Links md format text>
+        tags:
+          - code: BAP_TERMS
+            description: Employment Type
+            reference: <PR/Issue/Discussion Links md format text>
+            list: *ref_3
+          - code: CATALOG_INC
+            description: Incremental catalog
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: MODE
+                description: >-
+                  Used for starting or stopping async incremental catalog
+                  refresh
+                reference: <PR/Issue/Discussion Links md format text>
   on_search:
     message:
       catalog:
         providers:
           tags:
-            - code: JOB_TYPE
-              description: Employment Type
+            - code: LOCATION
+              description: Provider Location
               reference: <PR/Issue/Discussion Links md format text>
-              list: *ref_3
+              list:
+                - code: ADDRESS
+                  description: Addreess of the provider
+                  reference: <PR/Issue/Discussion Links md format text>
             - code: NP_FEES
               description: NP_FEES
               reference: <PR/Issue/Discussion Links md format text>
-              list:
+              list: &ref_4
+                - code: ID
+                  description: id
+                  reference: <PR/Issue/Discussion Links md format text>
                 - code: COMMERCIAL_TYPE
                   description: commercial type - [percent, value]
                   reference: <PR/Issue/Discussion Links md format text>
@@ -2735,10 +2752,6 @@ x-tags:
                   reference: <PR/Issue/Discussion Links md format text>
           items:
             tags:
-              - code: JOB_TYPE
-                description: Employment Type
-                reference: <PR/Issue/Discussion Links md format text>
-                list: *ref_3
               - code: JOB_DETAILS
                 description: JOB_DETAILS
                 reference: <PR/Issue/Discussion Links md format text>
@@ -2879,6 +2892,15 @@ x-tags:
                       Consulting", "Public Sector Consulting", "Risk Management
                       and Compliance Consulting", "Organizational Consulting"]
                     reference: <PR/Issue/Discussion Links md format text>
+                  - code: JOB_TYPE
+                    description: Types - ["part-time", "full-time", "contractual"]
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: JOB_ROLE
+                    description: example value - "Fullstack Engineer"
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: JOB_LEVEL
+                    description: example value - "Mid-level"
+                    reference: <PR/Issue/Discussion Links md format text>
                   - code: GENDER_PREFERENCE
                     description: Gender - ["Male", "Female", "Other"]
                     reference: <PR/Issue/Discussion Links md format text>
@@ -2922,6 +2944,9 @@ x-tags:
                       Minimum CGPA of marks to be obtained in the course for
                       eligibility
                     reference: <PR/Issue/Discussion Links md format text>
+                  - code: MANDATORY_ELIGIBILITY
+                    description: values - ["true", "false"]
+                    reference: <PR/Issue/Discussion Links md format text>
               - code: DOC_REQUIREMENTS
                 description: DOC_REQUIREMENTS
                 reference: <PR/Issue/Discussion Links md format text>
@@ -2929,77 +2954,270 @@ x-tags:
                   - code: DOCUMENT_NAME
                     description: Document name - ["AADHAAR_CARD", "PAN_CARD"]
                     reference: <PR/Issue/Discussion Links md format text>
-                  - code: MANDATORY_ELIGIBILITY
-                    description: >-
-                      Indicates if the document is mandatory for eligibility -
-                      ["true", "false"]
+              - code: TIMING
+                description: TIMING
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: DAY_FROM
+                    description: values - ["1, 2, 3, 4, 5, 6, 7"]
                     reference: <PR/Issue/Discussion Links md format text>
+                  - code: DAY_TO
+                    description: values - ["1, 2, 3, 4, 5, 6, 7"]
+                    reference: <PR/Issue/Discussion Links md format text>
+              - code: JOB_REQUIREMENTS
+                description: JOB_REQUIREMENTS
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: REQ_EXPERIENCE
+                    description: example value - "P2Y6M"
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: ADD_PROF_SKILL
+                    description: example value - "android-development"
+                    reference: <PR/Issue/Discussion Links md format text>
+              - code: JOB_RESPONSIBILITIES
+                description: JOB_RESPONSIBILITIES
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: RESPONSIBILITY
+                    description: >-
+                      example value - "Build frontend experiences for our tools
+                      (Web, PWA and React Native)"
+                    reference: <PR/Issue/Discussion Links md format text>
+              - code: COMPENSATION
+                description: COMPENSATION
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: TYPE
+                    description: type - ["ctc", "lpa"]
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: MIN
+                    description: minimum ctc value - "900000" or lpa value - "9"
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: MAX
+                    description: maximum ctc value - "1200000" or lpa value - "12"
+                    reference: <PR/Issue/Discussion Links md format text>
+              - code: NP_FEES
+                description: NP_FEES
+                reference: <PR/Issue/Discussion Links md format text>
+                list: *ref_4
+  select:
+    message:
+      order:
+        item: &ref_5
+          - code: NP_FEES
+            description: NP_FEES
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: ID
+                description: id
+                reference: <PR/Issue/Discussion Links md format text>
   on_select:
     message:
-      order: &ref_4
-        items:
-          tags:
-            - code: JOB_DETAILS
-              description: JOB_DETAILS
-              reference: <PR/Issue/Discussion Links md format text>
-              list: *ref_3
-        payments: &ref_6
-          tags:
-            - code: Settlement_Details
-              description: Define Payment Settlement Details here (Required)
-              reference: <PR/Issue/Discussion Links md format text>
-              list:
-                - code: SETTLEMENT_COUNTERPARTY
-                  description: >-
-                    Counterparty involved; Can be seller-app/buyer-app
-                    (Required)
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: SETTLEMENT_TYPE
-                  description: Mode of Payment. NEFT
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: BENEFICIARY_NAME
-                  description: Description of the Tag (Required in case of neft and rtgs)
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: SETTLEMENT_BANK_ACCOUNT_NO
-                  description: >-
-                    Bank Account of the counterpart (Required in case of neft
-                    and rtgs)
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: SETTLEMENT_IFSC_CODE
-                  description: >-
-                    IFSC Code for the Bank Account of the Counter party
-                    (Required in case of neft and rtgs)
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: SETTLEMENT_PHASE
-                  description: Phase of the settlement process; e.g., sale-amount
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: BANK_NAME
-                  description: Name of the bank associated with the settlement
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: BRANCH_NAME
-                  description: Branch name of the bank for the settlement
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: SETTLEMENT_BASIS
-                  description: >-
-                    Basis of the settlement, specifying the type of work (lead &
-                    recruitment)
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: SETTLEMENT_WINDOW
-                  description: Duration or time frame for the settlement window (e.g., P3M)
-                  reference: <PR/Issue/Discussion Links md format text>
+      order:
+        item: *ref_5
+  init:
+    message:
+      order:
+        item: *ref_5
+        fulfillments:
+          customer:
+            person:
+              - code: EMP_DETAILS
+                description: EMP_DETAILS
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: TOTAL_EXPERIENCE
+                    description: example value - "P2Y6M"
+                    reference: <PR/Issue/Discussion Links md format text>
+              - code: ACADEMIC_QUALIFICATIONS
+                description: ACADEMIC_QUALIFICATIONS
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: COURSE_NAME
+                    description: example value - "Bachelor of Science in Computer Science"
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: COLLEGE_NAME
+                    description: example value - "University of Technology"
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: YEAR_OF_COMPLETION
+                    description: example value - "2020"
+                    reference: <PR/Issue/Discussion Links md format text>
+              - code: ONLINE_LEARNING_AND_SPECIALIZATIONS
+                description: ONLINE_LEARNING_AND_SPECIALIZATIONS
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: CERTIFICATIONS
+                    description: example value - "Certified Cloud Practitioner"
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: COLLEGE_NAME
+                    description: example value - "University of Technology"
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: YEAR_OF_COMPLETION
+                    description: example value - "2020"
+                    reference: <PR/Issue/Discussion Links md format text>
+              - code: WORK_EXPERIENCE
+                description: WORK_EXPERIENCE
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: TOTAL_EXPERIENCE
+                    description: example value - "P3Y"
+                    reference: <PR/Issue/Discussion Links md format text>
+              - code: TECHNICAL_SKILLS
+                description: TECHNICAL_SKILLS
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: JOB_SPECIFIC_SKILLS
+                    description: example value - "Full Stack Development"
+                    reference: <PR/Issue/Discussion Links md format text>
+              - code: SKILLS
+                description: SKILLS
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: COMMUNICATION
+                    description: example value - "Excellent Verbal and Written Skills"
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: LEADERSHIP
+                    description: example value - "Team Management and Decision Making"
+                    reference: <PR/Issue/Discussion Links md format text>
+              - code: DIGITAL_FOOTPRINT
+                description: DIGITAL_FOOTPRINT
+                reference: <PR/Issue/Discussion Links md format text>
+                list:
+                  - code: LINKEDIN_PROFILE
+                    description: example value - "https://linkedin.com/in/example-profile"
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: GITHUB_REPOSITORIES
+                    description: example value - "https://github.com/example-profile"
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: CONDITION
+                    description: >-
+                      Equipment condition (it can be rating like 5) if
+                      applicable (Optional)
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: OWNERSHIP
+                    description: >-
+                      Ownership status for the equipment (1st owner, 2nd owner)
+                      if applicable (Optional)
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: RUNNING_HOURS
+                    description: >-
+                      Running hours status for the equipment (Ex - 500) if
+                      applicable  (Optional)
+                    reference: <PR/Issue/Discussion Links md format text>
   on_init:
     message:
-      order: *ref_4
+      order:
+        item: *ref_5
+        payments:
+          - code: SETTLEMENT_DETAILS
+            description: SETTLEMENT_DETAILS
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: SETTLEMENT_COUNTERPARTY
+                description: Counterparty involved; Can be seller-app/buyer-app (Required)
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: SETTLEMENT_BANK_ACCOUNT_NO
+                description: >-
+                  Bank Account of the counterpart (Required in case of neft and
+                  rtgs)
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: SETTLEMENT_IFSC_CODE
+                description: >-
+                  IFSC Code for the Bank Account of the Counter party (Required
+                  in case of neft and rtgs)
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: BENEFICIARY_NAME
+                description: Description of the Tag (Required in case of neft and rtgs)
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: BANK_NAME
+                description: Name of the bank associated with the settlement
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: BRANCH_NAME
+                description: Branch name of the bank for the settlement
+                reference: <PR/Issue/Discussion Links md format text>
+  confirm:
+    message:
+      order:
+        item: *ref_5
+        payments: &ref_6
+          - code: SETTLEMENT_DETAILS
+            description: Define Payment Settlement Details here (Required)
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: SETTLEMENT_COUNTERPARTY
+                description: Counterparty involved; Can be seller-app/buyer-app (Required)
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: SETTLEMENT_TYPE
+                description: Mode of Payment. NEFT
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: BENEFICIARY_NAME
+                description: Description of the Tag (Required in case of neft and rtgs)
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: SETTLEMENT_BANK_ACCOUNT_NO
+                description: >-
+                  Bank Account of the counterpart (Required in case of neft and
+                  rtgs)
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: SETTLEMENT_IFSC_CODE
+                description: >-
+                  IFSC Code for the Bank Account of the Counter party (Required
+                  in case of neft and rtgs)
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: SETTLEMENT_PHASE
+                description: Phase of the settlement process; e.g., sale-amount
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: BANK_NAME
+                description: Name of the bank associated with the settlement
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: BRANCH_NAME
+                description: Branch name of the bank for the settlement
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: SETTLEMENT_BASIS
+                description: >-
+                  Basis of the settlement, specifying the type of work (lead &
+                  recruitment)
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: SETTLEMENT_WINDOW
+                description: Duration or time frame for the settlement window (e.g., P3M)
+                reference: <PR/Issue/Discussion Links md format text>
   on_confirm:
     message:
-      order: *ref_4
+      order:
+        item: *ref_5
+        payments: *ref_6
   on_status:
     message:
-      order: *ref_4
+      order:
+        item: *ref_5
+        payments: *ref_6
+  on_cancel:
+    message:
+      order:
+        item: *ref_5
+        payments: *ref_6
+        fulfillments:
+          - code: QUOTE_TRAIL
+            description: Quote trail of the items in quote.breakup
+            reference: <PR/Issue/Discussion Links md format text>
+            list:
+              - code: CURRENCY
+                description: Currency in which the quote value is specified (e.g., INR)
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: ID
+                description: >-
+                  Unique identifier for the quote trail to track its origin or
+                  reference.
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: TYPE
+                description: Type of quote trail (e.g. ITEM, TAX).
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: VALUE
+                description: The monetary value associated with the quote trail (e.g. -150)
+                reference: <PR/Issue/Discussion Links md format text>
   on_update:
     message:
       order:
-        items: *ref_5
+        item: *ref_5
         payments: *ref_6
 x-flows:
   - summary: ONDC:ONEST10 - Work Opportunities
@@ -12553,6 +12771,36 @@ x-attributes:
                     description: Identifier for NP_FEES
                     required: mandatory
                     usage: '1'
+                    reference: null
+                  COMMERCIAL_TYPE:
+                    description: Type of NP_FEES
+                    required: mandatory
+                    usage: percent
+                    reference: null
+                  COMMERCIAL_VALUE:
+                    description: Value of NP_FEES based on the type
+                    required: mandatory
+                    usage: '0.5'
+                    reference: null
+                  COMMERCIAL_NAME:
+                    description: Name of the commercial fee type
+                    required: mandatory
+                    usage: recruitment
+                    reference: null
+                  COMMERCIAL_TRIGGERING_STATE:
+                    description: State or event that triggers the application of NP_FEES
+                    required: mandatory
+                    usage: OFFER_ACCEPTED
+                    reference: null
+                  COMPENSATION_TYPE:
+                    description: Type of compensation structure used
+                    required: mandatory
+                    usage: P1M,P2M,P3M
+                    reference: null
+                  COMPENSATION_TRANSFER_PERIOD:
+                    description: Transfer period percentages for the compensation structure
+                    required: mandatory
+                    usage: 50,25,25
                     reference: null
             item:
               parent: true
