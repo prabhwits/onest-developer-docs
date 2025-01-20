@@ -133,6 +133,10 @@ value:
       fulfillments:
         - id: "F3"
           type: "lead & recruitment"
+          state:
+          descriptor:
+            code: OFFER_ACCEPTED
+          updated_at: "2023-02-23T08:20:061Z"
       quote:
         price:
           currency: INR

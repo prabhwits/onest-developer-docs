@@ -100,7 +100,6 @@ value:
                     - descriptor:
                         code: TOTAL_EXPERIENCE
                       value: "P4Y"
-                
                 - descriptor:
                     code: "DISABILITIES_AND_ACCOMMODATIONS"
                   list:
@@ -158,3 +157,29 @@ value:
             contact:
               phone: "+91-1234567890"
               email: abc@abc.bc
+      payments:
+        - status: "NOT-PAID"
+          type: "ON-ORDER"
+          collected_by: "BAP"
+          tags:
+              descriptor:
+                code: "SETTLEMENT_DETAILS"
+              list:
+                - descriptor:
+                    code: "SETTLEMENT_COUNTERPARTY"
+                  value: "seller-app"
+                - descriptor:
+                    code: "SETTLEMENT_BANK_ACCOUNT_NO"
+                  value: "XXXXXXXXXX"
+                - descriptor:
+                    code: "SETTLEMENT_IFSC_CODE"
+                  value: "XXXXXXXXX"
+                - descriptor:
+                    code: "BENEFICIARY_NAME"
+                  value: "xxxxx"
+                - descriptor:
+                    code: "BANK_NAME"
+                  value: "xxxx"
+                - descriptor:
+                    code: "BRANCH_NAME"
+                  value: "xxxx"

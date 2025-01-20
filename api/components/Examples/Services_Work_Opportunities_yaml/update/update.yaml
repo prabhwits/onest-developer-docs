@@ -22,7 +22,6 @@ value:
       id: "1677140405881"
       fulfillments:
         - id: F3
-          type: OFFER-ACCEPTED
-          contact:
-            phone: "+91-1234567890"
-            email: abc@abc.bc
+          state:
+            descriptor:
+              code: OFFER_ACCEPTED

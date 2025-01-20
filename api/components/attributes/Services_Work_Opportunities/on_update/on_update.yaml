@@ -119,6 +119,18 @@ message:
         required: mandatory
         usage: "lead"
         reference: "if any"
+      state:
+        descriptor:
+          code:
+            description: "The code describing the fulfillment state."
+            required: mandatory
+            usage: "OFFER_ACCEPTED"
+            reference: null
+        updated_at:
+          description: Last state update timestamp
+          required: mandatory
+          usage: 2023-02-22T11:50:46.742Z
+          reference: if any
     quote:
       price:
         currency:
@@ -196,4 +208,15 @@ message:
         description: "Entity collecting the payment."
         required: mandatory
         usage: "BAP"
+        reference: null
+    documents:
+      url: 
+        description: "The link to the document, such as an invoice or receipt."
+        required: optional
+        usage: "https://offer_letter_url"
+        reference: null
+      label: 
+        description: "A descriptive title for the document, indicating its type."
+        required: optional
+        usage: "offer_letter"
         reference: null

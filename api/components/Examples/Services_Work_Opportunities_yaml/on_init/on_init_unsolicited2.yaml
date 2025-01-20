@@ -58,7 +58,8 @@ value:
           type: "lead & recruitment"
           state:
             descriptor:
-              code: APPLICATION-FILLED
+              code: APPLICATION_FILLED
+          updated_at: "2023-02-23T10:18:456Z"
           customer:
             person:
               name: Sanjay

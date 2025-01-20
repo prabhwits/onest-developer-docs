@@ -2392,52 +2392,13 @@ x-enum:
           state: &ref_2
             descriptor:
               code:
-                - code: APPLICATION_IN_PROGRESS
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: APPLICATION_FILLED
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: APPLICATION_SUBMITTED
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: APPLICATION-REJECTED
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: ASSESSMENT-IN-PROGRESS
+                - code: ASSESSMENT_IN_PROGRESS
                   description: Name of the fulfillment status
                   reference: <PR/Issue/Discussion Links md format text>
                 - code: OFFER_EXTENDED
                   description: Name of the fulfillment status
                   reference: <PR/Issue/Discussion Links md format text>
-                - code: OFFER_ACCEPTED
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: OFFER-REJECTED
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Application in Progress
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Application Filled
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Application Submitted
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Application Rejected
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Assessment in Progress
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Offer Extended
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Offer Accepted
-                  description: Name of the fulfillment status
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Offer Rejected
+                - code: OFFER_REJECTED
                   description: Name of the fulfillment status
                   reference: <PR/Issue/Discussion Links md format text>
           customer:
@@ -2592,6 +2553,20 @@ x-enum:
   on_init:
     context:
       domain: *ref_0
+    message:
+      fulfillments:
+        type: *ref_1
+        state:
+          descriptor:
+            code:
+              - code: APPLICATION_IN_PROGRESS
+                name: Name of the fulfillment status
+                reference: <PR/Issue/Discussion Links md format text>
+                description: APPLICATION_IN_PROGRESS
+              - code: APPLICATION_FILLED
+                name: Name of the fulfillment status
+                reference: <PR/Issue/Discussion Links md format text>
+                description: APPLICATION_FILLED
   confirm:
     context:
       domain: *ref_0
@@ -2599,16 +2574,17 @@ x-enum:
       order:
         status:
           - code: Created
-            description: fulfillments.state will be one of these - ["APPLICATION-STARTED"]
+            description: fulfillments.state will be one of these - ["APPLICATION_STARTED"]
             reference: <PR/Issue/Discussion Links md format text>
         fulfillments:
           type: *ref_1
           state:
             descriptor:
               code:
-                - code: APPLICATION_STARTED
+                - code: APPLICATION_SUBMITTED
                   name: Name of the fulfillment status
                   reference: <PR/Issue/Discussion Links md format text>
+                  description: APPLICATION_SUBMITTED
   on_confirm:
     context:
       domain: *ref_0
@@ -2616,22 +2592,49 @@ x-enum:
       order:
         status:
           - code: Created
-            description: fulfillments.state will be one of these - ["APPLICATION-STARTED"]
+            description: >-
+              fulfillments.state will be one of these - ["APPLICATION_ACCEPTED",
+              "APPLICATION_REJECTED"]
             reference: <PR/Issue/Discussion Links md format text>
         fulfillments:
           type: *ref_1
           state:
             descriptor:
               code:
-                - code: APPLICATION_STARTED
+                - code: APPLICATION_ACCEPTED
                   name: Name of the fulfillment status
                   reference: <PR/Issue/Discussion Links md format text>
+                  description: APPLICATION_ACCEPTED
+                - code: APPLICATION_REJECTED
+                  name: Name of the fulfillment status
+                  reference: <PR/Issue/Discussion Links md format text>
+                  description: APPLICATION_REJECTED
   update:
     context:
       domain: *ref_0
+    message:
+      order:
+        fulfillments:
+          state:
+            descriptor:
+              code:
+                - code: OFFER_ACCEPTED
+                  name: Name of the fulfillment status
+                  reference: <PR/Issue/Discussion Links md format text>
+                  description: OFFER_ACCEPTED
   on_update:
     context:
       domain: *ref_0
+    message:
+      order:
+        fulfillments:
+          state:
+            descriptor:
+              code:
+                - code: OFFER_ACCEPTED
+                  name: Name of the fulfillment status
+                  reference: <PR/Issue/Discussion Links md format text>
+                  description: OFFER_ACCEPTED
   status:
     context:
       domain: *ref_0
@@ -2644,15 +2647,15 @@ x-enum:
           - code: Active
             description: >-
               fulfillments.state will be one of these -
-              ["APPLICATION-IN-PROGRESS", "APPLICATION-FILLED",
-              "APPLICATION-SUBMITTED", "ASSESSMENT-IN-PROGRESS",
-              "OFFER-EXTENDED", "OFFER-REJECTED"]
+              ["APPLICATION_IN_PROGRESS", "APPLICATION_FILLED",
+              "APPLICATION_SUBMITTED", "ASSESSMENT_IN_PROGRESS",
+              "OFFER_EXTENDED", "OFFER_REJECTED"]
             reference: <PR/Issue/Discussion Links md format text>
           - code: Completed
-            description: fulfillments.state will be one of these - ["OFFER-ACCEPTED"]
+            description: fulfillments.state will be one of these - ["OFFER_ACCEPTED"]
             reference: <PR/Issue/Discussion Links md format text>
           - code: Cancelled
-            description: fulfillments.state will be one of these - ["APPLICATION-REJECTED"]
+            description: fulfillments.state will be one of these - ["APPLICATION_REJECTED"]
             reference: <PR/Issue/Discussion Links md format text>
         fulfillments:
           type: *ref_1
@@ -4931,6 +4934,32 @@ x-flows:
                       contact:
                         phone: +91-1234567890
                         email: abc@abc.bc
+                payments:
+                  - status: NOT-PAID
+                    type: ON-ORDER
+                    collected_by: BAP
+                    tags:
+                      descriptor:
+                        code: SETTLEMENT_DETAILS
+                      list:
+                        - descriptor:
+                            code: SETTLEMENT_COUNTERPARTY
+                          value: seller-app
+                        - descriptor:
+                            code: SETTLEMENT_BANK_ACCOUNT_NO
+                          value: XXXXXXXXXX
+                        - descriptor:
+                            code: SETTLEMENT_IFSC_CODE
+                          value: XXXXXXXXX
+                        - descriptor:
+                            code: BENEFICIARY_NAME
+                          value: xxxxx
+                        - descriptor:
+                            code: BANK_NAME
+                          value: xxxx
+                        - descriptor:
+                            code: BRANCH_NAME
+                          value: xxxx
       - summary: Description
         api: on_init
         description: >-
@@ -5012,6 +5041,10 @@ x-flows:
                 fulfillments:
                   - id: F3
                     type: lead & recruitment
+                    state:
+                      descriptor:
+                        code: APPLICATION_IN_PROGRESS
+                      updated_at: 2023-02-23T10:14:051Z
                     customer:
                       person:
                         name: Sanjay
@@ -5183,6 +5216,10 @@ x-flows:
                 fulfillments:
                   - id: F3
                     type: lead & recruitment
+                    state:
+                      descriptor:
+                        code: APPLICATION_IN_PROGRESS
+                      updated_at: 2023-02-23T10:16:123Z
                     customer:
                       person:
                         name: Sanjay
@@ -5338,7 +5375,8 @@ x-flows:
                     type: lead & recruitment
                     state:
                       descriptor:
-                        code: APPLICATION-FILLED
+                        code: APPLICATION_FILLED
+                    updated_at: 2023-02-23T10:18:456Z
                     customer:
                       person:
                         name: Sanjay
@@ -5477,7 +5515,7 @@ x-flows:
                     type: lead & recruitment
                     state:
                       descriptor:
-                        code: APPLICATION-STARTED
+                        code: APPLICATION_SUBMITTED
                       updated_at: 2023-02-23T08:09:021Z
                     customer:
                       person:
@@ -5758,7 +5796,7 @@ x-flows:
                     type: lead & recruitment
                     state:
                       descriptor:
-                        code: APPLICATION-FILLED
+                        code: APPLICATION_ACCEPTED
                       updated_at: '2023-02-23T08:20:06Z'
                     customer:
                       person:
@@ -6062,7 +6100,7 @@ x-flows:
                     type: lead & recruitment
                     state:
                       descriptor:
-                        code: APPLICATION-IN-PROGRESS
+                        code: APPLICATION_IN_PROGRESS
                       updated_at: '2023-02-22T11:50:46.742Z'
                 payments:
                   - params:
@@ -6276,7 +6314,7 @@ x-flows:
                     type: lead & recruitment
                     state:
                       descriptor:
-                        code: APPLICATIO-SUBMITTED
+                        code: APPLICATIO_SUBMITTED
                       updated_at: '2023-02-22T11:51:45.143Z'
                 payments:
                   - params:
@@ -6490,7 +6528,7 @@ x-flows:
                     type: lead & recruitment
                     state:
                       descriptor:
-                        code: OFFER-EXTENDED
+                        code: OFFER_EXTENDED
                       updated_at: '2023-02-22T11:52:00.243Z'
                 payments:
                   - params:
@@ -6744,10 +6782,9 @@ x-flows:
                 id: '1677140405881'
                 fulfillments:
                   - id: F3
-                    type: OFFER-ACCEPTED
-                    contact:
-                      phone: +91-1234567890
-                      email: abc@abc.bc
+                    state:
+                      descriptor:
+                        code: OFFER_ACCEPTED
       - summary: Description
         api: on_update
         description: BPP sends confirmation of submission of job application.
@@ -6890,6 +6927,10 @@ x-flows:
                 fulfillments:
                   - id: F3
                     type: lead & recruitment
+                    state: null
+                    descriptor:
+                      code: OFFER_ACCEPTED
+                    updated_at: 2023-02-23T08:20:061Z
                 quote:
                   price:
                     currency: INR
@@ -6962,6 +7003,8 @@ x-examples:
       href="https://docs.google.com/document/d/1cuvt_w9qSv7XpLXpY4KCq5gmrsQSqF8e3VLxOhpfO0g">link</a>
       <br/><br/> Taxonomy: ONEST - Work Opportunities : <a
       href="https://docs.google.com/spreadsheets/d/1Go22ou013hE-fxpjMd_XuM111l8x8TuMsF_nsjvB3so">link</a>
+      <br/><br/> Attributes For Profiling: ONEST - Work Opportunities : <a
+      href="https://docs.google.com/spreadsheets/d/1FIcpfypkN4rdWG6ZH3UKgP-lPnkJ6gkT8czwi0urLcA/edit?gid=0#gid=0">link</a>
     example_set:
       search:
         examples:
@@ -7887,10 +7930,10 @@ x-examples:
                                     value: P1M,P3M,P10M
                                   - code: COMPENSATION_PERCENTAGE_SPLIT
                                     value: 25,25,50
-                            price:
-                              currency: INR
-                              value: '1000.00'
-                              maximum_value: '1500.0'
+                          price:
+                            currency: INR
+                            value: '1000.00'
+                            maximum_value: '1500.0'
                         - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
                           category_ids:
                             - DevOps
@@ -8179,10 +8222,10 @@ x-examples:
                                     value: P1M,P3M,P10M
                                   - code: COMPENSATION_PERCENTAGE_SPLIT
                                     value: 25,25,50
-                            price:
-                              currency: INR
-                              value: '1000.00'
-                              maximum_value: '1500.0'
+                          price:
+                            currency: INR
+                            value: '1000.00'
+                            maximum_value: '1500.0'
                       tags:
                         - descriptor:
                             code: LOCATION
@@ -8533,10 +8576,10 @@ x-examples:
                                     value: P1M,P2M,P3M
                                   - code: COMPENSATION_PERCENTAGE_SPLIT
                                     value: 50,25,25
-                            price:
-                              currency: INR
-                              value: '1100.00'
-                              maximum_value: '1200.0'
+                          price:
+                            currency: INR
+                            value: '1100.00'
+                            maximum_value: '1200.0'
                         - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
                           category_ids:
                             - DevOps
@@ -8824,10 +8867,10 @@ x-examples:
                                     value: P1M,P3M,P10M
                                   - code: COMPENSATION_PERCENTAGE_SPLIT
                                     value: 25,25,50
-                            price:
-                              currency: INR
-                              value: '1000.00'
-                              maximum_value: '1500.0'
+                          price:
+                            currency: INR
+                            value: '1000.00'
+                            maximum_value: '1500.0'
                         - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
                           category_ids:
                             - DevOps
@@ -9116,10 +9159,10 @@ x-examples:
                                     value: P1M,P3M,P10M
                                   - code: COMPENSATION_PERCENTAGE_SPLIT
                                     value: 25,25,50
-                            price:
-                              currency: INR
-                              value: '1000.00'
-                              maximum_value: '1500.0'
+                          price:
+                            currency: INR
+                            value: '1000.00'
+                            maximum_value: '1500.0'
                       tags:
                         - descriptor:
                             code: LOCATION
@@ -10027,10 +10070,10 @@ x-examples:
                                     value: P1M,P3M,P10M
                                   - code: COMPENSATION_PERCENTAGE_SPLIT
                                     value: 25,25,50
-                            price:
-                              currency: INR
-                              value: '1000.00'
-                              maximum_value: '1500.0'
+                          price:
+                            currency: INR
+                            value: '1000.00'
+                            maximum_value: '1500.0'
                       tags:
                         - descriptor:
                             code: LOCATION
@@ -10329,10 +10372,10 @@ x-examples:
                                     value: P1M,P2M,P3M
                                   - code: COMPENSATION_PERCENTAGE_SPLIT
                                     value: 50,25,25
-                            price:
-                              currency: INR
-                              value: '1100.00'
-                              maximum_value: '1200.0'
+                          price:
+                            currency: INR
+                            value: '1100.00'
+                            maximum_value: '1200.0'
                         - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
                           category_ids:
                             - DevOps
@@ -10499,6 +10542,10 @@ x-examples:
                                   - descriptor:
                                       code: DOCUMENT_NAME
                                     value: AADHAAR_CARD
+                          price:
+                            currency: INR
+                            value: '1000.00'
+                            maximum_value: '1500.0'
                         - id: 34H1BH24GBH4BHH6DF15E62A81C374B4
                           category_ids:
                             - DevOps
@@ -10787,10 +10834,10 @@ x-examples:
                                     value: P1M,P3M,P10M
                                   - code: COMPENSATION_PERCENTAGE_SPLIT
                                     value: 25,25,50
-                            price:
-                              currency: INR
-                              value: '1000.00'
-                              maximum_value: '1500.0'
+                          price:
+                            currency: INR
+                            value: '1000.00'
+                            maximum_value: '1500.0'
                       tags:
                         - descriptor:
                             code: LOCATION
@@ -12653,10 +12700,10 @@ x-examples:
                                     value: P1M,P3M,P10M
                                   - code: COMPENSATION_PERCENTAGE_SPLIT
                                     value: 25,25,50
-                            price:
-                              currency: INR
-                              value: '1000.00'
-                              maximum_value: '1500.0'
+                          price:
+                            currency: INR
+                            value: '1000.00'
+                            maximum_value: '1500.0'
                       tags:
                         - descriptor:
                             code: LOCATION
@@ -12679,11 +12726,216 @@ x-examples:
       on_update:
         examples:
           on_update: *ref_20
+          on_update_unsolicited:
+            value:
+              context:
+                domain: ONDC:ONEST10
+                action: on_update
+                version: 2.0.0
+                bap_id: worker-hub.bap.io
+                bap_uri: https://worker-hub.bap.io
+                bpp_id: job-hub.bpp.io
+                bpp_uri: https://job-hub.bpp.io
+                transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
+                message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
+                location:
+                  city:
+                    code: std:080
+                  country:
+                    code: IND
+                timestamp: 2023-02-23T08:22:061Z
+                ttl: PT30S
+              message:
+                order:
+                  id: '1677140405881'
+                  status: Active
+                  provider:
+                    id: '1'
+                  items:
+                    - id: >-
+                        a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+                      fulfillment_ids:
+                        - F3
+                      location_ids:
+                        - L1
+                      tags:
+                        - descriptor:
+                            code: NP_FEES
+                          list:
+                            - code: ID
+                              value: '1'
+                        - descriptor:
+                            code: NP_FEES
+                          list:
+                            - code: ID
+                              value: '2'
+                        - descriptor:
+                            code: ACADEMIC_QUALIFICATIONS
+                          list:
+                            - descriptor:
+                                code: COURSE_NAME
+                              value: Class-X
+                            - descriptor:
+                                code: MIN_PERCENTAGE
+                              value: '60'
+                            - descriptor:
+                                code: MANDATORY_ELIGIBILITY
+                              value: 'true'
+                        - descriptor:
+                            code: ACADEMIC_QUALIFICATIONS
+                          list:
+                            - descriptor:
+                                code: COURSE_NAME
+                              value: Class-XII
+                            - descriptor:
+                                code: MIN_PERCENTAGE
+                              value: '60'
+                            - descriptor:
+                                code: MANDATORY_ELIGIBILITY
+                              value: 'true'
+                        - descriptor:
+                            code: ACADEMIC_QUALIFICATIONS
+                          list:
+                            - descriptor:
+                                code: COURSE_LEVEL
+                              value: Under Graduate
+                            - descriptor:
+                                code: MIN_PERCENTAGE
+                              value: '60'
+                            - descriptor:
+                                code: MANDATORY_ELIGIBILITY
+                              value: 'true'
+                        - descriptor:
+                            code: ACADEMIC_QUALIFICATIONS
+                          list:
+                            - descriptor:
+                                code: COURSE_LEVEL
+                              value: Graduate
+                            - descriptor:
+                                code: MANDATORY_ELIGIBILITY
+                              value: 'false'
+                        - descriptor:
+                            code: JOB_REQUIREMENTS
+                          list:
+                            - descriptor:
+                                code: REQ_EXPERIENCE
+                              value: P2Y6M
+                            - descriptor:
+                                code: ADD_PROF_SKILL
+                            - descriptor:
+                                code: ADD_PROF_SKILL
+                              value: dev-ops
+                            - descriptor:
+                                code: REQ_ADDL_SKILL
+                              value: >-
+                                8+ years of engineering experience in shipping
+                                user-facing production features
+                        - descriptor:
+                            code: JOB_RESPONSIBILITIES
+                          list:
+                            - descriptor:
+                                code: RESPONSIBILITY
+                              value: >-
+                                Build frontend experiences for tools (Web, PWA,
+                                React Native)
+                            - descriptor:
+                                code: RESPONSIBILITY
+                              value: Define long-term technical direction and vision
+                            - descriptor:
+                                code: RESPONSIBILITY
+                              value: >-
+                                Create reliable interfaces using modern tools
+                                like React, React Native, Typescript, Node.js,
+                                Jest, and Webpack.
+                            - descriptor:
+                                code: RESPONSIBILITY
+                              value: >-
+                                Mentor team members on design techniques and
+                                coding standards.
+                        - descriptor:
+                            code: JOB_DETAILS
+                          list:
+                            - descriptor:
+                                code: JOB_TYPE
+                              value: Full-Time
+                            - descriptor:
+                                code: JOB_ROLE
+                              value: DevOps Engineer
+                  fulfillments:
+                    - id: F3
+                      type: lead & recruitment
+                      state:
+                        descriptor:
+                          code: OFFER_EXTENDED
+                        updated_at: 2023-02-23T08:22:061Z
+                  quote:
+                    price:
+                      currency: INR
+                      value: '1150'
+                    breakup:
+                      - item:
+                          id: 0253719F295521CED39EC9C2F3C8DCDE
+                          price:
+                            currency: INR
+                            value: '1100'
+                          title: item
+                      - item:
+                          id: a3a7fe79-f26e-4698-ad0f-874e6b5db085
+                          price:
+                            currency: INR
+                            value: '50'
+                          title: tax
+                    ttl: P1D
+                  payments:
+                    - params:
+                        currency: INR
+                        transaction_id: '3937'
+                        amount: '1150.00'
+                      status: PAID
+                      type: ON-ORDER
+                      collected_by: BAP
+                      tags:
+                        descriptor:
+                          code: SETTLEMENT_DETAILS
+                        list:
+                          - descriptor:
+                              code: SETTLEMENT_COUNTERPARTY
+                            value: seller-app
+                          - descriptor:
+                              code: SETTLEMENT_PHASE
+                            value: sale-amount
+                          - descriptor:
+                              code: SETTLEMENT_TYPE
+                            value: neft
+                          - descriptor:
+                              code: SETTLEMENT_BASIS
+                            value: lead & recruitment
+                          - descriptor:
+                              code: SETTLEMENT_WINDOW
+                            value: P3M
+                          - descriptor:
+                              code: SETTLEMENT_BANK_ACCOUNT_NO
+                            value: XXXXXXXXXX
+                          - descriptor:
+                              code: SETTLEMENT_IFSC_CODE
+                            value: XXXXXXXXX
+                          - descriptor:
+                              code: BENEFICIARY_NAME
+                            value: xxxxx
+                          - descriptor:
+                              code: BANK_NAME
+                            value: xxxx
+                          - descriptor:
+                              code: BRANCH_NAME
+                            value: xxxx
+                  documents:
+                    - url: https://offer_letter_url
+                      label: offer_letter
       on_status:
         examples:
-          on_status - APPLICATION-IN-PROGRESS: *ref_21
-          on_status - APPLICATION-SUBMITTED: *ref_22
-          on_status - OFFER-EXTENDED: *ref_23
+          on_status - APPLICATION_IN_PROGRESS: *ref_21
+          on_status - APPLICATION_SUBMITTED: *ref_22
+          on_status - OFFER_EXTENDED: *ref_23
       on_cancel:
         examples:
           on_cancel: *ref_24
@@ -13529,6 +13781,23 @@ x-attributes:
                     required: mandatory
                     usage: abc@abc.bc
                     reference: null
+            payments:
+              parent: true
+              url:
+                description: The URL for payment processing.
+                required: mandatory
+                usage: https://ondc.transaction.com/payment
+                reference: null
+              type:
+                description: The type of payment.
+                required: mandatory
+                usage: ON-ORDER
+                reference: null
+              collected_by:
+                description: Entity collecting the payment.
+                required: mandatory
+                usage: BAP
+                reference: null
       on_init:
         parent: true
         context:
@@ -13716,6 +13985,29 @@ x-attributes:
                     required: mandatory
                     usage: item
                     reference: null
+            fulfillments:
+              id:
+                description: The unique identifier of the fulfillment option.
+                required: mandatory
+                usage: F1
+                reference: null
+              type:
+                description: The type of fulfillment.
+                required: mandatory
+                usage: lead
+                reference: null
+              state:
+                descriptor:
+                  code:
+                    description: Fulfillment state code
+                    required: mandatory
+                    usage: APPLICATION_IN_PROGRESS
+                    reference: if any
+                updated_at:
+                  description: Last state update timestamp
+                  required: mandatory
+                  usage: 2023-02-23T08:20:016Z
+                  reference: if any
             payments:
               parent: true
               url:
@@ -13854,7 +14146,7 @@ x-attributes:
                   code:
                     description: Fulfillment state code
                     required: mandatory
-                    usage: APPLICATION_STARTED
+                    usage: APPLICATION_SUBMITTED
                     reference: if any
                 updated_at:
                   description: Last state update timestamp
@@ -14177,7 +14469,7 @@ x-attributes:
                   code:
                     description: Fulfillment state code
                     required: mandatory
-                    usage: APPLICATION_STARTED
+                    usage: APPLICATION_ACCEPTED
                     reference: if any
                 updated_at:
                   description: Last state update timestamp
@@ -14960,22 +15252,13 @@ x-attributes:
               required: mandatory
               usage: fulfillment_id_value
               reference: if any
-            type:
-              description: fulfillment_type
-              required: mandatory
-              usage: FULFILLMENT_TYPE_VALUE
-              reference: if any
-            contact:
-              phone:
-                description: phone
-                required: mandatory
-                usage: +91-1234567890
-                reference: if any
-              email:
-                description: email
-                required: mandatory
-                usage: abc@abc.bc
-                reference: if any
+            state:
+              descriptor:
+                code:
+                  description: The code describing the fulfillment state.
+                  required: mandatory
+                  usage: OFFER_ACCEPTED
+                  reference: null
       on_update:
         parent: true
         context:
@@ -15102,6 +15385,18 @@ x-attributes:
                 required: mandatory
                 usage: lead
                 reference: if any
+              state:
+                descriptor:
+                  code:
+                    description: The code describing the fulfillment state.
+                    required: mandatory
+                    usage: OFFER_ACCEPTED
+                    reference: null
+                updated_at:
+                  description: Last state update timestamp
+                  required: mandatory
+                  usage: 2023-02-22T11:50:46.742Z
+                  reference: if any
             quote:
               price:
                 currency:
@@ -15179,6 +15474,17 @@ x-attributes:
                 description: Entity collecting the payment.
                 required: mandatory
                 usage: BAP
+                reference: null
+            documents:
+              url:
+                description: The link to the document, such as an invoice or receipt.
+                required: optional
+                usage: https://offer_letter_url
+                reference: null
+              label:
+                description: A descriptive title for the document, indicating its type.
+                required: optional
+                usage: offer_letter
                 reference: null
 x-errorcodes: null
 x-testcasesui:

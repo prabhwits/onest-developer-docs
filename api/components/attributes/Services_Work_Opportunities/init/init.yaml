@@ -175,3 +175,20 @@ message:
             required: mandatory
             usage: "abc@abc.bc"
             reference: null
+    payments:
+      parent: true
+      url:
+        description: "The URL for payment processing."
+        required: mandatory
+        usage: "https://ondc.transaction.com/payment"
+        reference: null
+      type:
+        description: "The type of payment."
+        required: mandatory
+        usage: "ON-ORDER"
+        reference: null
+      collected_by:
+        description: "Entity collecting the payment."
+        required: mandatory
+        usage: "BAP"
+        reference: null

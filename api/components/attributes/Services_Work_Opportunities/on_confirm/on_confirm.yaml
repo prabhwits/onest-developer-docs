@@ -155,7 +155,7 @@ message:
             code:
               description: Fulfillment state code
               required: mandatory
-              usage: APPLICATION_STARTED
+              usage: APPLICATION_ACCEPTED
               reference: if any
           updated_at:
             description: Last state update timestamp

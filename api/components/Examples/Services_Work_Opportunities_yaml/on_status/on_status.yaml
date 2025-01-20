@@ -155,7 +155,7 @@ value:
           type: "lead & recruitment"
           state:
             descriptor:
-              code: APPLICATION-IN-PROGRESS
+              code: APPLICATION_IN_PROGRESS
             updated_at: "2023-02-22T11:50:46.742Z"
       payments:
         - params:
