@@ -103,11 +103,6 @@ message:
         required: mandatory
         usage: "F1"
         reference: "if any"
-      location_ids:
-        description: "The location IDs associated with the item."
-        required: mandatory
-        usage: "L1"
-        reference: "if any"
     fulfillments:
       id:
         description: "The unique identifier of the fulfillment."

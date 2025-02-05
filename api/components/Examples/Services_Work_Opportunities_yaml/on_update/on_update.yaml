@@ -14,7 +14,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-23T08:20:061Z"
+    timestamp: "2023-02-23T08:20:06.061Z"
     ttl: PT30S
   message:
     order:
@@ -26,8 +26,6 @@ value:
         - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
           fulfillment_ids:
             - "F3"
-          location_ids:
-            - L1
           tags:
             - descriptor:
                 code: NP_FEES
@@ -92,8 +90,6 @@ value:
                   value: "P2Y6M"
                 - descriptor:
                     code: ADD_PROF_SKILL
-                - descriptor:
-                    code: ADD_PROF_SKILL
                   value: dev-ops
                 - descriptor:
                     code: REQ_ADDL_SKILL
@@ -134,9 +130,9 @@ value:
         - id: "F3"
           type: "lead & recruitment"
           state:
-          descriptor:
-            code: OFFER_ACCEPTED
-          updated_at: "2023-02-23T08:20:061Z"
+            descriptor:
+              code: OFFER_ACCEPTED
+          updated_at: "2023-02-23T08:20:06.061Z"
       quote:
         price:
           currency: INR
@@ -145,14 +141,14 @@ value:
           - item:
               id: "0253719F295521CED39EC9C2F3C8DCDE"
               price:
-                  currency: INR
-                  value: "1100"
+                currency: INR
+                value: "1100"
               title: "item"
           - item:
               id: "a3a7fe79-f26e-4698-ad0f-874e6b5db085"
               price:
-                  currency: INR
-                  value: "50"
+                currency: INR
+                value: "50"
               title: "tax"
         ttl: "P1D"
       payments:
@@ -164,36 +160,36 @@ value:
           type: "ON-ORDER"
           collected_by: "BAP"
           tags:
-              descriptor:
-                code: "SETTLEMENT_DETAILS"
-              list:
-                - descriptor:
-                    code: "SETTLEMENT_COUNTERPARTY"
-                  value: "seller-app"
-                - descriptor:
-                    code: "SETTLEMENT_PHASE"
-                  value: "sale-amount"
-                - descriptor:
-                    code: "SETTLEMENT_TYPE"
-                  value: "neft"
-                - descriptor:
-                    code: "SETTLEMENT_BASIS"
-                  value: "lead & recruitment"
-                - descriptor:
-                    code: "SETTLEMENT_WINDOW"
-                  value: "P3M"
-                - descriptor:
-                    code: "SETTLEMENT_BANK_ACCOUNT_NO"
-                  value: "XXXXXXXXXX"
-                - descriptor:
-                    code: "SETTLEMENT_IFSC_CODE"
-                  value: "XXXXXXXXX"
-                - descriptor:
-                    code: "BENEFICIARY_NAME"
-                  value: "xxxxx"
-                - descriptor:
-                    code: "BANK_NAME"
-                  value: "xxxx"
-                - descriptor:
-                    code: "BRANCH_NAME"
-                  value: "xxxx"
+            descriptor:
+              code: "SETTLEMENT_DETAILS"
+            list:
+              - descriptor:
+                  code: "SETTLEMENT_COUNTERPARTY"
+                value: "seller-app"
+              - descriptor:
+                  code: "SETTLEMENT_PHASE"
+                value: "sale-amount"
+              - descriptor:
+                  code: "SETTLEMENT_TYPE"
+                value: "neft"
+              - descriptor:
+                  code: "SETTLEMENT_BASIS"
+                value: "lead & recruitment"
+              - descriptor:
+                  code: "SETTLEMENT_WINDOW"
+                value: "P3M"
+              - descriptor:
+                  code: "SETTLEMENT_BANK_ACCOUNT_NO"
+                value: "XXXXXXXXXX"
+              - descriptor:
+                  code: "SETTLEMENT_IFSC_CODE"
+                value: "XXXXXXXXX"
+              - descriptor:
+                  code: "BENEFICIARY_NAME"
+                value: "xxxxx"
+              - descriptor:
+                  code: "BANK_NAME"
+                value: "xxxx"
+              - descriptor:
+                  code: "BRANCH_NAME"
+                value: "xxxx"
