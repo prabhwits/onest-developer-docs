@@ -28,7 +28,10 @@ confirm:
       $ref: ./confirm/confirm.yaml
 update:
   examples:
-    - $ref: ./update/update.yaml
+    update - contact_info:
+      $ref: ./update/update_customer.yaml
+    update - offer_info:
+      $ref: ./update/update.yaml
 status:
   examples:
     status:
@@ -69,18 +72,18 @@ on_confirm:
       $ref: ./on_confirm/on_confirm.yaml
 on_update:
   examples:
-    on_update:
-      $ref: ./on_update/on_update.yaml
-    on_update_unsolicited:
+    on_update - unsolicited:
       $ref: ./on_update/on_update_unsolicited.yaml
+    on_update - contact_info:
+      $ref: ./on_update/on_update_customer.yaml
+    on_update - offer_info:
+      $ref: ./on_update/on_update.yaml
 on_status:
   examples:
-    on_status - APPLICATION_IN_PROGRESS:
+    on_status - APPLICATION_ACCEPTED:
       $ref: ./on_status/on_status.yaml
-    on_status - APPLICATION_SUBMITTED:
+    on_status - ASSESSMENT_IN_PROGRESS:
       $ref: ./on_status/on_status_unsolicited.yaml
-    on_status - OFFER_EXTENDED:
-      $ref: ./on_status/on_status_unsolicited2.yaml
 on_cancel:
   examples:
     on_cancel:

@@ -61,7 +61,7 @@ context:
   timestamp:
     description: "The timestamp of the operation in ISO 8601 format."
     required: mandatory
-    usage: "2023-02-23T08:20:016Z"
+    usage: "2023-02-23T08:20:16Z"
     reference: null
   ttl:
     description: "The Time-to-Live (TTL) of the operation in ISO 8601 duration format."
@@ -160,7 +160,7 @@ message:
           updated_at:
             description: Last state update timestamp
             required: mandatory
-            usage: 2023-02-23T08:20:016Z
+            usage: 2023-02-23T08:20:16Z
             reference: if any
       customer:
         contact:
@@ -172,7 +172,7 @@ message:
           email:
             description: "The email of the customer."
             required: mandatory
-            usage: "abc@abc.bc"
+            usage: "abc@xyz.com"
             reference: null
         person:
           name:
@@ -255,11 +255,6 @@ message:
         usage: "1150"
         reference: null
     payments:
-      url:
-        description: "The URL for payment processing."
-        required: mandatory
-        usage: "https://ondc.transaction.com/payment"
-        reference: null
       params:
         currency:
           description: "The currency used for the transaction."
@@ -291,3 +286,9 @@ message:
         required: mandatory
         usage: "BAP"
         reference: null
+    state:
+      updated_at:
+        description: Last order update timestamp.
+        required: mandatory
+        usage: "2023-02-23T08:20:16Z"
+        reference: if any    

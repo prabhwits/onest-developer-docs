@@ -153,11 +153,6 @@ message:
           usage: 2023-02-22T11:50:46.742Z
           reference: if any
     payments:
-      url:
-        description: "The URL for payment processing."
-        required: mandatory
-        usage: "https://ondc.transaction.com/payment"
-        reference: null
       params:
         currency:
           description: "The currency used for the transaction."
@@ -189,3 +184,9 @@ message:
         required: mandatory
         usage: "BAP"
         reference: null
+    state:
+      updated_at:
+        description: Last order update timestamp.
+        required: mandatory
+        usage: "2023-02-22T11:50:46.742Z"
+        reference: if any    

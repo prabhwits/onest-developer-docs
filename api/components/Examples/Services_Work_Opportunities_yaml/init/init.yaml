@@ -14,7 +14,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-14T12:12:461Z"
+    timestamp: "2023-02-14T12:12:46Z"
     ttl: PT30S
   message:
     order:
@@ -156,7 +156,7 @@ value:
                       value: "https://github.com/example-profile"
             contact:
               phone: "+91-1234567890"
-              email: abc@abc.bc
+              email: abc@xyz.com
       payments:
         - status: "NOT-PAID"
           type: "ON-ORDER"

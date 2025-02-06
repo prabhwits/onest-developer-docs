@@ -61,7 +61,7 @@ context:
   timestamp:
     description: "The timestamp of the operation in ISO 8601 format."
     required: mandatory
-    usage: "2023-02-14T12:12:416Z"
+    usage: "2023-02-14T12:12:16Z"
     reference: null
   ttl:
     description: "The Time-to-Live (TTL) of the operation in ISO 8601 duration format."
@@ -173,15 +173,10 @@ message:
           email:
             description: "The email of the customer."
             required: mandatory
-            usage: "abc@abc.bc"
+            usage: "abc@xyz.com"
             reference: null
     payments:
       parent: true
-      url:
-        description: "The URL for payment processing."
-        required: mandatory
-        usage: "https://ondc.transaction.com/payment"
-        reference: null
       type:
         description: "The type of payment."
         required: mandatory

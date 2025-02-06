@@ -88,9 +88,22 @@ message:
       usage: "fulfillment_id_value"
       reference: "if any"
     state:
-        descriptor:
-          code:
-            description: "The code describing the fulfillment state."
-            required: mandatory
-            usage: "OFFER_ACCEPTED"
+      descriptor:
+        code:
+          description: "The code describing the fulfillment state."
+          required: optional
+          usage: "OFFER_ACCEPTED"
+          reference: null
+    customer:
+        contact:
+          phone:
+            description: "The phone number of the customer."
+            required: optional
+            usage: "+91-0987654321"
             reference: null
+          email:
+            description: "The email of the customer."
+            required: optional
+            usage: "bac@xyz.com"
+            reference: null
+    

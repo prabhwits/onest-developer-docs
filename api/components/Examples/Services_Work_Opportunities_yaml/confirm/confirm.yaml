@@ -14,7 +14,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-23T08:09:021Z"
+    timestamp: "2023-02-23T08:09:21Z"
     ttl: PT30S
   message:
     order:
@@ -43,7 +43,7 @@ value:
           state:
             descriptor:
               code: APPLICATION_SUBMITTED
-            updated_at: "2023-02-23T08:09:021Z"
+            updated_at: "2023-02-23T08:09:21Z"
           customer:
             person:
               name: Sanjay
@@ -101,7 +101,7 @@ value:
                   type: "pdf"
             contact:
               phone: "+91-1234567890"
-              email: abc@abc.bc
+              email: abc@xyz.com
       quote:
         price:
           currency: INR

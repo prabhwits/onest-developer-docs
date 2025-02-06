@@ -203,15 +203,10 @@ message:
           updated_at:
             description: Last state update timestamp
             required: mandatory
-            usage: 2023-02-23T08:20:016Z
+            usage: "2023-02-23T08:20:16Z"
             reference: if any
     payments:
       parent: true
-      url:
-        description: "The URL for payment processing."
-        required: mandatory
-        usage: "https://ondc.transaction.com/payment"
-        reference: null
       type:
         description: "The type of payment."
         required: mandatory

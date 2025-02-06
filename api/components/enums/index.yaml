@@ -16,24 +16,6 @@ on_search:
       fulfillments: &fulfillments
         type:
           $ref: "./fulfillments.yaml#/fulfillments/type"
-        state:
-          $ref: "./fulfillments.yaml#/fulfillments/state"
-        customer:
-          $ref: "./fulfillments.yaml#/fulfillments/customer"
-      # tags:
-      #   serviceability:
-      #     $ref: "./tags.yaml#/serviceability/type"
-      # providers:
-      #   items:
-      #     quantity:
-      #       unitized:
-      #         measure:
-      #           unit:
-      #             $ref: "./quantity_measure.yaml#/unit"
-      #     tags:
-      #       RESCHEDULE_TERMS:
-      #         RESCHEDULE_FEE_TYPE:
-      #           $ref: "./tags.yaml#/reschedule_fee_type"
 select:
   context: &context
     domain:
@@ -42,15 +24,6 @@ select:
       city:
         code:
           $ref: "./city_state_codes.yaml#/cities_with_std_codes"
-
-  # message:
-  #   order:
-  #     items:
-  #         quantity:
-  #           selected:
-  #             measure:
-  #               unit:
-  #                 $ref: "./quantity_measure.yaml#/unit"
 init:
   context: &context
     domain:
@@ -87,7 +60,7 @@ confirm:
     order:
       status:
         - code: Created
-          description: fulfillments.state will be one of these - ["APPLICATION_STARTED"]
+          description: fulfillments.state will be one of these - ["APPLICATION_SUBMITTED"]
           reference: <PR/Issue/Discussion Links md format text>
       fulfillments:
         type:
@@ -112,7 +85,13 @@ on_confirm:
     order:
       status:
         - code: Created
-          description: fulfillments.state will be one of these - ["APPLICATION_ACCEPTED", "APPLICATION_REJECTED"]
+          description: fulfillments.state will be one of these - ["APPLICATION_SUBMITTED"]
+          reference: <PR/Issue/Discussion Links md format text>        
+        - code: Active
+          description: fulfillments.state will be one of these - ["APPLICATION_ACCEPTED"]
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: Completed
+          description: fulfillments.state will be one of these - ["APPLICATION_REJECTED"]
           reference: <PR/Issue/Discussion Links md format text>
       fulfillments:
         type:
@@ -128,6 +107,10 @@ on_confirm:
                 name: Name of the fulfillment status	
                 reference: <PR/Issue/Discussion Links md format text>
                 description: APPLICATION_REJECTED
+              - code: APPLICATION_SUBMITTED
+                name: Name of the fulfillment status	
+                reference: <PR/Issue/Discussion Links md format text>
+                description: APPLICATION_SUBMITTED
   #     quote:
   #       breakup:
   #         $ref: "./title_type.yaml#/breakup"
@@ -147,6 +130,10 @@ update:
                 name: Name of the fulfillment status	
                 reference: <PR/Issue/Discussion Links md format text>
                 description: OFFER_ACCEPTED
+              - code: OFFER_REJECTED
+                name: Name of the fulfillment status	
+                reference: <PR/Issue/Discussion Links md format text>
+                description: OFFER_REJECTED
 #       payments:
 #         $ref: "./payment.yaml#/payment"
 on_update:
@@ -155,7 +142,13 @@ on_update:
       $ref: "./context.yaml#/domain"
   message:
     order:
-#       $ref: "./order.yaml#/order"
+      status:
+        - code: Active
+          description: fulfillments.state will be one of these - ["OFFER_EXTENDED"]
+          reference: <PR/Issue/Discussion Links md format text>        
+        - code: Completed
+          description: fulfillments.state will be one of these - ["OFFER_ACCEPTED", "OFFER_REJECTED"]
+          reference: <PR/Issue/Discussion Links md format text>
       fulfillments:
         state:
           descriptor:
@@ -164,6 +157,14 @@ on_update:
                 name: Name of the fulfillment status	
                 reference: <PR/Issue/Discussion Links md format text>
                 description: OFFER_ACCEPTED
+              - code: OFFER_REJECTED
+                name: Name of the fulfillment status
+                description: OFFER_REJECTED
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: OFFER_EXTENDED
+                name: Name of the fulfillment status
+                description: OFFER_EXTENDED
+                reference: <PR/Issue/Discussion Links md format text>
 status:
   context: &context
     domain:
@@ -194,8 +195,20 @@ on_cancel:
   context: &context
     domain:
       $ref: "./context.yaml#/domain"
-#   message:
-#     order:
+  message:
+    order:
+      status:
+        - code: Cancelled
+          description: fulfillments.state will be one of these - ["CANCELLED"]
+          reference: <PR/Issue/Discussion Links md format text>        
+      fulfillments:
+        state:
+          descriptor:
+            code:
+              - code: CANCELLED
+                name: Name of the fulfillment status
+                description: CANCELLED
+                reference: <PR/Issue/Discussion Links md format text> 
 #       cancellation:
 #         reason:
 #           descriptor:
