@@ -241,7 +241,7 @@ message:
               email:
                 description: "The email of the customer."
                 required: mandatory
-                usage: "abc@abc.bc"
+                usage: "abc@xyz.com"
                 reference: null
           time:
             range:

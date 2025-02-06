@@ -1,20 +1,20 @@
 value:
   context:
     domain: ONDC:ONEST10
-    action: on_status
+    action: on_update
     version: 2.0.0
     bap_id: worker-hub.bap.io
     bap_uri: https://worker-hub.bap.io
     bpp_id: job-hub.bpp.io
     bpp_uri: https://job-hub.bpp.io
     transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
-    message_id: c8e3968c-cd78-4e46-aa34-0d541e46bd73
+    message_id: 8cbb5e99-5d06-4855-81e9-a4fc8013dbff
     location:
       city:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-22T11:52:00.243Z"
+    timestamp: "2024-09-04T12:34:56Z"
     ttl: PT30S
   message:
     order:
@@ -23,13 +23,9 @@ value:
       provider:
         id: "1"
       items:
-        - id: 0253719F295521CED39EC9C2F3C8DCDE
+        - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
           fulfillment_ids:
             - "F3"
-          time:
-            range:
-              start: "2023-01-03T13:23:01+00:00"
-              end: "2023-02-03T13:23:01+00:00"
           tags:
             - descriptor:
                 code: NP_FEES
@@ -94,44 +90,107 @@ value:
                   value: "P2Y6M"
                 - descriptor:
                     code: ADD_PROF_SKILL
-                  value: android-development
-                - descriptor:
-                    code: ADD_PROF_SKILL
                   value: dev-ops
+                - descriptor:
+                    code: REQ_ADDL_SKILL
+                  value: >-
+                    8+ years of engineering experience in shipping user-facing
+                    production features
             - descriptor:
                 code: JOB_RESPONSIBILITIES
               list:
                 - descriptor:
                     code: RESPONSIBILITY
                   value: >-
-                    Build frontend experiences for our tools (Web, PWA and React Native)
+                    Build frontend experiences for tools (Web, PWA, React
+                    Native)
+                - descriptor:
+                    code: RESPONSIBILITY
+                  value: Define long-term technical direction and vision
                 - descriptor:
                     code: RESPONSIBILITY
                   value: >-
-                    Articulate a long term technical direction and vision for building, maintaining, and scaling our web and mobile platforms
+                    Create reliable interfaces using modern tools like React,
+                    React Native, Typescript, Node.js, Jest, and Webpack.
                 - descriptor:
                     code: RESPONSIBILITY
                   value: >-
-                    Create trustworthy user experiences by building interfaces that are simple, easy to comprehend, performant and reliable using modern tools like React, React Native, Typescript, Node.js, Jest and Webpack.
-                - descriptor:
-                    code: RESPONSIBILITY
-                  value: >-
-                    Mentor and train other team members on design techniques and coding standards.
+                    Mentor team members on design techniques and coding
+                    standards.
             - descriptor:
                 code: JOB_DETAILS
               list:
                 - descriptor:
-                    code: CTC
-                  value: 20,00,000
-                - descriptor:
-                    code: POST_START_LOCATION
-                  value: Pune
-                - descriptor:
-                    code: WORKING_LOCATION
-                  value: Hybrid
-                - descriptor:
-                    code: WORKING_TIME
+                    code: JOB_TYPE
                   value: Full-Time
+                - descriptor:
+                    code: JOB_ROLE
+                  value: DevOps Engineer
+      fulfillments:
+        - id: "F3"
+          type: "lead & recruitment"
+          state:
+            descriptor:
+              code: OFFER_EXTENDED 
+            updated_at: "2023-02-23T08:20:06Z"
+          customer:
+            person:
+              name: Sanjay
+              gender: Male
+              age: "35"
+              skills:
+                - name: Android
+                - name: AWS
+              languages:
+                - name: en
+                - name: ml
+                - name: hi
+              creds:
+                - id: "D1"
+                  descriptor:
+                    name: "PAN_CARD"
+                    short_desc: "PAN Card information"
+                    long_desc: "Permanent Account Number"
+                  url: "https://example.com/pan_card.jpeg"
+                  type: "jpeg"
+                - id: "D2"
+                  descriptor:
+                    name: "AADHAAR_CARD"
+                    short_desc: "Aadhaar Card information"
+                    long_desc: "Unique Identification Number"
+                  url: "https://example.com/aadhaar_card.jpeg"
+                  type: "pdf"
+                - id: "D3"
+                  descriptor:
+                    name: "VOTER_ID"
+                    short_desc: "Voter ID information"
+                    long_desc: "Election Commission ID"
+                  url: "https://example.com/voter_id.jpeg"
+                  type: "jpeg"
+                - id: "D4"
+                  descriptor:
+                    name: "PASSPORT"
+                    short_desc: "Passport information"
+                    long_desc: "International Travel Document"
+                  url: "https://example.com/passport.jpeg"
+                  type: "jpeg"
+                - id: "D5"
+                  descriptor:
+                    name: "DRIVING_LICENSE"
+                    short_desc: "Driving License information"
+                    long_desc: "License to Drive"
+                  url: "https://example.com/driving_license.jpeg"
+                  type: "jpeg"
+                - id: "D6"
+                  descriptor:
+                    name: "RESUME"
+                    short_desc: "Summary of qualifications, work experience, and education."
+                    long_desc: "A comprehensive document showcasing an individual's career achievements, skills, work history, education, certifications, and professional experience."
+                  url: "https://example.com/resume.pdf"
+                  type: "pdf"
+            contact:
+              phone: "+91-9876543210"
+              email: "bac@xyz.com"
       quote:
         price:
           currency: INR
@@ -140,23 +199,16 @@ value:
           - item:
               id: "0253719F295521CED39EC9C2F3C8DCDE"
               price:
-                  currency: INR
-                  value: "1100"
+                currency: INR
+                value: "1100"
               title: "item"
           - item:
               id: "a3a7fe79-f26e-4698-ad0f-874e6b5db085"
               price:
-                  currency: INR
-                  value: "50"
+                currency: INR
+                value: "50"
               title: "tax"
         ttl: "P1D"
-      fulfillments:
-        - id: "F3"
-          type: "lead & recruitment"
-          state:
-            descriptor:
-              code: OFFER_EXTENDED
-            updated_at: "2023-02-22T11:52:00.243Z"
       payments:
         - params:
             currency: "INR"
@@ -199,3 +251,8 @@ value:
               - descriptor:
                   code: "BRANCH_NAME"
                 value: "xxxx"
+      documents:
+        - url: "https://offer_letter_url"
+          label: "offer_letter"
+      state:
+        updated_at: "2024-09-04T12:34:56Z"

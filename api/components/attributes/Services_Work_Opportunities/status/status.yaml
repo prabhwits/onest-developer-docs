@@ -61,7 +61,7 @@ context:
   timestamp:
     description: "The timestamp of the operation in ISO 8601 format."
     required: mandatory
-    usage: "2024-09-04T12:34:560Z"
+    usage: "2024-09-04T12:34:56Z"
     reference: null
   ttl:
     description: "The Time-to-Live (TTL) of the operation in ISO 8601 duration format."

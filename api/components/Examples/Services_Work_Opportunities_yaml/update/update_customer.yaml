@@ -22,6 +22,8 @@ value:
       id: "1677140405881"
       fulfillments:
         - id: F3
-          state:
-            descriptor:
-              code: OFFER_ACCEPTED
+          customer: 
+            contact:
+              phone: "+91-9876543210"
+              email: "bac@xyz.com"
+              

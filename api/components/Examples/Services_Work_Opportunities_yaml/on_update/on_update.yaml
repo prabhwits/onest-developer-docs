@@ -19,7 +19,7 @@ value:
   message:
     order:
       id: "1677140405881"
-      status: Active
+      status: Completed
       provider:
         id: "1"
       items:
@@ -132,7 +132,7 @@ value:
           state:
             descriptor:
               code: OFFER_ACCEPTED
-          updated_at: "2023-02-23T08:20:06.061Z"
+            updated_at: "2023-02-23T08:20:06.061Z"
       quote:
         price:
           currency: INR
@@ -193,3 +193,8 @@ value:
               - descriptor:
                   code: "BRANCH_NAME"
                 value: "xxxx"
+      documents:
+        - url: "https://offer_letter_url"
+          label: "offer_letter"
+      state:
+        updated_at: "2023-02-23T08:20:06.061Z"

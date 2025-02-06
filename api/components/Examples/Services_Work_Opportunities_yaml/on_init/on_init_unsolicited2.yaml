@@ -59,7 +59,7 @@ value:
           state:
             descriptor:
               code: APPLICATION_FILLED
-          updated_at: "2023-02-23T10:18:45Z"
+            updated_at: "2023-02-23T10:18:45Z"
           customer:
             person:
               name: Sanjay
@@ -117,7 +117,7 @@ value:
                   type: "pdf"
             contact:
               phone: "+91-1234567890"
-              email: abc@abc.bc
+              email: abc@xyz.com
       payments:
         - status: "NOT-PAID"
           type: "ON-ORDER"

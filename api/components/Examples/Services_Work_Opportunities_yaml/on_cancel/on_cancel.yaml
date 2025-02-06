@@ -75,6 +75,7 @@ value:
           state:
             descriptor:
               code: CANCELLED
+            updated_at: "2023-02-23T08:20:06Z"
         - id: C1
           tags:
             - descriptor:
@@ -107,6 +108,10 @@ value:
                 - descriptor:
                     code: VALUE
                   value: "-50.00"
+          state:
+            descriptor:
+              code: CANCELLED
+            updated_at: "2023-02-23T08:20:06Z"
       payments:
          -  params:
               currency: "INR"
@@ -149,3 +154,5 @@ value:
                   - descriptor:
                       code: "BRANCH_NAME"
                     value: "xxxx"
+      state:
+        updated_at: "2023-02-23T08:20:06Z"

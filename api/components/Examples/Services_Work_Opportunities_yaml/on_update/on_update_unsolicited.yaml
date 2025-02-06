@@ -14,7 +14,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-23T08:22:061Z"
+    timestamp: "2023-02-23T08:22:06Z"
     ttl: PT30S
   message:
     order:
@@ -134,7 +134,7 @@ value:
           state:
             descriptor:
               code: OFFER_EXTENDED
-          updated_at: "2023-02-23T08:22:061Z"
+            updated_at: "2023-02-23T08:22:061"
       quote:
         price:
           currency: INR
@@ -198,3 +198,5 @@ value:
       documents:
         - url: "https://offer_letter_url"
           label: "offer_letter"
+      state:
+        updated_at: "2023-02-23T08:22:06Z"

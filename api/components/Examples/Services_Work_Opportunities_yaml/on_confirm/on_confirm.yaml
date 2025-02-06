@@ -19,7 +19,7 @@ value:
   message:
     order:
       id: "1677140405881"
-      status: Created
+      status: Active
       provider:
         id: "1"
       items:
@@ -206,7 +206,7 @@ value:
                   type: "pdf"
             contact:
               phone: "+91-1234567890"
-              email: abc@abc.bc
+              email: abc@xyz.com
       payments:
           - params:
               currency: "INR"
@@ -249,3 +249,5 @@ value:
                   - descriptor:
                       code: "BRANCH_NAME"
                     value: "xxxx"
+      state:
+        updated_at: "2023-02-23T08:20:06Z"

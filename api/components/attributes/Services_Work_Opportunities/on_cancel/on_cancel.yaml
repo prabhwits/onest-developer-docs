@@ -28,7 +28,7 @@ context:
   timestamp:
     description: RFC3339 compliant timestamp
     required: mandatory
-    usage: "2023-02-23T08:20:016Z"
+    usage: "2023-02-23T08:20:16Z"
     reference: if any
   transaction_id:
     description: unique string for each request trail
@@ -136,12 +136,12 @@ message:
             required: mandatory
             usage: "CANCELLED"
             reference: if any
+        updated_at:
+            description: Last state update timestamp
+            required: mandatory
+            usage: "2023-02-23T08:20:16Z"
+            reference: if any
     payments:
-      url:
-        description: "The URL for payment processing."
-        required: mandatory
-        usage: "https://ondc.transaction.com/payment"
-        reference: null
       params:
         currency:
           description: "The currency used for the transaction."
@@ -173,3 +173,9 @@ message:
         required: mandatory
         usage: "BAP"
         reference: null
+    state:
+      updated_at:
+        description: Last order update timestamp.
+        required: mandatory
+        usage: "2023-02-23T08:20:16Z"
+        reference: if any    

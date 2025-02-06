@@ -14,7 +14,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: 2024-09-04T12:34:560Z
+    timestamp: "2024-09-04T12:34:56Z"
     ttl: PT30S
   message:
     order:
