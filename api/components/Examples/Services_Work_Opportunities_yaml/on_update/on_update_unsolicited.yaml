@@ -23,7 +23,7 @@ value:
       provider:
         id: "1"
       items:
-        - id: a23f2fdfbbb8ac402bf259d75402eb0792f50c095f7d08a55475e7af1c2dadca
+        - id: 0253719F295521CED39EC9C2F3C8DCDE
           fulfillment_ids:
             - "F3"
           tags:
@@ -90,6 +90,7 @@ value:
                   value: "P2Y6M"
                 - descriptor:
                     code: ADD_PROF_SKILL
+                  value: android-development
                 - descriptor:
                     code: ADD_PROF_SKILL
                   value: dev-ops
