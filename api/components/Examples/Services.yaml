@@ -12,5 +12,7 @@ ONDC:ONEST10 - Work Opportunities:
     Attributes For Profiling: ONEST - Work Opportunities : <a href="https://docs.google.com/spreadsheets/d/1FIcpfypkN4rdWG6ZH3UKgP-lPnkJ6gkT8czwi0urLcA/edit?gid=0#gid=0">link</a>
     <br/><br/>
     Dozzle link for logs checking: ONEST - Work Opportunities : <a href="https://onest-mock-service.ondc.org/analytics/">link</a>
+    <br/><br/>
+    Logs Verification: ONEST - Work Opportunities : <a href="https://github.com/ONDC-Official/ONEST-LOGS-VERIFICATION">link</a>
   example_set:
     $ref: "./Services_Work_Opportunities_yaml/index.yaml"
