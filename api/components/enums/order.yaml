@@ -1,9 +1,12 @@
 status:
   - code: Active
-    description: fulfillments.state will be one of these - ["APPLICATION_ACCEPTED", "ASSESSMENT_IN_PROGRESS"]
+    description: fulfillments.state will be one of these - ["APPLICATION_ACCEPTED", "ASSESSMENT_IN_PROGRESS","OFFER_EXTENDED"]
     reference: <PR/Issue/Discussion Links md format text>
   - code: Completed
-    description: fulfillments.state will be - "APPLICATION_REJECTED"
+    description: fulfillments.state will be - ["APPLICATION_REJECTED","OFFER_ACCEPTED","OFFER_REJECTED"]
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: Cancelled
+    description: fulfillments.state will be - "CANCELLED"
     reference: <PR/Issue/Discussion Links md format text>
 
 

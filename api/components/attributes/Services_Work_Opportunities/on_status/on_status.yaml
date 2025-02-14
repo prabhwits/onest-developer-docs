@@ -150,7 +150,7 @@ message:
         updated_at:
           description: Last state update timestamp
           required: mandatory
-          usage: 2023-02-22T11:50:46.742Z
+          usage: "2023-02-22T11:50:46.742Z"
           reference: if any
     payments:
       params:
@@ -184,9 +184,8 @@ message:
         required: mandatory
         usage: "BAP"
         reference: null
-    state:
-      updated_at:
-        description: Last order update timestamp.
-        required: mandatory
-        usage: "2023-02-22T11:50:46.742Z"
-        reference: if any    
+    updated_at:
+      description: Last order update timestamp.
+      required: mandatory
+      usage: "2023-02-22T11:50:46.742Z"
+      reference: if any    

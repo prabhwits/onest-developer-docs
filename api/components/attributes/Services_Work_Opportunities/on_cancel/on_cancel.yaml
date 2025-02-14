@@ -28,7 +28,7 @@ context:
   timestamp:
     description: RFC3339 compliant timestamp
     required: mandatory
-    usage: "2023-02-23T08:20:16Z"
+    usage: "2023-02-23T08:20:16.324Z"
     reference: if any
   transaction_id:
     description: unique string for each request trail
@@ -139,7 +139,7 @@ message:
         updated_at:
             description: Last state update timestamp
             required: mandatory
-            usage: "2023-02-23T08:20:16Z"
+            usage: "2023-02-23T08:20:16.324Z"
             reference: if any
     payments:
       params:
@@ -173,9 +173,8 @@ message:
         required: mandatory
         usage: "BAP"
         reference: null
-    state:
-      updated_at:
-        description: Last order update timestamp.
-        required: mandatory
-        usage: "2023-02-23T08:20:16Z"
-        reference: if any    
+    updated_at:
+      description: Last order update timestamp.
+      required: mandatory
+      usage: "2023-02-23T08:20:16.324Z"
+      reference: if any    

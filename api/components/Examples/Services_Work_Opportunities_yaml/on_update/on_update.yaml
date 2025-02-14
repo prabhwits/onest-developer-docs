@@ -198,6 +198,5 @@ value:
                 value: "xxxx"
       documents:
         - url: "https://offer_letter_url"
-          label: "offer_letter"
-      state:
-        updated_at: "2023-02-23T08:20:06.061Z"
+          label: "OFFER_LETTER"
+      updated_at: "2023-02-23T08:20:06.061Z"

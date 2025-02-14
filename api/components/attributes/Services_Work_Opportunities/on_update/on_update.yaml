@@ -61,7 +61,7 @@ context:
   timestamp:
     description: "The timestamp of the operation in ISO 8601 format."
     required: mandatory
-    usage: "2023-02-23T08:20:61Z"
+    usage: "2023-02-23T08:20:61.324Z"
     reference: "if any"
   ttl:
     description: "The Time-to-Live (TTL) of the operation in ISO 8601 duration format."
@@ -124,7 +124,7 @@ message:
         updated_at:
           description: Last state update timestamp
           required: mandatory
-          usage: 2023-02-22T11:50:46.742Z
+          usage: "2023-02-22T11:50:46.742Z"
           reference: if any
       customer:
         contact:
@@ -280,11 +280,10 @@ message:
       label: 
         description: "A descriptive title for the document, indicating its type."
         required: optional
-        usage: "offer_letter"
+        usage: "OFFER_LETTER"
         reference: null
-    state:
-      updated_at:
-        description: Last order update timestamp.
-        required: mandatory
-        usage: "2023-02-23T08:20:61Z"
-        reference: if any    
+    updated_at:
+      description: Last order update timestamp.
+      required: mandatory
+      usage: "2023-02-23T08:20:61.324Z"
+      reference: if any    

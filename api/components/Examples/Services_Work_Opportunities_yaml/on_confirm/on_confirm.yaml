@@ -14,7 +14,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-23T08:20:06Z"
+    timestamp: "2023-02-23T08:20:06.214Z"
     ttl: PT30S
   message:
     order:
@@ -148,7 +148,7 @@ value:
           state:
             descriptor:
               code: APPLICATION_ACCEPTED
-            updated_at: "2023-02-23T08:20:06Z"
+            updated_at: "2023-02-23T08:20:06.214Z"
           customer:
             person:
               name: Sanjay
@@ -249,5 +249,4 @@ value:
                   - descriptor:
                       code: "BRANCH_NAME"
                     value: "xxxx"
-      state:
-        updated_at: "2023-02-23T08:20:06Z"
+      updated_at: "2023-02-23T08:20:06.214Z"
