@@ -61,7 +61,7 @@ context:
   timestamp:
     description: "timestamp"
     required: mandatory
-    usage: "2024-09-04T12:34:56Z"
+    usage: "2024-09-04T12:34:56.324Z"
     reference: "if any"
   ttl:
     description: "ttl"

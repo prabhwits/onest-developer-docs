@@ -14,7 +14,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: "2024-09-04T12:34:56Z"
+    timestamp: "2024-09-04T12:34:56.214Z"
     ttl: PT30S
   message:
     order:
@@ -135,7 +135,7 @@ value:
           state:
             descriptor:
               code: OFFER_EXTENDED 
-            updated_at: "2023-02-23T08:20:06Z"
+            updated_at: "2023-02-23T08:20:06.214Z"
           customer:
             person:
               name: Sanjay
@@ -256,6 +256,5 @@ value:
                 value: "xxxx"
       documents:
         - url: "https://offer_letter_url"
-          label: "offer_letter"
-      state:
-        updated_at: "2024-09-04T12:34:56Z"
+          label: "OFFER_LETTER"
+      updated_at: "2024-09-04T12:34:56.214Z"

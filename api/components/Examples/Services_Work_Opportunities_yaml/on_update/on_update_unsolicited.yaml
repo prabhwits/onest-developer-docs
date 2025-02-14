@@ -14,7 +14,7 @@ value:
         code: std:080
       country:
         code: IND
-    timestamp: "2023-02-23T08:22:06Z"
+    timestamp: "2023-02-23T08:22:06.214Z"
     ttl: PT30S
   message:
     order:
@@ -198,6 +198,5 @@ value:
                 value: "xxxx"
       documents:
         - url: "https://offer_letter_url"
-          label: "offer_letter"
-      state:
-        updated_at: "2023-02-23T08:22:06Z"
+          label: "OFFER_LETTER"
+      updated_at: "2023-02-23T08:22:06.214Z"

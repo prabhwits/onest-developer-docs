@@ -61,7 +61,7 @@ context:
   timestamp:
     description: "The timestamp of the operation in ISO 8601 format."
     required: mandatory
-    usage: "2024-09-04T12:34:56Z"
+    usage: "2024-09-04T12:34:56.324Z"
     reference: null
   ttl:
     description: "The Time-to-Live (TTL) of the operation in ISO 8601 duration format."
@@ -70,10 +70,8 @@ context:
     reference: null
 message:
   parent: true
-  order:
-    parent: true
-    id:
-      description: "The unique identifier of the order."
-      required: mandatory
-      usage: "1677140405881"
-      reference: null
+  order_id:
+    description: "The unique identifier of the order."
+    required: mandatory
+    usage: "1677140405881"
+    reference: null

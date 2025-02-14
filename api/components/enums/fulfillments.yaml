@@ -21,7 +21,18 @@ fulfillments:
         - code: ASSESSMENT_IN_PROGRESS
           description: Name of the fulfillment status	
           reference: <PR/Issue/Discussion Links md format text>
-
+        - code: OFFER_ACCEPTED
+          description: Name of the fulfillment status	
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: OFFER_REJECTED
+          description: Name of the fulfillment status	
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: OFFER_EXTENDED
+          description: Name of the fulfillment status	
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: CANCELLED
+          description: Name of the fulfillment status	
+          reference: <PR/Issue/Discussion Links md format text>
   customer:
     person:
       gender:

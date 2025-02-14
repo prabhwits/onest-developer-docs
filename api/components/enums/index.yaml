@@ -90,27 +90,27 @@ on_confirm:
         - code: Active
           description: fulfillments.state will be one of these - ["APPLICATION_ACCEPTED"]
           reference: <PR/Issue/Discussion Links md format text>
-        - code: Completed
-          description: fulfillments.state will be one of these - ["APPLICATION_REJECTED"]
-          reference: <PR/Issue/Discussion Links md format text>
+        # - code: Completed
+        #   description: fulfillments.state will be one of these - ["APPLICATION_REJECTED"]
+        #   reference: <PR/Issue/Discussion Links md format text>
       fulfillments:
         type:
           $ref: "./fulfillments.yaml#/fulfillments/type"
         state:
           descriptor:
             code:
-              - code: APPLICATION_ACCEPTED
-                name: Name of the fulfillment status	
-                reference: <PR/Issue/Discussion Links md format text>
-                description: APPLICATION_ACCEPTED
-              - code: APPLICATION_REJECTED
-                name: Name of the fulfillment status	
-                reference: <PR/Issue/Discussion Links md format text>
-                description: APPLICATION_REJECTED
               - code: APPLICATION_SUBMITTED
                 name: Name of the fulfillment status	
                 reference: <PR/Issue/Discussion Links md format text>
                 description: APPLICATION_SUBMITTED
+              - code: APPLICATION_ACCEPTED
+                name: Name of the fulfillment status	
+                reference: <PR/Issue/Discussion Links md format text>
+                description: APPLICATION_ACCEPTED
+              # - code: APPLICATION_REJECTED
+              #   name: Name of the fulfillment status	
+              #   reference: <PR/Issue/Discussion Links md format text>
+              #   description: APPLICATION_REJECTED
   #     quote:
   #       breakup:
   #         $ref: "./title_type.yaml#/breakup"
@@ -122,6 +122,10 @@ update:
       $ref: "./context.yaml#/domain"
   message:
     order:
+      status:
+        - code: Completed
+          description: fulfillments.state will be one of these - ["OFFER_ACCEPTED","OFFER_REJECTED"]
+          reference: <PR/Issue/Discussion Links md format text>  
       fulfillments:
         state:
           descriptor:
