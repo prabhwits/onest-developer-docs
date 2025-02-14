@@ -17,5 +17,4 @@ value:
     timestamp: "2024-09-04T12:34:56.214Z"
     ttl: PT30S
   message:
-    order:
-      id: "1677140405881"
+    order_id: "1677140405881"
